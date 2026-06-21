@@ -1,0 +1,361 @@
+# Frontend UI Design Standards
+
+## 1. Purpose
+
+This document defines shared frontend interface standards for Plystra projects.
+
+It is not a mandatory component library. It is a design contract. Projects may use different frameworks and implementation stacks, but their interfaces should share the same principles of clarity, restraint, accessibility, and maintenance.
+
+## 2. Interface personality
+
+A Plystra UI should feel:
+
+- quiet;
+- direct;
+- stable;
+- fast;
+- readable;
+- precise;
+- trustworthy;
+- intentionally sparse, but not under-designed.
+
+The interface should never feel like a template with Plystra colors applied.
+
+## 3. Information hierarchy
+
+Every screen should have a clear hierarchy:
+
+1. Where am I?
+2. What is the current object or workflow?
+3. What can I do next?
+4. What has changed?
+5. What needs attention?
+
+A page should not present several primary actions unless the workflow truly requires it.
+
+Recommended structure:
+
+```text
+Page title
+Short contextual description, when useful
+Primary content region
+Secondary metadata or navigation
+Primary action
+Secondary actions
+Danger zone, separated clearly
+```
+
+## 4. Spacing system
+
+Use a consistent spacing scale. The exact unit may differ by project, but the relationship should remain predictable.
+
+Recommended scale:
+
+```text
+2px   hairline offsets, optical alignment only
+4px   tight internal spacing
+8px   compact control spacing
+12px  dense grouping
+16px  standard component padding
+24px  section spacing
+32px  major section spacing
+48px  page rhythm
+64px+ landing and editorial spacing
+```
+
+Do not create arbitrary one-off spacing values unless solving a real optical problem.
+
+## 5. Surface model
+
+Interfaces should use a small number of surface levels.
+
+Recommended levels:
+
+```text
+Base surface        Main page background.
+Raised surface      Cards, panels, popovers.
+Inset surface       Inputs, code blocks, internal wells.
+Overlay surface     Modals, command menus, menus.
+```
+
+Avoid excessive nested cards. A card inside a card inside a card usually means the information architecture is unclear.
+
+## 6. Borders and shadows
+
+Use borders for structure and shadows for elevation. Do not use both heavily at the same time.
+
+Plystra interfaces should usually prefer subtle borders over dramatic shadows.
+
+Shadows may be used for:
+
+- popovers;
+- menus;
+- draggable overlays;
+- floating command palettes;
+- temporary elevated elements.
+
+Avoid shadows on every card.
+
+## 7. Buttons
+
+A screen should usually have one primary button.
+
+Button roles:
+
+```text
+Primary       The main forward action.
+Secondary     A safe alternative action.
+Tertiary      Low-emphasis action.
+Ghost         Contextual action with minimal visual weight.
+Destructive   Deletes, revokes, resets, or permanently changes state.
+```
+
+Rules:
+
+- Button labels must be verbs.
+- Destructive actions must be visually distinct and textually explicit.
+- Disabled buttons should explain why when the reason is not obvious.
+- Loading buttons should preserve size to avoid layout shift.
+- Do not use icons alone for important actions unless the action is universally understood and labeled for assistive technologies.
+
+Good labels:
+
+```text
+Create record
+Review changes
+Export data
+Send invite
+Archive project
+Delete permanently
+```
+
+Weak labels:
+
+```text
+Submit
+OK
+Next
+Go
+Apply magic
+```
+
+## 8. Forms
+
+Forms should be calm and forgiving.
+
+Rules:
+
+- Labels should remain visible; placeholders are not labels.
+- Required fields should be clear without visual clutter.
+- Validation should appear near the field.
+- Preserve user input after errors.
+- Prefer inline validation for format issues.
+- Use review screens for high-risk submissions.
+- Group related fields into meaningful sections.
+
+A form should explain why sensitive information is requested.
+
+## 9. Tables and lists
+
+Use tables for comparison and scanning. Use lists for objects that need narrative or actions.
+
+Table rules:
+
+- columns should have clear labels;
+- important status should not rely on color alone;
+- numeric values should align consistently;
+- row actions should be predictable;
+- empty states should explain the next step;
+- pagination, filtering, and sorting should be explicit.
+
+List rules:
+
+- each item should have a primary label;
+- metadata should be secondary;
+- unread or attention states should be subtle but discoverable;
+- avoid overloading each row with too many actions.
+
+## 10. Navigation
+
+Navigation should match product scale.
+
+Small tools should not pretend to be platforms. If a product only has three important areas, do not create an enterprise sidebar with ten empty sections.
+
+Recommended patterns:
+
+- landing or documentation site: top navigation;
+- small app: two to five primary sections;
+- data-heavy app: sidebar with stable categories;
+- mobile-first app: bottom navigation only for truly primary destinations;
+- project docs: left navigation plus content outline when needed.
+
+Navigation labels should use user-facing nouns, not internal architecture names.
+
+## 11. Command menus and shortcuts
+
+Command menus are useful for power users, but they should not become a substitute for clear interface design.
+
+Rules:
+
+- important actions must also be available visibly;
+- keyboard shortcuts should be documented;
+- destructive commands need confirmation;
+- search results should show context;
+- command names should match visible UI labels.
+
+## 12. Motion
+
+Motion should be brief and meaningful.
+
+Use motion for:
+
+- state transition;
+- object creation or removal;
+- focus movement;
+- progressive disclosure;
+- loading continuity.
+
+Avoid motion for:
+
+- constant background activity;
+- decorative hover effects on every element;
+- hiding slow performance;
+- simulating intelligence.
+
+Recommended duration:
+
+```text
+80–120ms    micro feedback
+120–180ms   simple state changes
+180–240ms   overlays and panels
+240–400ms   rare, expressive transitions
+```
+
+Respect reduced-motion preferences.
+
+## 13. Loading states
+
+A loading state should communicate whether the system is waiting, working, or blocked.
+
+Use:
+
+- skeletons for predictable content;
+- spinners for short unknown waits;
+- progress indicators for multi-step operations;
+- staged logs for technical operations;
+- explicit messages when operations may take time.
+
+Avoid indefinite loading without explanation for operations that affect data.
+
+## 14. Empty states
+
+Empty states should be quiet and useful.
+
+An empty state should include:
+
+- what is missing;
+- why it matters, if not obvious;
+- the next available action;
+- a link to docs when setup is required.
+
+## 15. Error and recovery states
+
+An error state should preserve user trust.
+
+It should answer:
+
+- what failed;
+- what was not changed;
+- what may have changed;
+- what the user can do;
+- how to report the issue if needed.
+
+For developer tools, include diagnostic IDs or copyable logs when appropriate.
+
+## 16. Responsive design
+
+Every Plystra product should define its minimum supported viewport and interaction model.
+
+General rules:
+
+- public sites must work well on mobile;
+- app workflows should avoid horizontal scrolling unless displaying tables or code;
+- tap targets should be large enough for touch;
+- hover-only interactions must have touch equivalents;
+- critical actions should not disappear on small screens;
+- modals should become full-screen sheets on mobile when content is long.
+
+## 17. Design tokens
+
+Projects should define tokens instead of scattering visual constants.
+
+Recommended token categories:
+
+```text
+color.background
+color.surface
+color.surfaceRaised
+color.text
+color.textMuted
+color.border
+color.accent
+color.success
+color.warning
+color.danger
+
+radius.sm
+radius.md
+radius.lg
+radius.full
+
+space.1
+space.2
+space.3
+space.4
+space.6
+space.8
+space.12
+space.16
+
+font.body
+font.mono
+font.display
+
+shadow.popover
+shadow.overlay
+
+motion.fast
+motion.normal
+motion.slow
+```
+
+Tokens should be semantic, not purely visual. Prefer `color.danger` over `color.red500` in component code.
+
+## 18. Component quality bar
+
+A component is ready when:
+
+- it has a clear purpose;
+- it supports keyboard interaction where relevant;
+- it handles loading, empty, and error states when needed;
+- it does not depend on page-specific hacks;
+- it has accessible labels;
+- it behaves predictably on mobile;
+- it uses design tokens;
+- it has documented variants;
+- it does not introduce unnecessary dependencies.
+
+## 19. UI acceptance checklist
+
+Before merging a visible UI change, ask:
+
+1. Is the primary action clear?
+2. Is the visual hierarchy obvious in grayscale?
+3. Does the screen still work with long text?
+4. Does it work without hover?
+5. Does it preserve user input on error?
+6. Are empty, loading, and error states handled?
+7. Is destructive behavior explicit?
+8. Does the interface feel calmer after the change?
+
+If the answer to the last question is no, reconsider the design.
