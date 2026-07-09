@@ -8,6 +8,8 @@ The goal is not to use the most impressive architecture. The goal is to build so
 
 A Plystra codebase should make contributors feel that someone cared about future maintenance.
 
+For day-to-day implementation practice, code projects should also follow [`12-code-project-working-standards.md`](12-code-project-working-standards.md).
+
 ## 2. General principles
 
 ### Prefer boring foundations
@@ -133,6 +135,8 @@ Rules:
 
 Dependencies should be treated as long-term commitments.
 
+Use the package manager established by the lockfile or project configuration. Install dependencies before importing them. Avoid new dependencies when the platform, standard library, or existing project utilities are enough.
+
 Before adding a dependency, ask:
 
 1. Does it solve a real problem?
@@ -148,6 +152,8 @@ Small utilities can create large maintenance risk when used everywhere.
 
 Testing should protect the product's promises.
 
+Verification is part of implementation, not a separate polish step.
+
 Minimum expectations vary by project, but serious Plystra projects should include:
 
 - unit tests for domain logic;
@@ -158,6 +164,10 @@ Minimum expectations vary by project, but serious Plystra projects should includ
 - migration tests when data integrity matters.
 
 Do not chase coverage percentages at the expense of meaningful tests.
+
+Test through public surfaces when possible: browser for visible frontend behavior, real requests for APIs, public commands for CLIs, and public exports for libraries.
+
+For visible interface changes, inspect the actual rendered UI at desktop and mobile viewport sizes when practical.
 
 ## 11. Observability
 
@@ -199,3 +209,5 @@ A change is ready when reviewers can understand:
 - whether documentation must change.
 
 If a change cannot be explained simply, it may be too large.
+
+Reviews should lead with concrete findings: bugs, regressions, security risks, data loss, broken contracts, missing tests, and deployment hazards. Preferences should not crowd out real failure scenarios.

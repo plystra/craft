@@ -20,6 +20,8 @@ Every serious Plystra project should define:
 - vulnerability reporting path;
 - dependency update process.
 
+Security work should validate untrusted input at every boundary: user input, HTTP requests, files, webhooks, CLI arguments, external APIs, database queries, and AI or tool outputs.
+
 ## 3. Secret handling
 
 Rules:
@@ -58,7 +60,26 @@ Rules:
 - log security-relevant changes;
 - test cross-user access failures.
 
-## 6. Privacy
+Client-side authorization checks are never sufficient for protecting data. Enforce access in the server, database policy layer, or another trusted boundary.
+
+## 6. Common vulnerability baseline
+
+Code projects should deliberately guard against:
+
+- SQL injection;
+- command injection;
+- path traversal;
+- unsafe deserialization;
+- cross-site scripting;
+- CSRF where applicable;
+- auth bypass;
+- privilege escalation;
+- insecure session handling;
+- sensitive-data leakage.
+
+Use parameterized queries or the project's safe query builder for database access. Avoid raw HTML rendering unless the content is necessary and sanitized.
+
+## 7. Privacy
 
 Privacy should be explained in plain language.
 
@@ -73,7 +94,7 @@ A project should document:
 - what third parties process it;
 - what happens during debugging or support.
 
-## 7. AI and private data
+## 8. AI and private data
 
 When using AI providers:
 
@@ -85,7 +106,7 @@ When using AI providers:
 - provide configuration paths to disable AI where appropriate;
 - avoid logging full private prompts in production.
 
-## 8. Data deletion and export
+## 9. Data deletion and export
 
 Data deletion and export behavior must be honest.
 
@@ -93,7 +114,19 @@ Do not claim complete deletion if backups, logs, audit trails, or third-party pr
 
 Exports should prefer formats that preserve meaning, not only raw dumps.
 
-## 9. Logging
+## 10. Payments and financial data
+
+Products that involve checkout, subscriptions, invoicing, donations, or e-commerce must use a real payment integration.
+
+Rules:
+
+- do not collect or handle raw card data directly;
+- keep payment secrets server-side;
+- verify webhook signatures before processing events;
+- make payment event handling idempotent;
+- do not imply that checkout works until required payment configuration is present, unless the surface is explicitly a visual-only prototype.
+
+## 11. Logging
 
 Logs are operational tools, not shadow databases.
 
@@ -106,7 +139,7 @@ Rules:
 - separate development verbosity from production behavior;
 - document where logs are stored.
 
-## 10. Security review checklist
+## 12. Security review checklist
 
 Before shipping a feature involving user data:
 

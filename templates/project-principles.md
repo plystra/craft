@@ -98,6 +98,45 @@ Known limitations:
 
 - ...
 
+## Engineering and verification
+
+Local instruction files:
+
+- `AGENTS.md` / equivalent: ...
+
+Primary development commands:
+
+- Install: ...
+- Run: ...
+- Test: ...
+- Lint/typecheck/build: ...
+
+Definition of done for this project:
+
+- ...
+
+High-risk changes that require extra review:
+
+- ...
+
+## Security and operations
+
+Authentication model:
+
+- ...
+
+Authorization boundaries:
+
+- ...
+
+Secrets and configuration:
+
+- ...
+
+Deployment or release constraints:
+
+- ...
+
 ## Open questions
 
 - ...

@@ -109,6 +109,18 @@ For deployed services, releases should consider:
 - observability updates;
 - user-facing downtime or degraded behavior.
 
+Deployments should be deliberate. Before declaring a project deployable, verify:
+
+- build command;
+- output directory;
+- runtime type;
+- required environment variables;
+- platform configuration;
+- migration and rollback behavior;
+- whether production secrets and URLs are provided by the platform rather than hardcoded.
+
+Do not deploy, publish, push, merge, or release from a project workflow unless the maintainer has explicitly asked for it.
+
 ## 10. Retirement
 
 Retiring a project is a responsible act when maintenance is no longer possible or aligned.

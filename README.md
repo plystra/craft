@@ -44,7 +44,8 @@ plystra/philosophy
 │   ├── 08-documentation-standards.md
 │   ├── 09-security-and-privacy.md
 │   ├── 10-release-and-maintenance.md
-│   └── 11-governance-and-legal.md
+│   ├── 11-governance-and-legal.md
+│   └── 12-code-project-working-standards.md
 └── templates/
     ├── decision-record.md
     ├── project-principles.md
@@ -82,6 +83,20 @@ Start with:
 5. Documentation that explains decisions rather than only describing commands.
 
 Do not rewrite a working project only to satisfy aesthetic consistency. Apply these standards where they make the project clearer, more trustworthy, and easier to maintain.
+
+### For code projects
+
+Code projects should also follow [`principles/12-code-project-working-standards.md`](principles/12-code-project-working-standards.md).
+
+These standards define how implementation work should be scoped, edited, verified, documented, reviewed, and shipped. They are especially important for repositories modified by coding agents or external contributors.
+
+At minimum, a serious code project should make the following clear:
+
+* which local instruction files apply;
+* how to run, test, lint, build, and deploy;
+* how secrets and environment variables are configured;
+* what data integrity and security boundaries exist;
+* what must be verified before a change is considered done.
 
 ### For design reviews
 

@@ -21,6 +21,8 @@ A Plystra UI should feel:
 
 The interface should never feel like a template with Plystra colors applied.
 
+Use the shipped product and existing design system as the source of truth when they exist. Do not replace a working interface with a generic template.
+
 ## 3. Information hierarchy
 
 Every screen should have a clear hierarchy:
@@ -345,7 +347,44 @@ A component is ready when:
 - it has documented variants;
 - it does not introduce unnecessary dependencies.
 
-## 19. UI acceptance checklist
+## 19. Frontend implementation discipline
+
+Follow the existing framework and styling approach. Use a new framework, component library, or build tool only when the project already uses it, the maintainer asks for it, or there is a clear project precedent.
+
+Rules:
+
+- use semantic HTML landmarks and correct heading hierarchy;
+- make interactive elements visibly interactive and keyboard accessible;
+- include loading, empty, error, disabled, hover, focus, and success states when the workflow requires them;
+- make text fit its containers across supported mobile and desktop viewports;
+- use stable dimensions for fixed-format controls, boards, counters, tiles, and toolbars;
+- do not scale font sizes directly with viewport width;
+- avoid negative letter spacing;
+- use existing icon libraries when available, and do not use emoji as interface icons;
+- provide alt text for meaningful images and mark decorative images as decorative;
+- save generated or uploaded assets into the project before referencing them in application code;
+- avoid unsafe raw HTML rendering unless necessary and sanitized.
+
+For maps, geographic data, 3D, charts, and other specialized surfaces, use established libraries instead of fragile hand-drawn approximations. Verify that rendered canvases and media are nonblank, framed correctly, and interactive when relevant.
+
+## 20. Data visualization and dashboards
+
+Choose the visualization form before choosing colors.
+
+Use charts only when a chart is the right form. Use stat rows, meters, tables, or structured text when they communicate better.
+
+Rules:
+
+- never use dual-axis charts;
+- avoid rainbow palettes and generated color cycling;
+- color should follow the entity, not its current rank;
+- reserve status colors for status meanings;
+- include legends for charts with multiple series;
+- values should be available through labels, axes, tables, or summaries, not only tooltips;
+- keep dashboard filters close to the content they control;
+- make interactive chart behavior keyboard accessible where practical.
+
+## 21. UI acceptance checklist
 
 Before merging a visible UI change, ask:
 
@@ -356,6 +395,8 @@ Before merging a visible UI change, ask:
 5. Does it preserve user input on error?
 6. Are empty, loading, and error states handled?
 7. Is destructive behavior explicit?
-8. Does the interface feel calmer after the change?
+8. Has the rendered UI been checked at relevant desktop and mobile sizes?
+9. Are console errors, broken assets, and obvious network failures absent?
+10. Does the interface feel calmer after the change?
 
 If the answer to the last question is no, reconsider the design.

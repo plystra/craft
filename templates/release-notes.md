@@ -34,6 +34,10 @@ Date: YYYY-MM-DD
 
 Describe required configuration, database, API, or user workflow changes.
 
+## Verification
+
+Describe the build, test, migration, smoke-test, or manual QA evidence used for this release.
+
 ## Known issues
 
 - ...

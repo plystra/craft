@@ -19,6 +19,8 @@ Use this checklist before merging visible UI changes in a Plystra project.
 - [ ] Borders and shadows are used intentionally.
 - [ ] There are no unnecessary nested cards.
 - [ ] The design still works without animation.
+- [ ] Text fits within its containers at supported viewport sizes.
+- [ ] Icons come from the existing icon system when one exists.
 
 ## Interaction
 
@@ -44,6 +46,7 @@ Use this checklist before merging visible UI changes in a Plystra project.
 ## Responsive behavior
 
 - [ ] The layout works on the minimum supported viewport.
+- [ ] The rendered UI was checked at desktop and mobile sizes.
 - [ ] Critical actions remain available on mobile.
 - [ ] Tables, code, or dense data have a mobile strategy.
 - [ ] Modals or overlays are usable on small screens.
@@ -55,6 +58,7 @@ Use this checklist before merging visible UI changes in a Plystra project.
 - [ ] New components have documented variants.
 - [ ] The change does not introduce unnecessary dependencies.
 - [ ] Tests or manual QA notes cover the critical path.
+- [ ] Console errors, broken assets, and obvious network failures were checked.
 
 ## Final question
 

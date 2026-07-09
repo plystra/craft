@@ -69,19 +69,36 @@ Required variables:
 # run tests
 ```
 
+Contributor and coding-agent instructions:
+
+- See `AGENTS.md` if this repository uses one.
+- Follow the project's existing architecture, style, and verification commands.
+
 ## Testing
 
 Explain the project's test strategy.
 
+Include the commands maintainers expect contributors to run before a change is considered ready.
+
 ## Deployment
 
 Explain supported deployment paths. Do not include private infrastructure details.
+
+Required deployment configuration:
+
+| Variable | Required | Description |
+| --- | --- | --- |
+| `EXAMPLE_DEPLOY_VAR` | Yes | Example only. |
 
 ## Security
 
 Please report security issues according to `SECURITY.md`.
 
 Do not open public issues for vulnerabilities.
+
+## Data and privacy
+
+Explain what data is stored, where it is stored, how it can be exported or deleted, and which third parties process it.
 
 ## Documentation
 
