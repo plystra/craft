@@ -2,21 +2,15 @@
 
 # Sources for plystra-product
 
-These files distribute selected canonical Plystra Craft material (version 1.0.0). Read the files relevant to the task; this selection does not narrow any applicable Craft obligations. The copies add no independent requirements and are not an assertion of compliance or automatic freshness.
+These task references distribute selected canonical Plystra Craft material (version 1.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
-| Source | Read when |
+| Material and selection | Read when |
 | --- | --- |
-| [README.md](README.md) | Establish project relationship, repository scope, and canonical sources; read only relevant sections. |
-| [CHARTER.md](CHARTER.md) | Review purpose, project admission, or a decision that changes the work's long-term direction. |
-| [ADOPTION.md](ADOPTION.md) | Interpret requirement levels and applicability; check version, evidence, and review deadlines when assessing adoption. |
-| [LICENSE](LICENSE) | Copy, distribute, or adapt Craft documentation and preserve its attribution and license. |
-| [principles/01-brand-philosophy.md](principles/01-brand-philosophy.md) | Define brand positioning, hierarchy, affiliation, or public identity. |
-| [principles/02-product-principles.md](principles/02-product-principles.md) | Design or assess product purpose, workflows, maturity, automation, or user trust. |
-| [principles/06-accessibility-and-interaction.md](principles/06-accessibility-and-interaction.md) | Design or verify an interface's accessibility and supported input methods. |
-| [principles/09-security-and-privacy.md](principles/09-security-and-privacy.md) | Handle user data, privacy notices, external processors, authorization, security, or sensitive examples. |
-| [principles/10-release-and-maintenance.md](principles/10-release-and-maintenance.md) | Prepare releases, migrations, support expectations, maintenance states, or retirement. |
-| [principles/11-governance-and-legal.md](principles/11-governance-and-legal.md) | Assess ownership, sponsorship, licensing, claims, brand permission, or legal and privacy records. |
-| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential decision when the task or project workflow calls for a decision record. |
-| [templates/project-principles.md](../assets/templates/project-principles.md) | Create or update an adoption record appropriate to the project's relationship and medium. |
+| [principles/02-product-principles.md (excerpt: 1. Build for long-term use; 2. Prefer legibility over magic; 3. Use friction where trust requires it; 4. Make the ordinary path excellent; 5. Respect user data ownership; 6. Default to human scale; 7. Naming inside products; 8. Product maturity levels; 9. Product checklist)](product-decisions.md) | Define product purpose, behavior, user agency, and maturity. |
+| [principles/06-accessibility-and-interaction.md (excerpt: 1. Accessibility is part of craft; 2. Baseline standard; 8. Cognitive accessibility; 9. Internationalization readiness)](inclusive-use.md) | Assess inclusive use, comprehension, and language in the proposed workflow. |
+| [principles/09-security-and-privacy.md (excerpt: 7. Privacy; 8. AI and private data; 9. Data deletion and export)](data-and-consent.md) | Decide what user data a workflow collects, sends, retains, exports, or deletes. |
+| [principles/10-release-and-maintenance.md (excerpt: 5. Deprecation; 6. Backward compatibility; 7. Maintenance states; 8. Support expectations)](lifecycle-promises.md) | Set realistic user-facing compatibility, support, and maintenance expectations. |
+| [templates/decision-record.md](../assets/templates/decision-record.md) | Record the chosen behavior and tradeoffs for a consequential product decision. |
+| [LICENSE](LICENSE) | Preserve the documentation license when adapting or distributing these resources. |
 
-[Source hashes and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [ADOPTION.md](ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to provenance and navigation; copies retain their canonical source information.
+[Source hashes, exact selections, and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [the adoption process](https://github.com/plystra/craft/blob/main/ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to section selection, provenance, and navigation; included text retains its canonical source information.

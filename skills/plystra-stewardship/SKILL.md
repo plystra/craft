@@ -1,40 +1,34 @@
 ---
 name: plystra-stewardship
-description: Assess Plystra project or sub-brand adoption, sponsorship admission, ownership records, licensing, maintenance, release readiness, and retirement under Plystra Craft. Also use for an explicit Craft adoption review; ordinary focused implementation does not require a full governance audit.
+description: "Assess Plystra project relationships, admission, sponsorship, adoption records, maintenance responsibility, and retirement. Use for governance decisions and evidence records under Craft; this skill does not itself perform every domain audit or certify full compliance."
 ---
 
 # Plystra stewardship
 
-Connect project obligations to explicit relationships, proportionate evidence, and realistic maintenance decisions.
+Keep project association, responsibility, adoption status, and continuing care supported by clear records.
 
-## Establish the relationship and review scope
+## Scope
 
-Read the project's maintained records and the [scope definitions](references/README.md#scope-and-project-relationships), then [ADOPTION](references/ADOPTION.md) for requirements, applicability, versioning, review evidence, and correction deadlines.
+Apply this workflow to Plystra work or an explicitly adopted Craft scope: owned projects, sub-brands, and every project under them follow all requirements applicable to their actual media, surfaces, and activities; sponsored projects choose their adoption scope while separate sponsorship admission and affiliation rules still apply. Preserve requirement levels: `must`, `required`, unqualified `never`, and unqualified procedural instructions are requirements; `should`, `recommended`, `prefer`, `avoid`, and `suggested` are recommendations, with reasons recorded for material alternatives; `may`, `optional`, and `can` expressing a choice are options. Lists inherit their introducing statement, while an explicit `must` still creates a requirement. `Should never` is a recommendation; examples and suggested scales add no independent requirements, and recommendations cannot weaken requirements. This focused workflow neither grants affiliation nor establishes full Craft compliance. Stay within the request and existing authorization, respect trusted project guidance and platform instructions, and do not treat this skill as permission to publish or make unrelated changes.
 
-Distinguish a Plystra-owned project, a sub-brand, every project under that sub-brand, an independently sponsored project, and an unaffiliated adopter. Do not infer an official relationship from shared authorship or use of Craft. Owned projects and sub-brands carry the full applicable obligations. Sponsorship has its own admission floor and permits no, partial, or full voluntary adoption; open source is not mandatory.
+## Choose the governance question
 
-This workflow does not itself approve admission, change ownership, confirm sponsorship, grant brand permission, publish notices, or override platform permissions. Identify the user's actual authorization and the responsible decision maker before any such action. A request for assessment remains an assessment unless implementation is authorized.
+Read [project relationships](references/project-relationships.md) and the existing records to distinguish direct ownership, a sub-brand and its projects, independent sponsorship, and voluntary adoption. A shared creator or adopted standard does not establish an official association.
 
-## Load the relevant review path
+- For purpose, admission, or retirement, use [project admission](references/project-admission.md) and [relationship governance](references/relationship-governance.md).
+- For sponsorship, use the sponsorship admission and continuation provisions in [relationship governance](references/relationship-governance.md). Record agreed support, responsibilities, term or review trigger, and permitted wording separately from optional Craft adoption. Open source and `PROJECT_PRINCIPLES.md` are not admission requirements.
+- For adoption records, use [adoption review](references/adoption-review.md). Establish the applicable revision, media and surfaces, evidence, gaps, owners, corrective actions, calendar deadlines, and next review.
+- For support, maintenance, deprecation, or retirement, use [care and retirement](references/care-and-retirement.md).
+- For evidence about data collection, processing, export, or deletion, use [privacy obligations](references/privacy-obligations.md) and the relevant notice provisions in relationship governance.
 
-- **Admission, purpose, or a sub-brand:** use the [Charter](references/CHARTER.md), [Brand Philosophy](references/principles/01-brand-philosophy.md), and [Governance and Legal](references/principles/11-governance-and-legal.md). A sub-brand record does not replace the records for its projects.
-- **Sponsorship:** use the sponsorship admission and continuation section of [Governance and Legal](references/principles/11-governance-and-legal.md), and verify the actual support, responsibilities, term or review trigger, and permitted wording. Keep voluntary adoption distinct from that admission record.
-- **Licensing or public claims:** use [Governance and Legal](references/principles/11-governance-and-legal.md), supported by the actual rights and project evidence.
-- **Data handling or external processing:** use [Security and Privacy](references/principles/09-security-and-privacy.md) and the relevant governance provisions before the affected activity begins.
-- **Release, support, or retirement:** use [Release and Maintenance](references/principles/10-release-and-maintenance.md). For software operations, also use [Code Project Working Standards](references/principles/12-code-project-working-standards.md).
-- **Official website or public web documentation:** use [Websites, Search, and Sharing](references/principles/13-websites-search-and-sharing.md), including required `/llms.txt` and the distinction between build checks and deployed evidence.
+## Assess evidence and maintain the record
 
-For a full adoption assessment, establish applicability across every chapter using the [reference index](references/index.md). The additional bundled chapters cover [product](references/principles/02-product-principles.md), [writing](references/principles/03-language-and-writing.md), [visual identity](references/principles/04-visual-identity.md), [frontend](references/principles/05-frontend-ui-design.md), [accessibility](references/principles/06-accessibility-and-interaction.md), [engineering](references/principles/07-engineering-standards.md), and [documentation](references/principles/08-documentation-standards.md). Read the applicable chapters rather than treating a selected checklist as the whole standard. A focused sponsorship or licensing task does not require loading all chapters.
+Inspect actual ownership, relationship confirmation, rights, support commitments, and domain review evidence. Record an applicable requirement as met only when the evidence supports it; absence of the relevant surface may justify non-applicability, while unfinished work is a gap. Keep sensitive supporting evidence within its authorized audience.
 
-## Review evidence and maintain records
+Apply the recorded version and review rules: review new revisions within 30 days, correct existing gaps within 90 days of discovery unless an earlier date applies, and review at least every six months. These windows never delay prerequisites such as privacy notice or required processing authorization. A sub-brand record must identify the separate records for all its projects.
 
-1. Identify the applicable published Craft revision. Check [source provenance](references/sources.json); an installed snapshot may need updating before a current-policy assessment.
-2. Determine the work's actual medium, public surfaces, data handling, and relationships. Mark a provision inapplicable only when its relevant surface or activity is absent.
-3. Inspect proportionate evidence for the obligations in scope. Separate a verified result, an open gap, missing evidence, and a documented alternative to a recommendation.
-4. Apply ADOPTION's current review and correction deadlines. Preconditions such as privacy disclosure and required processing authorization are not postponed by a remediation period.
-5. Record the responsible person, correction, calendar deadline, and verification for gaps. For sub-brands, identify every project and its separate review record.
-6. State the scope and actual status. Do not claim full compliance while applicable gaps remain, evidence is missing, or a required review is overdue. Keep sensitive evidence within its authorized audience.
+Use the [project record](assets/templates/project-principles.md) and [decision record](assets/templates/decision-record.md) for the requested governance deliverable. The project-record template contains only this task's record sections: preserve the other applicable sections of an existing `PROJECT_PRINCIPLES.md`, and identify remaining applicable information when starting a new record. Never replace complete project principles with this excerpt or claim the excerpt alone contains the complete applicable project record. Collect references to existing technical and design assessments rather than pretending this bundle performs them. If the request expands into a full Craft audit, identify the domain evidence still needed and do not mark the project fully compliant from this focused review.
 
-Use the [project-principles template](assets/templates/project-principles.md) for adoption records and a [decision record](assets/templates/decision-record.md) for consequential decisions. Use [README](assets/templates/project-readme.md), [release notes](assets/templates/release-notes.md), or the [UI review checklist](assets/templates/ui-review-checklist.md) only for corresponding requested or required deliverables. Adapt records to the actual medium; sponsorship alone does not require `PROJECT_PRINCIPLES.md`.
+State the confirmed relationship, reviewed scope and revision, decision or recommendation, open gaps, and next responsible action. A completed assessment does not itself confirm sponsorship, transfer ownership, grant brand permission, or authorize public announcements.
 
-Report confirmed facts, open decisions, evidence limits, and the next required action. Change normative rules in canonical Craft sources rather than generated references, and preserve the [documentation license](references/LICENSE) when adapting or distributing them.
+The task references are bundled excerpts, sufficient for this workflow without the Craft checkout or another installed skill. Their links to other Craft material provide provenance or context for a different task, not prerequisite loading steps. The [source ledger](references/sources.json) records the snapshot; preserve the [documentation license](references/LICENSE) when reusing it. A current-policy or full-adoption claim needs evidence for that revision and scope; ordinary completion of this task makes neither claim.

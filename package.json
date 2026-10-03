@@ -8,6 +8,6 @@
   "scripts": {
     "build:skills": "node tooling/build-skills.ts",
     "check:skills": "node tooling/build-skills.ts --check",
-    "test": "node --test tooling/build-skills.test.ts"
+    "test": "node --test tooling/*.test.ts"
   }
 }

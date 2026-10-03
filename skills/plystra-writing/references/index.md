@@ -2,25 +2,14 @@
 
 # Sources for plystra-writing
 
-These files distribute selected canonical Plystra Craft material (version 1.0.0). Read the files relevant to the task; this selection does not narrow any applicable Craft obligations. The copies add no independent requirements and are not an assertion of compliance or automatic freshness.
+These task references distribute selected canonical Plystra Craft material (version 1.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
-| Source | Read when |
+| Material and selection | Read when |
 | --- | --- |
-| [README.md](README.md) | Establish project relationship, repository scope, and canonical sources; read only relevant sections. |
-| [CHARTER.md](CHARTER.md) | Review purpose, project admission, or a decision that changes the work's long-term direction. |
-| [ADOPTION.md](ADOPTION.md) | Interpret requirement levels and applicability; check version, evidence, and review deadlines when assessing adoption. |
-| [LICENSE](LICENSE) | Copy, distribute, or adapt Craft documentation and preserve its attribution and license. |
-| [principles/01-brand-philosophy.md](principles/01-brand-philosophy.md) | Define brand positioning, hierarchy, affiliation, or public identity. |
-| [principles/03-language-and-writing.md](principles/03-language-and-writing.md) | Write or review interface copy, project descriptions, documentation, or public claims. |
-| [principles/08-documentation-standards.md](principles/08-documentation-standards.md) | Create or maintain project documentation, examples, contributor guidance, or operational instructions. |
-| [principles/09-security-and-privacy.md](principles/09-security-and-privacy.md) | Handle user data, privacy notices, external processors, authorization, security, or sensitive examples. |
-| [principles/10-release-and-maintenance.md](principles/10-release-and-maintenance.md) | Prepare releases, migrations, support expectations, maintenance states, or retirement. |
-| [principles/11-governance-and-legal.md](principles/11-governance-and-legal.md) | Assess ownership, sponsorship, licensing, claims, brand permission, or legal and privacy records. |
-| [principles/12-code-project-working-standards.md](principles/12-code-project-working-standards.md) | Modify or review code, contributor instructions, verification, or deployment workflows. |
-| [principles/13-websites-search-and-sharing.md](principles/13-websites-search-and-sharing.md) | Build, change, review, or publish an official website or public web documentation. |
-| [templates/project-readme.md](../assets/templates/project-readme.md) | Create or revise a project README or equivalent public introduction; keep only applicable sections. |
-| [templates/release-notes.md](../assets/templates/release-notes.md) | Prepare release notes from actual changes, migration needs, and verification evidence. |
-| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential decision when the task or project workflow calls for a decision record. |
-| [templates/project-principles.md](../assets/templates/project-principles.md) | Create or update an adoption record appropriate to the project's relationship and medium. |
+| [principles/03-language-and-writing.md (excerpt: 1. Voice; 2. Default writing style; 3. Claims must be earned; 4. Project descriptions; 5. Interface copy; 6. Empty states; 7. Error messages; 8. Documentation tone; 9. Capitalization; 10. Words Plystra likes)](voice-and-copy.md) | Write or edit project descriptions, interface copy, and explanatory text. |
+| [principles/08-documentation-standards.md (excerpt: 1. Documentation is part of the product; 2. Documentation goals; 4. Document structure; 5. Status labels; 6. Examples; 7. Diagrams; 8. Changelogs and release notes; 10. Documentation sync; 11. Documentation review checklist)](documentation-writing.md) | Structure technical explanations, label status, and keep examples and documentation accurate. |
+| [principles/11-governance-and-legal.md (excerpt: 6. Public claims)](supported-claims.md) | Check legal, security, privacy, open-source, and affiliation claims against evidence. |
+| [templates/release-notes.md](../assets/templates/release-notes.md) | Write release notes from actual user-facing changes, migration needs, and known issues. |
+| [LICENSE](LICENSE) | Preserve the documentation license when adapting or distributing these resources. |
 
-[Source hashes and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [ADOPTION.md](ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to provenance and navigation; copies retain their canonical source information.
+[Source hashes, exact selections, and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [the adoption process](https://github.com/plystra/craft/blob/main/ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to section selection, provenance, and navigation; included text retains its canonical source information.

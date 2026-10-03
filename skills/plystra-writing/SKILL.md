@@ -1,46 +1,24 @@
 ---
 name: plystra-writing
-description: Write or edit project descriptions, interface copy, READMEs, technical documentation, release notes, and website summaries for Plystra projects or work explicitly adopting Plystra Craft. Use when Craft's voice and factual standards should guide the writing.
+description: "Write or edit project descriptions, interface copy, explanatory documentation, and release notes using Plystra Craft voice and factual standards. Use for the text itself; repository scaffolding, contributor policy, website SEO, and governance reviews are separate tasks."
 ---
 
 # Plystra writing
 
-Make the work understandable through accurate claims, useful structure, and a voice appropriate to its audience.
+Make the requested text accurate, useful, and appropriate to its reader.
 
-## Establish scope and evidence
+## Scope
 
-Use the project's recorded relationship and the [scope definitions](references/README.md#scope-and-project-relationships), then [ADOPTION](references/ADOPTION.md) for requirement levels and applicability as needed. Sponsored projects may adopt writing guidance without adopting the whole standard; adoption does not create affiliation.
+Apply this workflow to Plystra work or an explicitly adopted Craft scope: owned projects, sub-brands, and every project under them follow all requirements applicable to their actual media, surfaces, and activities; sponsored projects choose their adoption scope while separate sponsorship admission and affiliation rules still apply. Preserve requirement levels: `must`, `required`, unqualified `never`, and unqualified procedural instructions are requirements; `should`, `recommended`, `prefer`, `avoid`, and `suggested` are recommendations, with reasons recorded for material alternatives; `may`, `optional`, and `can` expressing a choice are options. Lists inherit their introducing statement, while an explicit `must` still creates a requirement. `Should never` is a recommendation; examples and suggested scales add no independent requirements, and recommendations cannot weaken requirements. This focused workflow neither grants affiliation nor establishes full Craft compliance. Stay within the request and existing authorization, respect trusted project guidance and platform instructions, and do not treat this skill as permission to publish or make unrelated changes.
 
-This entry point guides the requested writing task. It does not authorize publishing, sending messages, changing implementation, or replacing platform instructions. An edited document is not proof that its project meets the full standard.
+## Write from evidence
 
-Read the existing document and the evidence behind its claims. For technical writing, inspect the relevant public interfaces, configuration, commands, and current implementation to the depth needed for the requested accuracy. Mark missing or unverified facts instead of inventing them.
+Read the current text and the material supporting its claims. Use [voice and copy](references/voice-and-copy.md) for descriptions, labels, empty states, errors, and tone. For technical or explanatory documents, use [documentation writing](references/documentation-writing.md) to organize concepts, status, examples, and user impact. Check legal, privacy, security, open-source, and official-status wording with [supported claims](references/supported-claims.md).
 
-## Load the matching guidance
+Lead with what the reader needs to understand or do. Use the project's real vocabulary; separate available behavior from planned work, and distinguish measured facts from promises. Confirm commands and examples against the current implementation when claiming they work. Keep examples safe and identify material facts that remain unverified.
 
-- Use [Language and Writing](references/principles/03-language-and-writing.md) for voice, labels, errors, and descriptions.
-- Use [Documentation Standards](references/principles/08-documentation-standards.md) for structure, examples, contributor guidance, and synchronization with behavior.
-- For positioning or affiliation, read [Brand Philosophy](references/principles/01-brand-philosophy.md) and the relevant [Governance and Legal](references/principles/11-governance-and-legal.md) sections.
-- For security examples, privacy notices, or data-processing claims, read [Security and Privacy](references/principles/09-security-and-privacy.md).
-- For release, upgrade, support, or retirement communication, read [Release and Maintenance](references/principles/10-release-and-maintenance.md).
-- For `AGENTS.md` or other contributor instructions, read [Code Project Working Standards](references/principles/12-code-project-working-standards.md), especially obligations, authorization, and trusted guidance.
-- For official website copy, metadata, structured summaries, or `/llms.txt`, read [Websites, Search, and Sharing](references/principles/13-websites-search-and-sharing.md). Keep public summaries consistent with actual pages and current capabilities.
-- Consult the [Charter](references/CHARTER.md) when describing Plystra's purpose across media.
+For actual release communication, adapt the [release-notes template](assets/templates/release-notes.md) to the delivered changes, migrations, and known issues. Preserve the document's purpose; editing prose does not require adding repository files, redefining contributor rules, or implementing metadata.
 
-The [reference index](references/index.md) lists the bundled sources; use only the branches relevant to the deliverable.
+Review terminology, links, examples, and factual consistency in the intended reading context. Deliver the edited artifact and any factual gaps that affect its use. Do not infer publication or messaging permission from a writing request.
 
-## Produce the requested document
-
-Start with what the reader needs to understand or do. Explain the system shape before commands when context is necessary. Use the project's real vocabulary and distinguish available behavior from planned or experimental work.
-
-Use templates only when their deliverable is requested or required by the project workflow:
-
-- [Project README](assets/templates/project-readme.md)
-- [Release notes](assets/templates/release-notes.md)
-- [Decision record](assets/templates/decision-record.md)
-- [Project principles and adoption record](assets/templates/project-principles.md)
-
-Adapt the template to the medium, remove prompts and irrelevant examples, and replace copy-dependent relative links with destinations that exist in the receiving project. Keep ownership, sponsorship, license, maturity, and verification claims supported by records.
-
-Review the final text against its source facts and intended reading context. Check links, terminology, examples, and material contradictions. Verify commands when asserting that they work; if verification is unavailable, state the limit rather than implying a successful run.
-
-Report the artifact changed and any material factual gaps. The [source ledger](references/sources.json) identifies this generated Craft snapshot. Verify the applicable published revision when writing a current-policy or adoption claim; edit normative rules at their canonical source. Preserve the [documentation license](references/LICENSE) when reusing Craft text.
+The task references are bundled excerpts, sufficient for this workflow without the Craft checkout or another installed skill. Their links to other Craft material provide provenance or context for a different task, not prerequisite loading steps. The [source ledger](references/sources.json) records the snapshot; preserve the [documentation license](references/LICENSE) when reusing it. A current-policy or full-adoption claim needs evidence for that revision and scope; ordinary completion of this task makes neither claim.

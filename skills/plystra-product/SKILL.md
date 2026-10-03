@@ -1,41 +1,28 @@
 ---
 name: plystra-product
-description: Define or review product purpose, workflows, automation, maturity, and user trust for Plystra projects or work explicitly adopting Plystra Craft. Use for product decisions across digital and physical media, rather than unrelated general product work.
+description: "Define or review product purpose, workflows, automation, user agency, and maturity under Plystra Craft. Use for decisions about product behavior across media; branding, sponsorship admission, and repository setup are separate tasks."
 ---
 
 # Plystra product
 
-Use Craft to turn the intended purpose of a project into understandable product behavior and explicit tradeoffs.
+Turn a product question into explicit behavior, tradeoffs, and a decision that can be checked.
 
-## Establish the applicable scope
+## Scope
 
-Read the project's relationship record and the [scope definitions](references/README.md#scope-and-project-relationships). Owned projects and projects under sub-brands follow all applicable Craft requirements. Sponsored projects choose their adoption scope and remain subject to the separate sponsorship requirements.
+Apply this workflow to Plystra work or an explicitly adopted Craft scope: owned projects, sub-brands, and every project under them follow all requirements applicable to their actual media, surfaces, and activities; sponsored projects choose their adoption scope while separate sponsorship admission and affiliation rules still apply. Preserve requirement levels: `must`, `required`, unqualified `never`, and unqualified procedural instructions are requirements; `should`, `recommended`, `prefer`, `avoid`, and `suggested` are recommendations, with reasons recorded for material alternatives; `may`, `optional`, and `can` expressing a choice are options. Lists inherit their introducing statement, while an explicit `must` still creates a requirement. `Should never` is a recommendation; examples and suggested scales add no independent requirements, and recommendations cannot weaken requirements. This focused workflow neither grants affiliation nor establishes full Craft compliance. Stay within the request and existing authorization, respect trusted project guidance and platform instructions, and do not treat this skill as permission to publish or make unrelated changes.
 
-Use [ADOPTION](references/ADOPTION.md) to interpret requirement levels and applicability. This skill supplies a workflow, not a new policy or authorization to implement, publish, or change project ownership. Preserve the user's requested mode: advice, review, design, or implementation. A product review alone does not establish full Craft compliance.
+## Work on the actual product decision
 
-## Read for the decision
+Start with the intended audience, problem, current capability, and specific choice requested. Read [product decisions](references/product-decisions.md) for long-term use, understandable behavior, action confirmation, data ownership, and honest maturity.
 
-- Begin with [Product Principles](references/principles/02-product-principles.md) for purpose, repeated use, automation, confirmation, data ownership, and maturity.
-- Read [Brand Philosophy](references/principles/01-brand-philosophy.md) when evaluating positioning or fit within Plystra, and the [Charter](references/CHARTER.md) for admission or a change of direction.
-- Read [Accessibility and Interaction](references/principles/06-accessibility-and-interaction.md) when the decision changes how people interact with the work.
-- Read [Security and Privacy](references/principles/09-security-and-privacy.md) before designing collection, retention, sharing, or external processing of user data.
-- Read [Release and Maintenance](references/principles/10-release-and-maintenance.md) for maturity, support promises, migration, and retirement decisions.
-- Read [Governance and Legal](references/principles/11-governance-and-legal.md) for licensing, sponsorship, public claims, and relationship changes.
+Load conditional material only for the behavior being designed:
 
-The [reference index](references/index.md) provides conditional navigation; loading a skill does not require reading every source.
+- [Inclusive use](references/inclusive-use.md) for comprehension, language, and access requirements.
+- [Data and consent](references/data-and-consent.md) when the workflow collects, sends, retains, exports, or deletes user data.
+- [Lifecycle promises](references/lifecycle-promises.md) when changing compatibility, deprecation, maintenance, or support expectations.
 
-## Develop the decision
+Describe the ordinary path, relevant failure or recovery paths, and what the user can understand and control. Distinguish existing capability, an accepted decision, and a proposal. Preserve required confirmation for consequential actions; a product decision does not itself authorize the action. Match data collection and external processing to disclosed purposes and required authorization before those activities begin.
 
-1. Identify the people, context, actual medium, current capabilities, and problem the proposed change addresses. Separate shipped behavior from ideas and prototypes.
-2. Describe the ordinary use path. For an object, publication, or research work, use encounter, use, care, or preservation rather than inventing an application workflow.
-3. Make important state, uncertainty, data use, and consequences visible. Assess confirmation and review behavior against the product principles, and identify recovery or inspection paths where relevant.
-4. Compare only meaningful alternatives. Include the effects on user agency, maintenance capacity, privacy, and long-term comprehensibility.
-5. Deliver the requested decision or design, or carry authorized implementation through its relevant verification. Do not turn a request for assessment into implementation work.
+Evaluate reasonable options against actual user needs and maintenance capacity. Record a consequential decision with the [decision-record template](assets/templates/decision-record.md) when the project needs it. State the chosen behavior, important tradeoffs, evidence checked, and unresolved facts. A focused product decision does not require admission paperwork or repository restructuring.
 
-Use the [decision-record template](assets/templates/decision-record.md) for a consequential choice when a maintained record is appropriate. Use the [project-principles template](assets/templates/project-principles.md) only when creating or updating that project's principles or adoption record. Keep scope and evidence honest; a completed template is not verification.
-
-## Report the result
-
-Explain the chosen behavior, why it fits the purpose, accepted tradeoffs, and what was actually validated. Identify unresolved factual or authorization questions without silently filling them with claims.
-
-The [source ledger](references/sources.json) records the bundled canonical snapshot. Confirm the applicable published revision when the request requires current policy or adoption status. Change canonical documents rather than their generated copies, and preserve the [documentation license](references/LICENSE) when reusing their text.
+The task references are bundled excerpts, sufficient for this workflow without the Craft checkout or another installed skill. Their links to other Craft material provide provenance or context for a different task, not prerequisite loading steps. The [source ledger](references/sources.json) records the snapshot; preserve the [documentation license](references/LICENSE) when reusing it. A current-policy or full-adoption claim needs evidence for that revision and scope; ordinary completion of this task makes neither claim.

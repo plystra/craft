@@ -1,123 +1,99 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-product",
   "craftVersion": "1.0.0",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
-      "path": "README.md",
-      "sha256": "7b3253d2a368ebf8e08752b6a791e50c5c7cfd1ee6555bdb6df3c61c51a0274d",
-      "output": "references/README.md"
-    },
-    {
-      "path": "CHARTER.md",
-      "sha256": "9cebb41e9694ed2cf45ddc5612e70a78dd5ed8fb1c056a0dd915397d3821a618",
-      "output": "references/CHARTER.md"
-    },
-    {
-      "path": "ADOPTION.md",
-      "sha256": "6b8b8811834b4ab9c55abed62489c87e76d9f14e12bc999f9c02097492adf855",
-      "output": "references/ADOPTION.md"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
-      "output": "references/LICENSE"
-    },
-    {
-      "path": "principles/01-brand-philosophy.md",
-      "sha256": "e7aa42c8f2b39803f0be01781392dc13bc89f0db25ee08bb9ddf341d80731c94",
-      "output": "references/principles/01-brand-philosophy.md"
-    },
-    {
       "path": "principles/02-product-principles.md",
       "sha256": "ba31e41bfafda47b643d5b81a44d23b0a46710dd88fd5383f750744436fd30f9",
-      "output": "references/principles/02-product-principles.md"
+      "selection": [
+        "1. Build for long-term use",
+        "2. Prefer legibility over magic",
+        "3. Use friction where trust requires it",
+        "4. Make the ordinary path excellent",
+        "5. Respect user data ownership",
+        "6. Default to human scale",
+        "7. Naming inside products",
+        "8. Product maturity levels",
+        "9. Product checklist"
+      ],
+      "output": "references/product-decisions.md"
     },
     {
       "path": "principles/06-accessibility-and-interaction.md",
       "sha256": "a7361aa9d04e641182c7bb329c8e17f76de8543f2e61ae4076b2ff4664718d94",
-      "output": "references/principles/06-accessibility-and-interaction.md"
+      "selection": [
+        "1. Accessibility is part of craft",
+        "2. Baseline standard",
+        "8. Cognitive accessibility",
+        "9. Internationalization readiness"
+      ],
+      "output": "references/inclusive-use.md"
     },
     {
       "path": "principles/09-security-and-privacy.md",
       "sha256": "566262882d89adb1e3f74ad552c548a445989b6f668ec876c4cf90bcf43f3bff",
-      "output": "references/principles/09-security-and-privacy.md"
+      "selection": [
+        "7. Privacy",
+        "8. AI and private data",
+        "9. Data deletion and export"
+      ],
+      "output": "references/data-and-consent.md"
     },
     {
       "path": "principles/10-release-and-maintenance.md",
       "sha256": "4e70f04996ac757bee1993cda022ba70e9b87e45697c59e8acc9d6332f337814",
-      "output": "references/principles/10-release-and-maintenance.md"
-    },
-    {
-      "path": "principles/11-governance-and-legal.md",
-      "sha256": "8358870c57a019ce44bc2e9694ec39dfb4102b4898be824aeb2f84d4fd8b92e0",
-      "output": "references/principles/11-governance-and-legal.md"
+      "selection": [
+        "5. Deprecation",
+        "6. Backward compatibility",
+        "7. Maintenance states",
+        "8. Support expectations"
+      ],
+      "output": "references/lifecycle-promises.md"
     },
     {
       "path": "templates/decision-record.md",
       "sha256": "43fec6c265b3a5e443f6ad3382088f1b6fddedb2d96df2d1e7012c67eebc8f30",
+      "selection": null,
       "output": "assets/templates/decision-record.md"
     },
     {
-      "path": "templates/project-principles.md",
-      "sha256": "a804fd6a75abcee113c1b947e155b9f4d3b7a4bc3919a875b4ca02eacbd093fc",
-      "output": "assets/templates/project-principles.md"
+      "path": "LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "selection": null,
+      "output": "references/LICENSE"
     }
   ],
   "outputs": [
     {
       "path": "assets/templates/decision-record.md",
-      "sha256": "7778568463b988f46214f4b8114c2c117f0738a9b0c0092fccaf288860203a5c"
+      "sha256": "8ff86a3a7ba589d58b5d243bd844be0d27d2c86a6e097bb0b1fcd8a750591a71"
     },
     {
-      "path": "assets/templates/project-principles.md",
-      "sha256": "907044ef861fab92fea5eb3148949b41ecaa13455c3b0e575e0556b9eb044970"
+      "path": "references/data-and-consent.md",
+      "sha256": "e0259a5ca5c9040ce8b921f4951340d8190a8c17a467efd61b5a2952ffba4944"
     },
     {
-      "path": "references/ADOPTION.md",
-      "sha256": "bb4553737caa1db1f3bb1be9ff9d17747a01c06313967ab2eb006e2b418b0cce"
-    },
-    {
-      "path": "references/CHARTER.md",
-      "sha256": "19f6fc4d056acb9bd93cf7159e5e238111021f910f92806042da3af740575e0c"
+      "path": "references/inclusive-use.md",
+      "sha256": "ed6ea0674a9d654940e0bea43deb0be1a13d834bb1477b3e8dc9b0a6603ee02a"
     },
     {
       "path": "references/index.md",
-      "sha256": "2fd981afe8b8a1720810e9b843deef24ca13bbf045820688eafd2263ba70c3b7"
+      "sha256": "d53e0a56d675ddf22050d0695cedd9d5c6ff389fa337d96d6a31a7b1c2cf7467"
     },
     {
       "path": "references/LICENSE",
       "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
     },
     {
-      "path": "references/principles/01-brand-philosophy.md",
-      "sha256": "35b7b36e8a631ff5a9f312bfb6f02e7c129aee07e078e183bdf22f305884c327"
+      "path": "references/lifecycle-promises.md",
+      "sha256": "7d6c2115f0156116fb571c4bc660bb1a59f1b5fab6509eb82d2ed628fea3e0a8"
     },
     {
-      "path": "references/principles/02-product-principles.md",
-      "sha256": "f8580943a432d6e193b739b18bf53cdbc786cff735a5ef8ea6d4e28c60271bbd"
-    },
-    {
-      "path": "references/principles/06-accessibility-and-interaction.md",
-      "sha256": "b0e88a418fcd36ae09ececb537d5fa8b35d5b888543399ff069016a67f90ef6d"
-    },
-    {
-      "path": "references/principles/09-security-and-privacy.md",
-      "sha256": "4595dd90163039987c8fed9adcc5380f6b874478a5a1b57f023f070c737efccc"
-    },
-    {
-      "path": "references/principles/10-release-and-maintenance.md",
-      "sha256": "3fbf08f740f79de4ca71c9ecdfcdd28a446acfd241391ff341ca81a989f77c04"
-    },
-    {
-      "path": "references/principles/11-governance-and-legal.md",
-      "sha256": "ea74626d583485b85906b1732d0ce1606d9c63333fb8d8976910b2776b73a3f1"
-    },
-    {
-      "path": "references/README.md",
-      "sha256": "c83cf7db09c0f929645bf6014bfc6e6aa4d87a73870bfa4f15196e234f7f6714"
+      "path": "references/product-decisions.md",
+      "sha256": "3c271c113989345f04ab8121d9e298d30e3d40f56b3abff76cbaf2936a28fe59"
     }
   ]
 }

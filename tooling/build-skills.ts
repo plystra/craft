@@ -5,13 +5,13 @@ import * as fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-type Source = { path: string; when: string };
+type Source = { path: string; when: string; sections?: string[]; output?: string };
 type Skill = { name: string; sources: Source[] };
-type Manifest = { schemaVersion: 1; canonicalBaseUrl: string; skills: Skill[] };
-type SourceRecord = { path: string; sha256: string; output: string };
+type Manifest = { schemaVersion: 2; canonicalBaseUrl: string; skills: Skill[] };
+type SourceRecord = { path: string; sha256: string; selection: string[] | null; output: string };
 type OutputRecord = { path: string; sha256: string };
 type Inventory = {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generator: string;
   skill: string;
   craftVersion: string;
@@ -22,6 +22,14 @@ type Inventory = {
 type BuildOptions = { root?: string; check?: boolean };
 type BuildResult = { skills: number; changed: string[]; removed: string[] };
 type Link = { start: number; end: number; target: string };
+type Heading = { start: number; lineEnd: number; level: number; text: string };
+type Anchor = { start: number; slug: string };
+type SelectedSource = {
+  content: string;
+  selection: string[] | null;
+  output: string;
+  anchors: Map<string, string>;
+};
 
 const GENERATOR = 'tooling/build-skills.ts';
 const INVENTORY = 'references/sources.json';
@@ -30,10 +38,10 @@ const hash = (value: string | Buffer): string => createHash('sha256').update(val
 const fail = (message: string): never => { throw new Error(message); };
 const isHash = (value: unknown): value is string => typeof value === 'string' && /^[a-f0-9]{64}$/.test(value);
 
-function object(value: unknown, keys: string[], label: string): Record<string, unknown> {
+function object(value: unknown, keys: string[], label: string, optional: string[] = []): Record<string, unknown> {
   if (!value || typeof value !== 'object' || Array.isArray(value)) fail(`${label}: expected an object`);
   const result = value as Record<string, unknown>;
-  if (Object.keys(result).some(key => !keys.includes(key)) || keys.some(key => !(key in result))) {
+  if (Object.keys(result).some(key => !keys.includes(key) && !optional.includes(key)) || keys.some(key => !(key in result))) {
     fail(`${label}: expected exactly ${keys.join(', ')}`);
   }
   return result;
@@ -59,9 +67,28 @@ function outputPath(source: string): string {
   return source.startsWith('templates/') ? `assets/${source}` : `references/${source}`;
 }
 
+function safeOutput(value: unknown): string {
+  const output = relativePath(value, 'Output');
+  if ((!output.startsWith('references/') && !output.startsWith('assets/templates/'))
+    || [INDEX, INVENTORY].some(reserved => output === reserved || output.startsWith(reserved + '/'))
+    || output.split('/').some(part => part.startsWith('.'))) {
+    fail(`Output must stay inside generated references or templates and avoid reserved paths: ${output}`);
+  }
+  return output;
+}
+
+function selectors(value: unknown, label: string): string[] {
+  if (!Array.isArray(value) || value.length === 0 || value.some(item => typeof item !== 'string' || !item.trim() || /[\r\n]/.test(item))) {
+    fail(`${label}: sections must be a nonempty array of exact heading text`);
+  }
+  const result = value as string[];
+  if (new Set(result).size !== result.length) fail(`${label}: duplicate section selector`);
+  return result;
+}
+
 function parseManifest(input: unknown): Manifest {
   const data = object(input, ['schemaVersion', 'canonicalBaseUrl', 'skills'], 'Manifest');
-  if (data.schemaVersion !== 1) fail('Unsupported manifest schemaVersion');
+  if (data.schemaVersion !== 2) fail('Unsupported manifest schemaVersion; expected 2');
   if (typeof data.canonicalBaseUrl !== 'string' || !/^https:\/\/[^?#]+\/$/.test(data.canonicalBaseUrl)) {
     fail('canonicalBaseUrl must be an HTTPS URL ending with /');
   }
@@ -77,20 +104,28 @@ function parseManifest(input: unknown): Manifest {
     names.add(name);
     if (!Array.isArray(skill.sources) || skill.sources.length === 0) fail(`${name}: sources must not be empty`);
     const paths = new Set<string>();
+    const outputs = new Set<string>();
     const sources = (skill.sources as unknown[]).map(input => {
-      const source = object(input, ['path', 'when'], `${name} source`);
+      const source = object(input, ['path', 'when'], `${name} source`, ['sections', 'output']);
       const sourcePath = canonicalPath(source.path);
       if (paths.has(sourcePath)) fail(`${name}: duplicate source ${sourcePath}`);
       paths.add(sourcePath);
       if (typeof source.when !== 'string' || !source.when.trim() || /[\r\n]/.test(source.when)) {
         fail(`${name}: each source needs a single-line reading condition`);
       }
-      return { path: sourcePath, when: source.when as string };
+      const sections = 'sections' in source ? selectors(source.sections, sourcePath) : undefined;
+      const output = 'output' in source ? safeOutput(source.output) : outputPath(sourcePath);
+      if (outputs.has(output)) fail(`${name}: duplicate output ${output}`);
+      if ([...outputs].some(other => other.startsWith(output + '/') || output.startsWith(other + '/'))) fail(`${name}: overlapping output paths`);
+      if (sourcePath === 'LICENSE' && (sections || output !== 'references/LICENSE')) fail(`${name}: LICENSE must remain complete at references/LICENSE`);
+      if (sourcePath !== 'LICENSE' && (!output.endsWith('.md') || output === 'references/LICENSE')) fail(`${name}: documentation output must be a Markdown file`);
+      outputs.add(output);
+      return { path: sourcePath, when: source.when as string, ...(sections ? { sections } : {}), output };
     });
-    if (!paths.has('LICENSE') || !paths.has('ADOPTION.md')) fail(`${name}: LICENSE and ADOPTION.md must be explicit sources`);
+    if (!paths.has('LICENSE')) fail(`${name}: LICENSE must be an explicit source`);
     return { name, sources };
   });
-  return { schemaVersion: 1, canonicalBaseUrl: data.canonicalBaseUrl as string, skills };
+  return { schemaVersion: 2, canonicalBaseUrl: data.canonicalBaseUrl as string, skills };
 }
 
 // Follow no symlink, including ancestor directories. All operations use this
@@ -133,6 +168,8 @@ function codeMask(markdown: string): Uint8Array {
       if (match && match[1][0] === fence.character && match[1].length >= fence.length && !match[2].trim()) fence = null;
     } else if (match && !(match[1][0] === '`' && match[2].includes('`'))) {
       fence = { character: match[1][0], length: match[1].length };
+      mask.fill(1, offset, offset + line.length);
+    } else if (/^(?: {4}|\t)/.test(line)) {
       mask.fill(1, offset, offset + line.length);
     }
     offset += line.length;
@@ -220,30 +257,102 @@ function markdownLinks(markdown: string): Link[] {
   return links.sort((a, b) => a.start - b.start);
 }
 
-function anchors(markdown: string): Set<string> {
+function atxHeading(line: string): { level: number; text: string } | null {
+  const match = /^ {0,3}(#{1,6})(?:[ \t]+(.*)|[ \t]*)\r?$/.exec(line.replace(/\r?\n$/, ''));
+  if (!match) return null;
+  return { level: match[1].length, text: (match[2] ?? '').replace(/[ \t]+#+[ \t]*$/, '').trim() };
+}
+
+function headings(markdown: string): Heading[] {
+  const mask = codeMask(markdown);
+  const result: Heading[] = [];
+  let offset = 0;
+  for (const line of markdown.match(/[^\n]*\n|[^\n]+$/g) ?? []) {
+    const heading = atxHeading(line);
+    if (heading && !mask[offset]) result.push({ start: offset, lineEnd: offset + line.length, ...heading });
+    offset += line.length;
+  }
+  return result;
+}
+
+function anchorEntries(markdown: string): Anchor[] {
   // Inline code contributes its visible text to heading slugs, unlike fences.
   const mask = codeMask(markdown);
-  const result = new Set<string>();
+  const used = new Set<string>();
+  const result: Anchor[] = [];
   let offset = 0;
   const lines = markdown.split('\n');
   for (let index = 0; index < lines.length; index++) {
     const line = lines[index];
-    const atx = /^ {0,3}#{1,6}\s+(.+?)\s*#*\s*$/.exec(line);
+    const atx = atxHeading(line);
     const setext = index + 1 < lines.length && /^ {0,3}(?:=+|-+)\s*$/.test(lines[index + 1]);
     if (!mask[offset] && (atx || (line.trim() && setext))) {
-      const label = (atx?.[1] ?? line).replace(/<[^>]+>/g, '').replace(/!?\[([^\]]+)\]\([^)]*\)/g, '$1');
+      const label = (atx?.text ?? line).replace(/<[^>]+>/g, '').replace(/!?\[([^\]]+)\]\([^)]*\)/g, '$1');
       const base = label.toLowerCase().trim().replace(/[^\p{L}\p{M}\p{N}_\-\s]/gu, '').replace(/\s/g, '-');
       let slug = base;
       let suffix = 0;
-      while (result.has(slug)) slug = `${base}-${++suffix}`;
-      result.add(slug);
+      while (used.has(slug)) slug = `${base}-${++suffix}`;
+      used.add(slug);
+      result.push({ start: offset, slug });
     }
     offset += line.length + 1;
   }
   for (const match of markdown.matchAll(/<[^>]+\b(?:id|name)\s*=\s*(["'])(.*?)\1[^>]*>/gi)) {
-    if (!mask[match.index!]) result.add(match[2]);
+    if (!mask[match.index!]) result.push({ start: match.index!, slug: match[2] });
   }
   return result;
+}
+
+function anchors(markdown: string): Set<string> {
+  return new Set(anchorEntries(markdown).map(anchor => anchor.slug));
+}
+
+function selectSource(content: string, source: Source): SelectedSource {
+  const originalAnchors = anchorEntries(content);
+  if (!source.sections) {
+    return { content, output: source.output!, selection: null, anchors: new Map(originalAnchors.map(anchor => [anchor.slug, anchor.slug])) };
+  }
+  const all = headings(content);
+  const selected = source.sections.map(selector => {
+    const matches = all.filter(heading => heading.text === selector);
+    if (matches.length === 0) fail(`${source.path}: unknown section selector ${JSON.stringify(selector)}`);
+    if (matches.length !== 1) fail(`${source.path}: ambiguous section selector ${JSON.stringify(selector)}`);
+    const heading = matches[0];
+    const end = all.find(next => next.start > heading.start && next.level <= heading.level)?.start ?? content.length;
+    return { start: heading.start, end, text: selector };
+  }).sort((a, b) => a.start - b.start);
+  for (let index = 1; index < selected.length; index++) {
+    if (selected[index].start < selected[index - 1].end) fail(`${source.path}: overlapping section selectors`);
+  }
+  const ranges = selected.map(({ start, end }) => ({ start, end }));
+  const title = all.find(heading => heading.level === 1);
+  if (title && !ranges.some(range => range.start <= title.start && title.start < range.end)) {
+    ranges.push({ start: title.start, end: title.lineEnd });
+  }
+  ranges.sort((a, b) => a.start - b.start);
+  let excerpt = '';
+  const spans: { start: number; end: number; generatedStart: number }[] = [];
+  const newline = content.includes('\r\n') ? '\r\n' : '\n';
+  for (const range of ranges) {
+    if (excerpt && !excerpt.endsWith(newline + newline)) excerpt += excerpt.endsWith(newline) ? newline : newline + newline;
+    spans.push({ ...range, generatedStart: excerpt.length });
+    excerpt += content.slice(range.start, range.end);
+  }
+  // Blank lines separating the last selected section from its next heading
+  // are excerpt boundaries, not code or paragraph content. Keep one original
+  // line ending without trimming spaces on a nonempty line or inside a fence.
+  const separator = /(\r?\n)(?:[ \t]*\r?\n)+$/.exec(excerpt);
+  if (separator && !codeMask(excerpt).subarray(separator.index + separator[1].length).some(Boolean)) {
+    excerpt = excerpt.slice(0, separator.index) + separator[1];
+  }
+  const generatedAnchors = new Map(anchorEntries(excerpt).map(anchor => [anchor.start, anchor.slug]));
+  const mapped = new Map<string, string>();
+  for (const anchor of originalAnchors) {
+    const span = spans.find(range => range.start <= anchor.start && anchor.start < range.end);
+    const generated = span && generatedAnchors.get(span.generatedStart + anchor.start - span.start);
+    if (generated !== undefined) mapped.set(anchor.slug, generated);
+  }
+  return { content: excerpt, selection: selected.map(section => section.text), output: source.output!, anchors: mapped };
 }
 
 function localTarget(target: string): { pathname: string; suffix: string; fragment: string } | null {
@@ -271,7 +380,7 @@ function canonicalUrl(base: string, relative: string, directory = false): string
   return (directory ? base.replace('/blob/', '/tree/') : base) + relative.split('/').map(encodeURIComponent).join('/');
 }
 
-async function rewriteMarkdown(root: string, source: string, content: string, included: Map<string, string>, base: string): Promise<string> {
+async function rewriteMarkdown(root: string, source: string, content: string, included: Map<string, SelectedSource>, base: string): Promise<string> {
   const replacements: (Link & { replacement: string })[] = [];
   for (const link of markdownLinks(content)) {
     const local = localTarget(link.target);
@@ -284,10 +393,13 @@ async function rewriteMarkdown(root: string, source: string, content: string, in
         fail(`Broken anchor in ${source}: ${link.target}`);
       }
     }
-    if (!local.pathname) continue;
-    const output = included.get(target);
-    const replacement = output
-      ? path.posix.relative(path.posix.dirname(included.get(source)!), output).split('/').map(encodeURIComponent).join('/') + local.suffix
+    const selected = included.get(target);
+    const includedFragment = local.fragment ? selected?.anchors.get(local.fragment) : undefined;
+    const useLocal = selected && (local.fragment ? includedFragment !== undefined : selected.selection === null);
+    const suffix = includedFragment !== undefined && includedFragment !== local.fragment
+      ? local.suffix.replace(/#.*$/, `#${encodeURIComponent(includedFragment)}`) : local.suffix;
+    const replacement = useLocal
+      ? (local.pathname ? path.posix.relative(path.posix.dirname(included.get(source)!.output), selected.output).split('/').map(encodeURIComponent).join('/') : '') + suffix
       : canonicalUrl(base, target, stat.isDirectory()) + local.suffix;
     replacements.push({ ...link, replacement });
   }
@@ -296,18 +408,25 @@ async function rewriteMarkdown(root: string, source: string, content: string, in
   return result;
 }
 
-function parseInventory(input: unknown, skillName: string): Inventory {
+function parseInventory(input: unknown, skillName: string): { outputs: OutputRecord[] } {
   const keys = ['schemaVersion', 'generator', 'skill', 'craftVersion', 'canonicalBaseUrl', 'sources', 'outputs'];
   const data = object(input, keys, `${skillName} generated inventory`);
-  if (data.schemaVersion !== 1 || data.generator !== GENERATOR || data.skill !== skillName
+  if (![1, 2].includes(data.schemaVersion as number) || data.generator !== GENERATOR || data.skill !== skillName
     || typeof data.craftVersion !== 'string' || typeof data.canonicalBaseUrl !== 'string'
     || !Array.isArray(data.sources) || !Array.isArray(data.outputs)) fail(`${skillName}: unrecognized generated inventory`);
   const permitted = new Set([INDEX]);
+  const paths = new Set<string>();
   for (const item of data.sources as unknown[]) {
-    const source = object(item, ['path', 'sha256', 'output'], 'Inventory source');
+    const source = object(item, data.schemaVersion === 1 ? ['path', 'sha256', 'output'] : ['path', 'sha256', 'selection', 'output'], 'Inventory source');
     const name = canonicalPath(source.path);
-    if (!isHash(source.sha256) || source.output !== outputPath(name) || permitted.has(source.output as string)) fail(`${skillName}: invalid inventory source`);
-    permitted.add(source.output as string);
+    const output = safeOutput(source.output);
+    if (!isHash(source.sha256) || paths.has(name) || permitted.has(output)) fail(`${skillName}: invalid inventory source`);
+    if (data.schemaVersion === 1 && output !== outputPath(name)) fail(`${skillName}: invalid legacy inventory source`);
+    if (data.schemaVersion === 2 && source.selection !== null) selectors(source.selection, `Inventory ${name}`);
+    if (name === 'LICENSE' && (output !== 'references/LICENSE' || (data.schemaVersion === 2 && source.selection !== null))) fail(`${skillName}: invalid inventory license`);
+    if (name !== 'LICENSE' && !output.endsWith('.md')) fail(`${skillName}: invalid inventory document`);
+    permitted.add(output);
+    paths.add(name);
   }
   const seen = new Set<string>();
   for (const item of data.outputs as unknown[]) {
@@ -316,7 +435,7 @@ function parseInventory(input: unknown, skillName: string): Inventory {
     seen.add(output.path as string);
   }
   if (seen.size !== permitted.size) fail(`${skillName}: incomplete generated inventory`);
-  return data as unknown as Inventory;
+  return { outputs: data.outputs as OutputRecord[] };
 }
 
 async function generatedFiles(root: string, skill: string): Promise<Map<string, Buffer>> {
@@ -373,6 +492,22 @@ async function writeAtomic(root: string, relative: string, content: string): Pro
   }
 }
 
+function retiredDirectories(outputs: string[], expected: Map<string, string>): string[] {
+  const result = new Set<string>();
+  for (const output of outputs) {
+    if (expected.has(output)) continue;
+    let directory = path.posix.dirname(output);
+    while (directory !== 'references' && directory !== 'assets/templates') {
+      // Every candidate must be an ancestor of an owned retired output and
+      // remain below a generated root. Arbitrary empty directories are kept.
+      if (!directory.startsWith('references/') && !directory.startsWith('assets/templates/')) break;
+      result.add(directory);
+      directory = path.posix.dirname(directory);
+    }
+  }
+  return [...result].sort((a, b) => b.split('/').length - a.split('/').length || a.localeCompare(b, 'en'));
+}
+
 export async function buildSkills(options: BuildOptions = {}): Promise<BuildResult> {
   const root = path.resolve(options.root ?? path.join(path.dirname(fileURLToPath(import.meta.url)), '..'));
   const rootStat = await fs.lstat(root);
@@ -388,32 +523,41 @@ export async function buildSkills(options: BuildOptions = {}): Promise<BuildResu
       if (await inspect(root, `skills/${name}/references/sources.json`)) fail(`Unlisted generated skill: ${name}; retire its generated files explicitly`);
     }
   }
-  const plans: { skill: string; expected: Map<string, string>; actual: Map<string, Buffer>; stale: string[] }[] = [];
+  const plans: { skill: string; expected: Map<string, string>; actual: Map<string, Buffer>; stale: string[]; emptyDirectories: string[] }[] = [];
   const result: BuildResult = { skills: manifest.skills.length, changed: [], removed: [] };
   for (const skill of manifest.skills) {
-    const included = new Map(skill.sources.map(source => [source.path, outputPath(source.path)]));
+    const included = new Map<string, SelectedSource>();
+    const rawSources = new Map<string, Buffer>();
+    for (const source of skill.sources) {
+      const raw = await read(root, source.path);
+      rawSources.set(source.path, raw);
+      // Reject invalid UTF-8 instead of silently replacing bytes in an excerpt.
+      const text = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true }).decode(raw);
+      included.set(source.path, selectSource(text, source));
+    }
     const expected = new Map<string, string>();
     const sources: SourceRecord[] = [];
     for (const source of skill.sources) {
-      const raw = await read(root, source.path);
-      const digest = hash(raw);
-      const output = included.get(source.path)!;
-      const content = raw.toString('utf8');
-      sources.push({ path: source.path, sha256: digest, output });
+      const digest = hash(rawSources.get(source.path)!);
+      const { output, content, selection } = included.get(source.path)!;
+      sources.push({ path: source.path, sha256: digest, selection, output });
       if (source.path === 'LICENSE') expected.set(output, content);
       else {
         const origin = canonicalUrl(manifest.canonicalBaseUrl, source.path);
-        const header = `<!-- Generated by ${GENERATOR}. Edit the canonical source, not this copy. -->\n\n> Source: [${source.path}](${origin}) · Craft ${version}\n> Author: immoses (Moses Qiu) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)\n> Source SHA-256: \`${digest}\`\n> Distribution changes: provenance added and relative links adapted for this skill. The source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.\n\n`;
+        const scope = selection ? `Excerpt only: ${selection.map(heading => JSON.stringify(heading)).join('; ')}. This is not the complete source document.` : 'Complete source document.';
+        const header = `<!-- Generated by ${GENERATOR}. Edit the canonical source, not this copy. -->\n\n> Source: [${source.path}](${origin}) · Craft ${version}\n> Author: immoses (Moses Qiu) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)\n> Source SHA-256: \`${digest}\`\n> ${scope}\n> Distribution changes: ${selection ? 'selected sections reproduced with the original title; ' : ''}provenance added and relative links adapted for this skill. Included source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.\n\n`;
         expected.set(output, header + await rewriteMarkdown(root, source.path, content, included, manifest.canonicalBaseUrl));
       }
     }
     const rows = skill.sources.map(source => {
-      const link = path.posix.relative('references', included.get(source.path)!);
-      return `| [${source.path}](${link}) | ${source.when.replace(/\|/g, '\\|')} |`;
+      const selected = included.get(source.path)!;
+      const link = path.posix.relative('references', selected.output).split('/').map(encodeURIComponent).join('/');
+      const label = selected.selection ? `${source.path} (excerpt: ${selected.selection.join('; ')})` : source.path;
+      return `| [${label.replace(/[\\\[\]|]/g, '\\$&')}](${link}) | ${source.when.replace(/\|/g, '\\|')} |`;
     }).join('\n');
-    expected.set(INDEX, `<!-- Generated by ${GENERATOR}. Do not edit. -->\n\n# Sources for ${skill.name}\n\nThese files distribute selected canonical Plystra Craft material (version ${version}). Read the files relevant to the task; this selection does not narrow any applicable Craft obligations. The copies add no independent requirements and are not an assertion of compliance or automatic freshness.\n\n| Source | Read when |\n| --- | --- |\n${rows}\n\n[Source hashes and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [ADOPTION.md](ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to provenance and navigation; copies retain their canonical source information.\n`);
+    expected.set(INDEX, `<!-- Generated by ${GENERATOR}. Do not edit. -->\n\n# Sources for ${skill.name}\n\nThese task references distribute selected canonical Plystra Craft material (version ${version}). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.\n\n| Material and selection | Read when |\n| --- | --- |\n${rows}\n\n[Source hashes, exact selections, and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [the adoption process](${canonicalUrl(manifest.canonicalBaseUrl, 'ADOPTION.md')}). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to section selection, provenance, and navigation; included text retains its canonical source information.\n`);
     const inventory: Inventory = {
-      schemaVersion: 1, generator: GENERATOR, skill: skill.name, craftVersion: version,
+      schemaVersion: 2, generator: GENERATOR, skill: skill.name, craftVersion: version,
       canonicalBaseUrl: manifest.canonicalBaseUrl, sources,
       outputs: [...expected].map(([name, content]) => ({ path: name, sha256: hash(content) })).sort((a, b) => a.path.localeCompare(b.path, 'en')),
     };
@@ -433,7 +577,7 @@ export async function buildSkills(options: BuildOptions = {}): Promise<BuildResu
     for (const [name, content] of expected) {
       if (!actual.get(name)?.equals(Buffer.from(content))) result.changed.push(`skills/${skill.name}/${name}`);
     }
-    plans.push({ skill: skill.name, expected, actual, stale });
+    plans.push({ skill: skill.name, expected, actual, stale, emptyDirectories: retiredDirectories([...owned.keys()], expected) });
   }
   if (options.check) {
     if (result.changed.length || result.removed.length) fail(`Generated materials are out of date:\n${result.changed.map(name => `  update ${name}`).concat(result.removed.map(name => `  remove ${name}`)).join('\n')}\nRun node tooling/build-skills.ts.`);
@@ -446,6 +590,15 @@ export async function buildSkills(options: BuildOptions = {}): Promise<BuildResu
       if (name !== INVENTORY && !plan.actual.get(name)?.equals(Buffer.from(content))) await writeAtomic(root, `skills/${plan.skill}/${name}`, content);
     }
     for (const name of plan.stale) await fs.unlink(path.join(root, 'skills', plan.skill, name));
+    for (const directory of plan.emptyDirectories) {
+      const relative = `skills/${plan.skill}/${directory}`;
+      const stat = await inspect(root, relative);
+      if (!stat?.isDirectory()) continue;
+      try { await fs.rmdir(path.join(root, relative)); }
+      catch (error) {
+        if (!['ENOTEMPTY', 'ENOENT', 'EEXIST'].includes((error as NodeJS.ErrnoException).code ?? '')) throw error;
+      }
+    }
     const inventory = plan.expected.get(INVENTORY)!;
     if (!plan.actual.get(INVENTORY)?.equals(Buffer.from(inventory))) await writeAtomic(root, `skills/${plan.skill}/${INVENTORY}`, inventory);
   }

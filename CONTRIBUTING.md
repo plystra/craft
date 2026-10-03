@@ -9,7 +9,7 @@ Craft keeps its standards and the skills that distribute them in one repository.
 | Scope or philosophy | `README.md`, `CHARTER.md`, `ADOPTION.md`, or `principles/` |
 | Reusable project document | `templates/` |
 | Task routing and workflow | `skills/<name>/SKILL.md` |
-| Which sources a skill carries and when to read them | `tooling/skills-manifest.json` |
+| Which source sections a skill carries, task-specific filenames, and reading conditions | `tooling/skills-manifest.json` |
 | Distribution and validation | `tooling/build-skills.ts` and its tests |
 
 Never edit a generated reference or template as its source. Change the canonical document, then rebuild all affected bundles. Keep the whole change in one commit so the entry points and distributed copies agree.
@@ -34,12 +34,12 @@ The underlying commands are:
 ```sh
 node tooling/build-skills.ts
 node tooling/build-skills.ts --check
-node --test tooling/build-skills.test.ts
+node --test tooling/*.test.ts
 ```
 
 Commit generated files so people can copy a skill without installing a build tool. CI runs the tests and checks that committed output matches the maintained sources. The check command does not write files.
 
-The generator uses the explicit manifest instead of following every link and bundling the entire repository. It preserves each source's text, adds attribution to Markdown copies, and rewrites navigation: included sources link within the skill; other repository documents link to their canonical GitHub paths. Fenced code examples, including target-project placeholder links, remain examples.
+The generator uses the explicit manifest instead of following links and bundling the entire repository. Each source declares a task-specific output path and may select exact Markdown headings. It preserves the selected sections' text and examples, adds attribution and an excerpt notice, and rewrites navigation. Links to included sections stay within the skill; links to omitted material or a complete source represented only by excerpts use the canonical GitHub URL. Source URLs are provenance and additional context, not a reason to fetch the whole repository during ordinary skill use.
 
 Each skill contains a generated reference index and a source ledger with content hashes. No build timestamps or current Git commit IDs are embedded: committing the outputs must not itself change the next build. `ADOPTION.md` supplies the declared policy version; hashes identify the actual source snapshot, including any not-yet-published edits. A local build does not publish a new policy revision.
 
@@ -47,11 +47,13 @@ Each skill contains a generated reference index and a source ledger with content
 
 Use a `plystra-` name that describes a real task. Write a concise `SKILL.md` with YAML `name` and `description`, preserving the task's scope and existing authorization. An entry point routes work to canonical requirements; it must not invent new policy, claim to override its host's permissions, or require unrelated project changes.
 
-List the sources and their reading conditions in the manifest. Bundle enough material for the skill's advertised task, with shared scope, adoption rules, and the documentation license. Keep conditional sources conditional: a small writing edit should not load every engineering chapter. A skill's source subset does not exempt a project from other applicable requirements or prove full compliance.
+Start from the concrete task and its deliverable. List only the material needed to complete that task; do not copy `principles/`, root README, Charter, or ADOPTION wholesale into skill directories. Put brief scope and interpretation guidance in the entry point. Include a whole source document only if all of it belongs to the task. Licensing and source records remain part of each independent distribution. A skill's scope does not exempt a project from other applicable requirements or prove full compliance.
 
-Generated principles go under `references/`; copyable templates go under `assets/templates/`. When adapting a template into another project, replace the template instructions, placeholders, and links with appropriate project content and canonical source URLs. Preserve license attribution where required.
+Manifest schema 2 sources use `path`, `when`, explicit `output`, and optional `sections`. `sections` contains exact heading text without Markdown `#` prefixes. A selection includes that heading and its subsections through the next peer or ancestor heading; headings inside code examples are not selectors. Keep each source path and output path unique within a skill. Rename or removed headings require an intentional mapping update rather than silently changing the excerpt.
 
-Validate that each skill works when copied alone. Local navigation must stay within its own directory. Links to unbundled canonical sources may require network access; if unavailable, report what was not reviewed rather than inventing the missing standard. Use a matching repository revision when exact historical consistency is needed.
+Use flat task-oriented filenames under `references/`, such as `website-delivery.md` or `repository-essentials.md`, without a nested `principles/` directory. Copyable templates go under `assets/templates/` only when the task uses them; templates can also select relevant sections. When adapting one into another project, replace instructions, placeholders, and links with appropriate project content and canonical source URLs. Preserve license attribution where required.
+
+Validate that each skill works when copied alone, without a sibling skill or the Craft source checkout. Its declared task must have all necessary guidance locally, and local navigation must stay within the directory. Canonical source links may need network access for provenance, broader context, or current-policy confirmation; lack of access does not prevent the normal bounded task. State the snapshot used and distinguish unverified current-policy claims. Use a matching repository revision when exact historical consistency is needed.
 
 The generator owns only its recorded outputs. It reports unknown files, modified outputs that would be removed, and symbolic links instead of silently discarding them. Resolve those findings before rebuilding. `SKILL.md` and other authored entry-point files are never generated. To retire a whole skill, review and remove its directory explicitly along with its manifest entry.
 

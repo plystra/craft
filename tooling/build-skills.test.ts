@@ -24,9 +24,9 @@ async function fixture(t: TestContext) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), 'craft-skills-'));
   t.after(() => fs.rm(root, { recursive: true, force: true }));
   const manifest = {
-    schemaVersion: 1,
+    schemaVersion: 2,
     canonicalBaseUrl: BASE,
-    skills: [{ name: NAME, sources: ['README.md', 'ADOPTION.md', 'LICENSE', 'principles/engineering.md', 'templates/example.md'].map(name => ({ path: name, when: `Work concerns ${name}.` })) }],
+    skills: [{ name: NAME, sources: ['README.md', 'ADOPTION.md', 'LICENSE', 'principles/engineering.md', 'templates/example.md'].map(name => ({ path: name, when: `Work concerns ${name}.` } as { path: string; when: string; sections?: string[]; output?: string })) }],
   };
   const saveManifest = () => write(root, 'tooling/skills-manifest.json', JSON.stringify(manifest, null, 2) + '\n');
   await saveManifest();
@@ -71,6 +71,8 @@ test('generation is deterministic, traceable, and never changes handwritten sour
   const adoption = ledger.sources.find((source: { path: string }) => source.path === 'ADOPTION.md');
   assert.equal(adoption.sha256, createHash('sha256').update(ADOPTION).digest('hex'));
   assert.equal(ledger.craftVersion, '1.2.3');
+  assert.equal(ledger.schemaVersion, 2);
+  assert.equal(adoption.selection, null);
   assert.equal(ledger.sources.length, 5);
   await assert.rejects(fs.access(path.join(root, `${SKILL}/references/principles/omitted.md`)));
 });
@@ -244,4 +246,228 @@ test('removing a skill from the manifest does not silently leave its old generat
   await saveManifest();
   await write(root, 'skills/plystra-replacement/SKILL.md', ENTRY.replace(`name: ${NAME}`, 'name: plystra-replacement'));
   await assert.rejects(checkSkills({ root }), /Unlisted generated skill/);
+});
+
+const SELECTED_SECTION = '## 2. Kept\r\n\r\nKeep this paragraph and its exact spacing.  \r\n\r\n```markdown\r\n# Not a boundary\r\n## Fake fenced section\r\n[Example](missing-example.md)\r\n```\r\n\r\n    ## Fake indented section\r\n    [Example](also-missing.md)\r\n\r\n### Shared\r\n\r\nThe second shared heading.\r\n\r\n[Local](#shared-1)\r\n[Excluded](#1-omitted)\r\n[Whole](engineering.md)\r\n\r\n';
+const SELECTIVE_SOURCE = '# Engineering\r\n\r\nThis introduction is excluded.\r\n\r\n## 1. Omitted\r\n\r\nOmitted rules.\r\n\r\n### Shared\r\n\r\nThe first shared heading.\r\n\r\n' + SELECTED_SECTION + '## 3. Later\r\n\r\nLater rules.\r\n';
+
+async function selectiveFixture(t: TestContext) {
+  const setup = await fixture(t);
+  const { root, manifest, saveManifest } = setup;
+  const core = manifest.skills[0].sources.find(source => source.path === 'principles/engineering.md')!;
+  core.sections = ['2. Kept'];
+  core.output = 'references/implementation.md';
+  const adoption = manifest.skills[0].sources.find(source => source.path === 'ADOPTION.md')!;
+  adoption.sections = ['2. Levels'];
+  adoption.output = 'references/requirements.md';
+  await saveManifest();
+  await write(root, 'principles/engineering.md', SELECTIVE_SOURCE);
+  await write(root, 'README.md', '# Craft\n\n[Selected](principles/engineering.md#2-kept)\n[Repeated heading](principles/engineering.md#shared-1)\n[Excluded](principles/engineering.md#1-omitted)\n[Complete document](principles/engineering.md)\n[Levels](ADOPTION.md#2-levels)\n');
+  await write(root, `${SKILL}/SKILL.md`, ENTRY.replace('references/principles/engineering.md#1-boundaries', 'references/implementation.md#2-kept') + '\n[Requirements](references/requirements.md#2-levels)\n');
+  return setup;
+}
+
+test('exact section excerpts preserve code bytes, carry selections and hashes, and keep source order', async t => {
+  const { root, manifest, saveManifest, read } = await selectiveFixture(t);
+  await buildSkills({ root });
+  const generated = await read(`${SKILL}/references/implementation.md`);
+  assert.ok(generated.includes('# Engineering\r\n\r\n'));
+  assert.ok(generated.includes(SELECTED_SECTION.slice(0, SELECTED_SECTION.indexOf('[Local]'))));
+  assert.ok(!generated.includes('This introduction is excluded.'));
+  assert.ok(!generated.includes('Omitted rules.'));
+  assert.ok(!generated.includes('Later rules.'));
+  assert.match(generated, /Excerpt only: "2\. Kept"/);
+  const ledger = JSON.parse(await read(`${SKILL}/references/sources.json`));
+  const core = ledger.sources.find((source: { path: string }) => source.path === 'principles/engineering.md');
+  assert.deepEqual(core.selection, ['2. Kept']);
+  assert.equal(core.sha256, createHash('sha256').update(SELECTIVE_SOURCE).digest('hex'));
+  assert.equal(core.output, 'references/implementation.md');
+  assert.ok(!(await read(`${SKILL}/references/requirements.md`)).includes('2026-10-04'));
+  assert.match(await read(`${SKILL}/references/index.md`), /https:\/\/github.com\/plystra\/craft\/blob\/main\/ADOPTION.md/);
+  const source = manifest.skills[0].sources.find(source => source.path === core.path)!;
+  source.sections = ['3. Later', '2. Kept'];
+  await saveManifest();
+  await buildSkills({ root });
+  const ordered = await read(`${SKILL}/references/implementation.md`);
+  assert.ok(ordered.indexOf('## 2. Kept\r\n') < ordered.indexOf('## 3. Later\r\n'));
+  const updated = JSON.parse(await read(`${SKILL}/references/sources.json`));
+  assert.deepEqual(updated.sources.find((item: { path: string }) => item.path === core.path).selection, ['2. Kept', '3. Later']);
+  await checkSkills({ root });
+});
+
+test('excerpt links route omitted and whole-document targets remotely, with retained and renumbered anchors local', async t => {
+  const { root, read } = await selectiveFixture(t);
+  await buildSkills({ root });
+  const core = await read(`${SKILL}/references/implementation.md`);
+  const overview = await read(`${SKILL}/references/README.md`);
+  assert.ok(core.includes('[Local](#shared)'));
+  assert.ok(core.includes(`[Excluded](${BASE}principles/engineering.md#1-omitted)`));
+  assert.ok(core.includes(`[Whole](${BASE}principles/engineering.md)`));
+  assert.ok(overview.includes('[Selected](implementation.md#2-kept)'));
+  assert.ok(overview.includes('[Repeated heading](implementation.md#shared)'));
+  assert.ok(overview.includes(`[Excluded](${BASE}principles/engineering.md#1-omitted)`));
+  assert.ok(overview.includes(`[Complete document](${BASE}principles/engineering.md)`));
+  assert.ok(overview.includes('[Levels](requirements.md#2-levels)'));
+  assert.ok((await read(`${SKILL}/assets/templates/example.md`)).includes('[Levels](../../references/requirements.md#2-levels)'));
+});
+
+test('source changes outside an excerpt still invalidate its full-source provenance without changing selected text', async t => {
+  const { root, read } = await selectiveFixture(t);
+  await buildSkills({ root });
+  const before = await read(`${SKILL}/references/implementation.md`);
+  await write(root, 'principles/engineering.md', SELECTIVE_SOURCE.replace('Omitted rules.', 'Revised omitted rules.'));
+  const state = await snapshot(root);
+  await assert.rejects(checkSkills({ root }), /Generated materials are out of date/);
+  assert.deepEqual(await snapshot(root), state);
+  await buildSkills({ root });
+  const after = await read(`${SKILL}/references/implementation.md`);
+  assert.notEqual(before, after);
+  assert.equal(before.slice(before.indexOf('# Engineering\r\n')), after.slice(after.indexOf('# Engineering\r\n')));
+  await checkSkills({ root });
+});
+
+test('excerpt boundaries have one original line ending while fenced bytes and nonempty-line spacing stay unchanged', async t => {
+  const { root, manifest, saveManifest, read } = await fixture(t);
+  const source = manifest.skills[0].sources.find(source => source.path === 'principles/engineering.md')!;
+  source.sections = ['1. Boundaries'];
+  await saveManifest();
+  for (const newline of ['\n', '\r\n']) {
+    const fenced = ['```text', 'Code keeps its trailing spaces.  ', '', '', '```'].join(newline);
+    const section = ['## 1. Boundaries', '', fenced, '', 'The final nonempty line keeps its spaces.  '].join(newline);
+    await write(root, source.path, ['# Engineering', '', section, '', '', '## 2. Next', '', 'Excluded.'].join(newline) + newline);
+    await buildSkills({ root });
+    const generated = await read(`${SKILL}/references/principles/engineering.md`);
+    // Only the final section separator is normalized. The entire selected
+    // section, including blank lines inside fenced code, remains byte-exact.
+    assert.ok(generated.endsWith(section + newline));
+    assert.ok(!generated.endsWith(newline + newline));
+    assert.ok(generated.includes(fenced));
+    await checkSkills({ root });
+    const openFence = ['# Engineering', '', '## 1. Boundaries', '', '```text', 'Unclosed fenced code.', '', '', ''].join(newline);
+    await write(root, source.path, openFence);
+    await buildSkills({ root });
+    assert.ok((await read(`${SKILL}/references/principles/engineering.md`)).endsWith(openFence.slice(openFence.indexOf('## 1. Boundaries'))));
+  }
+});
+
+test('section selectors reject missing, code-only, duplicate, ambiguous and overlapping headings', async t => {
+  const { root, manifest, saveManifest } = await selectiveFixture(t);
+  const source = manifest.skills[0].sources.find(source => source.path === 'principles/engineering.md')!;
+  for (const sections of [[], ['Not present'], ['Fake fenced section'], ['Fake indented section'], ['2. Kept', '2. Kept'], ['2. Kept', 'Shared'], ['Engineering', '2. Kept']]) {
+    source.sections = sections;
+    await saveManifest();
+    await assert.rejects(buildSkills({ root }), /sections must|unknown section selector|duplicate section selector|ambiguous section selector|overlapping section selectors/);
+    await assert.rejects(fs.access(path.join(root, `${SKILL}/references`)));
+  }
+  await write(root, 'principles/engineering.md', SELECTIVE_SOURCE.replace('### Shared\r\n\r\nThe second', '### Unique child\r\n\r\nThe second'));
+  source.sections = ['2. Kept', 'Unique child'];
+  await saveManifest();
+  await assert.rejects(buildSkills({ root }), /overlapping section selectors/);
+});
+
+test('custom output paths cannot escape generated roots, collide, shadow reserved files, or relocate the license', async t => {
+  const { root, manifest, saveManifest } = await fixture(t);
+  const source = manifest.skills[0].sources.find(source => source.path === 'principles/engineering.md')!;
+  for (const output of ['../outside.md', 'SKILL.md', 'assets/example.md', 'references/../outside.md', 'references/index.md', 'references/sources.json', 'references/index.md/nested.md', 'references/ADOPTION.md']) {
+    source.output = output;
+    await saveManifest();
+    await assert.rejects(buildSkills({ root }), /safe repository-relative|Output must|duplicate output/);
+  }
+  delete source.output;
+  const license = manifest.skills[0].sources.find(source => source.path === 'LICENSE')!;
+  license.output = 'references/terms.md';
+  await saveManifest();
+  await assert.rejects(buildSkills({ root }), /LICENSE must remain complete/);
+  delete license.output;
+  license.sections = ['Some terms'];
+  await saveManifest();
+  await assert.rejects(buildSkills({ root }), /LICENSE must remain complete/);
+});
+
+test('ADOPTION, README and CHARTER are not required distribution sources and the index does not link to absent local policy files', async t => {
+  const { root, manifest, saveManifest, read } = await fixture(t);
+  manifest.skills[0].sources = manifest.skills[0].sources.filter(source => !['ADOPTION.md', 'README.md'].includes(source.path));
+  await saveManifest();
+  await buildSkills({ root });
+  const index = await read(`${SKILL}/references/index.md`);
+  assert.ok(index.includes(`[the adoption process](${BASE}ADOPTION.md)`));
+  assert.ok(!index.includes('](ADOPTION.md)'));
+  await assert.rejects(fs.access(path.join(root, `${SKILL}/references/ADOPTION.md`)));
+  await assert.rejects(fs.access(path.join(root, `${SKILL}/references/README.md`)));
+  assert.ok((await read(`${SKILL}/references/principles/engineering.md`)).includes(`[Adoption](${BASE}ADOPTION.md#2-levels)`));
+  await checkSkills({ root });
+});
+
+test('schema-1 inventory migrates owned output paths safely and prunes only retired empty directory ancestors', async t => {
+  const { root, manifest, saveManifest, read } = await fixture(t);
+  await buildSkills({ root });
+  const legacy = JSON.parse(await read(`${SKILL}/references/sources.json`));
+  legacy.schemaVersion = 1;
+  for (const source of legacy.sources) delete source.selection;
+  await write(root, `${SKILL}/references/sources.json`, JSON.stringify(legacy, null, 2) + '\n');
+  await fs.mkdir(path.join(root, `${SKILL}/references/handwritten-empty`));
+  const source = manifest.skills[0].sources.find(source => source.path === 'principles/engineering.md')!;
+  source.output = 'references/implementation.md';
+  source.sections = ['1. Boundaries'];
+  await saveManifest();
+  await write(root, `${SKILL}/SKILL.md`, ENTRY.replace('references/principles/engineering.md', 'references/implementation.md'));
+  const before = await snapshot(root);
+  await assert.rejects(checkSkills({ root }), /Generated materials are out of date/);
+  assert.deepEqual(await snapshot(root), before);
+  const result = await buildSkills({ root });
+  assert.ok(result.removed.includes(`${SKILL}/references/principles/engineering.md`));
+  await assert.rejects(fs.access(path.join(root, `${SKILL}/references/principles`)));
+  assert.ok((await fs.stat(path.join(root, `${SKILL}/references/handwritten-empty`))).isDirectory());
+  assert.equal(JSON.parse(await read(`${SKILL}/references/sources.json`)).schemaVersion, 2);
+  assert.equal(await read(`${SKILL}/SKILL.md`), ENTRY.replace('references/principles/engineering.md', 'references/implementation.md'));
+  await checkSkills({ root });
+});
+
+test('schema-1 migration refuses to delete modified old output and preserves empty unowned child directories', async t => {
+  const { root, manifest, saveManifest, read } = await fixture(t);
+  await buildSkills({ root });
+  const legacy = JSON.parse(await read(`${SKILL}/references/sources.json`));
+  legacy.schemaVersion = 1;
+  for (const source of legacy.sources) delete source.selection;
+  await write(root, `${SKILL}/references/sources.json`, JSON.stringify(legacy));
+  const original = await read(`${SKILL}/references/principles/engineering.md`);
+  await write(root, `${SKILL}/references/principles/engineering.md`, original + '\nManual change.\n');
+  const source = manifest.skills[0].sources.find(source => source.path === 'principles/engineering.md')!;
+  source.output = 'references/implementation.md';
+  await saveManifest();
+  await write(root, `${SKILL}/SKILL.md`, ENTRY.replace('references/principles/engineering.md', 'references/implementation.md'));
+  await assert.rejects(buildSkills({ root }), /Refusing to remove modified generated file/);
+  await write(root, `${SKILL}/references/principles/engineering.md`, original);
+  await fs.mkdir(path.join(root, `${SKILL}/references/principles/handwritten-empty`));
+  await buildSkills({ root });
+  assert.ok((await fs.stat(path.join(root, `${SKILL}/references/principles/handwritten-empty`))).isDirectory());
+  await checkSkills({ root });
+});
+
+test('a generated excerpt bundle stays locally self-contained after independent copying and source removal', async t => {
+  const { root } = await selectiveFixture(t);
+  await buildSkills({ root });
+  const portable = await fs.mkdtemp(path.join(os.tmpdir(), 'craft-excerpt-portable-'));
+  t.after(() => fs.rm(portable, { recursive: true, force: true }));
+  await fs.cp(path.join(root, SKILL), portable, { recursive: true });
+  await fs.rm(root, { recursive: true });
+  const realRoot = await fs.realpath(portable);
+  let checked = 0;
+  async function inspectMarkdown(name: string) {
+    const file = path.join(portable, name);
+    if ((await fs.stat(file)).isDirectory()) {
+      for (const child of await fs.readdir(file)) await inspectMarkdown(path.posix.join(name, child));
+    } else if (name.endsWith('.md')) {
+      const markdown = (await fs.readFile(file, 'utf8')).replace(/^```[^\n]*\n[\s\S]*?^```[^\n]*$/gm, '').replace(/^ {4}.*$/gm, '').replace(/`[^`]*`/g, '');
+      for (const link of markdown.matchAll(/\]\(([^)\s]+)\)/g)) {
+        if (/^[a-z][a-z0-9+.-]*:/i.test(link[1])) continue;
+        const target = decodeURIComponent(link[1].split(/[?#]/)[0]);
+        const location = target ? path.resolve(path.dirname(file), target) : file;
+        assert.ok((await fs.realpath(location)).startsWith(realRoot + path.sep), `${name} -> ${target}`);
+        checked++;
+      }
+    }
+  }
+  await inspectMarkdown('.');
+  assert.ok(checked > 10);
 });

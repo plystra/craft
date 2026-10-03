@@ -1,105 +1,119 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-brand-design",
   "craftVersion": "1.0.0",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
-      "path": "README.md",
-      "sha256": "7b3253d2a368ebf8e08752b6a791e50c5c7cfd1ee6555bdb6df3c61c51a0274d",
-      "output": "references/README.md"
-    },
-    {
-      "path": "CHARTER.md",
-      "sha256": "9cebb41e9694ed2cf45ddc5612e70a78dd5ed8fb1c056a0dd915397d3821a618",
-      "output": "references/CHARTER.md"
-    },
-    {
-      "path": "ADOPTION.md",
-      "sha256": "6b8b8811834b4ab9c55abed62489c87e76d9f14e12bc999f9c02097492adf855",
-      "output": "references/ADOPTION.md"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
-      "output": "references/LICENSE"
-    },
-    {
       "path": "principles/01-brand-philosophy.md",
       "sha256": "e7aa42c8f2b39803f0be01781392dc13bc89f0db25ee08bb9ddf341d80731c94",
-      "output": "references/principles/01-brand-philosophy.md"
-    },
-    {
-      "path": "principles/03-language-and-writing.md",
-      "sha256": "9146edd5f6040e9db04a7e00aed8127523dd72847e602736348e4a29f7c7df66",
-      "output": "references/principles/03-language-and-writing.md"
+      "selection": [
+        "1. Brand essence",
+        "2. Positioning statement",
+        "3. Brand personality",
+        "4. Brand hierarchy",
+        "6. Premium without luxury theater",
+        "7. The anti-patterns",
+        "8. Brand test"
+      ],
+      "output": "references/brand-positioning.md"
     },
     {
       "path": "principles/04-visual-identity.md",
       "sha256": "c2b509e4f29d595e8be6788d219260803f5287463c15c14480178b2a9108a0b5",
-      "output": "references/principles/04-visual-identity.md"
+      "selection": [
+        "1. Visual direction",
+        "2. Core visual values",
+        "3. Color philosophy",
+        "4. Typography",
+        "5. Layout",
+        "6. Logo usage",
+        "7. Project identity",
+        "8. Imagery and animation",
+        "9. Screenshots",
+        "10. Visual review test"
+      ],
+      "output": "references/identity-assets.md"
+    },
+    {
+      "path": "principles/03-language-and-writing.md",
+      "sha256": "9146edd5f6040e9db04a7e00aed8127523dd72847e602736348e4a29f7c7df66",
+      "selection": [
+        "1. Voice",
+        "2. Default writing style",
+        "3. Claims must be earned",
+        "4. Project descriptions",
+        "9. Capitalization"
+      ],
+      "output": "references/brand-language.md"
     },
     {
       "path": "principles/06-accessibility-and-interaction.md",
       "sha256": "a7361aa9d04e641182c7bb329c8e17f76de8543f2e61ae4076b2ff4664718d94",
-      "output": "references/principles/06-accessibility-and-interaction.md"
+      "selection": [
+        "1. Accessibility is part of craft",
+        "5. Contrast",
+        "6. Motion sensitivity",
+        "9. Internationalization readiness"
+      ],
+      "output": "references/accessible-identity.md"
     },
     {
       "path": "principles/11-governance-and-legal.md",
       "sha256": "8358870c57a019ce44bc2e9694ec39dfb4102b4898be824aeb2f84d4fd8b92e0",
-      "output": "references/principles/11-governance-and-legal.md"
+      "selection": [
+        "2. Ownership and attribution",
+        "6. Public claims",
+        "7. Trademarks and naming"
+      ],
+      "output": "references/naming-and-affiliation.md"
     },
     {
       "path": "templates/decision-record.md",
       "sha256": "43fec6c265b3a5e443f6ad3382088f1b6fddedb2d96df2d1e7012c67eebc8f30",
+      "selection": null,
       "output": "assets/templates/decision-record.md"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "selection": null,
+      "output": "references/LICENSE"
     }
   ],
   "outputs": [
     {
       "path": "assets/templates/decision-record.md",
-      "sha256": "7778568463b988f46214f4b8114c2c117f0738a9b0c0092fccaf288860203a5c"
+      "sha256": "8ff86a3a7ba589d58b5d243bd844be0d27d2c86a6e097bb0b1fcd8a750591a71"
     },
     {
-      "path": "references/ADOPTION.md",
-      "sha256": "bb4553737caa1db1f3bb1be9ff9d17747a01c06313967ab2eb006e2b418b0cce"
+      "path": "references/accessible-identity.md",
+      "sha256": "03f22ed3339cf9a8122a0b3a7ab6eccbe4cc9c6b3a3ab2d337ca268c67127e70"
     },
     {
-      "path": "references/CHARTER.md",
-      "sha256": "19f6fc4d056acb9bd93cf7159e5e238111021f910f92806042da3af740575e0c"
+      "path": "references/brand-language.md",
+      "sha256": "4ef3bbdf1b2bc22b2ec11cf790efd1dfcf38759b570d41ad1c5b10edd65e0d16"
+    },
+    {
+      "path": "references/brand-positioning.md",
+      "sha256": "3a7e331dbfbe067a112cc1658fd32a4a4e5f566168e7aa8222b2a2c6d46cd204"
+    },
+    {
+      "path": "references/identity-assets.md",
+      "sha256": "693e24a64bc04d5fb443d91f0c2896298e6fd1b5a46be3b2fecc25a4de0cd014"
     },
     {
       "path": "references/index.md",
-      "sha256": "45e62e05635feda4c01a35aa53bb41f2dc806cd322f5e0f9f55cbd153abc0701"
+      "sha256": "b72a01075d3d7f73ca5442543ed17c20505dbeca0923c1641fb5376d7c406342"
     },
     {
       "path": "references/LICENSE",
       "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
     },
     {
-      "path": "references/principles/01-brand-philosophy.md",
-      "sha256": "35b7b36e8a631ff5a9f312bfb6f02e7c129aee07e078e183bdf22f305884c327"
-    },
-    {
-      "path": "references/principles/03-language-and-writing.md",
-      "sha256": "a0359205a296b7e3ddc10d9e2641f06e17afa5191d9b618a6c7b3b4de5a72091"
-    },
-    {
-      "path": "references/principles/04-visual-identity.md",
-      "sha256": "976eb2a42a697e1d6500329d55e0296e01abb883c07a9d1a779170163fe030ed"
-    },
-    {
-      "path": "references/principles/06-accessibility-and-interaction.md",
-      "sha256": "b0e88a418fcd36ae09ececb537d5fa8b35d5b888543399ff069016a67f90ef6d"
-    },
-    {
-      "path": "references/principles/11-governance-and-legal.md",
-      "sha256": "7f430473ecab2919011aeef65f0b708542ae681f273e8bd9c8b72277b57f154b"
-    },
-    {
-      "path": "references/README.md",
-      "sha256": "222f17c050ecbb4d9d4968ab138d7498757cf3146e5bda1413c98fae4870ac72"
+      "path": "references/naming-and-affiliation.md",
+      "sha256": "b57d077b68674cc6f05df2479b2b277c93f6fc68002c4bdfb028e79ab152688f"
     }
   ]
 }

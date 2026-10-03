@@ -3,7 +3,8 @@
 > Source: [templates/decision-record.md](https://github.com/plystra/craft/blob/main/templates/decision-record.md) · Craft 1.0.0
 > Author: immoses (Moses Qiu) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 > Source SHA-256: `43fec6c265b3a5e443f6ad3382088f1b6fddedb2d96df2d1e7012c67eebc8f30`
-> Distribution changes: provenance added and relative links adapted for this skill. The source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
+> Complete source document.
+> Distribution changes: provenance added and relative links adapted for this skill. Included source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
 
 # Decision Record: [Title]
 

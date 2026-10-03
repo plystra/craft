@@ -3,13 +3,10 @@
 > Source: [templates/ui-review-checklist.md](https://github.com/plystra/craft/blob/main/templates/ui-review-checklist.md) · Craft 1.0.0
 > Author: immoses (Moses Qiu) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 > Source SHA-256: `e2b56ae58ef9615c4111f304fec714a5559abd9af6d317c28ff96723c8717a31`
-> Distribution changes: provenance added and relative links adapted for this skill. The source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
+> Excerpt only: "Product fit"; "Visual design"; "Interaction"; "Accessibility"; "Responsive behavior"; "Engineering"; "Final question". This is not the complete source document.
+> Distribution changes: selected sections reproduced with the original title; provenance added and relative links adapted for this skill. Included source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
 
 # UI Review Checklist
-
-Use this checklist before merging visible UI changes in a Plystra project.
-
-Apply it to the actual interface and supported devices. Projects and sub-brands may have different visual personalities while meeting the same clarity, accessibility, and honesty requirements.
 
 ## Product fit
 
@@ -68,19 +65,6 @@ Apply it to the actual interface and supported devices. Projects and sub-brands 
 - [ ] The change does not introduce unnecessary dependencies.
 - [ ] Tests or manual QA notes cover the critical path.
 - [ ] Console errors, broken assets, and obvious network failures were checked.
-
-## Public websites and documentation
-
-Apply [Websites, Search, and Sharing](../../references/principles/13-websites-search-and-sharing.md) when the change affects an official website or public documentation. Sponsored projects may choose whether to adopt these checks.
-
-- [ ] Indexable pages return readable primary content and accurate page-specific metadata in their HTML.
-- [ ] Canonical URLs, internal links, sharing metadata, and sitemap entries agree.
-- [ ] Status codes and indexing rules match the intended public surface.
-- [ ] The sitemap excludes errors, redirects, duplicates, private pages, and `noindex` pages.
-- [ ] The required `/llms.txt` is publicly reachable and current, with accurate status and canonical links.
-- [ ] Share images resolve, have alternative text, and remain readable in previews.
-- [ ] Applicable structured data is valid and reflects actual content and relationships.
-- [ ] Production build and deployed-response checks cover the affected pages and assets.
 
 ## Final question
 

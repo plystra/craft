@@ -2,31 +2,18 @@
 
 # Sources for plystra-stewardship
 
-These files distribute selected canonical Plystra Craft material (version 1.0.0). Read the files relevant to the task; this selection does not narrow any applicable Craft obligations. The copies add no independent requirements and are not an assertion of compliance or automatic freshness.
+These task references distribute selected canonical Plystra Craft material (version 1.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
-| Source | Read when |
+| Material and selection | Read when |
 | --- | --- |
-| [README.md](README.md) | Establish project relationship, repository scope, and canonical sources; read only relevant sections. |
-| [CHARTER.md](CHARTER.md) | Review purpose, project admission, or a decision that changes the work's long-term direction. |
-| [ADOPTION.md](ADOPTION.md) | Interpret requirement levels and applicability; check version, evidence, and review deadlines when assessing adoption. |
-| [LICENSE](LICENSE) | Copy, distribute, or adapt Craft documentation and preserve its attribution and license. |
-| [principles/01-brand-philosophy.md](principles/01-brand-philosophy.md) | Define brand positioning, hierarchy, affiliation, or public identity. |
-| [principles/02-product-principles.md](principles/02-product-principles.md) | Design or assess product purpose, workflows, maturity, automation, or user trust. |
-| [principles/03-language-and-writing.md](principles/03-language-and-writing.md) | Write or review interface copy, project descriptions, documentation, or public claims. |
-| [principles/04-visual-identity.md](principles/04-visual-identity.md) | Design or review visual identity, typography, imagery, motion, or project personality. |
-| [principles/05-frontend-ui-design.md](principles/05-frontend-ui-design.md) | Design, implement, or review a digital interface and its states. |
-| [principles/06-accessibility-and-interaction.md](principles/06-accessibility-and-interaction.md) | Design or verify an interface's accessibility and supported input methods. |
-| [principles/07-engineering-standards.md](principles/07-engineering-standards.md) | Change or review software architecture, configuration, APIs, data, dependencies, or verification. |
-| [principles/08-documentation-standards.md](principles/08-documentation-standards.md) | Create or maintain project documentation, examples, contributor guidance, or operational instructions. |
-| [principles/09-security-and-privacy.md](principles/09-security-and-privacy.md) | Handle user data, privacy notices, external processors, authorization, security, or sensitive examples. |
-| [principles/10-release-and-maintenance.md](principles/10-release-and-maintenance.md) | Prepare releases, migrations, support expectations, maintenance states, or retirement. |
-| [principles/11-governance-and-legal.md](principles/11-governance-and-legal.md) | Assess ownership, sponsorship, licensing, claims, brand permission, or legal and privacy records. |
-| [principles/12-code-project-working-standards.md](principles/12-code-project-working-standards.md) | Modify or review code, contributor instructions, verification, or deployment workflows. |
-| [principles/13-websites-search-and-sharing.md](principles/13-websites-search-and-sharing.md) | Build, change, review, or publish an official website or public web documentation. |
-| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential decision when the task or project workflow calls for a decision record. |
-| [templates/project-principles.md](../assets/templates/project-principles.md) | Create or update an adoption record appropriate to the project's relationship and medium. |
-| [templates/project-readme.md](../assets/templates/project-readme.md) | Create or revise a project README or equivalent public introduction; keep only applicable sections. |
-| [templates/release-notes.md](../assets/templates/release-notes.md) | Prepare release notes from actual changes, migration needs, and verification evidence. |
-| [templates/ui-review-checklist.md](../assets/templates/ui-review-checklist.md) | Review a visible interface change; apply only relevant checks and preserve actual evidence. |
+| [CHARTER.md (excerpt: 1. Identity; 3. Core belief; 8. Project admission; 9. Project retirement)](project-admission.md) | Assess purpose, association, admission, or retirement under Plystra. |
+| [principles/01-brand-philosophy.md (excerpt: 4. Brand hierarchy)](project-relationships.md) | Distinguish ownership, sub-brands, sponsorship, and independent adoption. |
+| [ADOPTION.md (excerpt: 2. Requirement levels; 3. Applicability follows the work; 4. Versions and effective dates; 5. Review and correction)](adoption-review.md) | Maintain applicability, version, evidence, correction deadlines, and review status. |
+| [principles/11-governance-and-legal.md (excerpt: 1. Governance philosophy; 2. Ownership and attribution; 3. Licenses; 5. Decision records; 6. Public claims; 7. Trademarks and naming; 8. Privacy and terms pages; 9. Governance maturity; 10. Legal review checklist; 11. Sponsorship admission and continuation)](relationship-governance.md) | Assess ownership, rights, naming, sponsorship admission, and continuing governance responsibilities. |
+| [principles/10-release-and-maintenance.md (excerpt: 1. Maintenance is a brand signal; 5. Deprecation; 6. Backward compatibility; 7. Maintenance states; 8. Support expectations; 10. Retirement)](care-and-retirement.md) | Set maintenance responsibility, support expectations, deprecation, and retirement records. |
+| [principles/09-security-and-privacy.md (excerpt: 7. Privacy; 8. AI and private data; 9. Data deletion and export)](privacy-obligations.md) | Assess required privacy disclosure, transfer authorization, export, and deletion evidence. |
+| [templates/project-principles.md (excerpt: Relationship to Plystra; Philosophy review record; Project description; Maturity; What this project values; What this project refuses to do; Maintenance policy; Open questions)](../assets/templates/project-principles.md) | Maintain a relationship and adoption record using evidence from the applicable domain assessments. |
+| [templates/decision-record.md](../assets/templates/decision-record.md) | Record consequential association, governance, or retirement decisions. |
+| [LICENSE](LICENSE) | Preserve the documentation license when adapting or distributing these resources. |
 
-[Source hashes and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [ADOPTION.md](ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to provenance and navigation; copies retain their canonical source information.
+[Source hashes, exact selections, and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [the adoption process](https://github.com/plystra/craft/blob/main/ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to section selection, provenance, and navigation; included text retains its canonical source information.

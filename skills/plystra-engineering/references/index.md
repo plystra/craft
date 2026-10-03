@@ -2,26 +2,16 @@
 
 # Sources for plystra-engineering
 
-These files distribute selected canonical Plystra Craft material (version 1.0.0). Read the files relevant to the task; this selection does not narrow any applicable Craft obligations. The copies add no independent requirements and are not an assertion of compliance or automatic freshness.
+These task references distribute selected canonical Plystra Craft material (version 1.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
-| Source | Read when |
+| Material and selection | Read when |
 | --- | --- |
-| [README.md](README.md) | Establish project relationship, repository scope, and canonical sources; read only relevant sections. |
-| [CHARTER.md](CHARTER.md) | Review purpose, project admission, or a decision that changes the work's long-term direction. |
-| [ADOPTION.md](ADOPTION.md) | Interpret requirement levels and applicability; check version, evidence, and review deadlines when assessing adoption. |
-| [LICENSE](LICENSE) | Copy, distribute, or adapt Craft documentation and preserve its attribution and license. |
-| [principles/05-frontend-ui-design.md](principles/05-frontend-ui-design.md) | Design, implement, or review a digital interface and its states. |
-| [principles/06-accessibility-and-interaction.md](principles/06-accessibility-and-interaction.md) | Design or verify an interface's accessibility and supported input methods. |
-| [principles/07-engineering-standards.md](principles/07-engineering-standards.md) | Change or review software architecture, configuration, APIs, data, dependencies, or verification. |
-| [principles/08-documentation-standards.md](principles/08-documentation-standards.md) | Create or maintain project documentation, examples, contributor guidance, or operational instructions. |
-| [principles/09-security-and-privacy.md](principles/09-security-and-privacy.md) | Handle user data, privacy notices, external processors, authorization, security, or sensitive examples. |
-| [principles/10-release-and-maintenance.md](principles/10-release-and-maintenance.md) | Prepare releases, migrations, support expectations, maintenance states, or retirement. |
-| [principles/11-governance-and-legal.md](principles/11-governance-and-legal.md) | Assess ownership, sponsorship, licensing, claims, brand permission, or legal and privacy records. |
-| [principles/12-code-project-working-standards.md](principles/12-code-project-working-standards.md) | Modify or review code, contributor instructions, verification, or deployment workflows. |
-| [principles/13-websites-search-and-sharing.md](principles/13-websites-search-and-sharing.md) | Build, change, review, or publish an official website or public web documentation. |
-| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential decision when the task or project workflow calls for a decision record. |
-| [templates/project-readme.md](../assets/templates/project-readme.md) | Create or revise a project README or equivalent public introduction; keep only applicable sections. |
-| [templates/release-notes.md](../assets/templates/release-notes.md) | Prepare release notes from actual changes, migration needs, and verification evidence. |
-| [templates/project-principles.md](../assets/templates/project-principles.md) | Create or update an adoption record appropriate to the project's relationship and medium. |
+| [principles/07-engineering-standards.md (excerpt: 1. Engineering philosophy; 2. General principles; 5. Configuration; 6. Data and migrations; 7. API design; 8. Error handling; 9. Dependencies; 10. Testing; 11. Observability; 12. AI-related engineering; 13. Code review standard)](software-design.md) | Implement architecture, configuration, data, APIs, errors, dependencies, tests, and observability. |
+| [principles/09-security-and-privacy.md (excerpt: 1. Security posture; 2. Basic security requirements; 3. Secret handling; 4. Authentication and sessions; 5. Authorization; 6. Common vulnerability baseline; 7. Privacy; 8. AI and private data; 9. Data deletion and export; 10. Payments and financial data; 11. Logging; 12. Security review checklist)](secure-implementation.md) | Implement the security and privacy controls relevant to the changed software. |
+| [principles/12-code-project-working-standards.md (excerpt: 2. Obligations, authorization, and trusted guidance; 6. Editing standard; 7. Workspace and git hygiene; 8. Dependency and configuration discipline; 9. Backend and API work; 10. Auth, authorization, and payments; 11. Data integrity; 12. Security and misuse resistance; 13. Verification; 14. Deployment and operations; 15. Code review; 16. Documentation sync; 17. Definition of done)](code-change-workflow.md) | Make, review, and verify a scoped code change with the existing project architecture and authorization. |
+| [principles/10-release-and-maintenance.md (excerpt: 2. Release philosophy; 3. Versioning; 4. Release notes; 5. Deprecation; 6. Backward compatibility; 9. Operational readiness)](release-engineering.md) | Prepare software versions, compatibility, migrations, and operational readiness. |
+| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential engineering tradeoff when the project workflow calls for it. |
+| [templates/release-notes.md](../assets/templates/release-notes.md) | Document the changes, migrations, and verification for an actual software release. |
+| [LICENSE](LICENSE) | Preserve the documentation license when adapting or distributing these resources. |
 
-[Source hashes and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [ADOPTION.md](ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to provenance and navigation; copies retain their canonical source information.
+[Source hashes, exact selections, and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [the adoption process](https://github.com/plystra/craft/blob/main/ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to section selection, provenance, and navigation; included text retains its canonical source information.

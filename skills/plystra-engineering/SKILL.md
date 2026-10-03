@@ -1,43 +1,26 @@
 ---
 name: plystra-engineering
-description: Implement, debug, or review software, APIs, CLIs, libraries, data changes, and release workflows for Plystra projects or code explicitly adopting Plystra Craft. Use for engineering work within the actual repository and its existing architecture.
+description: "Implement, debug, or review software behavior, APIs, CLIs, libraries, data changes, security controls, and software releases under Plystra Craft. Use for scoped code work in the target project; repository standardization, visual design, and official website SEO are separate tasks."
 ---
 
 # Plystra engineering
 
-Complete authorized software work with explicit contracts, maintainable changes, and evidence appropriate to the risk.
+Complete a scoped software change with explicit behavior, security boundaries, and meaningful verification.
 
-## Establish obligations and authorization
+## Scope
 
-Use the project's maintained relationship record and the [scope definitions](references/README.md#scope-and-project-relationships). Interpret requirements and recommendations through [ADOPTION](references/ADOPTION.md). Sponsored projects retain their chosen scope; ownership and sub-brand obligations cover all applicable provisions.
+Apply this workflow to Plystra work or an explicitly adopted Craft scope: owned projects, sub-brands, and every project under them follow all requirements applicable to their actual media, surfaces, and activities; sponsored projects choose their adoption scope while separate sponsorship admission and affiliation rules still apply. Preserve requirement levels: `must`, `required`, unqualified `never`, and unqualified procedural instructions are requirements; `should`, `recommended`, `prefer`, `avoid`, and `suggested` are recommendations, with reasons recorded for material alternatives; `may`, `optional`, and `can` expressing a choice are options. Lists inherit their introducing statement, while an explicit `must` still creates a requirement. `Should never` is a recommendation; examples and suggested scales add no independent requirements, and recommendations cannot weaken requirements. This focused workflow neither grants affiliation nor establishes full Craft compliance. Stay within the request and existing authorization, respect trusted project guidance and platform instructions, and do not treat this skill as permission to publish or make unrelated changes.
 
-Read the relevant [Code Project Working Standards](references/principles/12-code-project-working-standards.md), including the distinction between project obligations, maintainer authorization, and trusted guidance. This entry point adds no requirements and does not override platform instruction priority or grant access to unrelated systems. Existing authorization remains effective within its stated bounds.
+## Implement and verify the change
 
-Keep the user's requested mode: a review produces findings; an implementation task includes the implementation and relevant verification. Resolve an actual conflict explicitly, continuing unaffected authorized work where possible. A narrow engineering task does not amount to a full Craft assessment.
+Inspect the actual target repository, relevant guidance, worktree state, existing architecture, and public commands before editing. Read [software design](references/software-design.md) for the affected architecture, configuration, API, data, error, dependency, and testing decisions. Use [code-change workflow](references/code-change-workflow.md) for editing, authorization, workspace hygiene, implementation, review, and completion requirements.
 
-## Gather the necessary project context
+Use the relevant sections of [secure implementation](references/secure-implementation.md) when changing authentication, authorization, data handling, external processing, logging, payments, or exposed boundaries. Read [release engineering](references/release-engineering.md) when preparing a version, migration, compatibility change, or operational release. Do not turn every ordinary fix into a full-project security or release audit.
 
-Inspect trusted contributor guidance, working-tree changes, relevant source and contracts, manifests, lockfiles, and existing public commands. Preserve unrelated changes. Use [Engineering Standards](references/principles/07-engineering-standards.md) for the affected architecture, configuration, APIs, data, dependencies, and verification decisions.
+Make the smallest complete change that satisfies the request and preserves existing contracts. Protect unrelated work, keep secrets out of outputs, and distinguish development from production configuration. Use the existing migration and integration mechanisms. Confirm the required authorization and recovery plan before consequential or destructive operations; existing authorization remains valid within its scope.
 
-Load additional references by the work being done:
+Exercise the affected public surface with the narrowest meaningful checks, then broaden when failures or remaining risk justify it. Review for regressions, data loss, security failures, broken contracts, and missing verification. Synchronize documentation and configuration examples affected by the change.
 
-- [Security and Privacy](references/principles/09-security-and-privacy.md) for trust boundaries, credentials, authentication, data handling, external processors, or sensitive logging.
-- [Documentation Standards](references/principles/08-documentation-standards.md) for changed setup, configuration, public contracts, operations, or contributor guidance.
-- [Frontend UI Design](references/principles/05-frontend-ui-design.md) and [Accessibility and Interaction](references/principles/06-accessibility-and-interaction.md) for changes to a digital interface.
-- [Websites, Search, and Sharing](references/principles/13-websites-search-and-sharing.md) for an official website or public web documentation, including the mandatory `/llms.txt` and real-response verification.
-- [Release and Maintenance](references/principles/10-release-and-maintenance.md) for compatibility, migrations, release preparation, deployment, or retirement.
-- [Governance and Legal](references/principles/11-governance-and-legal.md) for license decisions, ownership, or public claims; the [Charter](references/CHARTER.md) for changes of purpose or admission.
+Use a [decision record](assets/templates/decision-record.md) for a consequential choice when required by the project, and [release notes](assets/templates/release-notes.md) for an actual release deliverable. Report the implemented behavior, evidence, and limitations. Do not scaffold repository policy files or change public-site metadata merely because code was edited.
 
-The [reference index](references/index.md) lists the complete bundle. Read only the sections needed for the actual change and its affected contracts.
-
-## Make the change reviewable
-
-1. State the intended observable behavior and the boundary it must preserve. Scale planning to uncertainty and consequence.
-2. Follow the actual project architecture and maintained dependency choices. Implement the smallest coherent change that completes the requested behavior, including necessary documentation and configuration updates.
-3. Exercise the relevant public surface and failure paths. Use meaningful regression, integration, migration, browser, CLI, or library checks according to the changed contract; explain unavailable verification accurately.
-4. Inspect the final diff for unintended scope, sensitive data, broken contracts, and unsupported claims.
-5. Carry out any explicitly authorized commit, push, release, or deployment using the project workflow. Without that authorization, leave a reviewable result and accurately state what remains unpublished.
-
-Use bundled assets only for a matching deliverable: [decision record](assets/templates/decision-record.md), [README](assets/templates/project-readme.md), [release notes](assets/templates/release-notes.md), or [project adoption record](assets/templates/project-principles.md). Replace their prompts and destination-specific links; do not treat a template as evidence of compliance.
-
-For reviews, lead with concrete findings and failure scenarios. For implementation, report changed behavior, verification results, and material limitations. The [source ledger](references/sources.json) identifies the canonical snapshot used here. Confirm the applicable published revision for formal or current-policy assessments, edit canonical rules rather than generated copies, and preserve the [documentation license](references/LICENSE) when adapting their text.
+The task references are bundled excerpts, sufficient for this workflow without the Craft checkout or another installed skill. Their links to other Craft material provide provenance or context for a different task, not prerequisite loading steps. The [source ledger](references/sources.json) records the snapshot; preserve the [documentation license](references/LICENSE) when reusing it. A current-policy or full-adoption claim needs evidence for that revision and scope; ordinary completion of this task makes neither claim.

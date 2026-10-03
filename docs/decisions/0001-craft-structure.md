@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Accepted for repository structure. Skill boundaries and whole-document distribution are superseded by [task-specific skill distribution](0002-task-specific-skills.md).
 
 ## Date
 

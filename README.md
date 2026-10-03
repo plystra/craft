@@ -84,25 +84,29 @@ plystra/craft
 │   ├── plystra-writing/
 │   ├── plystra-frontend-design/
 │   ├── plystra-engineering/
+│   ├── plystra-repository-standards/
+│   ├── plystra-project-website/
 │   └── plystra-stewardship/
 │       ├── SKILL.md                # maintained task entry point
-│       ├── references/             # generated principles and source records
-│       └── assets/templates/       # generated templates for project use
+│       ├── references/             # flat, task-specific references and provenance
+│       └── assets/templates/       # only templates used by this task
 ├── tooling/
 │   ├── skills-manifest.json
 │   ├── build-skills.ts
-│   └── build-skills.test.ts
+│   ├── build-skills.test.ts
+│   └── skill-packages.test.ts
 └── docs/decisions/
-    └── 0001-craft-structure.md
+    ├── 0001-craft-structure.md
+    └── 0002-task-specific-skills.md
 ```
 
 ### One repository, one source of truth
 
 The root scope, Charter, adoption process, and `principles/` are the authoritative standards. `templates/` contains the maintained templates that help projects apply them. The 01–13 prefixes retain existing citations and provide a reading order; they do not rank the authority of chapters.
 
-Skills provide task-specific entry points into those sources. Their `SKILL.md` files explain when and how to consult the standards; their generated `references/` and `assets/templates/` distribute selected source documents. They do not define additional policy or replace a full applicability review. Repository maintenance and architecture notes under `CONTRIBUTING.md`, `tooling/`, and `docs/` describe how Craft itself is maintained, rather than adding obligations to adopting projects.
+Skills are independent task packages. Each `SKILL.md` defines a concrete task and uses only its own task-specific references and templates. The generator selects the relevant source sections into flat, purpose-named reference files; it does not copy the `principles/` tree, repository README, or whole governance documents into each skill. A whole domain document is included only when every section serves that skill's task. Skills do not define additional policy or replace a full applicability review. Repository maintenance and architecture notes under `CONTRIBUTING.md`, `tooling/`, and `docs/` describe how Craft itself is maintained, rather than adding obligations to adopting projects.
 
-These parts share maintainers and change together, so they live in one repository. The [structure decision](docs/decisions/0001-craft-structure.md) records the alternatives, migration paths, and conditions that would justify a future split.
+These parts share maintainers and change together, so they live in one source repository. Distribution includes just the selected skill directory. The [structure decision](docs/decisions/0001-craft-structure.md) records why the sources stay together; the [task distribution decision](docs/decisions/0002-task-specific-skills.md) defines the package boundaries.
 
 ### Task skills
 
@@ -110,14 +114,18 @@ These parts share maintainers and change together, so they live in one repositor
 | --- | --- |
 | [Plystra brand design](skills/plystra-brand-design/SKILL.md) | Brand relationships, identity, and visual expression across media. |
 | [Plystra product](skills/plystra-product/SKILL.md) | Product purpose, behavior, tradeoffs, and user agency. |
-| [Plystra writing](skills/plystra-writing/SKILL.md) | Product copy, documentation, public claims, and release writing. |
-| [Plystra frontend design](skills/plystra-frontend-design/SKILL.md) | Interfaces, accessibility, interaction, and official website delivery. |
+| [Plystra writing](skills/plystra-writing/SKILL.md) | Copy, document content, factual claims, and release writing. |
+| [Plystra frontend design](skills/plystra-frontend-design/SKILL.md) | Interface layout, components, interaction states, and accessibility. |
 | [Plystra engineering](skills/plystra-engineering/SKILL.md) | Code changes, architecture, security, verification, and releases. |
-| [Plystra stewardship](skills/plystra-stewardship/SKILL.md) | Project relationships, sponsorship admission, adoption reviews, and ongoing care. |
+| [Plystra repository standards](skills/plystra-repository-standards/SKILL.md) | Repository structure, README and contributor entry points, licensing, configuration, and working conventions. |
+| [Plystra project website](skills/plystra-project-website/SKILL.md) | Official website content, SEO, canonical URLs, crawling, sharing, `/llms.txt`, and publication checks. |
+| [Plystra stewardship](skills/plystra-stewardship/SKILL.md) | Relationships, sponsorship admission, adoption records, and maintenance responsibility. |
 
 Use these for Plystra work or when explicitly applying Craft to another project. Each skill directory can be copied on its own into a tool's supported skills directory, including its generated resources. Copying only `SKILL.md` loses the references it needs. No global installation or host-specific plugin is required to maintain this repository.
 
-Read only the sources relevant to the task. Bundled documents link locally; other sources link to the canonical repository. Each bundle records source hashes and the policy version from `ADOPTION.md`. It is a snapshot, not an automatic update subscription: GitHub `main` links may be newer than the copy. Use a matching repository revision for a historical review, and follow the adoption process for current obligations.
+The declared task can be carried out using the skill's own resources without the Craft checkout, another installed skill, or a download of the complete standards. Read the relevant local references as directed by its entry point. Source links document provenance and further context; they are not prerequisites for the normal task. If a request crosses task boundaries, identify the additional work instead of treating a focused skill as an all-purpose audit.
+
+Each bundle records its selected sections, source hashes, and the policy version from `ADOPTION.md`. It is a snapshot, not an automatic update subscription: GitHub `main` links may be newer than the copy. Use a matching repository revision for a historical review, and follow the adoption process for current obligations. Using an isolated skill does not establish full project compliance.
 
 For maintenance, use Node.js 24 or later; there are no package dependencies:
 

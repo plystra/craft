@@ -1,168 +1,144 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-frontend-design",
   "craftVersion": "1.0.0",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
-      "path": "README.md",
-      "sha256": "7b3253d2a368ebf8e08752b6a791e50c5c7cfd1ee6555bdb6df3c61c51a0274d",
-      "output": "references/README.md"
-    },
-    {
-      "path": "CHARTER.md",
-      "sha256": "9cebb41e9694ed2cf45ddc5612e70a78dd5ed8fb1c056a0dd915397d3821a618",
-      "output": "references/CHARTER.md"
-    },
-    {
-      "path": "ADOPTION.md",
-      "sha256": "6b8b8811834b4ab9c55abed62489c87e76d9f14e12bc999f9c02097492adf855",
-      "output": "references/ADOPTION.md"
-    },
-    {
-      "path": "LICENSE",
-      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
-      "output": "references/LICENSE"
-    },
-    {
-      "path": "principles/01-brand-philosophy.md",
-      "sha256": "e7aa42c8f2b39803f0be01781392dc13bc89f0db25ee08bb9ddf341d80731c94",
-      "output": "references/principles/01-brand-philosophy.md"
-    },
-    {
-      "path": "principles/02-product-principles.md",
-      "sha256": "ba31e41bfafda47b643d5b81a44d23b0a46710dd88fd5383f750744436fd30f9",
-      "output": "references/principles/02-product-principles.md"
-    },
-    {
-      "path": "principles/03-language-and-writing.md",
-      "sha256": "9146edd5f6040e9db04a7e00aed8127523dd72847e602736348e4a29f7c7df66",
-      "output": "references/principles/03-language-and-writing.md"
-    },
-    {
-      "path": "principles/04-visual-identity.md",
-      "sha256": "c2b509e4f29d595e8be6788d219260803f5287463c15c14480178b2a9108a0b5",
-      "output": "references/principles/04-visual-identity.md"
-    },
-    {
       "path": "principles/05-frontend-ui-design.md",
       "sha256": "0bb73c38719bb13ce76f93240d0207892bfa0c39606f8271df2a6da703eed70d",
-      "output": "references/principles/05-frontend-ui-design.md"
+      "selection": [
+        "1. Purpose",
+        "2. Interface personality",
+        "3. Information hierarchy",
+        "4. Spacing system",
+        "5. Surface model",
+        "6. Borders and shadows",
+        "7. Buttons",
+        "8. Forms",
+        "9. Tables and lists",
+        "10. Navigation",
+        "11. Command menus and shortcuts",
+        "12. Motion",
+        "13. Loading states",
+        "14. Empty states",
+        "15. Error and recovery states",
+        "16. Responsive design",
+        "17. Design tokens",
+        "18. Component quality bar",
+        "19. Frontend implementation discipline",
+        "20. Data visualization and dashboards",
+        "21. UI acceptance checklist"
+      ],
+      "output": "references/interface-design.md"
     },
     {
       "path": "principles/06-accessibility-and-interaction.md",
       "sha256": "a7361aa9d04e641182c7bb329c8e17f76de8543f2e61ae4076b2ff4664718d94",
-      "output": "references/principles/06-accessibility-and-interaction.md"
+      "selection": [
+        "1. Accessibility is part of craft",
+        "2. Baseline standard",
+        "3. Keyboard interaction",
+        "4. Focus states",
+        "5. Contrast",
+        "6. Motion sensitivity",
+        "7. Touch interaction",
+        "8. Cognitive accessibility",
+        "9. Internationalization readiness",
+        "10. Interaction review checklist"
+      ],
+      "output": "references/accessible-interaction.md"
     },
     {
-      "path": "principles/07-engineering-standards.md",
-      "sha256": "36e280fa50f9a9fb92f7ea3467ca7e8000094034e55779054a869800f42f4122",
-      "output": "references/principles/07-engineering-standards.md"
+      "path": "principles/04-visual-identity.md",
+      "sha256": "c2b509e4f29d595e8be6788d219260803f5287463c15c14480178b2a9108a0b5",
+      "selection": [
+        "1. Visual direction",
+        "2. Core visual values",
+        "3. Color philosophy",
+        "4. Typography",
+        "5. Layout",
+        "7. Project identity",
+        "8. Imagery and animation",
+        "10. Visual review test"
+      ],
+      "output": "references/visual-system.md"
     },
     {
-      "path": "principles/09-security-and-privacy.md",
-      "sha256": "566262882d89adb1e3f74ad552c548a445989b6f668ec876c4cf90bcf43f3bff",
-      "output": "references/principles/09-security-and-privacy.md"
+      "path": "principles/03-language-and-writing.md",
+      "sha256": "9146edd5f6040e9db04a7e00aed8127523dd72847e602736348e4a29f7c7df66",
+      "selection": [
+        "5. Interface copy",
+        "6. Empty states",
+        "7. Error messages",
+        "9. Capitalization"
+      ],
+      "output": "references/interface-copy.md"
     },
     {
-      "path": "principles/10-release-and-maintenance.md",
-      "sha256": "4e70f04996ac757bee1993cda022ba70e9b87e45697c59e8acc9d6332f337814",
-      "output": "references/principles/10-release-and-maintenance.md"
-    },
-    {
-      "path": "principles/12-code-project-working-standards.md",
-      "sha256": "f7570a2616e90e54194d2de021f3d0594b82dd4906f1b7e7f737d9d5515f450a",
-      "output": "references/principles/12-code-project-working-standards.md"
-    },
-    {
-      "path": "principles/13-websites-search-and-sharing.md",
-      "sha256": "07a659b0f66cceb94e5e88c72013746e810a64e69885fd5140df9047e039103a",
-      "output": "references/principles/13-websites-search-and-sharing.md"
+      "path": "principles/02-product-principles.md",
+      "sha256": "ba31e41bfafda47b643d5b81a44d23b0a46710dd88fd5383f750744436fd30f9",
+      "selection": [
+        "2. Prefer legibility over magic",
+        "3. Use friction where trust requires it",
+        "5. Respect user data ownership"
+      ],
+      "output": "references/user-agency.md"
     },
     {
       "path": "templates/ui-review-checklist.md",
       "sha256": "e2b56ae58ef9615c4111f304fec714a5559abd9af6d317c28ff96723c8717a31",
+      "selection": [
+        "Product fit",
+        "Visual design",
+        "Interaction",
+        "Accessibility",
+        "Responsive behavior",
+        "Engineering",
+        "Final question"
+      ],
       "output": "assets/templates/ui-review-checklist.md"
     },
     {
-      "path": "templates/decision-record.md",
-      "sha256": "43fec6c265b3a5e443f6ad3382088f1b6fddedb2d96df2d1e7012c67eebc8f30",
-      "output": "assets/templates/decision-record.md"
+      "path": "LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "selection": null,
+      "output": "references/LICENSE"
     }
   ],
   "outputs": [
     {
-      "path": "assets/templates/decision-record.md",
-      "sha256": "7778568463b988f46214f4b8114c2c117f0738a9b0c0092fccaf288860203a5c"
-    },
-    {
       "path": "assets/templates/ui-review-checklist.md",
-      "sha256": "d675fc0b7c082c013eabcbf99c71090346e8949df1504c7fdc100e604d17250e"
+      "sha256": "51a79a2189a21f4bac0fb90b4d276766dfbab1a3fc202268de38abeeba9e73cd"
     },
     {
-      "path": "references/ADOPTION.md",
-      "sha256": "83f7ea442f32a06cf4d506b7f6776bba13bdca7cbd9030bd8178116e6e4f820e"
-    },
-    {
-      "path": "references/CHARTER.md",
-      "sha256": "8d2d3f35ef2e6631603c3d5da8fdc61171c614049b1921d5a330fccf3e30483c"
+      "path": "references/accessible-interaction.md",
+      "sha256": "9655682f7a0f42555e993cef2202cb9d41b78e0757e73b331d1322004ef53632"
     },
     {
       "path": "references/index.md",
-      "sha256": "8f6da3c836003b8b7435a704f5226e6ccbddfe7b91f08baa5aa3c9596cfe5d2a"
+      "sha256": "e55c693914fd3bb13a8c46962d17ab25ff9541680942a146cab05379cb9a9083"
+    },
+    {
+      "path": "references/interface-copy.md",
+      "sha256": "d42ee58c0df4dedf6ebd339c1991942887e95c181a9a5639100a4941bbbf0179"
+    },
+    {
+      "path": "references/interface-design.md",
+      "sha256": "ed4c557f9abd058435f28c31214d4726e02822e310fbc00757fa614f4c744bb9"
     },
     {
       "path": "references/LICENSE",
       "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
     },
     {
-      "path": "references/principles/01-brand-philosophy.md",
-      "sha256": "35b7b36e8a631ff5a9f312bfb6f02e7c129aee07e078e183bdf22f305884c327"
+      "path": "references/user-agency.md",
+      "sha256": "6c8cc4c159b54fcaf329375cbdde1f4fcfd6bab24e6084f9aaf2f271d4db1d5e"
     },
     {
-      "path": "references/principles/02-product-principles.md",
-      "sha256": "f8580943a432d6e193b739b18bf53cdbc786cff735a5ef8ea6d4e28c60271bbd"
-    },
-    {
-      "path": "references/principles/03-language-and-writing.md",
-      "sha256": "a0359205a296b7e3ddc10d9e2641f06e17afa5191d9b618a6c7b3b4de5a72091"
-    },
-    {
-      "path": "references/principles/04-visual-identity.md",
-      "sha256": "972fe16027185d57a120b1143afad8649a2326e0ce8aff2e309673ee22f02a41"
-    },
-    {
-      "path": "references/principles/05-frontend-ui-design.md",
-      "sha256": "f0ce86e4add2aa8936245d77d7cbc364102fc77b099d8a874754932030fb8afe"
-    },
-    {
-      "path": "references/principles/06-accessibility-and-interaction.md",
-      "sha256": "b0e88a418fcd36ae09ececb537d5fa8b35d5b888543399ff069016a67f90ef6d"
-    },
-    {
-      "path": "references/principles/07-engineering-standards.md",
-      "sha256": "d0a3a45df49c0fcb7966b4a9b1848f072453bab462079b3a589e43b2082d33c4"
-    },
-    {
-      "path": "references/principles/09-security-and-privacy.md",
-      "sha256": "4595dd90163039987c8fed9adcc5380f6b874478a5a1b57f023f070c737efccc"
-    },
-    {
-      "path": "references/principles/10-release-and-maintenance.md",
-      "sha256": "fd505be44b245cc1fde05a805095d03ae9129b19f9e0861ff281c0323e49aed7"
-    },
-    {
-      "path": "references/principles/12-code-project-working-standards.md",
-      "sha256": "76a005b109dd971a43d7b661316a85c9fb00bb73b6dc58d37751d20fd52b24f5"
-    },
-    {
-      "path": "references/principles/13-websites-search-and-sharing.md",
-      "sha256": "e8e30adf1e52f30886a9005b38b67d445f3fa41be60828ceebe4693616fabbdf"
-    },
-    {
-      "path": "references/README.md",
-      "sha256": "3518a17f9861634300645c5b0a8e95f56221302a90292f52aef2a07a9ebdd7a7"
+      "path": "references/visual-system.md",
+      "sha256": "e41dd378a8daa3c847d3658112267ef82c7852a26122d037fc6800ed1da473c1"
     }
   ]
 }

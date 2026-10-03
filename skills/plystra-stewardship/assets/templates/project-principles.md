@@ -3,11 +3,10 @@
 > Source: [templates/project-principles.md](https://github.com/plystra/craft/blob/main/templates/project-principles.md) · Craft 1.0.0
 > Author: immoses (Moses Qiu) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 > Source SHA-256: `a804fd6a75abcee113c1b947e155b9f4d3b7a4bc3919a875b4ca02eacbd093fc`
-> Distribution changes: provenance added and relative links adapted for this skill. The source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
+> Excerpt only: "Relationship to Plystra"; "Philosophy review record"; "Project description"; "Maturity"; "What this project values"; "What this project refuses to do"; "Maintenance policy"; "Open questions". This is not the complete source document.
+> Distribution changes: selected sections reproduced with the original title; provenance added and relative links adapted for this skill. Included source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
 
 # [Project Name] Principles
-
-Use this template for Plystra-owned projects, sub-brands, and their projects. An equivalent maintained record is acceptable for work without a repository. Sponsored projects may use it voluntarily; sponsorship does not require a `PROJECT_PRINCIPLES.md` file. Adapt sections to the actual medium and record material non-applicability rather than inventing software features. Replace prompts and remove instructions before publishing.
 
 ## Relationship to Plystra
 
@@ -37,7 +36,7 @@ State adoption accurately. The sponsorship admission and affiliation requirement
 
 ## Philosophy review record
 
-Follow [Applying and Updating the Philosophy](../../references/ADOPTION.md) when preparing this record. When copying this template, replace that link with the maintained philosophy repository URL.
+Follow [Applying and Updating the Philosophy](https://github.com/plystra/craft/blob/main/ADOPTION.md) when preparing this record. When copying this template, replace that link with the maintained philosophy repository URL.
 
 - Philosophy version reviewed: ...
 - Exact source commit reviewed: ...
@@ -72,22 +71,6 @@ Current maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable / M
 
 Maintenance state: Active / Slow active / Maintenance / Paused / Retired
 
-## Primary loop
-
-For a product with a repeated workflow:
-
-```text
-trigger -> action -> feedback -> record -> next step
-```
-
-For this project:
-
-```text
-...
-```
-
-For other work, describe how people encounter, use, understand, care for, or preserve it instead.
-
 ## What this project values
 
 - ...
@@ -102,50 +85,6 @@ This project should not:
 - ...
 - ...
 
-## User trust model
-
-This project affects user trust because...
-
-Important trust boundaries:
-
-- ...
-- ...
-
-Review or confirmation is required for:
-
-- ...
-- ...
-
-## Data model notes
-
-Important user data or project data:
-
-- ...
-
-Export behavior:
-
-- ...
-
-Deletion behavior:
-
-- ...
-
-AI-generated or automated data, if any:
-
-- ...
-
-## Interface direction
-
-The interface should feel:
-
-- ...
-- ...
-
-The interface should avoid:
-
-- ...
-- ...
-
 ## Maintenance policy
 
 This project will be maintained by...
@@ -155,47 +94,6 @@ Expected release style:
 - ...
 
 Known limitations:
-
-- ...
-
-## Engineering and verification
-
-For software, complete the instruction and command fields below. For other work, describe the relevant methods, production or editorial process, and verification. Mixed projects cover each component.
-
-Local instruction files:
-
-- `AGENTS.md` / equivalent: ...
-
-Primary development commands:
-
-- Install: ...
-- Run: ...
-- Test: ...
-- Lint/typecheck/build: ...
-
-Definition of done for this project:
-
-- ...
-
-High-risk changes that require extra review:
-
-- ...
-
-## Security and operations
-
-Authentication model:
-
-- ...
-
-Authorization boundaries:
-
-- ...
-
-Secrets and configuration:
-
-- ...
-
-Deployment or release constraints:
 
 - ...
 

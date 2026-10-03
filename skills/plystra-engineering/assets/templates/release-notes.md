@@ -3,7 +3,8 @@
 > Source: [templates/release-notes.md](https://github.com/plystra/craft/blob/main/templates/release-notes.md) · Craft 1.0.0
 > Author: immoses (Moses Qiu) · [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 > Source SHA-256: `7ddf80f8dc7dbbc1205c3eaef4b2aa56c0075d4872a64cbc086b88b17e33b5a7`
-> Distribution changes: provenance added and relative links adapted for this skill. The source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
+> Complete source document.
+> Distribution changes: provenance added and relative links adapted for this skill. Included source text is otherwise preserved. This snapshot adds no requirements; the canonical source governs.
 
 # Release Notes: [Version]
 

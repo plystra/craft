@@ -2,19 +2,16 @@
 
 # Sources for plystra-brand-design
 
-These files distribute selected canonical Plystra Craft material (version 1.0.0). Read the files relevant to the task; this selection does not narrow any applicable Craft obligations. The copies add no independent requirements and are not an assertion of compliance or automatic freshness.
+These task references distribute selected canonical Plystra Craft material (version 1.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
-| Source | Read when |
+| Material and selection | Read when |
 | --- | --- |
-| [README.md](README.md) | Establish project relationship, repository scope, and canonical sources; read only relevant sections. |
-| [CHARTER.md](CHARTER.md) | Review purpose, project admission, or a decision that changes the work's long-term direction. |
-| [ADOPTION.md](ADOPTION.md) | Interpret requirement levels and applicability; check version, evidence, and review deadlines when assessing adoption. |
-| [LICENSE](LICENSE) | Copy, distribute, or adapt Craft documentation and preserve its attribution and license. |
-| [principles/01-brand-philosophy.md](principles/01-brand-philosophy.md) | Define brand positioning, hierarchy, affiliation, or public identity. |
-| [principles/03-language-and-writing.md](principles/03-language-and-writing.md) | Write or review interface copy, project descriptions, documentation, or public claims. |
-| [principles/04-visual-identity.md](principles/04-visual-identity.md) | Design or review visual identity, typography, imagery, motion, or project personality. |
-| [principles/06-accessibility-and-interaction.md](principles/06-accessibility-and-interaction.md) | Design or verify an interface's accessibility and supported input methods. |
-| [principles/11-governance-and-legal.md](principles/11-governance-and-legal.md) | Assess ownership, sponsorship, licensing, claims, brand permission, or legal and privacy records. |
-| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential decision when the task or project workflow calls for a decision record. |
+| [principles/01-brand-philosophy.md (excerpt: 1. Brand essence; 2. Positioning statement; 3. Brand personality; 4. Brand hierarchy; 6. Premium without luxury theater; 7. The anti-patterns; 8. Brand test)](brand-positioning.md) | Define positioning, parent and project identity, or affiliation wording. |
+| [principles/04-visual-identity.md (excerpt: 1. Visual direction; 2. Core visual values; 3. Color philosophy; 4. Typography; 5. Layout; 6. Logo usage; 7. Project identity; 8. Imagery and animation; 9. Screenshots; 10. Visual review test)](identity-assets.md) | Design or review the identity system, marks, typography, palette, and image assets. |
+| [principles/03-language-and-writing.md (excerpt: 1. Voice; 2. Default writing style; 3. Claims must be earned; 4. Project descriptions; 9. Capitalization)](brand-language.md) | Write names, taglines, project descriptions, and supported claims. |
+| [principles/06-accessibility-and-interaction.md (excerpt: 1. Accessibility is part of craft; 5. Contrast; 6. Motion sensitivity; 9. Internationalization readiness)](accessible-identity.md) | Check contrast, motion, and language in identity assets. |
+| [principles/11-governance-and-legal.md (excerpt: 2. Ownership and attribution; 6. Public claims; 7. Trademarks and naming)](naming-and-affiliation.md) | Verify names, public identity, ownership, and official-status claims. |
+| [templates/decision-record.md](../assets/templates/decision-record.md) | Record a consequential identity choice when the project workflow needs a decision record. |
+| [LICENSE](LICENSE) | Preserve the documentation license when adapting or distributing these resources. |
 
-[Source hashes and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [ADOPTION.md](ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to provenance and navigation; copies retain their canonical source information.
+[Source hashes, exact selections, and generated-file inventory](sources.json) identify this snapshot. Canonical updates follow [the adoption process](https://github.com/plystra/craft/blob/main/ADOPTION.md). Documentation by immoses (Moses Qiu) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see [LICENSE](LICENSE). Distribution changes are limited to section selection, provenance, and navigation; included text retains its canonical source information.
