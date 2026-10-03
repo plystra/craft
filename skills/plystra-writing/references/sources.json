@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "generator": "tooling/build-skills.ts",
+  "skill": "plystra-writing",
+  "craftVersion": "1.0.0",
+  "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
+  "sources": [
+    {
+      "path": "README.md",
+      "sha256": "7b3253d2a368ebf8e08752b6a791e50c5c7cfd1ee6555bdb6df3c61c51a0274d",
+      "output": "references/README.md"
+    },
+    {
+      "path": "CHARTER.md",
+      "sha256": "9cebb41e9694ed2cf45ddc5612e70a78dd5ed8fb1c056a0dd915397d3821a618",
+      "output": "references/CHARTER.md"
+    },
+    {
+      "path": "ADOPTION.md",
+      "sha256": "6b8b8811834b4ab9c55abed62489c87e76d9f14e12bc999f9c02097492adf855",
+      "output": "references/ADOPTION.md"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "output": "references/LICENSE"
+    },
+    {
+      "path": "principles/01-brand-philosophy.md",
+      "sha256": "e7aa42c8f2b39803f0be01781392dc13bc89f0db25ee08bb9ddf341d80731c94",
+      "output": "references/principles/01-brand-philosophy.md"
+    },
+    {
+      "path": "principles/03-language-and-writing.md",
+      "sha256": "9146edd5f6040e9db04a7e00aed8127523dd72847e602736348e4a29f7c7df66",
+      "output": "references/principles/03-language-and-writing.md"
+    },
+    {
+      "path": "principles/08-documentation-standards.md",
+      "sha256": "8b55c3bc0d65a2c3fdd89f180f78ee8eee4fd878c80d7093fde8583b14ab0b7b",
+      "output": "references/principles/08-documentation-standards.md"
+    },
+    {
+      "path": "principles/09-security-and-privacy.md",
+      "sha256": "566262882d89adb1e3f74ad552c548a445989b6f668ec876c4cf90bcf43f3bff",
+      "output": "references/principles/09-security-and-privacy.md"
+    },
+    {
+      "path": "principles/10-release-and-maintenance.md",
+      "sha256": "4e70f04996ac757bee1993cda022ba70e9b87e45697c59e8acc9d6332f337814",
+      "output": "references/principles/10-release-and-maintenance.md"
+    },
+    {
+      "path": "principles/11-governance-and-legal.md",
+      "sha256": "8358870c57a019ce44bc2e9694ec39dfb4102b4898be824aeb2f84d4fd8b92e0",
+      "output": "references/principles/11-governance-and-legal.md"
+    },
+    {
+      "path": "principles/12-code-project-working-standards.md",
+      "sha256": "f7570a2616e90e54194d2de021f3d0594b82dd4906f1b7e7f737d9d5515f450a",
+      "output": "references/principles/12-code-project-working-standards.md"
+    },
+    {
+      "path": "principles/13-websites-search-and-sharing.md",
+      "sha256": "07a659b0f66cceb94e5e88c72013746e810a64e69885fd5140df9047e039103a",
+      "output": "references/principles/13-websites-search-and-sharing.md"
+    },
+    {
+      "path": "templates/project-readme.md",
+      "sha256": "85938772c44e460c7279a0c0942eae8d885fe0c0c6a1c603ac839ce8abe000c5",
+      "output": "assets/templates/project-readme.md"
+    },
+    {
+      "path": "templates/release-notes.md",
+      "sha256": "7ddf80f8dc7dbbc1205c3eaef4b2aa56c0075d4872a64cbc086b88b17e33b5a7",
+      "output": "assets/templates/release-notes.md"
+    },
+    {
+      "path": "templates/decision-record.md",
+      "sha256": "43fec6c265b3a5e443f6ad3382088f1b6fddedb2d96df2d1e7012c67eebc8f30",
+      "output": "assets/templates/decision-record.md"
+    },
+    {
+      "path": "templates/project-principles.md",
+      "sha256": "a804fd6a75abcee113c1b947e155b9f4d3b7a4bc3919a875b4ca02eacbd093fc",
+      "output": "assets/templates/project-principles.md"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "assets/templates/decision-record.md",
+      "sha256": "7778568463b988f46214f4b8114c2c117f0738a9b0c0092fccaf288860203a5c"
+    },
+    {
+      "path": "assets/templates/project-principles.md",
+      "sha256": "907044ef861fab92fea5eb3148949b41ecaa13455c3b0e575e0556b9eb044970"
+    },
+    {
+      "path": "assets/templates/project-readme.md",
+      "sha256": "efe2b2cc94e5ef934acecc00fc49a67550368d231b522cb48fbc877e4fad721c"
+    },
+    {
+      "path": "assets/templates/release-notes.md",
+      "sha256": "66fbbee1891b531f98204606cd979d754cf37d494ae63fd2a4caeeb9f70b932f"
+    },
+    {
+      "path": "references/ADOPTION.md",
+      "sha256": "bb4553737caa1db1f3bb1be9ff9d17747a01c06313967ab2eb006e2b418b0cce"
+    },
+    {
+      "path": "references/CHARTER.md",
+      "sha256": "19f6fc4d056acb9bd93cf7159e5e238111021f910f92806042da3af740575e0c"
+    },
+    {
+      "path": "references/index.md",
+      "sha256": "dbf3fb9f67e81802fc2966364d65dad725a8c1d4d9481e139c144bc4e8e616a1"
+    },
+    {
+      "path": "references/LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "path": "references/principles/01-brand-philosophy.md",
+      "sha256": "35b7b36e8a631ff5a9f312bfb6f02e7c129aee07e078e183bdf22f305884c327"
+    },
+    {
+      "path": "references/principles/03-language-and-writing.md",
+      "sha256": "a0359205a296b7e3ddc10d9e2641f06e17afa5191d9b618a6c7b3b4de5a72091"
+    },
+    {
+      "path": "references/principles/08-documentation-standards.md",
+      "sha256": "29281e4d4006ecc87442dc65b47050ce81f577c70c13b5dd186c33229a8694aa"
+    },
+    {
+      "path": "references/principles/09-security-and-privacy.md",
+      "sha256": "4595dd90163039987c8fed9adcc5380f6b874478a5a1b57f023f070c737efccc"
+    },
+    {
+      "path": "references/principles/10-release-and-maintenance.md",
+      "sha256": "fd505be44b245cc1fde05a805095d03ae9129b19f9e0861ff281c0323e49aed7"
+    },
+    {
+      "path": "references/principles/11-governance-and-legal.md",
+      "sha256": "ea74626d583485b85906b1732d0ce1606d9c63333fb8d8976910b2776b73a3f1"
+    },
+    {
+      "path": "references/principles/12-code-project-working-standards.md",
+      "sha256": "326ac527f552f9612659d0ee44ecf4e9df6442017fcd53ba147cfa52d4fda2e6"
+    },
+    {
+      "path": "references/principles/13-websites-search-and-sharing.md",
+      "sha256": "1befc091372e3d1cc1d4d086582442d03f9a6de7d79f0e6090fd8b4ade241e23"
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "3a22480581bed63172e9c242bc80b518797a3b0cad952e0aa18ec8dcbb266c82"
+    }
+  ]
+}

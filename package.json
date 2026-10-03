@@ -1,0 +1,13 @@
+{
+  "name": "@plystra/craft",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build:skills": "node tooling/build-skills.ts",
+    "check:skills": "node tooling/build-skills.ts --check",
+    "test": "node --test tooling/build-skills.test.ts"
+  }
+}

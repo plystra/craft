@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Keep review focused on canonical sources and maintained skill entry points.
+skills/*/references/** linguist-generated=true
+skills/*/assets/templates/** linguist-generated=true
