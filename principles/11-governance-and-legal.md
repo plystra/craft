@@ -4,17 +4,7 @@
 
 Plystra should grow governance gradually.
 
-Do not imitate the full structure of a foundation before there is a real contributor base, maintenance burden, or legal need. But do build habits that make future governance possible.
-
-Good early governance means:
-
-- decisions are written down;
-- licenses are clear;
-- ownership is explicit;
-- project status is honest;
-- contribution rules are understandable;
-- security reports have a path;
-- public claims are careful.
+Do not imitate the full structure of a foundation before there is a real contributor base, maintenance burden, or legal need. Plystra should be treated as a personal craft umbrella first: careful, independent, and not prematurely institutionalized. But do build habits that make future governance possible, as described in the rest of this chapter.
 
 ## 2. Ownership and attribution
 
@@ -22,7 +12,7 @@ Every Plystra-owned project, sub-brand, and project under a sub-brand must clear
 
 Sponsored projects must identify their independent owner and maintainers and describe Plystra's agreed support. Sponsorship does not establish Plystra ownership, operation, or responsibility for the whole project.
 
-Public attribution must match these records and the [brand relationship rules](01-brand-philosophy.md#4-brand-hierarchy). State legal entities and trademark status only when verified for that public surface. Adoption of the philosophy alone does not establish an official relationship or permission to use Plystra's name and marks.
+Public attribution must match these records and use the [relationship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). State legal entities and trademark status only when verified for that public surface.
 
 ## 3. Licenses
 
@@ -55,34 +45,7 @@ Contribution rules should explain:
 
 Keep the tone direct and respectful. Avoid overly corporate language.
 
-## 5. Decision records
-
-Use decision records for meaningful choices.
-
-A decision record should explain:
-
-- context;
-- decision;
-- options considered;
-- consequences;
-- review date if relevant.
-
-Decision records are not bureaucracy. They protect future maintainers from rediscovering old reasoning.
-
-## 6. Public claims
-
-Legal and public claims must be conservative.
-
-Avoid claims such as:
-
-- `secure` without a defined standard;
-- `private` without explaining data handling;
-- `compliant` without naming the framework and scope;
-- `enterprise-grade` without evidence;
-- `open source` without a qualifying license;
-- `official` when the project is not formally endorsed by an external organization.
-
-## 7. Trademarks and naming
+## 5. Trademarks and naming
 
 Project names should be checked before public release.
 
@@ -98,20 +61,7 @@ A naming review should consider:
 
 Do not choose names that depend on another company's mark unless the project is clearly an integration and the usage is nominative.
 
-## 8. Privacy and terms pages
-
-Projects that collect real user data must provide the [privacy notice required by the security and privacy principles](09-security-and-privacy.md#7-privacy) before collection begins. The notice must be easy to find at the relevant collection or onboarding point and include:
-
-- data categories, purposes, access, and retention;
-- third-party recipients and processing purposes, where applicable;
-- export and deletion instructions, including limitations;
-- a contact path for the responsible operator.
-
-Private alpha tests and pilots may use a concise notice, but collecting real user data carries the same disclosure and authorization requirements. A later public launch is not the deadline for meeting them.
-
-Provide terms of use or service where needed for the product's service model, commercial arrangements, or applicable law. Applicable terms must be available before the user accepts the relevant service or transaction. The format and content of legal documents must fit the actual product and jurisdiction; one standard document does not cover every case.
-
-## 9. Governance maturity
+## 6. Governance maturity
 
 Plystra governance may evolve through stages:
 
@@ -133,25 +83,9 @@ Project admission, retirement, trademark use, and governance are formalized.
 
 Do not skip stages for appearance.
 
-## 10. Legal review checklist
+## 7. Sponsorship admission and continuation
 
-Before public launch of a Plystra project, check the following. Privacy disclosure and authorization checks must also pass before any real user data is collected or private content is sent to a third party, including during private testing.
-
-1. Is the license explicit?
-2. Is ownership clear?
-3. Are trademark statements accurate?
-4. Are third-party licenses compatible?
-5. Are public claims supportable?
-6. Is an accurate, accessible privacy notice available before collection, with a contact path and clear export and deletion instructions?
-7. Does actual data handling match the notice, including recipients, purposes, retention, and limitations?
-8. Are transfers of private content covered by explicit authorization for the purpose, recipient, and data scope?
-9. Are any applicable service or transaction terms available before acceptance?
-10. Are examples free of secrets and private infrastructure details?
-11. Is there a security reporting path?
-
-## 11. Sponsorship admission and continuation
-
-Sponsored projects remain independently owned and governed. They may adopt none, part, or all of the Plystra philosophy. Sponsorship does not require `PROJECT_PRINCIPLES.md`, a particular technical stack, or adoption of the full philosophy, and does not transfer ownership to Plystra.
+Sponsored projects remain independently owned and governed; see [scope and project relationships](../README.md#scope-and-project-relationships). Sponsorship does not require `PROJECT_PRINCIPLES.md`, a particular technical stack, or adoption of the full philosophy.
 
 Admission requires all of the following:
 
@@ -167,3 +101,7 @@ Record the project's chosen philosophy adoption scope separately from sponsorshi
 These requirements continue throughout sponsorship. Review the relationship when its agreed trigger occurs or when ownership, maintenance, support, or material security and privacy circumstances change. If the requirements are no longer met, agree corrective action or suspend or end sponsorship.
 
 When sponsorship changes or ends, update current descriptions and remove or revise current sponsorship marks as appropriate. Accurate historical acknowledgments may remain if they clearly describe the past scope and period of support and follow the agreed brand-use terms.
+
+## 8. Terms of use
+
+Provide terms of use or service where needed for the product's service model, commercial arrangements, or applicable law. Applicable terms must be available before the user accepts the relevant service or transaction. The format and content of legal documents must fit the actual product and jurisdiction; one standard document does not cover every case.

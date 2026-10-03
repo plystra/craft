@@ -1,6 +1,6 @@
 # Plystra Charter
 
-This charter applies in full to Plystra-owned projects, Plystra sub-brands, and every project under those sub-brands. Sponsored projects follow the separate admission and affiliation rules; adoption of the rest of the philosophy is their choice. See the [scope and relationship definitions](README.md#scope-and-project-relationships) and [requirement levels, applicability, and review process](ADOPTION.md).
+This charter states why Plystra exists and what its work commits to. Who it binds is defined in [scope and project relationships](README.md#scope-and-project-relationships).
 
 ## 1. Identity
 
@@ -33,7 +33,7 @@ Plystra projects may include:
 - experiments that clarify a question, material, method, or interaction;
 - work combining several of these forms.
 
-No medium is required to imitate another. Software-specific provisions apply to software components; public websites, data handling, and other shared surfaces carry their own applicable requirements as defined in [Applying and Updating the Philosophy](ADOPTION.md#3-applicability-follows-the-work).
+No medium is required to imitate another; [applicability follows the work](ADOPTION.md#3-applicability-follows-the-work).
 
 A Plystra project does not need to be large. It must be cared for.
 
@@ -85,23 +85,15 @@ A Plystra-owned project or a project under a Plystra sub-brand must meet all of 
 5. It has a plausible path to documentation, support, and responsible stewardship.
 6. It commits to the full philosophy, with clear responsibility for meeting its requirements.
 
-A Plystra sub-brand must document its identity, responsible steward, and relationship to Plystra. Every project under it inherits the full philosophy; a sub-brand cannot grant its projects an exemption.
+A project should not carry the Plystra name only because it was created by the same person. It should carry the name because it shares the same care, restraint, and long-term direction.
 
-A sponsored project remains independently owned and governed. It may decide whether to adopt the philosophy, but must meet all [sponsorship admission requirements](principles/11-governance-and-legal.md#11-sponsorship-admission-and-continuation): compatible purpose, clear ownership and maintenance responsibility, accurate licensing and claims, basic security and privacy practices, a feedback path, and an accurately described sponsorship confirmed by Plystra's steward.
+A Plystra sub-brand must also document its identity, responsible steward, and relationship to Plystra.
 
-None of these relationships requires a project to be open source. A shared author, voluntary adoption of the philosophy, or receipt of support does not by itself establish ownership or a sub-brand relationship.
+Sponsored projects are admitted under the separate [sponsorship requirements](principles/11-governance-and-legal.md#7-sponsorship-admission-and-continuation).
 
 ## 9. Project retirement
 
-Retiring a project is acceptable. Abandoning a project silently is not.
-
-A retired Plystra project should include:
-
-- a clear status notice;
-- a final recommended version, if applicable;
-- migration or export guidance, if possible;
-- a short explanation of why maintenance ended;
-- preserved documentation when the project may still be useful historically.
+Retiring a project is acceptable. Abandoning a project silently is not. A retired project follows the [retirement requirements](principles/10-release-and-maintenance.md#9-retirement).
 
 ## 10. The Plystra promise
 

@@ -2,23 +2,21 @@
 
 ## 1. Purpose
 
-This document defines how code projects under Plystra are changed, reviewed, verified, and shipped.
-
-It applies to human contributors, maintainers, and AI coding agents. It is the shared operating standard for practical software work; project-local guidance supplies the implementation details. Requirement levels, applicability, version records, and review deadlines follow [Applying and Updating the Philosophy](../ADOPTION.md).
-
-Plystra-owned projects and all projects under Plystra sub-brands must follow these standards as part of the full philosophy. Sponsored projects choose whether to adopt them, subject to the separate [sponsorship admission requirements](11-governance-and-legal.md#11-sponsorship-admission-and-continuation).
+This document defines how code in Plystra projects is changed, reviewed, verified, and shipped. It applies to human contributors, maintainers, and AI coding agents. Project-local guidance supplies the implementation details. What the software itself should be like is defined in [Engineering Standards](07-engineering-standards.md); security controls are in [Security and Privacy](09-security-and-privacy.md).
 
 ## 2. Obligations, authorization, and trusted guidance
 
 ### Project obligations
 
-The [project relationship](../README.md#scope-and-project-relationships) determines the applicable philosophy obligations. Project-local instructions, established conventions, and individual task decisions must not waive or weaken them. Contributors must also observe applicable legal and security requirements.
+The [project relationship](../README.md#scope-and-project-relationships) determines the applicable philosophy obligations, which [local instructions cannot weaken](../ADOPTION.md#2-requirement-levels). Contributors must also observe applicable legal and security requirements.
 
 If a task conflicts with an applicable obligation, identify the conflict and resolve the affected scope with the maintainer before proceeding. Unaffected work may continue. Record remaining gaps through the adoption process; a task request or a remediation plan does not establish compliance.
 
 ### Maintainer authorization and task scope
 
-The maintainer's request defines the intended result and authorized scope within those obligations. Clarify material ambiguity, respect explicit review gates, and carry authorized work through implementation and verification. An implementation request does not by itself authorize access to unrelated systems. Publication, release, and destructive operations require explicit authorization for the action and target.
+The maintainer's request defines the intended result and authorized scope within those obligations. Clarify material ambiguity, respect explicit review gates, and carry authorized work through implementation and verification. An implementation request does not by itself authorize access to unrelated systems.
+
+Commit only when asked. Deploying, publishing, releasing, pushing, merging, force-pushing, amending commits, and destructive operations require explicit authorization for the action and target, with the risk understood.
 
 A tool or platform defines its own instruction priority, permissions, and safety boundaries. Repository documents must not claim to replace or override them. This standard defines project responsibilities, not a universal ordering of instructions for every contributor or tool.
 
@@ -55,8 +53,6 @@ Use focused search and file discovery to locate relevant implementation and guid
 
 Check the trusted project guidance described in section 2 before touching files within its scope. Resolve conflicts between guidance sources before making affected changes.
 
-Confirm dependencies in manifests, lockfiles, installed package metadata, or existing imports before using them. Do not assume a dependency is available.
-
 Use external documentation when APIs, dependencies, platform behavior, or best practices are current, version-sensitive, niche, or high-risk. Prefer official documentation, standards, changelogs, and source repositories.
 
 ## 5. Planning and scope
@@ -83,7 +79,7 @@ Read a file before editing it.
 
 Keep edits scoped to the request and directly necessary supporting changes.
 
-Prefer editing existing files over creating new ones unless a new file is clearly needed.
+Prefer editing existing files over creating new ones unless a new file is clearly needed. Do not create planning docs, scratch notes, or tracking files unless the project workflow requires them or the maintainer asks for them.
 
 Match surrounding style, naming, formatting, imports, typing, error handling, and abstraction level.
 
@@ -93,7 +89,15 @@ Add comments only for non-obvious intent, constraints, tradeoffs, or complex log
 
 Clean up temporary files, debug logs, scratch scripts, and instrumentation before finishing.
 
-## 7. Workspace and git hygiene
+## 7. Dependencies
+
+Use the package manager established by the lockfile or project configuration.
+
+Confirm dependencies in manifests, lockfiles, installed package metadata, or existing imports before using them, including their supported versions. Do not assume a dependency is available. Update the manifest and lockfile together when adding or changing dependencies.
+
+Do not add substantial dependencies, frameworks, auth providers, ORMs, UI libraries, or build tools without explicit approval or a clear project precedent. Evaluate any new dependency as described in [Engineering Standards](07-engineering-standards.md#7-dependencies).
+
+## 8. Workspace and git hygiene
 
 Assume the worktree may contain maintainer changes.
 
@@ -101,102 +105,19 @@ Never revert, delete, overwrite, reset, checkout, or reformat changes you did no
 
 Inspect `git status` and relevant diffs before commits, pull requests, risky edits, or when unexpected changes appear.
 
-Commit only when asked. Push, publish, release, deploy, merge, force-push, or amend commits only when explicitly asked and the risk is understood.
-
 Avoid broad staging such as `git add .` when a focused set of files can be staged instead.
 
-## 8. Dependency and configuration discipline
+## 9. Implementation
 
-Use the package manager established by the lockfile or project configuration.
-
-Confirm dependency availability and supported versions before relying on them, and update the manifest and lockfile together when adding or changing them.
-
-Avoid new dependencies when the platform, standard library, or existing utilities are sufficient.
-
-Do not add substantial dependencies, frameworks, auth providers, ORMs, UI libraries, or build tools without explicit approval or a clear project precedent.
-
-Configuration should be documented and reproducible:
-
-- keep secrets out of source, docs, examples, logs, and tests;
-- provide `.env.example` when environment variables are used;
-- distinguish required and optional variables;
-- keep credentials in an appropriate secret store or environment injection mechanism;
-- configure endpoints that differ by environment or can affect production data separately for development, test, and production;
-- fail clearly when required configuration is missing;
-- avoid silent fallback to production services.
-
-Public canonical origins, website URLs, and other intentionally public constants may be kept in centralized, version-controlled configuration. A URL is not inherently a secret; embedded credentials, access tokens, and private endpoint details require protection. A public URL's visibility does not make it a safe default for test or development operations.
-
-## 9. Backend and API work
-
-Follow the existing backend architecture, routing conventions, middleware stack, error format, logging style, and dependency patterns.
-
-Keep API contracts explicit and typed where the stack supports it.
-
-Validate untrusted input at system boundaries, including HTTP requests, files, webhooks, CLI arguments, external APIs, database queries, and AI or tool outputs.
-
-Return clear, actionable errors at user-facing boundaries without leaking secrets, stack traces, or private implementation details.
-
-Use idempotency, retries, and timeouts for external service calls when duplicate operations or hangs would be harmful.
-
-Proxy secret-bearing external API calls through backend or serverless code. Do not expose secret-bearing calls from browser code.
+Follow the existing architecture, routing conventions, middleware stack, error format, logging style, and dependency patterns. Apply [Engineering Standards](07-engineering-standards.md) to configuration, data, APIs, and errors, and [Security and Privacy](09-security-and-privacy.md) to secrets, authentication, authorization, and input handling.
 
 Use real integrations for production-like apps. Do not rely on mock auth, fake persistence, or client-only state unless the project is explicitly a prototype.
 
-## 10. Auth, authorization, and payments
-
-Use the project's existing authentication provider and session model when present.
-
-For new projects, choose authentication and storage based on the product's security requirements, data model, privacy obligations, operational capacity, portability, and maintenance cost. Prefer maintained protocols and libraries with a clear security record. No vendor is the default for every project.
-
-Do not implement mock authentication as if it were production-ready.
-
-If custom auth is necessary, use strong password hashing, secure session management, HTTP-only cookies, CSRF protections where appropriate, and server-side authorization checks.
-
-Authorization must be enforced on the server or database policy layer. Client-side checks are user experience helpers, not security boundaries.
-
-Payment flows must use real payment integrations, keep secrets server-side, avoid raw card handling, verify webhook signatures, and process events idempotently.
-
-Do not ship UI that implies a working checkout unless the required payment integration and environment variables are available, except for explicitly labeled visual prototypes.
-
-## 11. Data integrity
-
-Data integrity is more important than convenience.
-
-Use the project's migration system. Do not edit historical migrations unless the project explicitly permits it and the migration has not shipped.
-
 Do not run destructive database operations such as drops, truncation, mass deletion, destructive column changes, or irreversible migrations without explicit approval and a rollback or backup plan.
 
-Add indexes, constraints, foreign keys, defaults, and uniqueness rules where they protect correctness or performance.
+## 10. Verification
 
-Use parameterized queries or the project's safe query builder for database access.
-
-Enforce access controls for user data at every accessible service or database boundary, including authenticated, unauthenticated, and privileged access. Where clients can access a database directly, use database-enforced policies such as row-level security or an equivalent control; server-only authorization is insufficient for a path that bypasses the server.
-
-Do not use `localStorage` or other client-only storage for durable product data unless the feature is intentionally local-only and documented as such.
-
-## 12. Security and misuse resistance
-
-Prevent common vulnerabilities by default:
-
-- SQL injection;
-- command injection;
-- path traversal;
-- unsafe deserialization;
-- XSS;
-- CSRF where applicable;
-- auth bypass;
-- privilege escalation;
-- insecure session handling;
-- sensitive-data leakage.
-
-Never build malicious, destructive, abusive, phishing, credential-theft, malware, unauthorized-access, or evasion functionality.
-
-Do not clone login pages, payment forms, or other flows that could be used for phishing. If a legitimate authenticated page must be recreated, use safe internal references such as post-login screenshots.
-
-## 13. Verification
-
-Verification is part of implementation.
+Verification is part of implementation, not a separate polish step.
 
 Use the project's existing test, lint, typecheck, build, and formatting commands. Confirm scripts exist in the relevant manifest when practical.
 
@@ -216,43 +137,58 @@ Test through public surfaces:
 
 Report verification honestly. If tests fail, explain what failed. If verification was skipped or impossible, explain why.
 
-## 14. Deployment and operations
+## 11. Code review
 
-Do not deploy, publish, release, push, or merge unless explicitly asked.
+A change is ready for review when reviewers can understand:
 
-Before deployment, verify build commands, output directories, runtime type, required environment variables, and platform configuration.
+- why it exists;
+- what user behavior changes;
+- what data changes;
+- what risks are introduced;
+- how it is tested;
+- how it can be reverted;
+- whether documentation must change.
 
-Follow the project's existing deployment platform and conventions.
+If a change cannot be explained simply, it may be too large.
 
-Production credentials must not enter the repository or public output. Use the configuration and environment-isolation rules in section 8; public canonical URLs may be versioned, while operational endpoints must be selected for the intended environment.
+Reviews should lead with findings. Prioritize bugs, regressions, security issues, data loss, broken contracts, missing tests, and deployment hazards. Order findings by severity and include concrete file and line references.
 
-Surface missing environment variables clearly, with exact variable names and where they should be configured.
-
-Run a production build or platform-equivalent validation before declaring deployment readiness when practical.
-
-## 15. Code review
-
-Reviews should lead with findings.
-
-Prioritize bugs, regressions, security issues, data loss, broken contracts, missing tests, and deployment hazards.
-
-Order findings by severity and include concrete file and line references.
-
-Explain concrete failure scenarios. Avoid vague preferences and theoretical issues.
+Explain concrete failure scenarios. Avoid vague preferences and theoretical issues; preferences should not crowd out real failures.
 
 If no issues are found, say so directly and state any residual risk or verification gap.
 
-## 16. Documentation sync
+## 12. Deployment and operations
 
-Update documentation when behavior, setup, environment variables, public APIs, security boundaries, deployment steps, or developer workflows change.
+Follow the project's existing deployment platform and conventions. Deployments should be deliberate and require the authorization described in section 2.
 
-Keep `.env.example`, README, deployment docs, API docs, and migration notes synchronized with implementation changes.
+Before declaring a project deployable, verify:
 
-Remove outdated instructions rather than adding contradictory guidance.
+- build command;
+- output directory;
+- runtime type;
+- required environment variables, named exactly, and where each must be configured;
+- platform configuration;
+- migration and rollback behavior;
+- that production credentials are supplied through a secret store or environment injection and excluded from the repository and public output;
+- that operational endpoints are selected for the intended environment, with no accidental development or test access to production;
+- that public canonical origins and website URLs in centralized configuration match the release's intended domain.
 
-Do not create planning docs, scratch notes, or tracking files unless the project workflow requires them or the maintainer asks for them.
+Run a production build or platform-equivalent validation before declaring deployment readiness when practical.
 
-## 17. Definition of done
+For deployed services, releases should also consider:
+
+- health checks;
+- backup compatibility;
+- database migrations;
+- rollback plan;
+- config changes;
+- dependency changes;
+- observability updates;
+- user-facing downtime or degraded behavior.
+
+Official websites also pass [website release verification](13-websites-search-and-sharing.md#10-release-verification).
+
+## 13. Definition of done
 
 A code project change is complete only when:
 
@@ -262,6 +198,6 @@ A code project change is complete only when:
 - security and data-integrity implications were considered;
 - appropriate tests or runtime verification were run;
 - UI changes were visually checked when relevant;
-- docs and configuration examples were updated when behavior or setup changed;
+- documentation and configuration examples were [synchronized](08-documentation-standards.md#8-documentation-sync);
 - temporary artifacts were cleaned up;
 - the final report accurately states what changed, where it changed, what was verified, what could not be verified, and any required maintainer action.

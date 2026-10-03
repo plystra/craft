@@ -4,9 +4,7 @@
 
 Project websites are public product surfaces. They must explain the project clearly to people, search engines, and other systems that read or share their content.
 
-These standards apply to official websites and public web documentation operated by Plystra, its sub-brands, Plystra-owned projects, and all projects under those sub-brands, whatever the medium of the underlying work. Sponsored projects may choose whether to adopt them; sponsorship admission requirements are defined separately in [Governance and Legal](11-governance-and-legal.md).
-
-Requirements below are mandatory where the described surface exists. Recommendations identify implementation choices that may vary with the site. These standards do not require private application content to become public or indexable.
+These standards apply to every official website and public web documentation of a Plystra project, whatever the medium of the underlying work. They do not require private application content to become public or indexable.
 
 ## 2. Honest, useful content
 
@@ -17,7 +15,7 @@ Public pages must:
 - say what the project does and who it serves;
 - distinguish current capabilities from planned work;
 - state maturity and limitations when needed to understand the offer;
-- describe ownership, publishing, and sponsorship relationships accurately;
+- describe ownership, publishing, and sponsorship relationships with the [relationship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording);
 - keep metadata and machine-readable summaries consistent with visible content.
 
 Do not use keyword stuffing, misleading previews, invented reviews, or unsupported claims to attract traffic. Search and sharing copy follows the same [writing standards](03-language-and-writing.md) as the product.

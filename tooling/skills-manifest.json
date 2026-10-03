@@ -3,677 +3,221 @@
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "skills": [
     {
-      "name": "plystra-brand-design",
+      "name": "plystra-craft",
       "sources": [
-        {
-          "path": "principles/01-brand-philosophy.md",
-          "output": "references/brand-positioning.md",
-          "when": "Define positioning, parent and project identity, or affiliation wording.",
-          "sections": [
-            "1. Brand essence",
-            "2. Positioning statement",
-            "3. Brand personality",
-            "4. Brand hierarchy",
-            "6. Premium without luxury theater",
-            "7. The anti-patterns",
-            "8. Brand test"
-          ]
-        },
-        {
-          "path": "principles/04-visual-identity.md",
-          "output": "references/identity-assets.md",
-          "when": "Design or review the identity system, marks, typography, palette, and image assets.",
-          "sections": [
-            "1. Visual direction",
-            "2. Core visual values",
-            "3. Color philosophy",
-            "4. Typography",
-            "5. Layout",
-            "6. Logo usage",
-            "7. Project identity",
-            "8. Imagery and animation",
-            "9. Screenshots",
-            "10. Visual review test"
-          ]
-        },
-        {
-          "path": "principles/03-language-and-writing.md",
-          "output": "references/brand-language.md",
-          "when": "Write names, taglines, project descriptions, and supported claims.",
-          "sections": [
-            "1. Voice",
-            "2. Default writing style",
-            "3. Claims must be earned",
-            "4. Project descriptions",
-            "9. Capitalization"
-          ]
-        },
-        {
-          "path": "principles/06-accessibility-and-interaction.md",
-          "output": "references/accessible-identity.md",
-          "when": "Check contrast, motion, and language in identity assets.",
-          "sections": [
-            "1. Accessibility is part of craft",
-            "5. Contrast",
-            "6. Motion sensitivity",
-            "9. Internationalization readiness"
-          ]
-        },
-        {
-          "path": "principles/11-governance-and-legal.md",
-          "output": "references/naming-and-affiliation.md",
-          "when": "Verify names, public identity, ownership, and official-status claims.",
-          "sections": [
-            "2. Ownership and attribution",
-            "6. Public claims",
-            "7. Trademarks and naming"
-          ]
-        },
-        {
-          "path": "templates/decision-record.md",
-          "output": "assets/templates/decision-record.md",
-          "when": "Record a consequential identity choice when the project workflow needs a decision record."
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-product",
-      "sources": [
-        {
-          "path": "principles/02-product-principles.md",
-          "output": "references/product-decisions.md",
-          "when": "Define product purpose, behavior, user agency, and maturity.",
-          "sections": [
-            "1. Build for long-term use",
-            "2. Prefer legibility over magic",
-            "3. Use friction where trust requires it",
-            "4. Make the ordinary path excellent",
-            "5. Respect user data ownership",
-            "6. Default to human scale",
-            "7. Naming inside products",
-            "8. Product maturity levels",
-            "9. Product checklist"
-          ]
-        },
-        {
-          "path": "principles/06-accessibility-and-interaction.md",
-          "output": "references/inclusive-use.md",
-          "when": "Assess inclusive use, comprehension, and language in the proposed workflow.",
-          "sections": [
-            "1. Accessibility is part of craft",
-            "2. Baseline standard",
-            "8. Cognitive accessibility",
-            "9. Internationalization readiness"
-          ]
-        },
-        {
-          "path": "principles/09-security-and-privacy.md",
-          "output": "references/data-and-consent.md",
-          "when": "Decide what user data a workflow collects, sends, retains, exports, or deletes.",
-          "sections": [
-            "7. Privacy",
-            "8. AI and private data",
-            "9. Data deletion and export"
-          ]
-        },
-        {
-          "path": "principles/10-release-and-maintenance.md",
-          "output": "references/lifecycle-promises.md",
-          "when": "Set realistic user-facing compatibility, support, and maintenance expectations.",
-          "sections": [
-            "5. Deprecation",
-            "6. Backward compatibility",
-            "7. Maintenance states",
-            "8. Support expectations"
-          ]
-        },
-        {
-          "path": "templates/decision-record.md",
-          "output": "assets/templates/decision-record.md",
-          "when": "Record the chosen behavior and tradeoffs for a consequential product decision."
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-writing",
-      "sources": [
-        {
-          "path": "principles/03-language-and-writing.md",
-          "output": "references/voice-and-copy.md",
-          "when": "Write or edit project descriptions, interface copy, and explanatory text.",
-          "sections": [
-            "1. Voice",
-            "2. Default writing style",
-            "3. Claims must be earned",
-            "4. Project descriptions",
-            "5. Interface copy",
-            "6. Empty states",
-            "7. Error messages",
-            "8. Documentation tone",
-            "9. Capitalization",
-            "10. Words Plystra likes"
-          ]
-        },
-        {
-          "path": "principles/08-documentation-standards.md",
-          "output": "references/documentation-writing.md",
-          "when": "Structure technical explanations, label status, and keep examples and documentation accurate.",
-          "sections": [
-            "1. Documentation is part of the product",
-            "2. Documentation goals",
-            "4. Document structure",
-            "5. Status labels",
-            "6. Examples",
-            "7. Diagrams",
-            "8. Changelogs and release notes",
-            "10. Documentation sync",
-            "11. Documentation review checklist"
-          ]
-        },
-        {
-          "path": "principles/11-governance-and-legal.md",
-          "output": "references/supported-claims.md",
-          "when": "Check legal, security, privacy, open-source, and affiliation claims against evidence.",
-          "sections": [
-            "6. Public claims"
-          ]
-        },
-        {
-          "path": "templates/release-notes.md",
-          "output": "assets/templates/release-notes.md",
-          "when": "Write release notes from actual user-facing changes, migration needs, and known issues."
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-frontend-design",
-      "sources": [
-        {
-          "path": "principles/05-frontend-ui-design.md",
-          "output": "references/interface-design.md",
-          "when": "Design and implement interface hierarchy, components, states, tokens, and responsive behavior.",
-          "sections": [
-            "1. Purpose",
-            "2. Interface personality",
-            "3. Information hierarchy",
-            "4. Spacing system",
-            "5. Surface model",
-            "6. Borders and shadows",
-            "7. Buttons",
-            "8. Forms",
-            "9. Tables and lists",
-            "10. Navigation",
-            "11. Command menus and shortcuts",
-            "12. Motion",
-            "13. Loading states",
-            "14. Empty states",
-            "15. Error and recovery states",
-            "16. Responsive design",
-            "17. Design tokens",
-            "18. Component quality bar",
-            "19. Frontend implementation discipline",
-            "20. Data visualization and dashboards",
-            "21. UI acceptance checklist"
-          ]
-        },
-        {
-          "path": "principles/06-accessibility-and-interaction.md",
-          "output": "references/accessible-interaction.md",
-          "when": "Implement and inspect keyboard, focus, contrast, motion, touch, and language behavior.",
-          "sections": [
-            "1. Accessibility is part of craft",
-            "2. Baseline standard",
-            "3. Keyboard interaction",
-            "4. Focus states",
-            "5. Contrast",
-            "6. Motion sensitivity",
-            "7. Touch interaction",
-            "8. Cognitive accessibility",
-            "9. Internationalization readiness",
-            "10. Interaction review checklist"
-          ]
-        },
-        {
-          "path": "principles/04-visual-identity.md",
-          "output": "references/visual-system.md",
-          "when": "Apply visual expression and the existing identity to the interface.",
-          "sections": [
-            "1. Visual direction",
-            "2. Core visual values",
-            "3. Color philosophy",
-            "4. Typography",
-            "5. Layout",
-            "7. Project identity",
-            "8. Imagery and animation",
-            "10. Visual review test"
-          ]
-        },
-        {
-          "path": "principles/03-language-and-writing.md",
-          "output": "references/interface-copy.md",
-          "when": "Write controls, empty states, recoverable errors, and consistent labels.",
-          "sections": [
-            "5. Interface copy",
-            "6. Empty states",
-            "7. Error messages",
-            "9. Capitalization"
-          ]
-        },
-        {
-          "path": "principles/02-product-principles.md",
-          "output": "references/user-agency.md",
-          "when": "Design visible state, consequential actions, and user data controls.",
-          "sections": [
-            "2. Prefer legibility over magic",
-            "3. Use friction where trust requires it",
-            "5. Respect user data ownership"
-          ]
-        },
-        {
-          "path": "templates/ui-review-checklist.md",
-          "output": "assets/templates/ui-review-checklist.md",
-          "when": "Review the actual interface and record checks relevant to the changed UI.",
-          "sections": [
-            "Product fit",
-            "Visual design",
-            "Interaction",
-            "Accessibility",
-            "Responsive behavior",
-            "Engineering",
-            "Final question"
-          ]
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-engineering",
-      "sources": [
-        {
-          "path": "principles/07-engineering-standards.md",
-          "output": "references/software-design.md",
-          "when": "Implement architecture, configuration, data, APIs, errors, dependencies, tests, and observability.",
-          "sections": [
-            "1. Engineering philosophy",
-            "2. General principles",
-            "5. Configuration",
-            "6. Data and migrations",
-            "7. API design",
-            "8. Error handling",
-            "9. Dependencies",
-            "10. Testing",
-            "11. Observability",
-            "12. AI-related engineering",
-            "13. Code review standard"
-          ]
-        },
-        {
-          "path": "principles/09-security-and-privacy.md",
-          "output": "references/secure-implementation.md",
-          "when": "Implement the security and privacy controls relevant to the changed software.",
-          "sections": [
-            "1. Security posture",
-            "2. Basic security requirements",
-            "3. Secret handling",
-            "4. Authentication and sessions",
-            "5. Authorization",
-            "6. Common vulnerability baseline",
-            "7. Privacy",
-            "8. AI and private data",
-            "9. Data deletion and export",
-            "10. Payments and financial data",
-            "11. Logging",
-            "12. Security review checklist"
-          ]
-        },
-        {
-          "path": "principles/12-code-project-working-standards.md",
-          "output": "references/code-change-workflow.md",
-          "when": "Make, review, and verify a scoped code change with the existing project architecture and authorization.",
-          "sections": [
-            "2. Obligations, authorization, and trusted guidance",
-            "6. Editing standard",
-            "7. Workspace and git hygiene",
-            "8. Dependency and configuration discipline",
-            "9. Backend and API work",
-            "10. Auth, authorization, and payments",
-            "11. Data integrity",
-            "12. Security and misuse resistance",
-            "13. Verification",
-            "14. Deployment and operations",
-            "15. Code review",
-            "16. Documentation sync",
-            "17. Definition of done"
-          ]
-        },
-        {
-          "path": "principles/10-release-and-maintenance.md",
-          "output": "references/release-engineering.md",
-          "when": "Prepare software versions, compatibility, migrations, and operational readiness.",
-          "sections": [
-            "2. Release philosophy",
-            "3. Versioning",
-            "4. Release notes",
-            "5. Deprecation",
-            "6. Backward compatibility",
-            "9. Operational readiness"
-          ]
-        },
-        {
-          "path": "templates/decision-record.md",
-          "output": "assets/templates/decision-record.md",
-          "when": "Record a consequential engineering tradeoff when the project workflow calls for it."
-        },
-        {
-          "path": "templates/release-notes.md",
-          "output": "assets/templates/release-notes.md",
-          "when": "Document the changes, migrations, and verification for an actual software release."
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-repository-standards",
-      "sources": [
-        {
-          "path": "principles/07-engineering-standards.md",
-          "output": "references/repository-essentials.md",
-          "when": "Set up repository entry documents, README content, configuration examples, and documented verification.",
-          "sections": [
-            "3. Repository standards",
-            "4. README requirements",
-            "5. Configuration",
-            "9. Dependencies",
-            "10. Testing"
-          ]
-        },
-        {
-          "path": "principles/08-documentation-standards.md",
-          "output": "references/contributor-entrypoints.md",
-          "when": "Provide reproducible project documentation and trusted contributor or agent guidance.",
-          "sections": [
-            "3. Required document types",
-            "6. Examples",
-            "8. Changelogs and release notes",
-            "9. Contributor and agent guidance",
-            "10. Documentation sync",
-            "11. Documentation review checklist"
-          ]
-        },
-        {
-          "path": "principles/11-governance-and-legal.md",
-          "output": "references/repository-rights.md",
-          "when": "Record ownership, choose explicit licensing, and document contribution and decision rules.",
-          "sections": [
-            "2. Ownership and attribution",
-            "3. Licenses",
-            "4. Contributor expectations",
-            "5. Decision records"
-          ]
-        },
-        {
-          "path": "principles/12-code-project-working-standards.md",
-          "output": "references/repository-workflow.md",
-          "when": "Document and validate repository boundaries, working rules, configuration, review, and completion checks.",
-          "sections": [
-            "2. Obligations, authorization, and trusted guidance",
-            "4. Context gathering",
-            "7. Workspace and git hygiene",
-            "8. Dependency and configuration discipline",
-            "13. Verification",
-            "15. Code review",
-            "16. Documentation sync",
-            "17. Definition of done"
-          ]
-        },
-        {
-          "path": "principles/09-security-and-privacy.md",
-          "output": "references/secrets-and-reporting.md",
-          "when": "Keep repository examples secret-free and give security reports a clear path.",
-          "sections": [
-            "2. Basic security requirements",
-            "3. Secret handling"
-          ]
-        },
         {
           "path": "ADOPTION.md",
-          "output": "references/adoption-record.md",
-          "when": "Prepare the requirement levels, reviewed revision, evidence, gaps, and review dates in the project record.",
+          "output": "references/applying-craft.md",
+          "when": "Always first: requirement levels, applicability by surface, versions, and the adoption review record."
+        },
+        {
+          "path": "README.md",
+          "output": "references/plystra-scope.md",
+          "when": "Who Craft binds: owned projects, sub-brands, and sponsored projects.",
           "sections": [
-            "2. Requirement levels",
-            "4. Versions and effective dates",
-            "5. Review and correction"
+            "Scope and project relationships"
           ]
         },
-        {
-          "path": "templates/project-readme.md",
-          "output": "assets/templates/project-readme.md",
-          "when": "Create a README with real commands, project facts, license, and security contacts."
-        },
-        {
-          "path": "templates/project-principles.md",
-          "output": "assets/templates/project-principles.md",
-          "when": "Create the repository relationship and adoption record without claiming unverified compliance.",
-          "sections": [
-            "Relationship to Plystra",
-            "Philosophy review record",
-            "Project description",
-            "Maturity",
-            "Maintenance policy",
-            "Engineering and verification",
-            "Security and operations",
-            "Open questions"
-          ]
-        },
-        {
-          "path": "templates/decision-record.md",
-          "output": "assets/templates/decision-record.md",
-          "when": "Create a decision record when a consequential repository convention needs maintained rationale."
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-project-website",
-      "sources": [
-        {
-          "path": "principles/13-websites-search-and-sharing.md",
-          "output": "references/website-delivery.md",
-          "when": "Build or review official public pages, indexing, sharing, structured data, llms.txt, and deployed responses.",
-          "sections": [
-            "1. Scope",
-            "2. Honest, useful content",
-            "3. Readable pages and navigation",
-            "4. Page identity and canonical URLs",
-            "5. Crawling and indexing",
-            "6. Sharing previews and site identity",
-            "7. Structured data",
-            "8. Machine-readable website summary",
-            "9. Performance and accessibility",
-            "10. Release verification"
-          ]
-        },
-        {
-          "path": "principles/03-language-and-writing.md",
-          "output": "references/public-site-copy.md",
-          "when": "Write factual project descriptions and page metadata that match current public capabilities.",
-          "sections": [
-            "1. Voice",
-            "2. Default writing style",
-            "3. Claims must be earned",
-            "4. Project descriptions",
-            "9. Capitalization"
-          ]
-        },
-        {
-          "path": "principles/06-accessibility-and-interaction.md",
-          "output": "references/accessible-pages.md",
-          "when": "Verify public-page keyboard access, focus, contrast, motion, touch, comprehension, and language.",
-          "sections": [
-            "2. Baseline standard",
-            "3. Keyboard interaction",
-            "4. Focus states",
-            "5. Contrast",
-            "6. Motion sensitivity",
-            "7. Touch interaction",
-            "8. Cognitive accessibility",
-            "9. Internationalization readiness"
-          ]
-        },
-        {
-          "path": "principles/04-visual-identity.md",
-          "output": "references/site-identity-assets.md",
-          "when": "Use the actual logo and truthful project screenshots on the public site.",
-          "sections": [
-            "6. Logo usage",
-            "9. Screenshots"
-          ]
-        },
-        {
-          "path": "principles/09-security-and-privacy.md",
-          "output": "references/collection-and-processors.md",
-          "when": "Handle website analytics, forms, support data, and external processing with appropriate disclosure and authorization.",
-          "sections": [
-            "7. Privacy",
-            "8. AI and private data"
-          ]
-        },
-        {
-          "path": "principles/11-governance-and-legal.md",
-          "output": "references/website-claims-and-notices.md",
-          "when": "Verify publisher and sponsorship wording, public claims, and privacy or service notices.",
-          "sections": [
-            "2. Ownership and attribution",
-            "6. Public claims",
-            "8. Privacy and terms pages"
-          ]
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-stewardship",
-      "sources": [
         {
           "path": "CHARTER.md",
-          "output": "references/project-admission.md",
-          "when": "Assess purpose, association, admission, or retirement under Plystra.",
+          "output": "references/charter-commitments.md",
+          "when": "Plystra's identity, what it avoids, the standard of care, public posture, and retirement.",
           "sections": [
             "1. Identity",
-            "3. Core belief",
-            "8. Project admission",
+            "5. What Plystra avoids",
+            "6. The standard of care",
+            "7. Public posture",
             "9. Project retirement"
           ]
         },
         {
           "path": "principles/01-brand-philosophy.md",
-          "output": "references/project-relationships.md",
-          "when": "Distinguish ownership, sub-brands, sponsorship, and independent adoption.",
-          "sections": [
-            "4. Brand hierarchy"
-          ]
+          "output": "references/brand.md",
+          "when": "Positioning, personality, the five words, relationship wording, anti-patterns, and the brand test before publishing."
         },
         {
-          "path": "ADOPTION.md",
-          "output": "references/adoption-review.md",
-          "when": "Maintain applicability, version, evidence, correction deadlines, and review status.",
-          "sections": [
-            "2. Requirement levels",
-            "3. Applicability follows the work",
-            "4. Versions and effective dates",
-            "5. Review and correction"
-          ]
+          "path": "principles/02-product-principles.md",
+          "output": "references/product.md",
+          "when": "Product purpose, automation and AI status, confirmation, data ownership, naming, and maturity labels."
         },
         {
-          "path": "principles/11-governance-and-legal.md",
-          "output": "references/relationship-governance.md",
-          "when": "Assess ownership, rights, naming, sponsorship admission, and continuing governance responsibilities.",
+          "path": "principles/03-language-and-writing.md",
+          "output": "references/writing.md",
+          "when": "Any user-facing text: voice, claims, descriptions, labels, empty states, and error messages."
+        },
+        {
+          "path": "principles/08-documentation-standards.md",
+          "output": "references/documentation.md",
+          "when": "Repository files, README, guides, decision records, AGENTS.md or contributor guidance, examples, status labels, and documentation sync."
+        },
+        {
+          "path": "principles/09-security-and-privacy.md",
+          "output": "references/privacy-and-data.md",
+          "when": "Before collecting real user data or sending private content to AI providers or other processors; export and deletion claims.",
           "sections": [
-            "1. Governance philosophy",
-            "2. Ownership and attribution",
-            "3. Licenses",
-            "5. Decision records",
-            "6. Public claims",
-            "7. Trademarks and naming",
-            "8. Privacy and terms pages",
-            "9. Governance maturity",
-            "10. Legal review checklist",
-            "11. Sponsorship admission and continuation"
+            "9. Privacy notice",
+            "10. AI and private data",
+            "11. Data deletion and export"
           ]
         },
         {
           "path": "principles/10-release-and-maintenance.md",
-          "output": "references/care-and-retirement.md",
-          "when": "Set maintenance responsibility, support expectations, deprecation, and retirement records.",
-          "sections": [
-            "1. Maintenance is a brand signal",
-            "5. Deprecation",
-            "6. Backward compatibility",
-            "7. Maintenance states",
-            "8. Support expectations",
-            "10. Retirement"
-          ]
+          "output": "references/release-and-maintenance.md",
+          "when": "Releases, versioning, release notes, deprecation, compatibility, maintenance state, support, retirement, and the public launch checklist."
         },
         {
-          "path": "principles/09-security-and-privacy.md",
-          "output": "references/privacy-obligations.md",
-          "when": "Assess required privacy disclosure, transfer authorization, export, and deletion evidence.",
+          "path": "principles/11-governance-and-legal.md",
+          "output": "references/ownership-licensing-claims.md",
+          "when": "Ownership records, licenses, contribution rules, naming and trademarks, and terms of use.",
           "sections": [
-            "7. Privacy",
-            "8. AI and private data",
-            "9. Data deletion and export"
+            "2. Ownership and attribution",
+            "3. Licenses",
+            "4. Contributor expectations",
+            "5. Trademarks and naming",
+            "8. Terms of use"
           ]
         },
         {
           "path": "templates/project-principles.md",
           "output": "assets/templates/project-principles.md",
-          "when": "Maintain a relationship and adoption record using evidence from the applicable domain assessments.",
-          "sections": [
-            "Relationship to Plystra",
-            "Philosophy review record",
-            "Project description",
-            "Maturity",
-            "What this project values",
-            "What this project refuses to do",
-            "Maintenance policy",
-            "Open questions"
-          ]
+          "when": "Create or update the project's PROJECT_PRINCIPLES.md relationship and adoption record."
+        },
+        {
+          "path": "templates/project-readme.md",
+          "output": "assets/templates/project-readme.md",
+          "when": "Create or repair a project README with real facts, status, relationship, license, and security contact."
         },
         {
           "path": "templates/decision-record.md",
           "output": "assets/templates/decision-record.md",
-          "when": "Record consequential association, governance, or retirement decisions."
+          "when": "Record a consequential product, architecture, privacy, API, design, or maintenance decision."
+        },
+        {
+          "path": "templates/release-notes.md",
+          "output": "assets/templates/release-notes.md",
+          "when": "Write release notes for an actual release."
+        },
+        {
+          "path": "LICENSE",
+          "output": "references/LICENSE",
+          "when": "Preserve the documentation license when adapting or distributing these resources."
+        }
+      ]
+    },
+    {
+      "name": "plystra-craft-code",
+      "sources": [
+        {
+          "path": "principles/12-code-project-working-standards.md",
+          "output": "references/code-working-standards.md",
+          "when": "Every code change: authorization and trusted guidance, context, editing, dependencies, git hygiene, verification, review, deployment, and definition of done."
+        },
+        {
+          "path": "principles/07-engineering-standards.md",
+          "output": "references/engineering-standards.md",
+          "when": "Architecture, configuration, data and migrations, APIs, errors, dependency choice, test strategy, observability, and AI engineering."
+        },
+        {
+          "path": "principles/09-security-and-privacy.md",
+          "output": "references/security.md",
+          "when": "Secrets, authentication, authorization, common vulnerabilities, payments, logging, and the security review checklist.",
+          "sections": [
+            "1. Security posture",
+            "2. Basic security requirements",
+            "3. Secret handling",
+            "4. Authentication and sessions",
+            "5. Authorization and access control",
+            "6. Common vulnerabilities and misuse",
+            "7. Payments and financial data",
+            "8. Logging",
+            "12. Security review checklist"
+          ]
+        },
+        {
+          "path": "LICENSE",
+          "output": "references/LICENSE",
+          "when": "Preserve the documentation license when adapting or distributing these resources."
+        }
+      ]
+    },
+    {
+      "name": "plystra-craft-design",
+      "sources": [
+        {
+          "path": "principles/04-visual-identity.md",
+          "output": "references/visual-identity.md",
+          "when": "Identity, marks and logo use, palette, typography, layout, imagery, motion, and screenshots in any medium."
+        },
+        {
+          "path": "principles/05-frontend-ui-design.md",
+          "output": "references/interface-design.md",
+          "when": "Digital interfaces: personality, hierarchy, spacing, surfaces, components, forms, navigation, states, responsive behavior, tokens, and data visualization."
+        },
+        {
+          "path": "principles/06-accessibility-and-interaction.md",
+          "output": "references/accessibility.md",
+          "when": "Keyboard, focus, contrast, motion, touch, cognitive accessibility, and internationalization."
+        },
+        {
+          "path": "templates/ui-review-checklist.md",
+          "output": "assets/templates/ui-review-checklist.md",
+          "when": "Review a visible interface change before merging."
+        },
+        {
+          "path": "LICENSE",
+          "output": "references/LICENSE",
+          "when": "Preserve the documentation license when adapting or distributing these resources."
+        }
+      ]
+    },
+    {
+      "name": "plystra-craft-website",
+      "sources": [
+        {
+          "path": "principles/13-websites-search-and-sharing.md",
+          "output": "references/website-standards.md",
+          "when": "Official sites and public web docs: content, readable HTML, canonical URLs, robots.txt, sitemap.xml, sharing previews, JSON-LD, the required /llms.txt, and release verification."
+        },
+        {
+          "path": "LICENSE",
+          "output": "references/LICENSE",
+          "when": "Preserve the documentation license when adapting or distributing these resources."
+        }
+      ]
+    },
+    {
+      "name": "plystra-craft-stewardship",
+      "sources": [
+        {
+          "path": "CHARTER.md",
+          "output": "references/charter.md",
+          "when": "Plystra's ambition, scope of work, admission conditions, and promise.",
+          "sections": [
+            "2. Long-term ambition",
+            "3. Core belief",
+            "4. What Plystra builds",
+            "8. Project admission",
+            "10. The Plystra promise"
+          ]
+        },
+        {
+          "path": "principles/11-governance-and-legal.md",
+          "output": "references/governance-and-sponsorship.md",
+          "when": "Governance philosophy and maturity, and sponsorship admission, continuation, and ending.",
+          "sections": [
+            "1. Governance philosophy",
+            "6. Governance maturity",
+            "7. Sponsorship admission and continuation"
+          ]
+        },
+        {
+          "path": "README.md",
+          "output": "references/brand-stewardship.md",
+          "when": "Who stewards Plystra and the limits on using its name and marks.",
+          "sections": [
+            "Stewardship",
+            "Attribution and brand use"
+          ]
         },
         {
           "path": "LICENSE",

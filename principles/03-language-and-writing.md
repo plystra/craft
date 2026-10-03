@@ -14,6 +14,17 @@ The ideal tone is:
 - serious but not theatrical;
 - warm but not sentimental.
 
+Good Plystra writing should:
+
+- say what the product actually does;
+- avoid over-explaining obvious behavior;
+- respect the user's intelligence;
+- use simple language without sounding simplistic;
+- feel confident without becoming loud;
+- make the product easier to trust.
+
+Plystra should not sound like it is trying to impress everyone. It should sound like it was made carefully for people who care.
+
 ## 2. Default writing style
 
 Use short sentences when explaining actions. Use longer sentences only when the rhythm benefits the idea.
@@ -29,9 +40,7 @@ Avoid filler phrases:
 - `all-in-one`
 - `supercharge`
 - `unlock your potential`
-- `delightful` as a substitute for describing the actual quality;
-- `trusted by` without evidence;
-- `enterprise-grade` without explaining the standard.
+- `delightful` as a substitute for describing the actual quality.
 
 ## 3. Claims must be earned
 
@@ -61,6 +70,16 @@ Say:
 
 > Data is stored in your configured database. AI processing is opt-in for supported flows. Export and deletion behavior is documented here.
 
+Legal and public claims must be conservative. Do not use:
+
+- `secure` without a defined standard;
+- `private` without explaining data handling;
+- `compliant` without naming the framework and scope;
+- `enterprise-grade` without evidence;
+- `trusted by` without evidence;
+- `open source` without a [qualifying license](11-governance-and-legal.md#3-licenses);
+- `official` when the project is not formally endorsed by the external organization concerned.
+
 ## 4. Project descriptions
 
 A project description should answer three questions:
@@ -83,12 +102,12 @@ Example:
 
 ## 5. Interface copy
 
-Interface copy should reduce uncertainty.
+Interface copy should reduce uncertainty. Button and action labels must be verbs that name the result.
 
 Use direct labels:
 
 - `Save`
-- `Export`
+- `Export data`
 - `Review changes`
 - `Create record`
 - `Send message`
@@ -97,8 +116,12 @@ Use direct labels:
 
 Avoid vague labels:
 
+- `Submit`
+- `OK`
+- `Next`
 - `Go`
 - `Magic`
+- `Apply magic`
 - `Enhance`
 - `Smart apply`
 - `Boost`
@@ -106,7 +129,14 @@ Avoid vague labels:
 
 ## 6. Empty states
 
-An empty state should not be cute unless the product itself is intentionally playful.
+An empty state should include:
+
+- what is missing;
+- why it matters, if not obvious;
+- the next available action;
+- a link to docs when setup is required.
+
+It should not be cute unless the product itself is intentionally playful.
 
 Good empty states:
 
@@ -130,14 +160,13 @@ unless the project's tone specifically allows it.
 
 ## 7. Error messages
 
-Error messages should be specific, useful, and calm.
-
-A good error explains:
+Error messages, in an interface, a CLI, or an API, should be specific, useful, and calm. A good error explains:
 
 - what failed;
-- whether the user's data is safe;
+- whether the user's data is safe: what was not changed and what may have changed;
 - what the user can do next;
-- whether retrying may help.
+- whether retrying may help;
+- how to report the issue if needed.
 
 Example:
 
@@ -151,25 +180,11 @@ Avoid:
 Something went wrong.
 ```
 
-If details are sensitive, show a safe summary and provide a diagnostic reference.
+If details are sensitive, show a safe summary and provide a diagnostic reference. For developer tools, include diagnostic IDs or copyable logs when appropriate.
 
 ## 8. Documentation tone
 
-Documentation should respect the reader's time.
-
-Start with the shape of the system before listing commands. A contributor should understand why a command exists, not only how to run it.
-
-Recommended order:
-
-1. What this project is.
-2. Current maturity and limitations.
-3. System architecture.
-4. Local development.
-5. Configuration.
-6. Data and security model.
-7. Deployment.
-8. Operations.
-9. Contribution rules.
+Documentation should respect the reader's time. Start with the shape of the system before listing commands. A contributor should understand why a command exists, not only how to run it. Structure follows [Documentation Standards](08-documentation-standards.md#4-document-structure).
 
 ## 9. Capitalization
 

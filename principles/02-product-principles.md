@@ -1,7 +1,5 @@
 # Product Principles
 
-Apply these principles to the actual form of the work using [the applicability rules](../ADOPTION.md#3-applicability-follows-the-work). Products may be physical or digital. Provisions about accounts, APIs, data, and automation apply when those capabilities exist; writing, research, and experiments need clear purpose, status, limitations, and stewardship without inventing an application workflow.
-
 ## 1. Build for long-term use
 
 Plystra products should be designed for repeated use, not only first impressions.
@@ -30,7 +28,7 @@ Automation should answer:
 - Can the user undo it?
 - Can the user inspect the result?
 
-AI-assisted features must be especially explicit. Do not present probabilistic output as verified fact. When a model suggests, extracts, summarizes, classifies, or acts, the interface should make the status clear.
+AI-assisted features must be especially explicit. If AI is involved, explain what it does, what it does not do, and what the user controls. Do not present probabilistic output as verified fact. When a model suggests, extracts, summarizes, classifies, or acts, the interface should make the status clear, and users should be able to review meaningful AI-generated changes before they are applied.
 
 Recommended labels:
 
@@ -91,14 +89,9 @@ For writing, research, or an object without a repeated workflow, describe how pe
 
 Plystra products should treat user data as something entrusted, not captured.
 
-Every serious product should have a clear answer for:
+Every serious product should be able to answer what its [privacy notice](09-security-and-privacy.md#9-privacy-notice) must state, and also:
 
-- what data is stored;
-- where it is stored;
-- how it can be exported;
-- how it can be deleted;
-- what is shared with third parties;
-- what is processed by AI providers;
+- where data is stored;
 - what remains after account deletion;
 - what logs may contain.
 
@@ -159,21 +152,9 @@ Recommended maturity labels:
 - `Public Alpha` — publicly accessible; incomplete but intentionally maintained.
 - `Beta` — core loop stable; some APIs or UI may change.
 - `Stable` — suitable for serious use within documented limits.
-- `Maintenance` — supported but not actively expanded.
-- `Retired` — no longer maintained; preserved for reference.
+
+How actively a project is maintained, including retirement, is stated separately with a [maintenance state](10-release-and-maintenance.md#7-maintenance-states).
 
 Do not use `Stable` because the project feels polished. Use it when maintenance, support, documentation, and upgrade expectations are also stable.
 
-## 9. Product checklist
-
-Before a Plystra project is announced publicly, it should have:
-
-- a clear one-sentence description;
-- a README or equivalent project description that explains the purpose and current status;
-- a visible maturity label;
-- a license decision;
-- a security contact or policy;
-- an export or backup story when user data is involved;
-- a basic visual identity consistent with Plystra standards;
-- a documented primary loop or an explanation of how people use or engage with the work;
-- a known set of things the project refuses to do.
+Before public announcement, a project also passes the [public launch checklist](10-release-and-maintenance.md#10-public-launch-checklist).

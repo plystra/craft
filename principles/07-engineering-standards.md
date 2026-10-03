@@ -1,16 +1,24 @@
 # Engineering Standards
 
-These standards apply to software and code components of Plystra projects. Other forms of work follow the shared philosophy and the standards relevant to their materials, use, and maintenance. Requirement levels and applicability follow [Applying and Updating the Philosophy](../ADOPTION.md).
+These standards describe how Plystra software should be built. How a change is made, reviewed, verified, and shipped is defined in [Code Project Working Standards](12-code-project-working-standards.md); security controls are in [Security and Privacy](09-security-and-privacy.md).
 
 ## 1. Engineering philosophy
 
 Plystra engineering should favor systems that can be understood, operated, and repaired.
 
-The goal is not to use the most impressive architecture. The goal is to build software that remains legible under change.
+The goal is not to use the most impressive architecture. The goal is to build software that remains legible under change, whether it is revisited next week or years later.
 
-A Plystra codebase should make contributors feel that someone cared about future maintenance.
+Preferred engineering qualities include:
 
-For day-to-day implementation practice, Plystra-owned code projects and all code projects under Plystra sub-brands must also follow [`12-code-project-working-standards.md`](12-code-project-working-standards.md). Sponsored projects choose whether to adopt these standards.
+- clear architecture;
+- small, well-defined modules;
+- explicit contracts between layers;
+- practical defaults;
+- minimal unnecessary infrastructure;
+- documentation for important decisions;
+- respect for deployment and maintenance realities.
+
+Complexity is acceptable only when it earns its place. A Plystra codebase should make contributors feel that someone cared about future maintenance.
 
 ## 2. General principles
 
@@ -39,80 +47,47 @@ Writes, migrations, external calls, file operations, AI actions, billing actions
 
 A contributor should be able to understand a feature by reading a small set of files. Avoid architectures that require global knowledge for small changes.
 
-## 3. Repository standards
+## 3. Configuration
 
-Every public repository for a Plystra-owned project or a project under a Plystra sub-brand should include:
-
-```text
-README.md
-LICENSE
-SECURITY.md
-CONTRIBUTING.md, when contributions are accepted
-CHANGELOG.md or release notes, when versions are published
-PROJECT_PRINCIPLES.md
-docs/, when setup or operation is non-trivial
-```
-
-Every private repository should still include enough documentation for future maintainers.
-
-Sponsored projects choose whether to adopt these engineering standards. Sponsorship alone does not require this document set or `PROJECT_PRINCIPLES.md`; the separate [sponsorship admission requirements](11-governance-and-legal.md#11-sponsorship-admission-and-continuation) apply.
-
-## 4. README requirements
-
-A README should explain:
-
-- what the project is;
-- current maturity;
-- who it is for;
-- what problem it solves;
-- what it does not do;
-- quick start;
-- architecture overview;
-- configuration;
-- development workflow;
-- testing;
-- deployment or release process;
-- license;
-- security reporting.
-
-Avoid README files that are only installation commands.
-
-## 5. Configuration
-
-Configuration should be explicit and documented.
+Configuration should be explicit, documented, and reproducible.
 
 Rules:
 
-- never commit real secrets;
-- provide `.env.example` where environment variables are used;
+- provide `.env.example` with placeholder values where environment variables are used;
 - document required and optional variables;
 - use safe development defaults;
 - fail clearly when required configuration is missing;
 - avoid silent fallback to production services;
 - separate build-time and runtime configuration when relevant.
 
-Keep credentials in a suitable secret store or environment injection mechanism. Endpoints that differ by environment or can affect production data must be configured separately for development, test, and production. Public canonical origins and website URLs may be kept in centralized, version-controlled configuration; do not treat every URL as a secret or use a public production endpoint as an implicit development default.
+Endpoints that differ by environment or can affect production data must be configured separately for development, test, and production. Credentials follow [secret handling](09-security-and-privacy.md#3-secret-handling).
 
-## 6. Data and migrations
+Public canonical origins, website URLs, and other intentionally public constants may be kept in centralized, version-controlled configuration. A URL is not inherently a secret; embedded credentials, access tokens, and private endpoint details require protection. A public URL's visibility does not make it a safe default for development or test operations.
 
-Data deserves special care.
+## 4. Data and migrations
+
+Data deserves special care. Data integrity is more important than convenience.
 
 Rules:
 
 - schema changes must be reviewed as product changes, not only technical changes;
-- migrations should be deterministic;
+- use the project's migration system; migrations should be deterministic;
+- do not edit historical migrations unless the project explicitly permits it and the migration has not shipped;
 - destructive migrations require explicit notes;
+- add indexes, constraints, foreign keys, defaults, and uniqueness rules where they protect correctness or performance;
 - user data deletion semantics must be documented;
 - imports should be idempotent where possible;
 - generated or AI-derived data should be distinguishable from user-confirmed data;
-- audit trails should be used for important state transitions.
+- audit trails should be used for important state transitions;
+- do not use `localStorage` or other client-only storage for durable product data unless the feature is intentionally local-only and documented as such.
 
-## 7. API design
+## 5. API design
 
 APIs should be stable, named clearly, and documented.
 
 Rules:
 
+- keep contracts explicit and typed where the stack supports it;
 - use consistent resource names;
 - use explicit status codes;
 - return structured errors;
@@ -122,11 +97,11 @@ Rules:
 - distinguish validation errors from system errors;
 - include request IDs or trace IDs in operational contexts.
 
-## 8. Error handling
+## 6. Error handling
 
 Errors should preserve context.
 
-A good error path records enough information for debugging without leaking secrets or private data.
+A good error path records enough information for debugging without leaking secrets or private data. User-facing error content follows [error messages](03-language-and-writing.md#7-error-messages).
 
 Rules:
 
@@ -135,13 +110,11 @@ Rules:
 - include actionable messages in logs;
 - classify expected failures separately from unexpected failures;
 - make retry behavior explicit;
-- avoid logging raw secrets, tokens, private messages, or full user documents.
+- use idempotency, retries, and timeouts for external service calls when duplicate operations or hangs would be harmful.
 
-## 9. Dependencies
+## 7. Dependencies
 
-Dependencies should be treated as long-term commitments.
-
-Use the package manager established by the lockfile or project configuration. Confirm dependency availability and supported versions before relying on them, and update manifests and lockfiles together. Avoid new dependencies when the platform, standard library, or existing project utilities are enough.
+Dependencies should be treated as long-term commitments. Avoid new dependencies when the platform, standard library, or existing project utilities are enough.
 
 Before adding a dependency, ask:
 
@@ -154,11 +127,9 @@ Before adding a dependency, ask:
 
 Small utilities can create large maintenance risk when used everywhere.
 
-## 10. Testing
+## 8. Testing
 
 Testing should protect the product's promises.
-
-Verification is part of implementation, not a separate polish step.
 
 Minimum expectations vary by project, but serious Plystra projects should include:
 
@@ -171,11 +142,7 @@ Minimum expectations vary by project, but serious Plystra projects should includ
 
 Do not chase coverage percentages at the expense of meaningful tests.
 
-Test through public surfaces when possible: browser for visible frontend behavior, real requests for APIs, public commands for CLIs, and public exports for libraries.
-
-For visible interface changes, inspect the actual rendered UI at desktop and mobile viewport sizes when practical.
-
-## 11. Observability
+## 9. Observability
 
 Operational systems should explain themselves.
 
@@ -190,30 +157,12 @@ Observability should help answer:
 - Is user data at risk?
 - What changed recently?
 
-## 12. AI-related engineering
+## 10. AI-related engineering
 
 When a Plystra project uses AI:
 
 - model output should be treated as untrusted until confirmed or validated;
 - prompts that define product behavior should be versioned or documented;
-- AI calls should have timeouts and failure handling;
-- external provider usage should be disclosed in relevant documentation;
-- generated candidates should be distinguishable from verified records;
-- users should be able to review meaningful AI-generated changes;
-- logs should not expose private prompt content unless explicitly configured for development.
+- AI calls should have timeouts and failure handling.
 
-## 13. Code review standard
-
-A change is ready when reviewers can understand:
-
-- why it exists;
-- what user behavior changes;
-- what data changes;
-- what risks are introduced;
-- how it is tested;
-- how it can be reverted;
-- whether documentation must change.
-
-If a change cannot be explained simply, it may be too large.
-
-Reviews should lead with concrete findings: bugs, regressions, security risks, data loss, broken contracts, missing tests, and deployment hazards. Preferences should not crowd out real failure scenarios.
+User review and status labels follow [legibility over magic](02-product-principles.md#2-prefer-legibility-over-magic). Sending private content to providers follows [AI and private data](09-security-and-privacy.md#10-ai-and-private-data).

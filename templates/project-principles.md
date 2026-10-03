@@ -1,6 +1,6 @@
 # [Project Name] Principles
 
-Use this template for Plystra-owned projects, sub-brands, and their projects. An equivalent maintained record is acceptable for work without a repository. Sponsored projects may use it voluntarily; sponsorship does not require a `PROJECT_PRINCIPLES.md` file. Adapt sections to the actual medium and record material non-applicability rather than inventing software features. Replace prompts and remove instructions before publishing.
+This is the adoption record described in [review and correction](../ADOPTION.md#5-review-and-correction). Adapt sections to the actual medium. Replace prompts, remove instructions, and replace relative links with canonical Craft URLs before publishing.
 
 ## Relationship to Plystra
 
@@ -14,7 +14,7 @@ Relationship confirmed by: ...
 
 For owned projects, sub-brands, and projects under sub-brands:
 
-This project is subject to the full Plystra philosophy. These project principles explain implementation choices and add project-specific requirements; they do not waive or weaken applicable requirements. The review record below states what has actually been verified.
+This project is subject to the full Plystra philosophy. The review record below states what has actually been verified.
 
 It contributes to the broader Plystra philosophy of durable, human-scale systems by...
 
@@ -26,11 +26,9 @@ For sponsored projects that voluntarily use this template:
 - Permitted sponsorship wording and brand use: ...
 - Sponsorship admission record: ...
 
-State adoption accurately. The sponsorship admission and affiliation requirements apply regardless of the chosen scope; sponsorship does not make this a Plystra-owned project. Remove this sponsorship block for owned projects, sub-brands, and projects under sub-brands.
+Remove this block for owned projects, sub-brands, and projects under sub-brands.
 
 ## Philosophy review record
-
-Follow [Applying and Updating the Philosophy](../ADOPTION.md) when preparing this record. When copying this template, replace that link with the maintained philosophy repository URL.
 
 - Philosophy version reviewed: ...
 - Exact source commit reviewed: ...
@@ -53,7 +51,7 @@ Material alternatives to recommendations and their reasons:
 
 - ...
 
-Use `Not applicable` only when the relevant surface or activity is absent. An unfinished requirement is an open gap. Keep sensitive review evidence private and use safe references. Do not claim full compliance before verification, while gaps remain, or when a required review is overdue.
+Results, `Not applicable`, evidence, and compliance claims follow [applicability](../ADOPTION.md#3-applicability-follows-the-work) and [review and correction](../ADOPTION.md#5-review-and-correction).
 
 ## Project description
 
@@ -61,7 +59,7 @@ Use `Not applicable` only when the relevant surface or activity is absent. An un
 
 ## Maturity
 
-Current maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable / Maintenance / Retired
+Current maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable
 
 Maintenance state: Active / Slow active / Maintenance / Paused / Retired
 

@@ -2,9 +2,7 @@
 
 ## 1. Brand essence
 
-Plystra is an independent craft practice spanning software, objects, tools, writing, research, and experiments.
-
-It should express care, taste, and long-term responsibility through the work itself. Its identity should remain coherent across media without requiring every project to resemble a software product or a single visual style.
+Plystra's identity is defined in the [Charter](../CHARTER.md#1-identity). The brand should express care, taste, and long-term responsibility through the work itself, and remain coherent across media without requiring every project to resemble a software product or a single visual style.
 
 The Plystra brand is carried by a few recurring ideas:
 
@@ -19,9 +17,7 @@ The Plystra brand is carried by a few recurring ideas:
 
 ## 2. Positioning statement
 
-Use this internally:
-
-> Plystra is an independent practice for thoughtful, durable work across software, objects, tools, writing, research, and experiments.
+Internally, describe Plystra with the [Charter identity statement](../CHARTER.md#1-identity).
 
 Use this when a shorter public description is needed:
 
@@ -46,13 +42,23 @@ Plystra should feel:
 - humane, not sentimental;
 - minimal, not empty.
 
-These qualities guide judgment rather than prescribe one mood. Projects and sub-brands may be playful, expressive, technical, or contemplative when that fits their purpose. They must preserve clarity, accessibility where applicable, honest claims, and respect for attention.
+These qualities guide judgment rather than prescribe one mood. Projects and sub-brands may be playful, expressive, technical, dense, or contemplative, and may have their own identity, when that fits their purpose and audience. They must preserve clarity, accessibility where applicable, honest claims, and respect for attention.
 
-## 4. Brand hierarchy
+## 4. The five words
 
-Plystra is the parent brand for its owned projects and sub-brands. A sub-brand may have its own name and identity, but it and every project under it must follow the full philosophy. Sponsored projects remain independent. Use the [relationship definitions](../README.md#scope-and-project-relationships) consistently.
+Every Plystra project should be evaluated against five words:
 
-Recommended pattern:
+- **Quiet** — it should respect attention; this does not require every project to look subdued.
+- **Durable** — it should remain useful, understandable, or preservable beyond its first release.
+- **Legible** — users and contributors should be able to understand it.
+- **Personal** — it should respect individual context and agency.
+- **Crafted** — it should feel intentionally made, not assembled from trends.
+
+If a project violates these words repeatedly, it may still be useful, but it should not carry the Plystra name.
+
+## 5. Brand hierarchy and relationship wording
+
+Plystra is the parent brand for its owned projects and sub-brands; sponsored projects remain independent. The relationships are defined in [scope and project relationships](../README.md#scope-and-project-relationships).
 
 ```text
 Plystra
@@ -79,19 +85,19 @@ A sponsored project can say, within its agreed scope:
 
 > Sponsored by Plystra.
 
-Sponsorship wording must make the nature of support clear. It must not imply Plystra ownership, operation, or responsibility for the project's entire product. Do not list sponsored projects as owned projects or sub-brands.
+Public wording must distinguish ownership, a sub-brand relationship, sponsorship, and voluntary adoption of the philosophy. Sponsorship wording must make the nature of support clear. It must not imply Plystra ownership, operation, or responsibility for the project's entire product. Do not list sponsored projects as owned projects or sub-brands.
 
-Voluntary use of this philosophy does not authorize any of these affiliation claims. A statement such as `Follows the Plystra philosophy` describes adoption only, must match the actual scope adopted, and must not imply an official relationship.
+A statement such as `Follows the Plystra philosophy` describes adoption only, must match the actual scope adopted, and must not imply an official relationship.
 
 Avoid making every project name visually dependent on the Plystra wordmark. The parent brand should create trust and coherence, not crowd out the product.
 
-## 5. Brand promises
+## 6. Brand promises
 
 Plystra projects should implicitly promise:
 
 ### We will be understandable
 
-People should be able to understand the work's purpose, limits, and relevant risks. Products that store data or change systems should explain those behaviors explicitly.
+People should be able to understand the work's purpose, limits, and relevant risks.
 
 ### We will be maintainable
 
@@ -99,7 +105,7 @@ Methods, materials, engineering, and documentation should favor future comprehen
 
 ### We will be honest
 
-Marketing language should not claim maturity, adoption, capability, or security that has not been earned.
+Claims should be proportionate to the work, as described in [claims must be earned](03-language-and-writing.md#3-claims-must-be-earned).
 
 ### We will be careful with user context
 
@@ -109,7 +115,7 @@ A user is not just an account. A user has history, constraints, preferences, rel
 
 Plystra can adopt new technology, including AI, but only when the technology makes a system more useful, legible, or humane.
 
-## 6. Premium without luxury theater
+## 7. Premium without luxury theater
 
 Plystra should be recognized for care and quality. Price, scarcity, and visual seriousness are not evidence of either.
 
@@ -127,7 +133,7 @@ Quality should come through decisions such as:
 
 The work should make the care behind those decisions perceptible in use.
 
-## 7. The anti-patterns
+## 8. The anti-patterns
 
 Avoid these patterns across all Plystra projects:
 
@@ -137,7 +143,7 @@ Do not imitate a large company with fake metrics, fake social proof, empty enter
 
 ### AI fog
 
-Do not use vague AI language to hide weak product thinking. If AI is involved, explain what it does, what it does not do, and what the user controls.
+Do not use vague AI language to hide weak product thinking. AI features follow [legibility over magic](02-product-principles.md#2-prefer-legibility-over-magic).
 
 ### Feature noise
 
@@ -151,7 +157,7 @@ Plystra may be operated by an individual or a small group, but the brand should 
 
 Do not use dense typography, latin phrases, pseudo-academic language, or excessive darkness to simulate depth.
 
-## 8. Brand test
+## 9. Brand test
 
 Before publishing a project, page, document, or public announcement, ask:
 

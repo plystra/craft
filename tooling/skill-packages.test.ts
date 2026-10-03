@@ -44,18 +44,40 @@ function localLinks(markdown: string): string[] {
     .map(target => decodeURIComponent(target.split(/[?#]/, 1)[0]));
 }
 
-test('website and repository standards are independent task packages', () => {
+const CORE = 'plystra-craft';
+const MODULES = ['plystra-craft-code', 'plystra-craft-design', 'plystra-craft-website', 'plystra-craft-stewardship'];
+
+test('skills are one required base skill plus surface modules', async () => {
   assert.equal(manifest.schemaVersion, 2);
-  const website = manifest.skills.find(skill => skill.name === 'plystra-project-website');
-  const repository = manifest.skills.find(skill => skill.name === 'plystra-repository-standards');
-  assert.ok(website);
-  assert.ok(repository);
-  assert.ok(website.sources.some(source => source.path === 'principles/13-websites-search-and-sharing.md'
-    && (!source.sections || (source.sections.includes('8. Machine-readable website summary') && source.sections.includes('10. Release verification')))));
-  assert.ok(repository.sources.some(source => source.path === 'principles/07-engineering-standards.md'
-    && source.sections?.includes('3. Repository standards') && source.sections.includes('4. README requirements')));
+  assert.deepEqual(manifest.skills.map(skill => skill.name).sort(), [CORE, ...MODULES].sort());
+  const website = manifest.skills.find(skill => skill.name === 'plystra-craft-website')!;
+  assert.ok(website.sources.some(source => source.path === 'principles/13-websites-search-and-sharing.md' && !source.sections),
+    'An official site needs the complete website standard');
+  for (const name of MODULES) {
+    const entry = await fs.readFile(path.join(root, 'skills', name, 'SKILL.md'), 'utf8');
+    const description = /^description:\s*"?(.*?)"?$/m.exec(entry)?.[1] ?? '';
+    assert.match(description, /Requires plystra-craft\./, `${name} must declare its dependency on plystra-craft in its description`);
+    assert.match(entry, /--skill plystra-craft/, `${name} must tell the user how to install plystra-craft`);
+  }
+});
+
+test('each canonical section is distributed by exactly one skill', () => {
+  const owners = new Map<string, { skill: string; sections: string[] | null }[]>();
   for (const skill of manifest.skills) {
-    if (skill !== website) assert.equal(skill.sources.some(source => source.path === 'principles/13-websites-search-and-sharing.md'), false, `${skill.name} must not carry the website rules`);
+    for (const source of skill.sources) {
+      if (source.path === 'LICENSE') continue;
+      owners.set(source.path, [...(owners.get(source.path) ?? []), { skill: skill.name, sections: source.sections ?? null }]);
+    }
+  }
+  for (const [file, uses] of owners) {
+    for (let i = 0; i < uses.length; i++) {
+      for (let j = i + 1; j < uses.length; j++) {
+        const [a, b] = [uses[i], uses[j]];
+        assert.ok(a.sections && b.sections, `${file} is complete in ${a.sections ? b.skill : a.skill} and must not also appear in ${a.sections ? a.skill : b.skill}`);
+        const shared = a.sections.filter(section => b.sections!.includes(section));
+        assert.deepEqual(shared, [], `${file} sections shipped by both ${a.skill} and ${b.skill}`);
+      }
+    }
   }
 });
 
@@ -72,8 +94,7 @@ test('each real skill can be copied alone with only its declared task resources'
       assert.deepEqual(actual.sort(), expected, 'Distribute only the entry point, declared resources, and provenance');
       for (const source of skill.sources) {
         assert.ok(/^(?:references\/[^/]+|assets\/templates\/[^/]+)$/.test(source.output), `Use task-specific flat resources: ${source.output}`);
-        assert.notEqual(source.path, 'README.md', 'The Craft repository README does not belong in a task package');
-        if (['CHARTER.md', 'ADOPTION.md'].includes(source.path)) assert.ok(source.sections?.length, 'Distribute only governance sections needed by the task');
+        if (source.path === 'README.md') assert.ok(source.sections?.length, 'Distribute only the README sections a skill needs, never the repository front page');
         assert.ok(!/^references\/(?:README|CHARTER|ADOPTION)\.md$/.test(source.output));
       }
       for (const name of actual.filter(name => name.endsWith('.md'))) {

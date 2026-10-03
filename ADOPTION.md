@@ -2,9 +2,7 @@
 
 ## 1. Purpose and scope
 
-Plystra-owned projects, Plystra sub-brands, and every project under those sub-brands must follow the full philosophy. This document defines how to interpret, review, and update that commitment. It is part of the philosophy, not a way to opt out of it.
-
-Sponsored projects may adopt none, part, or all of the philosophy. The [sponsorship admission and affiliation requirements](principles/11-governance-and-legal.md#11-sponsorship-admission-and-continuation) apply throughout sponsorship regardless of that choice. Any voluntary adoption claim must identify its actual scope and reviewed revision.
+This document defines how to interpret, apply, review, and update the philosophy. It is part of the philosophy, not a way to opt out of it. Who it binds is defined in [scope and project relationships](README.md#scope-and-project-relationships).
 
 ## 2. Requirement levels
 
@@ -21,6 +19,8 @@ The governing modal determines combined wording: `should never` means `should no
 Examples, suggested scales, and sample wording do not create independent requirements. Descriptions of values explain the purpose behind the provisions; they do not turn every aesthetic preference into a release condition.
 
 Full adherence means meeting all applicable requirements and applying the recommendations with reasoned judgment. Choosing a documented alternative to a recommendation does not authorize an exception to a requirement. If a provision is materially ambiguous, seek clarification from Plystra's steward and record the interpretation; a project cannot resolve ambiguity by silently weakening the rule.
+
+Project documents and local instructions may explain implementation choices and add stricter rules. They must not waive or weaken applicable requirements.
 
 ## 3. Applicability follows the work
 
@@ -45,6 +45,7 @@ The current published baseline is recorded below. Its exact source is the Git co
 
 | Version | Effective date | Change and adoption notes |
 | --- | --- | --- |
+| 1.0.1 | 2026-10-04 | Patch: each provision now has one canonical home, and other documents link to it instead of restating it. Sections were merged and renumbered within the existing chapter files; README direction sections moved into the chapters, code-change security rules into Security and Privacy, the repository document set into Documentation Standards, and service deployment readiness into Code Project Working Standards. Maturity labels no longer repeat `Maintenance` and `Retired`, which are maintenance states. No obligation changes; projects should update section citations at their next review. |
 | 1.0.0 | 2026-10-04 | First versioned baseline: scope across media, requirement levels, adoption records, privacy boundaries, working standards, and design expression. Existing projects must complete an initial review within 30 calendar days of publication. |
 
 Plystra's steward confirms changes to the shared philosophy. Each published revision must update this record with a new version, its effective date, affected obligations, and migration expectations. The effective date must not precede publication. Use a major version for incompatible changes to existing obligations, a minor version for additions, and a patch version for corrections that do not change obligations. Preserve earlier version records and their source history.
@@ -53,7 +54,7 @@ Publication and applicability are distinct: a future-dated requirement takes eff
 
 ## 5. Review and correction
 
-Each owned project and sub-brand must keep a concise adoption record in `PROJECT_PRINCIPLES.md` or an equivalent maintained record. A sub-brand's record covers its own responsibilities and identifies the records for all projects under it; it does not replace those project reviews.
+Each owned project and sub-brand must keep a concise adoption record, created before the project or sub-brand is publicly introduced. Repository-based projects must use `PROJECT_PRINCIPLES.md`; other work may use an equivalent maintained record with the same applicable information. Start from the [project principles template](templates/project-principles.md). A sub-brand's record also documents its relationship to Plystra and how it upholds the full philosophy across its projects; it identifies the records for all projects under it and does not replace those project reviews. A statement of intent alone is not a review.
 
 The record must include:
 

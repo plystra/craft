@@ -1,6 +1,6 @@
 # Release and Maintenance
 
-These standards apply to the release and ongoing care of Plystra work in its actual form. Software may use versions, deployments, and security support; objects, publications, or research may use editions, care guidance, corrections, and end-of-support notices. Code-specific release steps apply only where code or deployed services exist. Requirement levels and applicability follow [Applying and Updating the Philosophy](../ADOPTION.md).
+These standards apply to the release and ongoing care of Plystra work in its actual form. Software may use versions, deployments, and security support; objects, publications, or research may use editions, care guidance, corrections, and end-of-support notices.
 
 ## 1. Maintenance is a brand signal
 
@@ -34,7 +34,7 @@ Breaking changes should be named directly.
 
 Release notes should be written for users and maintainers, not only commit history.
 
-Recommended sections:
+Recommended sections, also used by the [release notes template](../templates/release-notes.md):
 
 ```md
 ## Added
@@ -98,46 +98,32 @@ A small project should state:
 - whether security reports have a separate path;
 - expected response style, not guaranteed response time unless it can be honored.
 
-## 9. Operational readiness
+## 9. Retirement
 
-For deployed services, releases should consider:
-
-- health checks;
-- backup compatibility;
-- database migrations;
-- rollback plan;
-- config changes;
-- dependency changes;
-- observability updates;
-- user-facing downtime or degraded behavior.
-
-Deployments should be deliberate. Before declaring a project deployable, verify:
-
-- build command;
-- output directory;
-- runtime type;
-- required environment variables;
-- platform configuration;
-- migration and rollback behavior;
-- whether production credentials are supplied through a secret store or environment injection and excluded from the repository and public output;
-- whether operational endpoints are selected for the intended environment, with no accidental development or test access to production;
-- whether public canonical origins and website URLs in centralized, version-controlled configuration match the release's intended domain.
-
-Do not deploy, publish, push, merge, or release from a project workflow unless the maintainer has explicitly asked for it.
-
-Official website releases must also pass the checks in [Websites, Search, and Sharing](13-websites-search-and-sharing.md): verify deployed content and metadata, status codes, indexing policy, sitemap, required `/llms.txt`, structured data, and sharing previews. Update these surfaces when routes, domains, project status, or public relationships change.
-
-## 10. Retirement
-
-Retiring a project is a responsible act when maintenance is no longer possible or aligned.
+Retiring a project is a responsible act when maintenance is no longer possible or aligned. Silent abandonment damages the parent brand more than honest retirement.
 
 A retired project should have:
 
-- a visible status banner in the README;
-- final release tag if relevant;
-- migration guidance if possible;
-- archive decision;
-- explanation of security support status;
-- preserved documentation.
+- a clear status notice, such as a banner in the README;
+- a final recommended version or release tag, if applicable;
+- migration or export guidance, if possible;
+- a short explanation of why maintenance ended;
+- an archive decision;
+- an explanation of security support status;
+- preserved documentation when the project may still be useful historically.
 
-Silent abandonment damages the parent brand more than honest retirement.
+## 10. Public launch checklist
+
+Before a Plystra project is announced publicly, check that it has:
+
+1. A clear one-sentence description, and a README or equivalent that explains its purpose and current status.
+2. A visible maturity label and maintenance state.
+3. A documented primary loop or an explanation of how people use or engage with the work, and a known set of things it refuses to do.
+4. A basic visual identity consistent with Plystra standards.
+5. Clear ownership, an explicit license, accurate trademark statements, and compatible third-party licenses.
+6. Supportable public claims.
+7. A security contact or policy.
+8. An export or backup story when user data is involved.
+9. A [privacy notice](09-security-and-privacy.md#9-privacy-notice) and [processing authorization](09-security-and-privacy.md#10-ai-and-private-data) in place before any real user data is collected or private content is sent to a third party, with actual handling matching the notice.
+10. Any applicable service or transaction terms, available before acceptance.
+11. Examples free of secrets and private infrastructure details.

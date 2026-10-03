@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines shared digital interface standards for Plystra projects. Web implementation rules apply to web surfaces; native and device interfaces must meet the same applicable usability and accessibility requirements using their platform's conventions. Work without a digital interface does not acquire one merely to satisfy this chapter; see [Applying and Updating the Philosophy](../ADOPTION.md).
+This document defines shared digital interface standards for Plystra projects. Web implementation rules apply to web surfaces; native and device interfaces must meet the same applicable usability requirements using their platform's conventions.
 
 It is not a mandatory component library. It is a design contract. Projects may use different frameworks and implementation stacks, but their interfaces must uphold clarity, purposeful expression, accessibility, and maintenance.
 
@@ -17,9 +17,18 @@ A Plystra UI should be:
 - precise;
 - trustworthy.
 
-Quiet, sparse interfaces are a useful default for focused tools. Projects and sub-brands may use different personalities, expressive styles, or information densities when these serve their audience and tasks. The shared quality bar does not require a single visual style.
+It should also be:
 
-The interface should never feel like a template with Plystra colors applied.
+- minimal, but not empty;
+- elegant, but not fragile;
+- modern, but not generic;
+- functional, but not cold;
+- calm, but not boring;
+- opinionated, but not restrictive.
+
+Quiet, sparse interfaces are a useful default for focused tools; the shared quality bar does not require a single visual style.
+
+The interface should never feel like a template with Plystra colors applied. Avoid artificial complexity. Avoid making the user feel like the software is performing sophistication instead of providing it.
 
 Use the shipped product and existing design system as the source of truth when they exist. Do not replace a working interface with a generic template.
 
@@ -114,32 +123,11 @@ Destructive   Deletes, revokes, resets, or permanently changes state.
 
 Rules:
 
-- Button labels must be verbs.
+- Labels follow [interface copy](03-language-and-writing.md#5-interface-copy).
 - Destructive actions must be visually distinct and textually explicit.
 - Disabled buttons should explain why when the reason is not obvious.
 - Loading buttons should preserve size to avoid layout shift.
 - Do not use icons alone for important actions unless the action is universally understood and labeled for assistive technologies.
-
-Good labels:
-
-```text
-Create record
-Review changes
-Export data
-Send invite
-Archive project
-Delete permanently
-```
-
-Weak labels:
-
-```text
-Submit
-OK
-Next
-Go
-Apply magic
-```
 
 ## 8. Forms
 
@@ -152,7 +140,6 @@ Rules:
 - Validation should appear near the field.
 - Preserve user input after errors.
 - Prefer inline validation for format issues.
-- Use review screens for high-risk submissions.
 - Group related fields into meaningful sections.
 
 A form should explain why sensitive information is requested.
@@ -201,7 +188,6 @@ Rules:
 
 - important actions must also be available visibly;
 - keyboard shortcuts should be documented;
-- destructive commands need confirmation;
 - search results should show context;
 - command names should match visible UI labels.
 
@@ -222,8 +208,7 @@ Avoid motion for:
 
 - constant background activity;
 - decorative hover effects on every element;
-- hiding slow performance;
-- simulating intelligence.
+- hiding slow performance.
 
 Recommended duration:
 
@@ -233,8 +218,6 @@ Recommended duration:
 180–240ms   overlays and panels
 240–400ms   rare, expressive transitions
 ```
-
-Respect reduced-motion preferences.
 
 ## 13. Loading states
 
@@ -250,32 +233,11 @@ Use:
 
 Avoid indefinite loading without explanation for operations that affect data.
 
-## 14. Empty states
+## 14. Empty, error, and recovery states
 
-Empty states should be clear and useful.
+Every workflow that can be empty or fail needs designed states. Their content follows [empty states](03-language-and-writing.md#6-empty-states) and [error messages](03-language-and-writing.md#7-error-messages). Keep errors close to the affected content, preserve user input, and keep the recovery action visible.
 
-An empty state should include:
-
-- what is missing;
-- why it matters, if not obvious;
-- the next available action;
-- a link to docs when setup is required.
-
-## 15. Error and recovery states
-
-An error state should preserve user trust.
-
-It should answer:
-
-- what failed;
-- what was not changed;
-- what may have changed;
-- what the user can do;
-- how to report the issue if needed.
-
-For developer tools, include diagnostic IDs or copyable logs when appropriate.
-
-## 16. Responsive design
+## 15. Responsive design
 
 Every Plystra digital interface should define its supported viewport range and interaction model. Device interfaces should use the actual display and input constraints of their hardware.
 
@@ -283,12 +245,10 @@ General rules:
 
 - public sites must work well on mobile;
 - app workflows should avoid horizontal scrolling unless displaying tables or code;
-- tap targets should be large enough for touch;
-- hover-only interactions must have touch equivalents;
 - critical actions should not disappear on small screens;
 - modals should become full-screen sheets on mobile when content is long.
 
-## 17. Design tokens
+## 16. Design tokens
 
 Projects should define tokens instead of scattering visual constants.
 
@@ -334,41 +294,36 @@ motion.slow
 
 Tokens should be semantic, not purely visual. Prefer `color.danger` over `color.red500` in component code.
 
-## 18. Component quality bar
+## 17. Component quality bar
 
 A component is ready when:
 
 - it has a clear purpose;
-- it supports keyboard interaction where relevant;
 - it handles loading, empty, and error states when needed;
 - it does not depend on page-specific hacks;
-- it has accessible labels;
+- it meets the [accessibility standards](06-accessibility-and-interaction.md);
 - it behaves predictably across supported displays and input methods;
 - it uses design tokens;
 - it has documented variants;
 - it does not introduce unnecessary dependencies.
 
-## 19. Frontend implementation discipline
+## 18. Frontend implementation discipline
 
-Follow the existing framework and styling approach. Use a new framework, component library, or build tool only when the project already uses it, the maintainer asks for it, or there is a clear project precedent.
+Follow the existing framework and styling approach; new frameworks, component libraries, and build tools follow [dependency discipline](12-code-project-working-standards.md#7-dependencies).
 
 Rules:
 
-- use semantic HTML landmarks and correct heading hierarchy;
-- make interactive elements visibly interactive and keyboard accessible;
 - include loading, empty, error, disabled, hover, focus, and success states when the workflow requires them;
 - make text fit its containers across supported mobile and desktop viewports;
 - use stable dimensions for fixed-format controls, boards, counters, tiles, and toolbars;
 - avoid font sizes based only on viewport width; fluid typography may use explicit minimum and maximum sizes with relative text units, and must remain readable under text resizing and browser zoom;
 - adjust letter spacing for the typeface and text role only when legibility is preserved; verify tight tracking with supported scripts and sizes;
 - use existing icon libraries when available, and do not use emoji as interface icons;
-- provide alt text for meaningful images and mark decorative images as decorative;
-- keep public design assets used by application code in versioned project assets or an approved asset pipeline, with provenance and licensing recorded; runtime user uploads belong in the project's data storage and must not be committed to source control;
-- avoid unsafe raw HTML rendering unless necessary and sanitized.
+- keep public design assets used by application code in versioned project assets or an approved asset pipeline, with provenance and licensing recorded; runtime user uploads belong in the project's data storage and must not be committed to source control.
 
 For maps, geographic data, 3D, charts, and other specialized surfaces, use established libraries instead of fragile hand-drawn approximations. Verify that rendered canvases and media are nonblank, framed correctly, and interactive when relevant.
 
-## 20. Data visualization and dashboards
+## 19. Data visualization and dashboards
 
 Choose the visualization form before choosing colors.
 
@@ -385,23 +340,10 @@ Rules:
 - keep dashboard filters close to the content they control;
 - make interactive chart behavior keyboard accessible where practical.
 
-## 21. UI acceptance checklist
+## 20. Review
 
-Before merging a visible UI change, ask:
+Before merging a visible UI change, review it with the [UI review checklist](../templates/ui-review-checklist.md) and verify it as described in [verification](12-code-project-working-standards.md#10-verification). Revise any change that makes essential content or interaction harder to understand or use.
 
-1. Is the primary action clear?
-2. Is the visual hierarchy obvious in grayscale?
-3. Does the screen still work with long text?
-4. Does it work without hover?
-5. Does it preserve user input on error?
-6. Are empty, loading, and error states handled?
-7. Is destructive behavior explicit?
-8. Has the rendered UI been checked at supported display sizes, input methods, and relevant text zoom levels?
-9. Are console errors, broken assets, and obvious network failures absent?
-10. Does the visual expression support the task and identity without weakening clarity or accessibility?
+## 21. Public websites
 
-Revise any change that makes essential content or interaction harder to understand or use.
-
-## 22. Public websites
-
-Official project websites and public documentation must also meet [Websites, Search, and Sharing](13-websites-search-and-sharing.md). Treat readable HTML, page metadata, accurate sharing previews, and the required `/llms.txt` as part of the public interface, and verify them alongside visual changes that affect public content or navigation.
+Official project websites and public documentation also follow [Websites, Search, and Sharing](13-websites-search-and-sharing.md).

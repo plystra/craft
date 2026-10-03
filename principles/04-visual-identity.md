@@ -2,11 +2,11 @@
 
 ## 1. Visual direction
 
-Plystra's own visual identity should feel quiet, precise, and lasting. This is the parent brand's direction, not the only acceptable personality for every project or sub-brand.
+Plystra's own visual identity should feel quiet, precise, and lasting. This is the parent brand's direction, not the only acceptable personality for every project or sub-brand. These principles apply to visual work in any medium: digital and physical products, publications, and other work.
 
-These principles apply to visual work across digital and physical products, publications, and other media. Interface-specific rules apply where an interface exists, as described in [Applying and Updating the Philosophy](../ADOPTION.md).
+Visual design should support trust, clarity, recognition, and an experience appropriate to the work. Identity, warmth, playfulness, and atmosphere may serve the work alongside structure and information. Typography, spacing, motion, color, and layout should serve those purposes without compromising usability or honest communication.
 
-Projects may be playful, expressive, dense, or quiet when that choice serves their purpose and audience. Their visual systems must remain clear, usable, accessible, honest, and free of manipulative presentation. Gradients, illustration, cards, and effects need a purpose; fake dashboards and visual claims of capabilities the product does not have are unacceptable.
+Whatever their expression, visual systems must remain clear, usable, accessible, honest, and free of manipulative presentation. Gradients, illustration, cards, and effects need a purpose; fake dashboards and visual claims of capabilities the product does not have are unacceptable.
 
 Work by Plystra should look like it was designed by someone who expects to care for it.
 
@@ -102,7 +102,7 @@ General rules:
 
 The Plystra logo should be treated as a mark of stewardship, not decoration.
 
-For sponsored projects, an authorized logo placement identifies only the agreed sponsorship. Pair it with clear sponsorship wording and follow the [brand relationship rules](01-brand-philosophy.md#4-brand-hierarchy); do not present it as a mark of ownership or operation. Adoption of this philosophy alone does not grant permission to use the logo.
+A sponsored project may use the logo only as authorized for its sponsorship, together with the [sponsorship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). It identifies the agreed support, not ownership or operation.
 
 Use the logo:
 
@@ -121,8 +121,6 @@ Avoid:
 
 ## 7. Project identity
 
-Each Plystra-owned project, sub-brand, and project under a sub-brand may have its own personality and identity system within the full philosophy. A sub-brand's separate identity does not exempt its projects from these standards.
-
 Affiliation must be accurate, but visual similarity to the parent brand is not a condition of compliance. Shared principles do not require identical colors, typography, density, or emotional tone.
 
 A project may define:
@@ -133,18 +131,6 @@ A project may define:
 - landing page motion direction;
 - screenshot composition;
 - domain-specific visual metaphors.
-
-A Plystra project must carry the philosophy's standards for:
-
-- clear and honest writing;
-- purposeful expression;
-- accessibility standards;
-- typography discipline;
-- legible and maintainable documentation;
-- maintenance labeling;
-- legal attribution pattern.
-
-Sponsored projects may retain their own visual systems and choose whether to adopt these standards. Within these visual standards, they are required only to use Plystra's name and marks accurately and with authorization; the separate [sponsorship admission requirements](11-governance-and-legal.md#11-sponsorship-admission-and-continuation) still apply.
 
 ## 8. Imagery and animation
 

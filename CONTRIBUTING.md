@@ -12,11 +12,13 @@ Craft keeps its standards and the skills that distribute them in one repository.
 | Which source sections a skill carries, task-specific filenames, and reading conditions | `tooling/skills-manifest.json` |
 | Distribution and validation | `tooling/build-skills.ts` and its tests |
 
+Each rule has exactly one canonical home. Before adding a rule, find whether a chapter already owns the topic; elsewhere, link to that section instead of restating it. Checklists live in `templates/` or in the chapter that owns their rules, and do not restate another chapter.
+
 Never edit a generated reference or template as its source. Change the canonical document, then rebuild all affected bundles. Keep the whole change in one commit so the entry points and distributed copies agree.
 
 Policy revisions follow [ADOPTION.md](ADOPTION.md#4-versions-and-effective-dates). Keep its newest version at the top of the version table, retaining earlier rows. The policy version is read from that record; package tooling and individual skills do not maintain a second policy version. Git records changes to task adapters and distribution tooling. Those changes must preserve the meaning of the canonical standards.
 
-Keep the existing numbered principle paths stable when practical. Use a decision record for a substantial change to repository structure or distribution; [the initial structure decision](docs/decisions/0001-craft-structure.md) explains the current boundaries.
+Keep the existing numbered principle paths stable when practical. Use a decision record for a substantial change to repository structure or distribution; [the initial structure decision](docs/decisions/0001-craft-structure.md) and [the surface-based skills decision](docs/decisions/0003-surface-based-skills.md) explain the current boundaries.
 
 ## Build and check
 
@@ -45,15 +47,17 @@ Each skill contains a generated reference index and a source ledger with content
 
 ## Add or change a skill
 
-Use a `plystra-` name that describes a real task. Write a concise `SKILL.md` with YAML `name` and `description`, preserving the task's scope and existing authorization. An entry point routes work to canonical requirements; it must not invent new policy, claim to override its host's permissions, or require unrelated project changes.
+Skills follow project surfaces and are named in the `plystra-craft` namespace, never after a project. A new project chooses from the existing skills and never requires a change to Craft. As recorded in [the surface-based skills decision](docs/decisions/0003-surface-based-skills.md): `plystra-craft` is installed in every project, and each module covers one surface from [the applicability rules](ADOPTION.md#3-applicability-follows-the-work). A new skill needs a surface that projects can identify with a yes-or-no question; a new kind of task belongs in the routing table of an existing entry point. Record a new skill boundary in a decision record and add its row to the README install table.
 
-Start from the concrete task and its deliverable. List only the material needed to complete that task; do not copy `principles/`, root README, Charter, or ADOPTION wholesale into skill directories. Put brief scope and interpretation guidance in the entry point. Include a whole source document only if all of it belongs to the task. Licensing and source records remain part of each independent distribution. A skill's scope does not exempt a project from other applicable requirements or prove full compliance.
+Write a concise `SKILL.md` with YAML `name` and `description`. The description says when the skill applies, and every module's description ends with `Requires plystra-craft.` An entry point routes work to canonical requirements; it must not invent new policy, claim to override its host's permissions, or require unrelated project changes. Interpretation rules live in `plystra-craft`'s distributed copy of `ADOPTION.md`; do not paraphrase them into each entry point.
+
+Distribute each canonical section through exactly one skill; the tests enforce this. A module may point to material in `plystra-craft` by skill and reference name, but never through a relative link. Include a whole source document only when all of it belongs to that skill. `README.md` is always distributed as selected sections, never as the repository front page. Licensing and source records remain part of each distribution. A skill's scope does not exempt a project from other applicable requirements or prove full compliance.
 
 Manifest schema 2 sources use `path`, `when`, explicit `output`, and optional `sections`. `sections` contains exact heading text without Markdown `#` prefixes. A selection includes that heading and its subsections through the next peer or ancestor heading; headings inside code examples are not selectors. Keep each source path and output path unique within a skill. Rename or removed headings require an intentional mapping update rather than silently changing the excerpt.
 
 Use flat task-oriented filenames under `references/`, such as `website-delivery.md` or `repository-essentials.md`, without a nested `principles/` directory. Copyable templates go under `assets/templates/` only when the task uses them; templates can also select relevant sections. When adapting one into another project, replace instructions, placeholders, and links with appropriate project content and canonical source URLs. Preserve license attribution where required.
 
-Validate that each skill works when copied alone, without a sibling skill or the Craft source checkout. Its declared task must have all necessary guidance locally, and local navigation must stay within the directory. Canonical source links may need network access for provenance, broader context, or current-policy confirmation; lack of access does not prevent the normal bounded task. State the snapshot used and distinguish unverified current-policy claims. Use a matching repository revision when exact historical consistency is needed.
+Validate that each skill directory can be copied with `plystra-craft` and without the Craft source checkout. Local navigation must stay within the directory. Canonical source links may need network access for provenance, broader context, or current-policy confirmation; lack of access does not prevent the normal bounded task. State the snapshot used and distinguish unverified current-policy claims. Use a matching repository revision when exact historical consistency is needed.
 
 The generator owns only its recorded outputs. It reports unknown files, modified outputs that would be removed, and symbolic links instead of silently discarding them. Resolve those findings before rebuilding. `SKILL.md` and other authored entry-point files are never generated. To retire a whole skill, review and remove its directory explicitly along with its manifest entry.
 

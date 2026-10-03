@@ -6,7 +6,7 @@ Accessibility is not a compliance layer added after design. For Plystra, accessi
 
 A high-end interface must be usable by people with different devices, input methods, vision, motion preferences, language abilities, attention levels, and stress conditions.
 
-Apply these principles to the actual medium and supported interaction model, following [Applying and Updating the Philosophy](../ADOPTION.md). HTML, browser keyboard behavior, and CSS media queries concern web interfaces; native and physical interfaces must provide equivalent access through their platform or device capabilities. A medium-specific implementation detail does not make the underlying accessibility obligation optional.
+Apply these principles to the actual medium and supported interaction model. HTML, browser keyboard behavior, and CSS media queries concern web interfaces; native and physical interfaces must provide equivalent access through their platform or device capabilities. A medium-specific implementation detail does not make the underlying accessibility obligation optional.
 
 ## 2. Baseline standard
 
@@ -14,12 +14,12 @@ Plystra projects should aim for WCAG 2.2 AA where applicable. When a project can
 
 Minimum expectations:
 
-- meaningful semantic HTML where possible;
-- keyboard access for interactive controls;
+- meaningful semantic HTML where possible, with landmarks and a correct heading hierarchy;
+- interactive elements that look interactive and are keyboard accessible;
 - visible focus states;
 - sufficient contrast;
 - labels for form controls;
-- alt text for meaningful images;
+- alt text for meaningful images, and decorative images marked as decorative;
 - reduced-motion support;
 - no color-only status communication;
 - predictable navigation order;
@@ -87,9 +87,8 @@ Mobile and touch interfaces should not be second-class.
 Rules:
 
 - use comfortable tap targets;
-- avoid hover-only controls;
+- avoid hover-only controls; hover interactions must have touch equivalents;
 - keep destructive actions away from frequent safe actions;
-- use bottom sheets for long mobile modal content;
 - avoid placing primary actions where browser UI frequently interferes;
 - ensure scrolling areas are obvious;
 - test with one-handed use when the project is mobile-first.
@@ -124,16 +123,3 @@ Recommended practices:
 - document the current language policy.
 
 A project may intentionally support only one language during early phases, but that decision should be explicit.
-
-## 10. Interaction review checklist
-
-Before shipping a new interaction:
-
-1. Can web and keyboard-capable interfaces be completed with keyboard only, and do other interfaces support their relevant assistive input methods?
-2. Can it be completed on touch devices where touch input is supported?
-3. Is the focus path predictable?
-4. Is the result clear without animation?
-5. Is the status clear without color?
-6. Is there a recovery path for mistakes?
-7. Does the interface use the same words as the documentation?
-8. Is the interaction still clear when the user is tired or distracted?

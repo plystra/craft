@@ -14,15 +14,11 @@ Owner and operator: ...
 
 Responsible maintainer: ...
 
-For owned projects and projects under sub-brands, state that the full Plystra philosophy applies. Project-specific principles supplement it and cannot waive or weaken its obligations.
-
-Link to the project's philosophy review record and state its reviewed version and status accurately. Being subject to the full philosophy is not evidence that all requirements have been verified.
-
-For sponsored projects, state the support scope and current sponsorship status, the term or review trigger, and any voluntary philosophy adoption: none, named provisions, or the full philosophy. Sponsorship does not imply Plystra ownership or full compliance. This template and `PROJECT_PRINCIPLES.md` are optional for sponsored projects; their sponsorship admission and affiliation requirements still apply.
+Follow the [relationship wording](../principles/01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). Owned projects and projects under sub-brands state that the full Plystra philosophy applies and link to their philosophy review record with its reviewed version and status. Sponsored projects state the support scope, current sponsorship status, term or review trigger, and any voluntary adoption.
 
 ## Status
 
-Maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable / Maintenance / Retired
+Maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable
 
 Maintenance: Active / Slow active / Maintenance / Paused / Retired
 
@@ -118,7 +114,7 @@ Explain what data is stored, where it is stored, how it can be exported or delet
 
 ## Documentation
 
-Keep only links to documents that exist. Owned projects and projects under sub-brands must include project principles and their philosophy review record; work without a repository may link to equivalent maintained records. Sponsored projects include these documents only if they choose to maintain them.
+Keep only links to documents that exist, including the project principles record where the project keeps one.
 
 These are example links for the target project, not files in Craft. Replace them with that project's real paths when using this template:
 
@@ -133,10 +129,8 @@ These are example links for the target project, not files in Craft. Replace them
 
 [License name]
 
-State the actual license terms and link to them. Open source is not mandatory for any relationship category; do not describe source-available or proprietary software as open source.
+State the actual license terms and link to them, following [licenses](../principles/11-governance-and-legal.md#3-licenses).
 
 ## About Plystra, if relevant
 
-Plystra is an independent practice for thoughtful, durable work across software, objects, tools, writing, research, and experiments.
-
-Keep this section consistent with the relationship stated above. For sponsored projects, describe the agreed support and avoid implying that Plystra owns or operates the project.
+Describe Plystra with the [Charter identity statement](../CHARTER.md#1-identity), consistent with the relationship stated above.

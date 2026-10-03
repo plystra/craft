@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted
+Superseded by [surface-based skills](0003-surface-based-skills.md). Section-level selection, provenance, and generator ownership remain in use; the task-based package boundaries do not.
 
 ## Date
 
@@ -48,5 +48,5 @@ The policy sources and their obligations remain unchanged by this packaging revi
 ## Related documents
 
 - [Repository structure decision](0001-craft-structure.md)
-- [Skill catalog](../../README.md#task-skills)
+- [Installing skills](../../README.md#installing-skills)
 - [Contribution workflow](../../CONTRIBUTING.md)

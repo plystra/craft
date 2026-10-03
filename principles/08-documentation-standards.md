@@ -1,6 +1,6 @@
 # Documentation Standards
 
-Documentation should fit the work: software may need API and deployment guides, while an object, publication, or research project may need care instructions, edition records, methods, or source notes. Technical document types apply when the project has the corresponding surface. Requirement levels and applicability follow [Applying and Updating the Philosophy](../ADOPTION.md).
+Documentation should fit the work: software may need API and deployment guides, while an object, publication, or research project may need care instructions, edition records, methods, or source notes.
 
 ## 1. Documentation is part of the product
 
@@ -20,39 +20,55 @@ Plystra documentation should:
 - help contributors make coherent changes;
 - help users evaluate whether the project is appropriate for them.
 
-## 3. Required document types
+## 3. Document set
 
-A serious Plystra project should include the following when applicable:
+### Repository files
+
+Every public repository for a Plystra project should include:
+
+```text
+README.md
+LICENSE
+SECURITY.md
+CONTRIBUTING.md, when contributions are accepted
+CHANGELOG.md or release notes, when versions are published
+PROJECT_PRINCIPLES.md
+docs/, when setup or operation is non-trivial
+```
+
+`LICENSE` is required by [Governance and Legal](11-governance-and-legal.md#3-licenses) and `PROJECT_PRINCIPLES.md` by [the adoption process](../ADOPTION.md#5-review-and-correction). Every private repository should still include enough documentation for future maintainers.
 
 ### README
 
-The public entry point. It should explain the project, status, setup, and links to deeper docs.
+The public entry point. Start from the [project README template](../templates/project-readme.md). A README should explain, as applicable:
 
-### Architecture overview
+- what the project is;
+- current maturity;
+- who it is for;
+- what problem it solves;
+- what it does not do;
+- quick start;
+- architecture overview;
+- configuration;
+- development workflow;
+- testing;
+- deployment or release process;
+- license;
+- security reporting;
+- links to deeper documentation.
 
-A concise explanation of components, boundaries, data flow, and important tradeoffs.
+Avoid README files that are only installation commands.
 
-### Development guide
+### Other document types
 
-How to run, test, lint, build, and debug locally.
+A serious Plystra project should include the following when applicable:
 
-For code projects, include the exact public commands contributors should use. Avoid relying on private maintainer habits.
-
-### Deployment guide
-
-How the project is deployed, configured, backed up, upgraded, and rolled back.
-
-### Security policy
-
-How to report vulnerabilities and what practices the project follows.
-
-### Data model or domain guide
-
-For projects with meaningful persistent data, explain the major entities and lifecycle.
-
-### Decision records
-
-Use decision records for choices that future contributors will otherwise have to rediscover.
+- **Architecture overview** — a concise explanation of components, boundaries, data flow, and important tradeoffs.
+- **Development guide** — how to run, test, lint, build, and debug locally. For code projects, include the exact public commands contributors should use; avoid relying on private maintainer habits.
+- **Deployment guide** — how the project is deployed, configured, backed up, upgraded, and rolled back.
+- **Security policy** — how to report vulnerabilities and what practices the project follows.
+- **Data model or domain guide** — for projects with meaningful persistent data, the major entities and lifecycle.
+- **Decision records** — for meaningful choices that future contributors would otherwise have to rediscover, such as product direction, architecture, privacy, public API, user experience, or long-term maintenance. Use the [decision record template](../templates/decision-record.md): context, decision, options considered and why they were not chosen, consequences, and a review trigger. Decision records are not bureaucracy; they protect future maintainers from rediscovering old reasoning.
 
 ## 4. Document structure
 
@@ -79,6 +95,18 @@ Prefer this structure for technical docs:
 ```
 
 Not every document needs every section. But every document should have a clear purpose.
+
+Recommended order for a project's documentation as a whole:
+
+1. What this project is.
+2. Current maturity and limitations.
+3. System architecture.
+4. Local development.
+5. Configuration.
+6. Data and security model.
+7. Deployment.
+8. Operations.
+9. Contribution rules.
 
 ## 5. Status labels
 
@@ -107,7 +135,7 @@ Examples should be realistic, safe, and maintainable.
 
 Rules:
 
-- never include real secrets, tokens, private IP addresses, or personal data;
+- follow [secret handling](09-security-and-privacy.md#3-secret-handling) and never include personal data;
 - use clearly fake domains such as `example.com` when needed;
 - mark destructive commands clearly;
 - prefer copyable commands that work;
@@ -131,21 +159,21 @@ Avoid diagrams that merely decorate the page.
 
 Text diagrams are acceptable when they are clearer and easier to maintain.
 
-## 8. Changelogs and release notes
+## 8. Documentation sync
 
-Release documentation should explain user impact.
+Documentation must change when implementation changes affect:
 
-Separate:
+- setup steps;
+- environment variables;
+- public APIs;
+- data models;
+- security boundaries;
+- deployment workflow;
+- operating procedures;
+- user-visible behavior;
+- maintainer or contributor workflow.
 
-- added;
-- changed;
-- fixed;
-- removed;
-- security;
-- migration notes;
-- known issues.
-
-Do not hide breaking changes under generic `improvements`.
+Keep `.env.example`, README files, deployment guides, API docs, migration notes, and [release notes](10-release-and-maintenance.md#4-release-notes) synchronized. Remove outdated instructions instead of adding contradictory ones.
 
 ## 9. Contributor and agent guidance
 
@@ -162,31 +190,9 @@ It should specify:
 - security rules;
 - where to add documentation.
 
-Contributor guidance must not contain secrets or credentials. Keep private infrastructure details in documentation restricted to the appropriate audience.
+Document which guidance files apply to which paths, repository boundaries, verification and commit expectations, required review gates, and where project-specific documentation must be updated. Guidance carries authority as described in [trusted project guidance](12-code-project-working-standards.md#2-obligations-authorization-and-trusted-guidance); it must not claim to redefine a tool or platform's instruction priority. Keep private infrastructure details in documentation restricted to the appropriate audience.
 
-Document which guidance files apply to which paths, repository boundaries, verification and commit expectations, required review gates, and where project-specific documentation must be updated. Follow [Code Project Working Standards](12-code-project-working-standards.md#2-obligations-authorization-and-trusted-guidance) for the distinction between project obligations, task authorization, and trusted guidance. Repository instructions must not redefine a tool or platform's instruction priority or weaken applicable philosophy obligations.
-
-Established contributor entry points and the guidance they designate can carry standing project instructions. Examples, logs, generated output, and external documents do not become instructions merely by containing commands; any designation as guidance must come from a trusted entry point or the maintainer and stay within the applicable project and platform boundaries.
-
-Official project websites must also publish and maintain `/llms.txt` under [Websites, Search, and Sharing](13-websites-search-and-sharing.md). It summarizes public facts and canonical links; it does not replace contributor instructions or the underlying documentation.
-
-## 10. Documentation sync
-
-Documentation must change when implementation changes affect:
-
-- setup steps;
-- environment variables;
-- public APIs;
-- data models;
-- security boundaries;
-- deployment workflow;
-- operating procedures;
-- user-visible behavior;
-- maintainer or contributor workflow.
-
-Keep `.env.example`, README files, deployment guides, API docs, migration notes, and release notes synchronized. Remove outdated instructions instead of adding contradictory ones.
-
-## 11. Documentation review checklist
+## 10. Documentation review checklist
 
 Before publishing documentation, ask:
 

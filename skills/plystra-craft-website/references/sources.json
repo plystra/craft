@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 2,
+  "generator": "tooling/build-skills.ts",
+  "skill": "plystra-craft-website",
+  "craftVersion": "1.0.1",
+  "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
+  "sources": [
+    {
+      "path": "principles/13-websites-search-and-sharing.md",
+      "sha256": "bcb6071ba0b0a2ed96eb5b0c51cd9389c21dbd845750bd6317420f031be0313d",
+      "selection": null,
+      "output": "references/website-standards.md"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94",
+      "selection": null,
+      "output": "references/LICENSE"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "references/index.md",
+      "sha256": "042bcc39073839a23e78b80208660360717ae55198b0f812d15d616ffac18896"
+    },
+    {
+      "path": "references/LICENSE",
+      "sha256": "9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94"
+    },
+    {
+      "path": "references/website-standards.md",
+      "sha256": "ccbbff14f49b52670de1c1732d1c3ea748260f3be4b12250d34fe9b85d560419"
+    }
+  ]
+}
