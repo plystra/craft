@@ -6,6 +6,8 @@ Accessibility is not a compliance layer added after design. For Plystra, accessi
 
 A high-end interface must be usable by people with different devices, input methods, vision, motion preferences, language abilities, attention levels, and stress conditions.
 
+Apply these principles to the actual medium and supported interaction model, following [Applying and Updating the Philosophy](../ADOPTION.md). HTML, browser keyboard behavior, and CSS media queries concern web interfaces; native and physical interfaces must provide equivalent access through their platform or device capabilities. A medium-specific implementation detail does not make the underlying accessibility obligation optional.
+
 ## 2. Baseline standard
 
 Plystra projects should aim for WCAG 2.2 AA where applicable. When a project cannot fully meet this standard yet, the limitation should be acknowledged and tracked.
@@ -66,7 +68,7 @@ Avoid:
 
 ## 6. Motion sensitivity
 
-Respect `prefers-reduced-motion`.
+Respect `prefers-reduced-motion` on the web and equivalent motion preferences on other platforms.
 
 When reduced motion is enabled:
 
@@ -127,8 +129,8 @@ A project may intentionally support only one language during early phases, but t
 
 Before shipping a new interaction:
 
-1. Can it be completed with keyboard only?
-2. Can it be completed on touch devices?
+1. Can web and keyboard-capable interfaces be completed with keyboard only, and do other interfaces support their relevant assistive input methods?
+2. Can it be completed on touch devices where touch input is supported?
 3. Is the focus path predictable?
 4. Is the result clear without animation?
 5. Is the status clear without color?

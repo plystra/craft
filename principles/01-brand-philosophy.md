@@ -2,9 +2,9 @@
 
 ## 1. Brand essence
 
-Plystra is a software craft brand.
+Plystra is an independent craft practice spanning software, objects, tools, writing, research, and experiments.
 
-It should feel like an independent lab that builds tools with restraint, taste, and long-term responsibility. The brand should not feel like a personal portfolio, a generic startup, a venture-backed landing page, or a fashionable AI wrapper.
+It should express care, taste, and long-term responsibility through the work itself. Its identity should remain coherent across media without requiring every project to resemble a software product or a single visual style.
 
 The Plystra brand is carried by a few recurring ideas:
 
@@ -21,7 +21,7 @@ The Plystra brand is carried by a few recurring ideas:
 
 Use this internally:
 
-> Plystra is an independent software lab for durable, human-scale systems.
+> Plystra is an independent practice for thoughtful, durable work across software, objects, tools, writing, research, and experiments.
 
 Use this when a shorter public description is needed:
 
@@ -29,7 +29,7 @@ Use this when a shorter public description is needed:
 
 Use this as a philosophical slogan:
 
-> For craft that outlasts its makers.
+> for craft that outlasts its makers.
 
 The slogan should not be forced onto every interface. Plystra should not over-explain itself. The phrase is a north star, not a banner ad.
 
@@ -46,7 +46,7 @@ Plystra should feel:
 - humane, not sentimental;
 - minimal, not empty.
 
-When in doubt, choose the quieter version.
+These qualities guide judgment rather than prescribe one mood. Projects and sub-brands may be playful, expressive, technical, or contemplative when that fits their purpose. They must preserve clarity, accessibility where applicable, honest claims, and respect for attention.
 
 ## 4. Brand hierarchy
 
@@ -91,11 +91,11 @@ Plystra projects should implicitly promise:
 
 ### We will be understandable
 
-Users should be able to understand what the product does, what it stores, what it changes, and what risks it introduces.
+People should be able to understand the work's purpose, limits, and relevant risks. Products that store data or change systems should explain those behaviors explicitly.
 
 ### We will be maintainable
 
-Engineering should favor future comprehension over short-term cleverness.
+Methods, materials, engineering, and documentation should favor future comprehension, care, and preservation over short-term cleverness.
 
 ### We will be honest
 
@@ -111,9 +111,9 @@ Plystra can adopt new technology, including AI, but only when the technology mak
 
 ## 6. Premium without luxury theater
 
-Plystra should be a high-end brand, but not a luxury brand.
+Plystra should be recognized for care and quality. Price, scarcity, and visual seriousness are not evidence of either.
 
-High-end software is not made high-end by black backgrounds, animated gradients, expensive words, or artificial scarcity. It becomes high-end through:
+Quality should come through decisions such as:
 
 - thoughtful defaults;
 - reduced cognitive noise;
@@ -125,7 +125,7 @@ High-end software is not made high-end by black backgrounds, animated gradients,
 - coherent maintenance;
 - reliable support paths.
 
-The product should feel expensive because the decisions are expensive, not because the surface is shiny.
+The work should make the care behind those decisions perceptible in use.
 
 ## 7. The anti-patterns
 

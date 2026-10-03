@@ -1,10 +1,10 @@
 # [Project Name] Principles
 
-Use this template for Plystra-owned projects and projects under Plystra sub-brands. Sponsored projects may use it voluntarily; sponsorship does not require a `PROJECT_PRINCIPLES.md` file. Replace prompts and remove instructions before publishing.
+Use this template for Plystra-owned projects, sub-brands, and their projects. An equivalent maintained record is acceptable for work without a repository. Sponsored projects may use it voluntarily; sponsorship does not require a `PROJECT_PRINCIPLES.md` file. Adapt sections to the actual medium and record material non-applicability rather than inventing software features. Replace prompts and remove instructions before publishing.
 
 ## Relationship to Plystra
 
-Relationship: Plystra-owned project / Project under [Sub-brand], a Plystra sub-brand / Independent project sponsored by Plystra
+Relationship: Plystra-owned project / Plystra sub-brand / Project under [Sub-brand], a Plystra sub-brand / Independent project sponsored by Plystra
 
 Owner and operator: ...
 
@@ -12,9 +12,9 @@ Responsible maintainer: ...
 
 Relationship confirmed by: ...
 
-For owned projects and projects under sub-brands:
+For owned projects, sub-brands, and projects under sub-brands:
 
-This project follows the full Plystra philosophy. These project principles explain implementation choices and add project-specific requirements; they do not waive or weaken the philosophy.
+This project is subject to the full Plystra philosophy. These project principles explain implementation choices and add project-specific requirements; they do not waive or weaken applicable requirements. The review record below states what has actually been verified.
 
 It contributes to the broader Plystra philosophy of durable, human-scale systems by...
 
@@ -26,11 +26,38 @@ For sponsored projects that voluntarily use this template:
 - Permitted sponsorship wording and brand use: ...
 - Sponsorship admission record: ...
 
-State adoption accurately. The sponsorship admission and affiliation requirements apply regardless of the chosen scope; sponsorship does not make this a Plystra-owned project. Remove this sponsorship block for owned projects and projects under sub-brands.
+State adoption accurately. The sponsorship admission and affiliation requirements apply regardless of the chosen scope; sponsorship does not make this a Plystra-owned project. Remove this sponsorship block for owned projects, sub-brands, and projects under sub-brands.
+
+## Philosophy review record
+
+Follow [Applying and Updating the Philosophy](../ADOPTION.md) when preparing this record. When copying this template, replace that link with the maintained philosophy repository URL.
+
+- Philosophy version reviewed: ...
+- Exact source commit reviewed: ...
+- Review date and responsible maintainer: ...
+- Review status: Not yet reviewed / Reviewed with open gaps / All applicable requirements verified
+- Next review due: YYYY-MM-DD
+- Media and components: Software / Object / Tool / Writing / Research / Experiment / ...
+- Public surfaces and relevant data handling: ...
+- For a sub-brand, its project inventory and each project's review record: ...
+
+| Provision or section | Applicability and reason | Result: Met / Open gap / Not applicable | Evidence reference |
+| --- | --- | --- | --- |
+| ... | ... | ... | ... |
+
+| Open gap | Owner | Corrective action | Deadline (YYYY-MM-DD) | Planned verification |
+| --- | --- | --- | --- | --- |
+| ... | ... | ... | ... | ... |
+
+Material alternatives to recommendations and their reasons:
+
+- ...
+
+Use `Not applicable` only when the relevant surface or activity is absent. An unfinished requirement is an open gap. Keep sensitive review evidence private and use safe references. Do not claim full compliance before verification, while gaps remain, or when a required review is overdue.
 
 ## Project description
 
-[Project Name] is a [kind of tool] for [audience/context] who need to [primary job] without [important negative pattern].
+[Project Name] is a [kind of work] for [audience/context] that [purpose and intended use or contribution].
 
 ## Maturity
 
@@ -39,6 +66,8 @@ Current maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable / M
 Maintenance state: Active / Slow active / Maintenance / Paused / Retired
 
 ## Primary loop
+
+For a product with a repeated workflow:
 
 ```text
 trigger -> action -> feedback -> record -> next step
@@ -49,6 +78,8 @@ For this project:
 ```text
 ...
 ```
+
+For other work, describe how people encounter, use, understand, care for, or preserve it instead.
 
 ## What this project values
 
@@ -121,6 +152,8 @@ Known limitations:
 - ...
 
 ## Engineering and verification
+
+For software, complete the instruction and command fields below. For other work, describe the relevant methods, production or editorial process, and verification. Mixed projects cover each component.
 
 Local instruction files:
 

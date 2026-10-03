@@ -1,5 +1,7 @@
 # Product Principles
 
+Apply these principles to the actual form of the work using [the applicability rules](../ADOPTION.md#3-applicability-follows-the-work). Products may be physical or digital. Provisions about accounts, APIs, data, and automation apply when those capabilities exist; writing, research, and experiments need clear purpose, status, limitations, and stewardship without inventing an application workflow.
+
 ## 1. Build for long-term use
 
 Plystra products should be designed for repeated use, not only first impressions.
@@ -69,7 +71,7 @@ Avoid confirmation for harmless actions. Warning fatigue lowers trust.
 
 A high-end product does not need to make every edge case prominent. It should make the ordinary path calm, fast, and reliable.
 
-For each project, define the primary loop:
+For a product with a repeated workflow, define the primary loop:
 
 ```text
 trigger -> action -> feedback -> record -> next step
@@ -83,7 +85,7 @@ Examples:
 - Bundle -> verify -> transfer -> deploy -> release note.
 - Message -> read -> reply -> state update -> later context.
 
-A project without a clear loop will feel like a feature pile.
+For writing, research, or an object without a repeated workflow, describe how people encounter, use, understand, or preserve the work instead. The goal is a clear purpose and experience appropriate to the medium.
 
 ## 5. Respect user data ownership
 
@@ -167,11 +169,11 @@ Do not use `Stable` because the project feels polished. Use it when maintenance,
 Before a Plystra project is announced publicly, it should have:
 
 - a clear one-sentence description;
-- a README that explains the problem and current status;
+- a README or equivalent project description that explains the purpose and current status;
 - a visible maturity label;
 - a license decision;
 - a security contact or policy;
 - an export or backup story when user data is involved;
 - a basic visual identity consistent with Plystra standards;
-- a documented primary loop;
+- a documented primary loop or an explanation of how people use or engage with the work;
 - a known set of things the project refuses to do.

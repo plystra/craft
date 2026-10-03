@@ -2,22 +2,22 @@
 
 ## 1. Purpose
 
-This document defines shared frontend interface standards for Plystra projects.
+This document defines shared digital interface standards for Plystra projects. Web implementation rules apply to web surfaces; native and device interfaces must meet the same applicable usability and accessibility requirements using their platform's conventions. Work without a digital interface does not acquire one merely to satisfy this chapter; see [Applying and Updating the Philosophy](../ADOPTION.md).
 
-It is not a mandatory component library. It is a design contract. Projects may use different frameworks and implementation stacks, but their interfaces should share the same principles of clarity, restraint, accessibility, and maintenance.
+It is not a mandatory component library. It is a design contract. Projects may use different frameworks and implementation stacks, but their interfaces must uphold clarity, purposeful expression, accessibility, and maintenance.
 
 ## 2. Interface personality
 
-A Plystra UI should feel:
+A Plystra UI should be:
 
-- quiet;
 - direct;
 - stable;
 - fast;
 - readable;
 - precise;
-- trustworthy;
-- intentionally sparse, but not under-designed.
+- trustworthy.
+
+Quiet, sparse interfaces are a useful default for focused tools. Projects and sub-brands may use different personalities, expressive styles, or information densities when these serve their audience and tasks. The shared quality bar does not require a single visual style.
 
 The interface should never feel like a template with Plystra colors applied.
 
@@ -143,7 +143,7 @@ Apply magic
 
 ## 8. Forms
 
-Forms should be calm and forgiving.
+Forms should be clear and forgiving.
 
 Rules:
 
@@ -207,7 +207,7 @@ Rules:
 
 ## 12. Motion
 
-Motion should be brief and meaningful.
+Motion should be meaningful and proportionate to the task. Interaction feedback should usually be brief; expressive sequences need a clear purpose and must not obstruct essential content or controls.
 
 Use motion for:
 
@@ -215,7 +215,8 @@ Use motion for:
 - object creation or removal;
 - focus movement;
 - progressive disclosure;
-- loading continuity.
+- loading continuity;
+- deliberate identity or editorial expression that preserves usability.
 
 Avoid motion for:
 
@@ -251,7 +252,7 @@ Avoid indefinite loading without explanation for operations that affect data.
 
 ## 14. Empty states
 
-Empty states should be quiet and useful.
+Empty states should be clear and useful.
 
 An empty state should include:
 
@@ -276,7 +277,7 @@ For developer tools, include diagnostic IDs or copyable logs when appropriate.
 
 ## 16. Responsive design
 
-Every Plystra product should define its minimum supported viewport and interaction model.
+Every Plystra digital interface should define its supported viewport range and interaction model. Device interfaces should use the actual display and input constraints of their hardware.
 
 General rules:
 
@@ -342,7 +343,7 @@ A component is ready when:
 - it handles loading, empty, and error states when needed;
 - it does not depend on page-specific hacks;
 - it has accessible labels;
-- it behaves predictably on mobile;
+- it behaves predictably across supported displays and input methods;
 - it uses design tokens;
 - it has documented variants;
 - it does not introduce unnecessary dependencies.
@@ -358,11 +359,11 @@ Rules:
 - include loading, empty, error, disabled, hover, focus, and success states when the workflow requires them;
 - make text fit its containers across supported mobile and desktop viewports;
 - use stable dimensions for fixed-format controls, boards, counters, tiles, and toolbars;
-- do not scale font sizes directly with viewport width;
-- avoid negative letter spacing;
+- avoid font sizes based only on viewport width; fluid typography may use explicit minimum and maximum sizes with relative text units, and must remain readable under text resizing and browser zoom;
+- adjust letter spacing for the typeface and text role only when legibility is preserved; verify tight tracking with supported scripts and sizes;
 - use existing icon libraries when available, and do not use emoji as interface icons;
 - provide alt text for meaningful images and mark decorative images as decorative;
-- save generated or uploaded assets into the project before referencing them in application code;
+- keep public design assets used by application code in versioned project assets or an approved asset pipeline, with provenance and licensing recorded; runtime user uploads belong in the project's data storage and must not be committed to source control;
 - avoid unsafe raw HTML rendering unless necessary and sanitized.
 
 For maps, geographic data, 3D, charts, and other specialized surfaces, use established libraries instead of fragile hand-drawn approximations. Verify that rendered canvases and media are nonblank, framed correctly, and interactive when relevant.
@@ -375,7 +376,7 @@ Use charts only when a chart is the right form. Use stat rows, meters, tables, o
 
 Rules:
 
-- never use dual-axis charts;
+- prefer a shared scale or separate charts over independent dual axes that can suggest false relationships; a secondary axis for an explicit unit conversion of the same quantity is acceptable when the conversion and units are clear;
 - avoid rainbow palettes and generated color cycling;
 - color should follow the entity, not its current rank;
 - reserve status colors for status meanings;
@@ -395,11 +396,11 @@ Before merging a visible UI change, ask:
 5. Does it preserve user input on error?
 6. Are empty, loading, and error states handled?
 7. Is destructive behavior explicit?
-8. Has the rendered UI been checked at relevant desktop and mobile sizes?
+8. Has the rendered UI been checked at supported display sizes, input methods, and relevant text zoom levels?
 9. Are console errors, broken assets, and obvious network failures absent?
-10. Does the interface feel calmer after the change?
+10. Does the visual expression support the task and identity without weakening clarity or accessibility?
 
-If the answer to the last question is no, reconsider the design.
+Revise any change that makes essential content or interaction harder to understand or use.
 
 ## 22. Public websites
 

@@ -81,24 +81,30 @@ Use parameterized queries or the project's safe query builder for database acces
 
 ## 7. Privacy
 
-Privacy should be explained in plain language.
+Before collecting real user data, a project must provide an accurate, accessible privacy notice in plain language. This applies to private alpha tests and pilots as well as public products, including data collected through telemetry, debugging, and support.
 
-A project should document:
+The notice must explain:
 
 - what data is collected;
 - why it is collected;
 - how long it is kept;
 - who can access it;
-- how it can be exported;
-- how it can be deleted;
-- what third parties process it;
-- what happens during debugging or support.
+- which third parties receive or process it and for what purposes;
+- how to request export or deletion, including any limits and retained copies;
+- what happens during debugging or support;
+- how to contact the responsible operator about data handling.
+
+Collect only the data needed for the stated purposes. The notice must match actual behavior and be updated before changed data handling begins. Disclosure does not replace authorization where it is required.
 
 ## 8. AI and private data
 
+Before sending private files, code, messages, or other private content to an AI provider or another third-party processor, a project must have explicit authorization from a user or organization entitled to authorize that processing. Authorization must cover the stated purpose, identified recipient, and data scope; merely listing a provider in documentation is insufficient.
+
+An explicit, continuing workflow authorization may cover repeated transfers within those boundaries without a prompt each time. A new purpose or recipient, or an expanded data scope, requires renewed authorization before transmission. Model training and other secondary uses are not included by default and require separate explicit authorization.
+
 When using AI providers:
 
-- disclose provider categories in documentation;
+- identify the providers that receive private content;
 - explain what data may be sent;
 - avoid sending more context than necessary;
 - distinguish model output from verified data;
@@ -152,3 +158,5 @@ Before shipping a feature involving user data:
 7. Are errors safe?
 8. Is there a recovery path after mistakes?
 9. Does documentation match implementation?
+10. Is an accurate privacy notice available before any real user data is collected, including in private tests?
+11. Are transfers of private content to AI providers or other third parties within valid, explicit authorization for the purpose, recipient, and data scope?

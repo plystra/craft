@@ -1,5 +1,7 @@
 # Release and Maintenance
 
+These standards apply to the release and ongoing care of Plystra work in its actual form. Software may use versions, deployments, and security support; objects, publications, or research may use editions, care guidance, corrections, and end-of-support notices. Code-specific release steps apply only where code or deployed services exist. Requirement levels and applicability follow [Applying and Updating the Philosophy](../ADOPTION.md).
+
 ## 1. Maintenance is a brand signal
 
 Plystra's brand depends on the impression that projects are cared for.
@@ -117,7 +119,9 @@ Deployments should be deliberate. Before declaring a project deployable, verify:
 - required environment variables;
 - platform configuration;
 - migration and rollback behavior;
-- whether production secrets and URLs are provided by the platform rather than hardcoded.
+- whether production credentials are supplied through a secret store or environment injection and excluded from the repository and public output;
+- whether operational endpoints are selected for the intended environment, with no accidental development or test access to production;
+- whether public canonical origins and website URLs in centralized, version-controlled configuration match the release's intended domain.
 
 Do not deploy, publish, push, merge, or release from a project workflow unless the maintainer has explicitly asked for it.
 

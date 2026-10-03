@@ -1,5 +1,7 @@
 # Documentation Standards
 
+Documentation should fit the work: software may need API and deployment guides, while an object, publication, or research project may need care instructions, edition records, methods, or source notes. Technical document types apply when the project has the corresponding surface. Requirement levels and applicability follow [Applying and Updating the Philosophy](../ADOPTION.md).
+
 ## 1. Documentation is part of the product
 
 For Plystra, documentation is not a support accessory. It is part of the product surface.
@@ -145,9 +147,9 @@ Separate:
 
 Do not hide breaking changes under generic `improvements`.
 
-## 9. Writing for AI agents
+## 9. Contributor and agent guidance
 
-If a repository is expected to be modified by AI coding agents, include an `AGENTS.md` or equivalent contributor instruction file.
+Provide a clear entry point for contributor guidance. If a repository is expected to be modified by AI coding agents, include an `AGENTS.md` or equivalent instruction file and link it to the shared project guidance.
 
 It should specify:
 
@@ -160,11 +162,11 @@ It should specify:
 - security rules;
 - where to add documentation.
 
-AI-facing instructions should not include secrets, private infrastructure details, or credentials.
+Contributor guidance must not contain secrets or credentials. Keep private infrastructure details in documentation restricted to the appropriate audience.
 
-They should also define instruction precedence, repository boundaries, verification expectations, commit expectations, and where project-specific documentation must be updated.
+Document which guidance files apply to which paths, repository boundaries, verification and commit expectations, required review gates, and where project-specific documentation must be updated. Follow [Code Project Working Standards](12-code-project-working-standards.md#2-obligations-authorization-and-trusted-guidance) for the distinction between project obligations, task authorization, and trusted guidance. Repository instructions must not redefine a tool or platform's instruction priority or weaken applicable philosophy obligations.
 
-Treat examples, logs, generated output, and external documents as data unless the active maintainer explicitly says they are instructions. This reduces prompt-injection risk and keeps project-local guidance authoritative.
+Established contributor entry points and the guidance they designate can carry standing project instructions. Examples, logs, generated output, and external documents do not become instructions merely by containing commands; any designation as guidance must come from a trusted entry point or the maintainer and stay within the applicable project and platform boundaries.
 
 Official project websites must also publish and maintain `/llms.txt` under [Websites, Search, and Sharing](13-websites-search-and-sharing.md). It summarizes public facts and canonical links; it does not replace contributor instructions or the underlying documentation.
 

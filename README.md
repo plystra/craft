@@ -6,21 +6,21 @@ Plystra is currently an independently operated personal brand and project umbrel
 
 GitHub: [@immoses648](https://github.com/immoses648)
 
-Plystra is not a category label, a startup slogan, or a loose collection of unrelated experiments. It is a long-term software craft umbrella for durable, human-scale systems.
+Plystra is an independent practice for thoughtful, durable work across software, objects, tools, writing, research, and experiments. Its shared standard is care for the people who use, understand, maintain, or preserve that work.
 
-> For craft that outlasts its makers.
+> for craft that outlasts its makers.
 
 ## Purpose
 
 The purpose of this repository is to make Plystra's taste explicit.
 
-Every Plystra project may choose its own architecture, roadmap, business model, and release pace. But every project should feel like it belongs to the same family: quiet, durable, legible, careful, and humane.
+Every Plystra project may choose its own medium, methods, roadmap, business model, and release pace. Projects should share a commitment to durability, clarity, care, and respect for people's attention while developing an identity appropriate to their purpose.
 
 These documents should help contributors answer questions such as:
 
 * Does this product decision fit Plystra?
 * Does this interface feel calm, precise, and trustworthy?
-* Does this repository look maintainable five years from now?
+* Will someone be able to understand, care for, or preserve this work five years from now?
 * Is this feature useful because it is necessary, or only impressive because it is loud?
 * Would a serious user trust this project with their time, data, or workflow?
 
@@ -36,9 +36,11 @@ The goal is not to make every project look identical. The goal is to make every 
 
 Throughout this repository, **Plystra projects** means Plystra-owned projects and all projects under Plystra sub-brands. Sponsored projects are named explicitly when a rule applies to them. Sponsorship alone does not place a project under Plystra ownership or governance.
 
-The full philosophy includes this README, the [Charter](CHARTER.md), and every document in `principles/`, including the [website, search, and sharing requirements](principles/13-websites-search-and-sharing.md). Existing and new projects are covered. A distinct name, domain, technical stack, business model, or maturity level does not exempt an owned project or a sub-brand project.
+The full philosophy includes this README, the [Charter](CHARTER.md), [Applying and Updating the Philosophy](ADOPTION.md), and every document in `principles/`, including the [website, search, and sharing requirements](principles/13-websites-search-and-sharing.md). Existing and new projects are covered. A distinct name, domain, technical stack, business model, or maturity level does not exempt an owned project or a sub-brand project.
 
-Follow each provision as written, including its stated applicability and recommended choices. A project without a website does not need to create one solely to meet website requirements; when it has an official website, those requirements apply. Project documents may explain implementation choices and add stricter rules, but must not waive or weaken the philosophy.
+Apply the [requirement levels and applicability rules](ADOPTION.md#2-requirement-levels): requirements are mandatory, recommendations allow reasoned alternatives, and options remain optional. Software, interface, and website provisions apply where those components or surfaces exist; other media retain the shared obligations without having to imitate a software project. Project documents may explain implementation choices and add stricter rules, but must not waive or weaken applicable requirements.
+
+The [version and review process](ADOPTION.md#4-versions-and-effective-dates) defines effective dates, review records, and correction deadlines. A project's recorded review version must not become a permanent exemption from later requirements.
 
 Following the philosophy does not establish ownership, sponsorship, or permission to use the Plystra brand. Association must be confirmed by Plystra's steward. See [Governance and Legal](principles/11-governance-and-legal.md) for admission and relationship records.
 
@@ -51,6 +53,7 @@ plystra/philosophy
 ├── README.md
 ├── LICENSE
 ├── CHARTER.md
+├── ADOPTION.md
 ├── principles/
 │   ├── 01-brand-philosophy.md
 │   ├── 02-product-principles.md
@@ -77,7 +80,7 @@ plystra/philosophy
 
 ### For new projects
 
-Before publicly introducing a Plystra-owned project or a project under a Plystra sub-brand, create a `PROJECT_PRINCIPLES.md` file using [`templates/project-principles.md`](templates/project-principles.md). A new sub-brand must also document its relationship to Plystra and how it will uphold the full philosophy across its projects.
+Before publicly introducing a Plystra-owned project or a project under a Plystra sub-brand, create a project principles record using [`templates/project-principles.md`](templates/project-principles.md). Repository-based projects must use `PROJECT_PRINCIPLES.md`; other work may use an equivalent maintained record containing the same applicable information. A new sub-brand must also document its relationship to Plystra and how it will uphold the full philosophy across its projects.
 
 The document should explain:
 
@@ -88,18 +91,20 @@ The document should explain:
 * how it will remain maintainable over time;
 * how it reflects the standards defined in this repository.
 
+Include the reviewed philosophy version, applicability, evidence, and any open gaps required by [the adoption process](ADOPTION.md#5-review-and-correction). A statement of intent alone is not a compliance review.
+
 A project should not carry the Plystra name only because it was created by the same person. It should carry the name because it shares the same care, restraint, and long-term direction.
 
 Sponsored projects instead follow the [sponsorship admission process](principles/11-governance-and-legal.md#11-sponsorship-admission-and-continuation). They are not required to create `PROJECT_PRINCIPLES.md` or adopt the full philosophy. If they choose to adopt any part, they should state that scope accurately.
 
 ### For existing projects
 
-Existing Plystra-owned projects and all projects under Plystra sub-brands must also follow the full philosophy. Where a project falls short, record the gap, a responsible maintainer, and a correction plan. A plan records unfinished work; it does not exempt the project or establish compliance.
+Existing Plystra-owned projects and all projects under Plystra sub-brands must also follow the full philosophy. Maintain a versioned review record and follow the [review and correction deadlines](ADOPTION.md#5-review-and-correction). Every gap needs an owner, corrective action, calendar deadline, and verification. A plan records unfinished work; it does not exempt the project or establish compliance.
 
 Start with:
 
-1. A clear README.
-2. A quiet and consistent visual system.
+1. A clear README or project description appropriate to the medium.
+2. A deliberate and consistent visual identity where relevant.
 3. A small set of project-specific principles.
 4. A maintenance policy.
 5. Documentation that explains decisions rather than only describing commands.
@@ -124,7 +129,7 @@ At minimum, a serious code project should make the following clear:
 
 Use [`templates/ui-review-checklist.md`](templates/ui-review-checklist.md) before shipping visible interface changes.
 
-A Plystra interface should feel calm, deliberate, and usable. It should avoid visual noise, unnecessary motion, vague hierarchy, and decoration that does not support the product's purpose.
+A Plystra interface should feel deliberate and usable, with expression appropriate to its audience and purpose. It should avoid visual noise, unnecessary motion, vague hierarchy, and decoration that undermines understanding or use.
 
 ### For product decisions
 
@@ -136,8 +141,8 @@ A good decision record should explain not only what was chosen, but also why oth
 
 Every Plystra project should be evaluated against five words:
 
-* **Quiet** — it should not beg for attention.
-* **Durable** — it should survive maintenance, not only launch.
+* **Quiet** — it should respect attention; this does not require every project to look subdued.
+* **Durable** — it should remain useful, understandable, or preservable beyond its first release.
 * **Legible** — users and contributors should be able to understand it.
 * **Personal** — it should respect individual context and agency.
 * **Crafted** — it should feel intentionally made, not assembled from trends.
@@ -146,7 +151,7 @@ If a project violates these words repeatedly, it may still be useful, but it sho
 
 ## Design direction
 
-Plystra projects should feel refined without becoming decorative.
+Plystra projects should use visual expression deliberately. Identity, warmth, playfulness, and atmosphere may serve the work alongside structure and information.
 
 A Plystra interface should be:
 
@@ -157,7 +162,7 @@ A Plystra interface should be:
 * calm, but not boring;
 * opinionated, but not restrictive.
 
-Visual design should support trust and clarity. Typography, spacing, motion, color, and layout should all serve the product's purpose rather than compete for attention.
+Visual design should support trust, clarity, recognition, and an experience appropriate to the work. Typography, spacing, motion, color, and layout should serve those purposes without compromising usability or honest communication.
 
 Avoid interfaces that feel like templates. Avoid artificial complexity. Avoid making the user feel like the software is performing sophistication instead of providing it.
 
@@ -180,7 +185,7 @@ Plystra should not sound like it is trying to impress everyone. It should sound 
 
 ## Engineering direction
 
-Plystra projects should be built with long-term maintainability in mind.
+Projects with software or engineered components should be built with long-term maintainability in mind. Other work should document the material, production, care, or preservation decisions needed for its intended life.
 
 Engineering decisions should favor clarity, explicit boundaries, and operational simplicity. A project should be understandable not only when it is created, but also when it is revisited months or years later.
 
@@ -200,7 +205,7 @@ Complexity is acceptable only when it earns its place.
 
 Plystra is the parent philosophy and brand layer for its owned projects and sub-brands. Individual identities, technical stacks, and release strategies are welcome within the full philosophy. Sub-brands must carry the same obligations through to every project they contain.
 
-A project under Plystra should never feel like a random prototype with a logo attached. It should feel like a serious tool being prepared for a long life.
+A project under Plystra should show deliberate purpose and care appropriate to its medium and maturity. Experiments may be unfinished, but their status and limitations must be honest.
 
 Project-specific documents supplement this repository; they cannot override its obligations. Sponsored projects retain their own governance and standards, subject to the separate sponsorship requirements. Public wording must distinguish ownership, a sub-brand relationship, sponsorship, and voluntary adoption of the philosophy.
 

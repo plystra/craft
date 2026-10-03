@@ -4,7 +4,7 @@
 
 Project websites are public product surfaces. They must explain the project clearly to people, search engines, and other systems that read or share their content.
 
-These standards apply to the official websites and public documentation of Plystra-owned projects and all projects under Plystra sub-brands. Sponsored projects may choose whether to adopt them; sponsorship admission requirements are defined separately in [Governance and Legal](11-governance-and-legal.md).
+These standards apply to official websites and public web documentation operated by Plystra, its sub-brands, Plystra-owned projects, and all projects under those sub-brands, whatever the medium of the underlying work. Sponsored projects may choose whether to adopt them; sponsorship admission requirements are defined separately in [Governance and Legal](11-governance-and-legal.md).
 
 Requirements below are mandatory where the described surface exists. Recommendations identify implementation choices that may vary with the site. These standards do not require private application content to become public or indexable.
 

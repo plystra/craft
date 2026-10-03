@@ -1,38 +1,39 @@
 # Plystra Charter
 
-This charter applies in full to Plystra-owned projects, Plystra sub-brands, and every project under those sub-brands. Sponsored projects follow the separate admission and affiliation rules; adoption of the rest of the philosophy is their choice. See the [scope and relationship definitions](README.md#scope-and-project-relationships).
+This charter applies in full to Plystra-owned projects, Plystra sub-brands, and every project under those sub-brands. Sponsored projects follow the separate admission and affiliation rules; adoption of the rest of the philosophy is their choice. See the [scope and relationship definitions](README.md#scope-and-project-relationships) and [requirement levels, applicability, and review process](ADOPTION.md).
 
 ## 1. Identity
 
-Plystra is an independent software lab for durable, human-scale systems.
+Plystra is an independent practice for thoughtful, durable work across software, objects, tools, writing, research, and experiments.
 
-It exists to build and maintain software that helps individuals and small groups create, record, deploy, understand, and preserve meaningful systems over time.
+It exists to make things people can use, understand, care for, and keep. The medium may change; responsibility for the work and its effect on people remains.
 
 Plystra favors tools that are small enough to reason about, strong enough to rely on, and calm enough to live with.
 
 ## 2. Long-term ambition
 
-Plystra should grow toward the seriousness of a foundation, the taste of a design-led studio, and the reliability of a mature open-source institution.
+Plystra should grow toward the seriousness of a foundation, the taste of a design-led studio, and the reliability of a mature institution that preserves and shares knowledge.
 
 It should not imitate the surface of a large company before earning the substance of one. The brand should feel precise, restrained, and permanent even when the organization is still small.
 
 ## 3. Core belief
 
-Software should not only accelerate work. It should make work more understandable.
+Good work should remain understandable beyond the moment it is made.
 
-A system is not mature because it has many features. A system is mature when its behavior can be explained, maintained, questioned, repaired, and trusted.
+A work's maturity comes from whether its purpose, construction, limits, and care can be explained. Software, physical objects, and published ideas need different forms of maintenance and preservation, but each deserves that consideration.
 
 ## 4. What Plystra builds
 
 Plystra projects may include:
 
-- personal computing systems;
-- deployment and infrastructure tools;
-- knowledge, memory, and record systems;
-- human-scale communication tools;
-- developer utilities;
-- public notes, essays, and documentation;
-- long-lived experiments that clarify how software should feel and behave.
+- software and digital systems;
+- physical objects and tools;
+- writing, publications, and documentation;
+- research and studies;
+- experiments that clarify a question, material, method, or interaction;
+- work combining several of these forms.
+
+No medium is required to imitate another. Software-specific provisions apply to software components; public websites, data handling, and other shared surfaces carry their own applicable requirements as defined in [Applying and Updating the Philosophy](ADOPTION.md#3-applicability-follows-the-work).
 
 A Plystra project does not need to be large. It must be cared for.
 
@@ -40,7 +41,7 @@ A Plystra project does not need to be large. It must be cared for.
 
 Plystra avoids:
 
-- trend-driven software with no maintenance plan;
+- trend-driven work with no plan for care or preservation;
 - interfaces that trade clarity for spectacle;
 - copywriting that exaggerates impact;
 - lock-in disguised as simplicity;
@@ -57,10 +58,10 @@ Every project under Plystra should be treated as if it may still matter in five 
 That means:
 
 - names should be chosen carefully;
-- APIs should be documented;
+- construction, methods, interfaces, and APIs should be documented where relevant;
 - migrations should be reversible when reasonable;
 - data ownership should be respected;
-- security issues should have an obvious reporting path;
+- safety and security concerns should have an obvious reporting path;
 - releases should communicate risk;
 - interfaces should not surprise users for the sake of novelty;
 - contributors should be able to understand the system without private context.

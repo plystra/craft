@@ -1,5 +1,7 @@
 # Engineering Standards
 
+These standards apply to software and code components of Plystra projects. Other forms of work follow the shared philosophy and the standards relevant to their materials, use, and maintenance. Requirement levels and applicability follow [Applying and Updating the Philosophy](../ADOPTION.md).
+
 ## 1. Engineering philosophy
 
 Plystra engineering should favor systems that can be understood, operated, and repaired.
@@ -89,6 +91,8 @@ Rules:
 - avoid silent fallback to production services;
 - separate build-time and runtime configuration when relevant.
 
+Keep credentials in a suitable secret store or environment injection mechanism. Endpoints that differ by environment or can affect production data must be configured separately for development, test, and production. Public canonical origins and website URLs may be kept in centralized, version-controlled configuration; do not treat every URL as a secret or use a public production endpoint as an implicit development default.
+
 ## 6. Data and migrations
 
 Data deserves special care.
@@ -137,7 +141,7 @@ Rules:
 
 Dependencies should be treated as long-term commitments.
 
-Use the package manager established by the lockfile or project configuration. Install dependencies before importing them. Avoid new dependencies when the platform, standard library, or existing project utilities are enough.
+Use the package manager established by the lockfile or project configuration. Confirm dependency availability and supported versions before relying on them, and update manifests and lockfiles together. Avoid new dependencies when the platform, standard library, or existing project utilities are enough.
 
 Before adding a dependency, ask:
 

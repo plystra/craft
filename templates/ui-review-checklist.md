@@ -2,12 +2,14 @@
 
 Use this checklist before merging visible UI changes in a Plystra project.
 
+Apply it to the actual interface and supported devices. Projects and sub-brands may have different visual personalities while meeting the same clarity, accessibility, and honesty requirements.
+
 ## Product fit
 
 - [ ] The change supports the project's primary loop.
 - [ ] The screen has one clear primary action.
 - [ ] The change reduces uncertainty rather than adding visual noise.
-- [ ] The copy is calm, specific, and proportionate.
+- [ ] The copy is clear, specific, proportionate, and appropriate to the project.
 - [ ] The interface does not exaggerate AI or automation capability.
 
 ## Visual design
@@ -75,4 +77,4 @@ Apply [Websites, Search, and Sharing](../principles/13-websites-search-and-shari
 
 ## Final question
 
-- [ ] Does the interface feel calmer and more trustworthy after this change?
+- [ ] Does the change serve the intended experience while preserving clarity, usability, accessibility, and trust?

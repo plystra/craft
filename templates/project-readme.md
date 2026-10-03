@@ -2,6 +2,8 @@
 
 > [One-sentence description.]
 
+Adapt this template to the medium. Software may need setup commands and architecture; objects, writing, or research may need use, methods, care, or preservation information. Keep applicable requirements and remove irrelevant examples. Work without a repository may use an equivalent project page or document.
+
 Choose the accurate relationship statement and remove the other options:
 
 - [Project Name] is a Plystra project.
@@ -13,6 +15,8 @@ Owner and operator: ...
 Responsible maintainer: ...
 
 For owned projects and projects under sub-brands, state that the full Plystra philosophy applies. Project-specific principles supplement it and cannot waive or weaken its obligations.
+
+Link to the project's philosophy review record and state its reviewed version and status accurately. Being subject to the full philosophy is not evidence that all requirements have been verified.
 
 For sponsored projects, state the support scope and current sponsorship status, the term or review trigger, and any voluntary philosophy adoption: none, named provisions, or the full philosophy. Sponsorship does not imply Plystra ownership or full compliance. This template and `PROJECT_PRINCIPLES.md` are optional for sponsored projects; their sponsorship admission and affiliation requirements still apply.
 
@@ -114,7 +118,7 @@ Explain what data is stored, where it is stored, how it can be exported or delet
 
 ## Documentation
 
-Keep only links to documents that exist. Owned projects and projects under sub-brands must include project principles; sponsored projects include them only if they choose to maintain that document.
+Keep only links to documents that exist. Owned projects and projects under sub-brands must include project principles and their philosophy review record; work without a repository may link to equivalent maintained records. Sponsored projects include these documents only if they choose to maintain them.
 
 - [Project principles](./PROJECT_PRINCIPLES.md)
 - [Architecture](./docs/architecture.md)
@@ -129,6 +133,6 @@ State the actual license terms and link to them. Open source is not mandatory fo
 
 ## About Plystra, if relevant
 
-Plystra is an independent software lab for durable, human-scale systems.
+Plystra is an independent practice for thoughtful, durable work across software, objects, tools, writing, research, and experiments.
 
 Keep this section consistent with the relationship stated above. For sponsored projects, describe the agreed support and avoid implying that Plystra owns or operates the project.

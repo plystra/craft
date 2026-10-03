@@ -2,41 +2,45 @@
 
 ## 1. Visual direction
 
-Plystra's visual identity should feel quiet, precise, and lasting.
+Plystra's own visual identity should feel quiet, precise, and lasting. This is the parent brand's direction, not the only acceptable personality for every project or sub-brand.
 
-It should avoid the visual language of disposable startup websites: excessive gradients, floating cards without purpose, noisy illustration packs, animated buzzwords, fake dashboards, and over-lit glass effects.
+These principles apply to visual work across digital and physical products, publications, and other media. Interface-specific rules apply where an interface exists, as described in [Applying and Updating the Philosophy](../ADOPTION.md).
 
-A Plystra interface should look like it was designed by someone who expects to maintain it.
+Projects may be playful, expressive, dense, or quiet when that choice serves their purpose and audience. Their visual systems must remain clear, usable, accessible, honest, and free of manipulative presentation. Gradients, illustration, cards, and effects need a purpose; fake dashboards and visual claims of capabilities the product does not have are unacceptable.
+
+Work by Plystra should look like it was designed by someone who expects to care for it.
 
 ## 2. Core visual values
 
 ### Restraint
 
-Every visual element must earn its place. If a border, shadow, animation, icon, or color does not clarify structure or communicate state, remove it.
+Every visual element must earn its place. It may support understanding, recognition, emotional tone, or the experience of the work. Decoration can serve these purposes, but must not obscure content, weaken accessibility, or mislead people about state or capability.
 
 ### Precision
 
 Spacing, alignment, contrast, and typography should feel intentional. Imperfect implementation is acceptable during early development, but visual looseness should not become the house style.
 
-### Calm density
+### Organized density
 
 Plystra products may contain complex information, but the density should feel organized rather than crowded. Use hierarchy, grouping, progressive disclosure, and clear labels before adding decorative separation.
 
-### Quiet motion
+### Purposeful motion
 
-Motion should communicate continuity, not performance. It should help the user understand where they are and what changed.
+Motion should help people understand continuity and change, or contribute deliberately to identity and expression. It must not distract from essential tasks, simulate progress or capabilities that do not exist, or override accessibility needs.
 
 ## 3. Color philosophy
 
-Plystra should not depend on color for identity alone.
+Identity should remain recognizable through more than color alone, and meaning must not depend on color alone.
 
-Default direction:
+Default direction for the parent brand and utility interfaces:
 
 - neutral surfaces;
 - high-quality grayscale hierarchy;
 - one restrained accent color per product;
 - semantic colors only when they communicate state;
-- no rainbow palettes unless the product has a real data visualization need.
+- avoid arbitrary color cycling.
+
+Projects and sub-brands may use broader or more expressive palettes for a defined identity, audience, or medium. Contrast, semantic consistency, and non-color cues remain required.
 
 Use color for:
 
@@ -45,19 +49,18 @@ Use color for:
 - primary action;
 - warning or destructive state;
 - data series when necessary;
-- project identity in small amounts.
+- project identity and intentional expression.
 
 Do not use color for:
 
 - making a weak layout look interesting;
-- arbitrary card decoration;
-- excessive gradients;
-- background noise;
-- status when text or icon is also required.
+- decoration that obscures hierarchy or interaction;
+- effects that impair legibility;
+- communicating status without the necessary text or icon cues.
 
 ## 4. Typography
 
-Typography should carry much of the premium feeling.
+Typography should support comfortable reading and express the work's character.
 
 Recommended principles:
 
@@ -118,13 +121,13 @@ Avoid:
 
 ## 7. Project identity
 
-Each Plystra-owned project, sub-brand, and project under a sub-brand may have its own accent and identity system within the full philosophy. A sub-brand's separate identity does not exempt its projects from these standards.
+Each Plystra-owned project, sub-brand, and project under a sub-brand may have its own personality and identity system within the full philosophy. A sub-brand's separate identity does not exempt its projects from these standards.
 
-However, project identity must not fight Plystra identity.
+Affiliation must be accurate, but visual similarity to the parent brand is not a condition of compliance. Shared principles do not require identical colors, typography, density, or emotional tone.
 
 A project may define:
 
-- accent color;
+- palette and typography;
 - product icon;
 - illustration style;
 - landing page motion direction;
@@ -133,11 +136,11 @@ A project may define:
 
 A Plystra project must carry the philosophy's standards for:
 
-- writing tone;
-- restraint;
+- clear and honest writing;
+- purposeful expression;
 - accessibility standards;
 - typography discipline;
-- documentation style;
+- legible and maintainable documentation;
 - maintenance labeling;
 - legal attribution pattern.
 
@@ -145,7 +148,7 @@ Sponsored projects may retain their own visual systems and choose whether to ado
 
 ## 8. Imagery and animation
 
-When using particles, diagrams, or abstract animation, the image should express system behavior rather than decoration.
+Imagery and animation may explain behavior, communicate identity, establish emotional tone, or contribute to an artistic or editorial purpose. The choice should fit the work and its audience without obscuring information or implying capabilities that do not exist.
 
 Good uses:
 
@@ -153,14 +156,15 @@ Good uses:
 - nodes forming a stable structure;
 - a deployment bundle moving through constrained paths;
 - a local object becoming a maintained system;
-- small signals becoming legible patterns.
+- small signals becoming legible patterns;
+- an illustration that gives a publication or sub-brand a recognizable voice;
+- material photography that honestly conveys an object's texture and construction.
 
 Bad uses:
 
-- generic glowing orbs;
-- random network lines;
-- meaningless AI particles;
-- stock 3D devices;
+- effects that suggest nonexistent intelligence or system activity;
+- stock imagery presented as the actual product;
+- visual noise that obscures content or controls;
 - looping animations that distract from reading.
 
 ## 9. Screenshots
@@ -181,10 +185,10 @@ Screenshots should show:
 
 Before shipping a public visual surface, ask:
 
-1. Does the page still look good without animation?
-2. Does the hierarchy work in grayscale?
-3. Can a user understand the main action in five seconds?
-4. Does any element exist only to look fashionable?
-5. Would the design still feel acceptable if trends changed next year?
+1. Does essential content remain understandable without animation?
+2. Does the hierarchy remain clear without relying on color alone?
+3. Is the work's purpose or main action clear?
+4. Does each expressive element serve understanding, identity, tone, or experience?
+5. Would the design still serve its purpose if trends changed next year?
 
-If the design depends on novelty, reduce it.
+Revise elements whose novelty comes at the expense of clarity, honesty, accessibility, or the work's purpose.

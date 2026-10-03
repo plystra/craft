@@ -100,15 +100,16 @@ Do not choose names that depend on another company's mark unless the project is 
 
 ## 8. Privacy and terms pages
 
-Public products that collect user data should eventually provide:
+Projects that collect real user data must provide the [privacy notice required by the security and privacy principles](09-security-and-privacy.md#7-privacy) before collection begins. The notice must be easy to find at the relevant collection or onboarding point and include:
 
-- privacy policy;
-- terms of use or service terms;
-- contact path;
-- data deletion instructions;
-- third-party processor disclosure where relevant.
+- data categories, purposes, access, and retention;
+- third-party recipients and processing purposes, where applicable;
+- export and deletion instructions, including limitations;
+- a contact path for the responsible operator.
 
-Early private projects may use simpler notices, but the direction should be clear before public launch.
+Private alpha tests and pilots may use a concise notice, but collecting real user data carries the same disclosure and authorization requirements. A later public launch is not the deadline for meeting them.
+
+Provide terms of use or service where needed for the product's service model, commercial arrangements, or applicable law. Applicable terms must be available before the user accepts the relevant service or transaction. The format and content of legal documents must fit the actual product and jurisdiction; one standard document does not cover every case.
 
 ## 9. Governance maturity
 
@@ -134,16 +135,19 @@ Do not skip stages for appearance.
 
 ## 10. Legal review checklist
 
-Before public launch of a Plystra project:
+Before public launch of a Plystra project, check the following. Privacy disclosure and authorization checks must also pass before any real user data is collected or private content is sent to a third party, including during private testing.
 
 1. Is the license explicit?
 2. Is ownership clear?
 3. Are trademark statements accurate?
 4. Are third-party licenses compatible?
 5. Are public claims supportable?
-6. Is user data handled according to the published policy?
-7. Are examples free of secrets and private infrastructure details?
-8. Is there a security reporting path?
+6. Is an accurate, accessible privacy notice available before collection, with a contact path and clear export and deletion instructions?
+7. Does actual data handling match the notice, including recipients, purposes, retention, and limitations?
+8. Are transfers of private content covered by explicit authorization for the purpose, recipient, and data scope?
+9. Are any applicable service or transaction terms available before acceptance?
+10. Are examples free of secrets and private infrastructure details?
+11. Is there a security reporting path?
 
 ## 11. Sponsorship admission and continuation
 
