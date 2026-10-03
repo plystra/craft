@@ -121,6 +121,8 @@ Deployments should be deliberate. Before declaring a project deployable, verify:
 
 Do not deploy, publish, push, merge, or release from a project workflow unless the maintainer has explicitly asked for it.
 
+Official website releases must also pass the checks in [Websites, Search, and Sharing](13-websites-search-and-sharing.md): verify deployed content and metadata, status codes, indexing policy, sitemap, required `/llms.txt`, structured data, and sharing previews. Update these surfaces when routes, domains, project status, or public relationships change.
+
 ## 10. Retirement
 
 Retiring a project is a responsible act when maintenance is no longer possible or aligned.

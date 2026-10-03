@@ -78,7 +78,7 @@ Recommended pattern:
 Example:
 
 ```text
-Tarsail is a release bundler and SSH deployer for teams that need to ship Docker Compose applications in restricted or unreliable network environments without depending on live registry access during deployment.
+[Project Name] is a release bundler and SSH deployer for teams that need to ship Docker Compose applications in restricted or unreliable network environments without depending on live registry access during deployment.
 ```
 
 ## 5. Interface copy

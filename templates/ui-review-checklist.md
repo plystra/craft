@@ -60,6 +60,19 @@ Use this checklist before merging visible UI changes in a Plystra project.
 - [ ] Tests or manual QA notes cover the critical path.
 - [ ] Console errors, broken assets, and obvious network failures were checked.
 
+## Public websites and documentation
+
+Apply [Websites, Search, and Sharing](../principles/13-websites-search-and-sharing.md) when the change affects an official website or public documentation. Sponsored projects may choose whether to adopt these checks.
+
+- [ ] Indexable pages return readable primary content and accurate page-specific metadata in their HTML.
+- [ ] Canonical URLs, internal links, sharing metadata, and sitemap entries agree.
+- [ ] Status codes and indexing rules match the intended public surface.
+- [ ] The sitemap excludes errors, redirects, duplicates, private pages, and `noindex` pages.
+- [ ] The required `/llms.txt` is publicly reachable and current, with accurate status and canonical links.
+- [ ] Share images resolve, have alternative text, and remain readable in previews.
+- [ ] Applicable structured data is valid and reflects actual content and relationships.
+- [ ] Production build and deployed-response checks cover the affected pages and assets.
+
 ## Final question
 
 - [ ] Does the interface feel calmer and more trustworthy after this change?

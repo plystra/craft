@@ -8,7 +8,7 @@ The goal is not to use the most impressive architecture. The goal is to build so
 
 A Plystra codebase should make contributors feel that someone cared about future maintenance.
 
-For day-to-day implementation practice, code projects should also follow [`12-code-project-working-standards.md`](12-code-project-working-standards.md).
+For day-to-day implementation practice, Plystra-owned code projects and all code projects under Plystra sub-brands must also follow [`12-code-project-working-standards.md`](12-code-project-working-standards.md). Sponsored projects choose whether to adopt these standards.
 
 ## 2. General principles
 
@@ -39,7 +39,7 @@ A contributor should be able to understand a feature by reading a small set of f
 
 ## 3. Repository standards
 
-Every public Plystra repository should include:
+Every public repository for a Plystra-owned project or a project under a Plystra sub-brand should include:
 
 ```text
 README.md
@@ -47,11 +47,13 @@ LICENSE
 SECURITY.md
 CONTRIBUTING.md, when contributions are accepted
 CHANGELOG.md or release notes, when versions are published
-PROJECT_PRINCIPLES.md, when publicly associated with Plystra
+PROJECT_PRINCIPLES.md
 docs/, when setup or operation is non-trivial
 ```
 
 Every private repository should still include enough documentation for future maintainers.
+
+Sponsored projects choose whether to adopt these engineering standards. Sponsorship alone does not require this document set or `PROJECT_PRINCIPLES.md`; the separate [sponsorship admission requirements](11-governance-and-legal.md#11-sponsorship-admission-and-continuation) apply.
 
 ## 4. README requirements
 

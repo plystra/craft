@@ -1,10 +1,32 @@
 # [Project Name] Principles
 
+Use this template for Plystra-owned projects and projects under Plystra sub-brands. Sponsored projects may use it voluntarily; sponsorship does not require a `PROJECT_PRINCIPLES.md` file. Replace prompts and remove instructions before publishing.
+
 ## Relationship to Plystra
 
-[Project Name] is a Plystra project because...
+Relationship: Plystra-owned project / Project under [Sub-brand], a Plystra sub-brand / Independent project sponsored by Plystra
+
+Owner and operator: ...
+
+Responsible maintainer: ...
+
+Relationship confirmed by: ...
+
+For owned projects and projects under sub-brands:
+
+This project follows the full Plystra philosophy. These project principles explain implementation choices and add project-specific requirements; they do not waive or weaken the philosophy.
 
 It contributes to the broader Plystra philosophy of durable, human-scale systems by...
+
+For sponsored projects that voluntarily use this template:
+
+- Philosophy adoption: None / Named provisions: ... / Full philosophy
+- Sponsorship scope and responsibilities: ...
+- Term or review trigger: ...
+- Permitted sponsorship wording and brand use: ...
+- Sponsorship admission record: ...
+
+State adoption accurately. The sponsorship admission and affiliation requirements apply regardless of the chosen scope; sponsorship does not make this a Plystra-owned project. Remove this sponsorship block for owned projects and projects under sub-brands.
 
 ## Project description
 

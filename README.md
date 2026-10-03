@@ -1,6 +1,6 @@
 # Plystra Philosophy
 
-This repository defines the shared philosophy, brand standards, product principles, interface rules, documentation conventions, and stewardship expectations for projects under the Plystra name.
+This repository defines the shared philosophy, brand standards, product principles, interface rules, documentation conventions, and stewardship expectations for Plystra-owned projects and Plystra sub-brands, including every project under those sub-brands. It also defines the separate admission and affiliation rules for projects sponsored by Plystra.
 
 Plystra is currently an independently operated personal brand and project umbrella by [immoses (Moses Qiu)](https://www.immoses.com).
 
@@ -26,6 +26,24 @@ These documents should help contributors answer questions such as:
 
 The goal is not to make every project look identical. The goal is to make every project feel like it comes from the same underlying craft.
 
+## Scope and project relationships
+
+| Relationship | Meaning | Philosophy obligations |
+| --- | --- | --- |
+| **Plystra-owned project** | A project owned and stewarded directly under Plystra. | Must follow the full philosophy. |
+| **Plystra sub-brand** | A brand within Plystra with its own name and identity. | The sub-brand and every project under it must follow the full philosophy. |
+| **Plystra-sponsored project** | An independently owned and governed project receiving agreed support from Plystra. | May choose whether to adopt the philosophy, in full or in part. Must meet the sponsorship admission and affiliation requirements. |
+
+Throughout this repository, **Plystra projects** means Plystra-owned projects and all projects under Plystra sub-brands. Sponsored projects are named explicitly when a rule applies to them. Sponsorship alone does not place a project under Plystra ownership or governance.
+
+The full philosophy includes this README, the [Charter](CHARTER.md), and every document in `principles/`, including the [website, search, and sharing requirements](principles/13-websites-search-and-sharing.md). Existing and new projects are covered. A distinct name, domain, technical stack, business model, or maturity level does not exempt an owned project or a sub-brand project.
+
+Follow each provision as written, including its stated applicability and recommended choices. A project without a website does not need to create one solely to meet website requirements; when it has an official website, those requirements apply. Project documents may explain implementation choices and add stricter rules, but must not waive or weaken the philosophy.
+
+Following the philosophy does not establish ownership, sponsorship, or permission to use the Plystra brand. Association must be confirmed by Plystra's steward. See [Governance and Legal](principles/11-governance-and-legal.md) for admission and relationship records.
+
+**Open source is not mandatory** for any of these categories. Projects may use open-source, source-available, or proprietary terms, provided licensing and public claims are accurate.
+
 ## Repository structure
 
 ```text
@@ -45,7 +63,8 @@ plystra/philosophy
 │   ├── 09-security-and-privacy.md
 │   ├── 10-release-and-maintenance.md
 │   ├── 11-governance-and-legal.md
-│   └── 12-code-project-working-standards.md
+│   ├── 12-code-project-working-standards.md
+│   └── 13-websites-search-and-sharing.md
 └── templates/
     ├── decision-record.md
     ├── project-principles.md
@@ -58,10 +77,11 @@ plystra/philosophy
 
 ### For new projects
 
-Before a new project is publicly associated with Plystra, create a `PROJECT_PRINCIPLES.md` file using [`templates/project-principles.md`](templates/project-principles.md).
+Before publicly introducing a Plystra-owned project or a project under a Plystra sub-brand, create a `PROJECT_PRINCIPLES.md` file using [`templates/project-principles.md`](templates/project-principles.md). A new sub-brand must also document its relationship to Plystra and how it will uphold the full philosophy across its projects.
 
 The document should explain:
 
+* whether the project is directly owned or belongs to a Plystra sub-brand, and who is responsible for it;
 * why the project belongs under Plystra;
 * what the project is trying to make easier, calmer, or more durable;
 * what the project refuses to do;
@@ -70,9 +90,11 @@ The document should explain:
 
 A project should not carry the Plystra name only because it was created by the same person. It should carry the name because it shares the same care, restraint, and long-term direction.
 
+Sponsored projects instead follow the [sponsorship admission process](principles/11-governance-and-legal.md#11-sponsorship-admission-and-continuation). They are not required to create `PROJECT_PRINCIPLES.md` or adopt the full philosophy. If they choose to adopt any part, they should state that scope accurately.
+
 ### For existing projects
 
-Existing projects do not need to become identical. They should gradually adopt these standards where doing so improves coherence, trust, and maintainability.
+Existing Plystra-owned projects and all projects under Plystra sub-brands must also follow the full philosophy. Where a project falls short, record the gap, a responsible maintainer, and a correction plan. A plan records unfinished work; it does not exempt the project or establish compliance.
 
 Start with:
 
@@ -82,11 +104,11 @@ Start with:
 4. A maintenance policy.
 5. Documentation that explains decisions rather than only describing commands.
 
-Do not rewrite a working project only to satisfy aesthetic consistency. Apply these standards where they make the project clearer, more trustworthy, and easier to maintain.
+Projects do not need to look identical or share a technical stack. Correct gaps with focused changes that meet the standards and preserve working behavior.
 
 ### For code projects
 
-Code projects should also follow [`principles/12-code-project-working-standards.md`](principles/12-code-project-working-standards.md).
+Plystra-owned code projects and all code projects under Plystra sub-brands must also follow [`principles/12-code-project-working-standards.md`](principles/12-code-project-working-standards.md). Sponsored projects choose whether to adopt these standards.
 
 These standards define how implementation work should be scoped, edited, verified, documented, reviewed, and shipped. They are especially important for repositories modified by coding agents or external contributors.
 
@@ -176,11 +198,11 @@ Complexity is acceptable only when it earns its place.
 
 ## Relationship between Plystra and projects
 
-Plystra is the parent philosophy and brand layer. Individual projects are allowed to have distinct names, identities, technical stacks, and release strategies, but they should inherit the same standards for care, writing, design, security, maintainability, and public behavior.
+Plystra is the parent philosophy and brand layer for its owned projects and sub-brands. Individual identities, technical stacks, and release strategies are welcome within the full philosophy. Sub-brands must carry the same obligations through to every project they contain.
 
 A project under Plystra should never feel like a random prototype with a logo attached. It should feel like a serious tool being prepared for a long life.
 
-Project-specific documents may override this repository when a project has a clear reason to differ. However, major deviations from this philosophy should be intentional and documented.
+Project-specific documents supplement this repository; they cannot override its obligations. Sponsored projects retain their own governance and standards, subject to the separate sponsorship requirements. Public wording must distinguish ownership, a sub-brand relationship, sponsorship, and voluntary adoption of the philosophy.
 
 ## Stewardship
 

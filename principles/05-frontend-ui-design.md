@@ -400,3 +400,7 @@ Before merging a visible UI change, ask:
 10. Does the interface feel calmer after the change?
 
 If the answer to the last question is no, reconsider the design.
+
+## 22. Public websites
+
+Official project websites and public documentation must also meet [Websites, Search, and Sharing](13-websites-search-and-sharing.md). Treat readable HTML, page metadata, accurate sharing previews, and the required `/llms.txt` as part of the public interface, and verify them alongside visual changes that affect public content or navigation.

@@ -1,5 +1,7 @@
 # Plystra Charter
 
+This charter applies in full to Plystra-owned projects, Plystra sub-brands, and every project under those sub-brands. Sponsored projects follow the separate admission and affiliation rules; adoption of the rest of the philosophy is their choice. See the [scope and relationship definitions](README.md#scope-and-project-relationships).
+
 ## 1. Identity
 
 Plystra is an independent software lab for durable, human-scale systems.
@@ -73,13 +75,20 @@ Plystra may be ambitious, but it should not be grandiose. It should let the qual
 
 ## 8. Project admission
 
-A project should be associated with Plystra only when it satisfies at least three conditions:
+A Plystra-owned project or a project under a Plystra sub-brand must meet all of these conditions:
 
 1. It expresses a long-term idea, not merely a one-off implementation.
 2. It can be maintained with available resources.
 3. It benefits from being understood as part of the Plystra family.
 4. It can be explained without relying on hype.
 5. It has a plausible path to documentation, support, and responsible stewardship.
+6. It commits to the full philosophy, with clear responsibility for meeting its requirements.
+
+A Plystra sub-brand must document its identity, responsible steward, and relationship to Plystra. Every project under it inherits the full philosophy; a sub-brand cannot grant its projects an exemption.
+
+A sponsored project remains independently owned and governed. It may decide whether to adopt the philosophy, but must meet all [sponsorship admission requirements](principles/11-governance-and-legal.md#11-sponsorship-admission-and-continuation): compatible purpose, clear ownership and maintenance responsibility, accurate licensing and claims, basic security and privacy practices, a feedback path, and an accurately described sponsorship confirmed by Plystra's steward.
+
+None of these relationships requires a project to be open source. A shared author, voluntary adoption of the philosophy, or receipt of support does not by itself establish ownership or a sub-brand relationship.
 
 ## 9. Project retirement
 

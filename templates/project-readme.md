@@ -2,7 +2,19 @@
 
 > [One-sentence description.]
 
-[Project Name] is a Plystra project.
+Choose the accurate relationship statement and remove the other options:
+
+- [Project Name] is a Plystra project.
+- [Project Name] is a project by [Sub-brand], a Plystra sub-brand.
+- [Project Name] is independently owned and maintained by [Owner/Maintainer], with [specific support] sponsored by Plystra.
+
+Owner and operator: ...
+
+Responsible maintainer: ...
+
+For owned projects and projects under sub-brands, state that the full Plystra philosophy applies. Project-specific principles supplement it and cannot waive or weaken its obligations.
+
+For sponsored projects, state the support scope and current sponsorship status, the term or review trigger, and any voluntary philosophy adoption: none, named provisions, or the full philosophy. Sponsorship does not imply Plystra ownership or full compliance. This template and `PROJECT_PRINCIPLES.md` are optional for sponsored projects; their sponsorship admission and affiliation requirements still apply.
 
 ## Status
 
@@ -102,6 +114,8 @@ Explain what data is stored, where it is stored, how it can be exported or delet
 
 ## Documentation
 
+Keep only links to documents that exist. Owned projects and projects under sub-brands must include project principles; sponsored projects include them only if they choose to maintain that document.
+
 - [Project principles](./PROJECT_PRINCIPLES.md)
 - [Architecture](./docs/architecture.md)
 - [Development](./docs/development.md)
@@ -111,6 +125,10 @@ Explain what data is stored, where it is stored, how it can be exported or delet
 
 [License name]
 
-## About Plystra
+State the actual license terms and link to them. Open source is not mandatory for any relationship category; do not describe source-available or proprietary software as open source.
+
+## About Plystra, if relevant
 
 Plystra is an independent software lab for durable, human-scale systems.
+
+Keep this section consistent with the relationship stated above. For sponsored projects, describe the agreed support and avoid implying that Plystra owns or operates the project.

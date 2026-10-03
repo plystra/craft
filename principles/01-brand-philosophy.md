@@ -50,26 +50,38 @@ When in doubt, choose the quieter version.
 
 ## 4. Brand hierarchy
 
-Plystra is the parent brand. Projects may have their own names and identities, but the relationship should remain clear.
+Plystra is the parent brand for its owned projects and sub-brands. A sub-brand may have its own name and identity, but it and every project under it must follow the full philosophy. Sponsored projects remain independent. Use the [relationship definitions](../README.md#scope-and-project-relationships) consistently.
 
 Recommended pattern:
 
 ```text
 Plystra
-└── Project Name
-    ├── product website
-    ├── documentation
-    ├── repository
-    └── release notes
+├── Owned Project
+└── Sub-brand
+    └── Project
+
+Independent Project ← sponsorship from Plystra
 ```
 
-A project can say:
+An owned project can say:
 
 > A Plystra project.
 
-or:
+A sub-brand can say:
 
-> Built under the Plystra philosophy.
+> A Plystra sub-brand.
+
+A project under a sub-brand can say:
+
+> A project by [Sub-brand], a Plystra sub-brand.
+
+A sponsored project can say, within its agreed scope:
+
+> Sponsored by Plystra.
+
+Sponsorship wording must make the nature of support clear. It must not imply Plystra ownership, operation, or responsibility for the project's entire product. Do not list sponsored projects as owned projects or sub-brands.
+
+Voluntary use of this philosophy does not authorize any of these affiliation claims. A statement such as `Follows the Plystra philosophy` describes adoption only, must match the actual scope adopted, and must not imply an official relationship.
 
 Avoid making every project name visually dependent on the Plystra wordmark. The parent brand should create trust and coherence, not crowd out the product.
 

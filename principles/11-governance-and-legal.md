@@ -18,19 +18,17 @@ Good early governance means:
 
 ## 2. Ownership and attribution
 
-Every project under Plystra should clearly state its ownership and operating context.
+Every Plystra-owned project, sub-brand, and project under a sub-brand must clearly record its owner, operator, responsible maintainer, and relationship to Plystra. For a project under a sub-brand, identify the sub-brand as well.
 
-Recommended wording where appropriate:
+Sponsored projects must identify their independent owner and maintainers and describe Plystra's agreed support. Sponsorship does not establish Plystra ownership, operation, or responsibility for the whole project.
 
-```text
-Plystra is a trademark operated by Zhizhizhi (Shanghai) Technology Co., Ltd.
-```
-
-Use the exact legal wording only where it is accurate for the specific public surface. Do not place legal claims in a repository if the relationship is uncertain.
+Public attribution must match these records and the [brand relationship rules](01-brand-philosophy.md#4-brand-hierarchy). State legal entities and trademark status only when verified for that public surface. Adoption of the philosophy alone does not establish an official relationship or permission to use Plystra's name and marks.
 
 ## 3. Licenses
 
 Every public repository must have an explicit license.
+
+Open source is not mandatory for Plystra-owned projects, sub-brands or their projects, or sponsored projects. No category requires public source code. License terms and descriptions must accurately reflect what is available and what users may do with it.
 
 The license should match the project's goals:
 
@@ -146,3 +144,22 @@ Before public launch of a Plystra project:
 6. Is user data handled according to the published policy?
 7. Are examples free of secrets and private infrastructure details?
 8. Is there a security reporting path?
+
+## 11. Sponsorship admission and continuation
+
+Sponsored projects remain independently owned and governed. They may adopt none, part, or all of the Plystra philosophy. Sponsorship does not require `PROJECT_PRINCIPLES.md`, a particular technical stack, or adoption of the full philosophy, and does not transfer ownership to Plystra.
+
+Admission requires all of the following:
+
+1. **Compatible purpose.** The project's purpose and public conduct are compatible with care for users, honest claims, and responsible maintenance.
+2. **Clear responsibility.** Ownership, operating context, responsible maintainers, and current maintenance status are identifiable. Support expectations reflect the resources available.
+3. **Accurate licensing and claims.** The project has the rights to distribute what it offers, describes its license terms accurately, and makes supportable public claims. Open-source, source-available, and proprietary projects are all eligible.
+4. **Basic security and privacy care.** Practices are proportionate to the project's risks. Secrets are protected, relevant data handling and known limitations are explained, and there is a path for reporting security concerns.
+5. **A feedback path.** Users can report problems or reach a responsible maintainer, with honest expectations about support.
+6. **Confirmed and accurate sponsorship.** Plystra's steward and the project maintainer confirm a written record of the support provided, each party's responsibilities, the term or review trigger, and permitted public wording and brand use. Public descriptions identify the nature and scope of support without implying ownership or guarantees beyond that scope.
+
+Record the project's chosen philosophy adoption scope separately from sponsorship: none, named provisions, or the full philosophy. Any public adoption claim must match actual practice; partial adoption must not be described as full compliance. The admission requirements above apply regardless of that choice.
+
+These requirements continue throughout sponsorship. Review the relationship when its agreed trigger occurs or when ownership, maintenance, support, or material security and privacy circumstances change. If the requirements are no longer met, agree corrective action or suspend or end sponsorship.
+
+When sponsorship changes or ends, update current descriptions and remove or revise current sponsorship marks as appropriate. Accurate historical acknowledgments may remain if they clearly describe the past scope and period of support and follow the agreed brand-use terms.

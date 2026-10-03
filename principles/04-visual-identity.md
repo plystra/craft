@@ -99,6 +99,8 @@ General rules:
 
 The Plystra logo should be treated as a mark of stewardship, not decoration.
 
+For sponsored projects, an authorized logo placement identifies only the agreed sponsorship. Pair it with clear sponsorship wording and follow the [brand relationship rules](01-brand-philosophy.md#4-brand-hierarchy); do not present it as a mark of ownership or operation. Adoption of this philosophy alone does not grant permission to use the logo.
+
 Use the logo:
 
 - on the main Plystra site;
@@ -116,7 +118,7 @@ Avoid:
 
 ## 7. Project identity
 
-Each project may have its own accent and small identity system.
+Each Plystra-owned project, sub-brand, and project under a sub-brand may have its own accent and identity system within the full philosophy. A sub-brand's separate identity does not exempt its projects from these standards.
 
 However, project identity must not fight Plystra identity.
 
@@ -129,7 +131,7 @@ A project may define:
 - screenshot composition;
 - domain-specific visual metaphors.
 
-A project should inherit:
+A Plystra project must carry the philosophy's standards for:
 
 - writing tone;
 - restraint;
@@ -138,6 +140,8 @@ A project should inherit:
 - documentation style;
 - maintenance labeling;
 - legal attribution pattern.
+
+Sponsored projects may retain their own visual systems and choose whether to adopt these standards. Within these visual standards, they are required only to use Plystra's name and marks accurately and with authorization; the separate [sponsorship admission requirements](11-governance-and-legal.md#11-sponsorship-admission-and-continuation) still apply.
 
 ## 8. Imagery and animation
 
