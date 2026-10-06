@@ -63,9 +63,9 @@ A deprecation notice should explain:
 
 ## 6. Backward compatibility
 
-Compatibility should be treated as a user promise.
+Compatibility should be treated as a user promise once there is someone to keep it for.
 
-It may be broken when necessary, especially before stable releases, but the cost should be visible and justified.
+Before a project's first release, replace directly. Do not add compatibility parsing, deprecated aliases, shims, dual output, or fallback paths for unreleased interfaces; regenerate or discard existing local state instead. After release, compatibility may still be broken when necessary, but the cost should be visible and justified.
 
 For stable projects:
 

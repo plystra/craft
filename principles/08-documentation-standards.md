@@ -36,7 +36,7 @@ PROJECT_PRINCIPLES.md
 docs/, when setup or operation is non-trivial
 ```
 
-`LICENSE` is required by [Governance and Legal](11-governance-and-legal.md#3-licenses) and `PROJECT_PRINCIPLES.md` by [the adoption process](../ADOPTION.md#5-review-and-correction). Every private repository should still include enough documentation for future maintainers.
+`LICENSE` is required by [Governance and Legal](11-governance-and-legal.md#3-licenses) and `PROJECT_PRINCIPLES.md` by [project principles](../ADOPTION.md#4-project-principles). Every private repository should still include enough documentation for future maintainers.
 
 ### README
 
@@ -189,6 +189,8 @@ It should specify:
 - commit expectations;
 - security rules;
 - where to add documentation.
+
+Guidance read by agents describes the project as it is now. Leave out plans for later rewrites, migrations onto other systems, and pointers to unfinished work elsewhere: an agent treats every mention as a lead, goes to read the unfinished code, and builds premature integration that must be undone later. Keep such plans with the steward, and give agents a workspace that contains only what the task needs.
 
 Document which guidance files apply to which paths, repository boundaries, verification and commit expectations, required review gates, and where project-specific documentation must be updated. Guidance carries authority as described in [trusted project guidance](12-code-project-working-standards.md#2-obligations-authorization-and-trusted-guidance); it must not claim to redefine a tool or platform's instruction priority. Keep private infrastructure details in documentation restricted to the appropriate audience.
 

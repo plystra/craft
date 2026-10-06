@@ -1,196 +1,61 @@
 # [Project Name] Principles
 
-This is the adoption record described in [review and correction](../ADOPTION.md#5-review-and-correction). Adapt sections to the actual medium. Replace prompts, remove instructions, and replace relative links with canonical Craft URLs before publishing.
+This is the project principles record described in [project principles](../ADOPTION.md#4-project-principles). It is read by the people and agents who work on the project before they start a task. Keep it short and current, adapt the sections to the actual medium, remove these instructions, and replace relative links with canonical Craft URLs.
 
-## Relationship to Plystra
+Relationship: Plystra-owned project / Plystra sub-brand / Project under [Sub-brand], a Plystra sub-brand
 
-Relationship: Plystra-owned project / Plystra sub-brand / Project under [Sub-brand], a Plystra sub-brand / Independent project sponsored by Plystra
+Owner and responsible maintainer: ...
 
-Owner and operator: ...
+Craft version applied: ...
 
-Responsible maintainer: ...
+## What this project is
 
-Relationship confirmed by: ...
+[Project Name] is a [kind of work] for [audience or context] that [purpose and intended use].
 
-For owned projects, sub-brands, and projects under sub-brands:
-
-This project is subject to the full Plystra philosophy. The review record below states what has actually been verified.
-
-It contributes to the broader Plystra philosophy of durable, human-scale systems by...
-
-For sponsored projects that voluntarily use this template:
-
-- Philosophy adoption: None / Named provisions: ... / Full philosophy
-- Sponsorship scope and responsibilities: ...
-- Term or review trigger: ...
-- Permitted sponsorship wording and brand use: ...
-- Sponsorship admission record: ...
-
-Remove this block for owned projects, sub-brands, and projects under sub-brands.
-
-## Philosophy review record
-
-- Philosophy version reviewed: ...
-- Exact source commit reviewed: ...
-- Review date and responsible maintainer: ...
-- Review status: Not yet reviewed / Reviewed with open gaps / All applicable requirements verified
-- Next review due: YYYY-MM-DD
-- Media and components: Software / Object / Tool / Writing / Research / Experiment / ...
-- Public surfaces and relevant data handling: ...
-- For a sub-brand, its project inventory and each project's review record: ...
-
-| Provision or section | Applicability and reason | Result: Met / Open gap / Not applicable | Evidence reference |
-| --- | --- | --- | --- |
-| ... | ... | ... | ... |
-
-| Open gap | Owner | Corrective action | Deadline (YYYY-MM-DD) | Planned verification |
-| --- | --- | --- | --- | --- |
-| ... | ... | ... | ... | ... |
-
-Material alternatives to recommendations and their reasons:
-
-- ...
-
-Results, `Not applicable`, evidence, and compliance claims follow [applicability](../ADOPTION.md#3-applicability-follows-the-work) and [review and correction](../ADOPTION.md#5-review-and-correction).
-
-## Project description
-
-[Project Name] is a [kind of work] for [audience/context] that [purpose and intended use or contribution].
-
-## Maturity
-
-Current maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable
+Maturity: Exploration / Private Alpha / Public Alpha / Beta / Stable
 
 Maintenance state: Active / Slow active / Maintenance / Paused / Retired
 
 ## Primary loop
 
-For a product with a repeated workflow:
+For a product with a repeated workflow, write the loop it must make excellent:
 
 ```text
 trigger -> action -> feedback -> record -> next step
 ```
 
-For this project:
-
-```text
-...
-```
-
-For other work, describe how people encounter, use, understand, care for, or preserve it instead.
+For other work, describe how people encounter, use, understand, or preserve it.
 
 ## What this project values
 
-- ...
-- ...
-- ...
+Write the judgments a contributor or agent should make without asking. Prefer concrete statements that could decide a real disagreement over general virtues.
 
 ## What this project refuses to do
 
-This project should not:
+List the things the project will not do, even when asked or when they look useful.
 
-- ...
-- ...
-- ...
+## Trust and data
 
-## User trust model
-
-This project affects user trust because...
-
-Important trust boundaries:
-
-- ...
-- ...
-
-Review or confirmation is required for:
-
-- ...
-- ...
-
-## Data model notes
-
-Important user data or project data:
-
-- ...
-
-Export behavior:
-
-- ...
-
-Deletion behavior:
-
-- ...
-
-AI-generated or automated data, if any:
-
-- ...
+State the trust boundaries, which actions require review or confirmation, what user or project data is kept, and how it is exported and deleted. Omit this section when the project handles no data and takes no consequential actions.
 
 ## Interface direction
 
-The interface should feel:
+Describe how the interface should feel and what it must avoid, including anything specific to this project's identity. Omit this section when the project has no interface.
 
-- ...
-- ...
+## Working on this project
 
-The interface should avoid:
+Local instruction files: `AGENTS.md` or equivalent.
 
-- ...
-- ...
+Commands:
 
-## Maintenance policy
-
-This project will be maintained by...
-
-Expected release style:
-
-- ...
-
-Known limitations:
-
-- ...
-
-## Engineering and verification
-
-For software, complete the instruction and command fields below. For other work, describe the relevant methods, production or editorial process, and verification. Mixed projects cover each component.
-
-Local instruction files:
-
-- `AGENTS.md` / equivalent: ...
-
-Primary development commands:
-
-- Install: ...
 - Run: ...
 - Test: ...
-- Lint/typecheck/build: ...
+- Lint, typecheck, build: ...
 
-Definition of done for this project:
+Definition of done: ...
 
-- ...
+Changes that need the maintainer's review before they are made: ...
 
-High-risk changes that require extra review:
+## Departures from Craft recommendations
 
-- ...
-
-## Security and operations
-
-Authentication model:
-
-- ...
-
-Authorization boundaries:
-
-- ...
-
-Secrets and configuration:
-
-- ...
-
-Deployment or release constraints:
-
-- ...
-
-## Open questions
-
-- ...
-- ...
+For each material departure from a Craft recommendation, state the recommendation, what this project does instead, and why. Omit this section when there are none.

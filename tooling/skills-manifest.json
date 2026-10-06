@@ -8,7 +8,7 @@
         {
           "path": "ADOPTION.md",
           "output": "references/applying-craft.md",
-          "when": "Always first: requirement levels, applicability by surface, versions, and the adoption review record."
+          "when": "Always first: requirement levels, applicability by surface, the project principles record, and versions."
         },
         {
           "path": "README.md",
@@ -33,17 +33,17 @@
         {
           "path": "principles/01-brand-philosophy.md",
           "output": "references/brand.md",
-          "when": "Positioning, personality, the five words, relationship wording, anti-patterns, and the brand test before publishing."
+          "when": "Positioning, personality, the five words, relationship wording, anti-patterns such as the template look and generated decoration, and the brand test before publishing."
         },
         {
           "path": "principles/02-product-principles.md",
           "output": "references/product.md",
-          "when": "Product purpose, automation and AI status, confirmation, data ownership, naming, and maturity labels."
+          "when": "Product purpose, automation and AI status, confirmation, data ownership, scope under demonstrated need, deferring what real use must decide, agents as first-class users, naming, and maturity labels."
         },
         {
           "path": "principles/03-language-and-writing.md",
           "output": "references/writing.md",
-          "when": "Any user-facing text: voice, claims, descriptions, labels, empty states, and error messages."
+          "when": "Any text: voice, document form, outcome-first public copy, claims, descriptions, labels, empty states, and error messages."
         },
         {
           "path": "principles/08-documentation-standards.md",
@@ -80,7 +80,7 @@
         {
           "path": "templates/project-principles.md",
           "output": "assets/templates/project-principles.md",
-          "when": "Create or update the project's PROJECT_PRINCIPLES.md relationship and adoption record."
+          "when": "Create or update the project's PROJECT_PRINCIPLES.md working record."
         },
         {
           "path": "templates/project-readme.md",
@@ -146,7 +146,7 @@
         {
           "path": "principles/04-visual-identity.md",
           "output": "references/visual-identity.md",
-          "when": "Identity, marks and logo use, palette, typography, layout, imagery, motion, and screenshots in any medium."
+          "when": "Identity, the wordmark, palette and grounds, typography, layout, project site identity, imagery, figures and icons, screenshots, and visual review in any medium."
         },
         {
           "path": "principles/05-frontend-ui-design.md",

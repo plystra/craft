@@ -2,11 +2,11 @@
 
 # Sources for plystra-craft-design
 
-These task references distribute selected canonical Plystra Craft material (version 1.0.1). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
+These task references distribute selected canonical Plystra Craft material (version 2.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
 | Material and selection | Read when |
 | --- | --- |
-| [principles/04-visual-identity.md](visual-identity.md) | Identity, marks and logo use, palette, typography, layout, imagery, motion, and screenshots in any medium. |
+| [principles/04-visual-identity.md](visual-identity.md) | Identity, the wordmark, palette and grounds, typography, layout, project site identity, imagery, figures and icons, screenshots, and visual review in any medium. |
 | [principles/05-frontend-ui-design.md](interface-design.md) | Digital interfaces: personality, hierarchy, spacing, surfaces, components, forms, navigation, states, responsive behavior, tokens, and data visualization. |
 | [principles/06-accessibility-and-interaction.md](accessibility.md) | Keyboard, focus, contrast, motion, touch, cognitive accessibility, and internationalization. |
 | [templates/ui-review-checklist.md](../assets/templates/ui-review-checklist.md) | Review a visible interface change before merging. |

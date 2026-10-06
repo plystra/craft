@@ -51,6 +51,8 @@ Use color for:
 - data series when necessary;
 - project identity and intentional expression.
 
+Give each color mode one ground. A page sits on a single surface color in light mode and a single surface color in dark mode; do not alternate dark and light bands or blocks to separate sections, which breaks the page into pieces. Separate sections with rules, space, and type instead. Choose neutrals in the same temperature as the accent so the two do not clash.
+
 Do not use color for:
 
 - making a weak layout look interesting;
@@ -71,6 +73,8 @@ Recommended principles:
 - ensure code and identifiers use a distinct monospace style;
 - keep line length reasonable;
 - avoid tiny text that looks elegant but hurts usability.
+
+Keep each typeface in its role. A serif or display face belongs to headings and section numerals; data, results, identifiers, and row numbers are set in monospace, including inside figures and animated scenes. Introducing a display face inside a diagram or a table reads as an accident.
 
 Suggested type roles:
 
@@ -98,55 +102,57 @@ General rules:
 - use tables when comparison is the primary task;
 - use drawers and modals sparingly.
 
-## 6. Logo usage
+## 6. Wordmark
 
-The Plystra logo should be treated as a mark of stewardship, not decoration.
+Plystra has no logo. Its identity is the wordmark, set in type, including its dots. Do not add a symbol, monogram, or mark beside it, and do not draw one for a project.
 
-A sponsored project may use the logo only as authorized for its sponsorship, together with the [sponsorship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). It identifies the agreed support, not ownership or operation.
+A project uses the lockup `PLYSTRA | PROJECT`, with the project name in the second cell. The wordmark always stands on the current mode's ground: on light in light mode and on dark in dark mode, with that mode's colors for the dots. Do not place it on an inverted block, a photograph, or a noisy background.
 
-Use the logo:
+Use the wordmark:
 
-- on the main Plystra site;
-- in project footers or about pages;
-- in repository documentation where brand affiliation matters;
-- in release assets when appropriate.
+- in the header and footer of official sites;
+- on sharing images and cards;
+- in repository documentation where brand affiliation matters.
+
+A sponsored project may use the wordmark only as authorized for its sponsorship, together with the [sponsorship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). It identifies the agreed support, not ownership or operation.
 
 Avoid:
 
-- repeating the logo in every card;
-- using the logo as a loading spinner by default;
-- distorting the mark;
-- placing it on noisy backgrounds;
-- combining it with unrelated decorative shapes.
+- repeating the wordmark in every card or section;
+- using it as a loading indicator;
+- distorting, outlining, or recoloring it outside the mode colors;
+- combining it with decorative shapes.
 
 ## 7. Project identity
 
-Affiliation must be accurate, but visual similarity to the parent brand is not a condition of compliance. Shared principles do not require identical colors, typography, density, or emotional tone.
+Affiliation must be accurate, but visual similarity to the parent brand is not required. Shared principles do not require identical colors, typography, density, or emotional tone.
+
+Each project's and sub-brand's site must have its own look. It must not look like the brand site, and it must not be cast from the same mould as another project's site with only the colors changed. Shared foundations such as a rendering setup or a type stack may be reused; the visual language, layout, and figures should come from the project's own subject.
 
 A project may define:
 
 - palette and typography;
-- product icon;
-- illustration style;
+- layout language;
 - landing page motion direction;
 - screenshot composition;
 - domain-specific visual metaphors.
 
-## 8. Imagery and animation
+## 8. Imagery and figures
 
-Imagery and animation may explain behavior, communicate identity, establish emotional tone, or contribute to an artistic or editorial purpose. The choice should fit the work and its audience without obscuring information or implying capabilities that do not exist.
+Figures and motion may explain behavior, communicate identity, or set tone. On Plystra surfaces they are built from the system's own visual language: type, rules, dots, hatching, layout, and motion. A figure should look like it belongs to the page's typography and grid, not like an object placed on top of it.
 
-Good uses:
+Rules:
 
-- traces becoming records;
-- nodes forming a stable structure;
-- a deployment bundle moving through constrained paths;
-- a local object becoming a maintained system;
-- small signals becoming legible patterns;
-- an illustration that gives a publication or sub-brand a recognizable voice;
-- material photography that honestly conveys an object's texture and construction.
+- do not use illustrations, figures, or symbols drawn by an agent, by hand in code, or assembled from mechanical geometry; concept symbols read as clip-art;
+- do not use stock imagery or generic illustration sets;
+- aim for composed tension: a field of lines that is perfectly regular looks lifeless, and a random one looks cluttered, especially on wide screens;
+- avoid heavy masses that weigh a page down, and avoid long, thin shapes that taper to a needle point;
+- when real imagery is needed, prefer honest photography of actual work;
+- an empty area is acceptable; do not fill it with a figure only because it is empty.
 
-Bad uses:
+Icons are held to the same bar. Use them only where they serve a control or a label, from one set that matches the project's identity in weight and finish. Do not use icons as feature illustration, and do not use soft, generic icon sets where they clash with the surface. An icon set designed in the system's own language may be used anywhere it is spare and elegant.
+
+Bad uses of imagery in any form:
 
 - effects that suggest nonexistent intelligence or system activity;
 - stock imagery presented as the actual product;
@@ -167,7 +173,9 @@ Screenshots should show:
 - product constraints;
 - meaningful data examples.
 
-## 10. Visual review test
+## 10. Visual review
+
+Judge visual work in the real rendered surface, at real sizes, not in mockups or proof sheets. Show one option, refine it, and only then try another; a sheet of many rough options hides the quality of each. Before drawing a new figure or mark, agree on references that show the intended quality.
 
 Before shipping a public visual surface, ask:
 
@@ -176,5 +184,6 @@ Before shipping a public visual surface, ask:
 3. Is the work's purpose or main action clear?
 4. Does each expressive element serve understanding, identity, tone, or experience?
 5. Would the design still serve its purpose if trends changed next year?
+6. Does anything read as a template, clip-art, or decoration added to fill space?
 
-Revise elements whose novelty comes at the expense of clarity, honesty, accessibility, or the work's purpose.
+Revise elements whose novelty comes at the expense of clarity, honesty, accessibility, or the work's purpose. If the answer is uncertain, remove the element.

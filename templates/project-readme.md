@@ -14,7 +14,7 @@ Owner and operator: ...
 
 Responsible maintainer: ...
 
-Follow the [relationship wording](../principles/01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). Owned projects and projects under sub-brands state that the full Plystra philosophy applies and link to their philosophy review record with its reviewed version and status. Sponsored projects state the support scope, current sponsorship status, term or review trigger, and any voluntary adoption.
+Follow the [relationship wording](../principles/01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). Owned projects and projects under sub-brands state that the full Plystra philosophy applies and link to their project principles. Sponsored projects state the support scope, current sponsorship status, term or review trigger, and any voluntary adoption.
 
 ## Status
 

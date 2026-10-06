@@ -47,6 +47,18 @@ Writes, migrations, external calls, file operations, AI actions, billing actions
 
 A contributor should be able to understand a feature by reading a small set of files. Avoid architectures that require global knowledge for small changes.
 
+### Minimize total cognitive load
+
+Optimize for how much a person or agent must hold in mind to use and change the system, not for the fewest lines of code. Removing code by introducing a new abstraction, adaptation layer, or vocabulary is a bad trade when the abstraction costs more to learn than the code it replaced. Push mechanical complexity into tools that can carry it, and keep the concepts people must learn few, stable, and disclosed only when needed.
+
+### Ordinary code first
+
+Write the language's ordinary constructs, such as packages, functions, types, and calls, before reaching for a framework mechanism, code generator, plugin system, or registry. Add an abstraction only when ordinary code cannot do the job and the need has appeared repeatedly in real work, not in anticipation.
+
+### Deterministic and explicit
+
+The same inputs must produce the same result. Do not let discovery order, file order, version order, or prior generated state create hidden priority. Do not fall back silently: when a required choice is missing or ambiguous, fail with an explanation instead of picking something plausible. A system must never quietly reuse another environment's or another project's real resources, credentials, or data because a value was inherited or defaulted.
+
 ## 3. Configuration
 
 Configuration should be explicit, documented, and reproducible.

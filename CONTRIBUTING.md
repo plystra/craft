@@ -16,9 +16,11 @@ Each rule has exactly one canonical home. Before adding a rule, find whether a c
 
 Never edit a generated reference or template as its source. Change the canonical document, then rebuild all affected bundles. Keep the whole change in one commit so the entry points and distributed copies agree.
 
-Policy revisions follow [ADOPTION.md](ADOPTION.md#4-versions-and-effective-dates). Keep its newest version at the top of the version table, retaining earlier rows. The policy version is read from that record; package tooling and individual skills do not maintain a second policy version. Git records changes to task adapters and distribution tooling. Those changes must preserve the meaning of the canonical standards.
+Policy revisions follow [ADOPTION.md](ADOPTION.md#5-versions). Keep its newest version at the top of the version table, retaining earlier rows. The policy version is read from that record; package tooling and individual skills do not maintain a second policy version. Git records changes to task adapters and distribution tooling. Those changes must preserve the meaning of the canonical standards.
 
-Keep the existing numbered principle paths stable when practical. Use a decision record for a substantial change to repository structure or distribution; [the initial structure decision](docs/decisions/0001-craft-structure.md) and [the surface-based skills decision](docs/decisions/0003-surface-based-skills.md) explain the current boundaries.
+Keep the existing numbered principle paths stable when practical. Craft contains only what projects use: the standards, templates, skills, and the tooling that distributes them. Do not add decision records, plans, or notes about Craft itself; explain a structural change in its commit message.
+
+Craft is general. Do not name, describe, or use as an example any specific Plystra project; write rules and examples that any project could apply.
 
 ## Build and check
 
@@ -47,7 +49,7 @@ Each skill contains a generated reference index and a source ledger with content
 
 ## Add or change a skill
 
-Skills follow project surfaces and are named in the `plystra-craft` namespace, never after a project. A new project chooses from the existing skills and never requires a change to Craft. As recorded in [the surface-based skills decision](docs/decisions/0003-surface-based-skills.md): `plystra-craft` is installed in every project, and each module covers one surface from [the applicability rules](ADOPTION.md#3-applicability-follows-the-work). A new skill needs a surface that projects can identify with a yes-or-no question; a new kind of task belongs in the routing table of an existing entry point. Record a new skill boundary in a decision record and add its row to the README install table.
+Skills follow project surfaces and are named in the `plystra-craft` namespace, never after a project. A new project chooses from the existing skills and never requires a change to Craft. `plystra-craft` is installed in every project, and each module covers one surface from [the applicability rules](ADOPTION.md#3-applicability-follows-the-work). A new skill needs a surface that projects can identify with a yes-or-no question; a new kind of task belongs in the routing table of an existing entry point. Add a new skill's row to the README install table.
 
 Write a concise `SKILL.md` with YAML `name` and `description`. The description says when the skill applies, and every module's description ends with `Requires plystra-craft.` An entry point routes work to canonical requirements; it must not invent new policy, claim to override its host's permissions, or require unrelated project changes. Interpretation rules live in `plystra-craft`'s distributed copy of `ADOPTION.md`; do not paraphrase them into each entry point.
 

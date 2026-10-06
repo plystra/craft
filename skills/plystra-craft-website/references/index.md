@@ -2,7 +2,7 @@
 
 # Sources for plystra-craft-website
 
-These task references distribute selected canonical Plystra Craft material (version 1.0.1). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
+These task references distribute selected canonical Plystra Craft material (version 2.0.0). Read only what the task needs. Excerpts identify their included sections and do not present the complete source. This index is navigation, not a new normative document, a compliance checklist, or a claim of automatic freshness. Selecting excerpts neither creates obligations nor changes obligations already applicable to a project.
 
 | Material and selection | Read when |
 | --- | --- |

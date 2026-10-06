@@ -20,7 +20,10 @@ Use this checklist before merging visible UI changes in a Plystra project. Apply
 - [ ] There are no unnecessary nested cards.
 - [ ] The design still works without animation.
 - [ ] Text fits within its containers at supported viewport sizes.
-- [ ] Icons come from the existing icon system when one exists.
+- [ ] Icons, if any, serve controls or labels and match the identity; none are used as decoration.
+- [ ] Nothing reads as a template, clip-art, or a figure added to fill space.
+- [ ] The page keeps one ground per color mode, with no alternating dark and light blocks.
+- [ ] Text is never animated by distorting its proportions.
 
 ## Interaction
 

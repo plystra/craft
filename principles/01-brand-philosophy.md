@@ -7,7 +7,7 @@ Plystra's identity is defined in the [Charter](../CHARTER.md#1-identity). The br
 The Plystra brand is carried by a few recurring ideas:
 
 - durable systems;
-- human-scale tools;
+- tools people can reason about;
 - clear records;
 - quiet infrastructure;
 - careful interfaces;
@@ -89,7 +89,7 @@ Public wording must distinguish ownership, a sub-brand relationship, sponsorship
 
 A statement such as `Follows the Plystra philosophy` describes adoption only, must match the actual scope adopted, and must not imply an official relationship.
 
-Avoid making every project name visually dependent on the Plystra wordmark. The parent brand should create trust and coherence, not crowd out the product.
+A project's own site and cards carry the shared wordmark lockup described in [wordmark](04-visual-identity.md#6-wordmark). The parent brand should create trust and coherence, not crowd out the product.
 
 ## 6. Brand promises
 
@@ -156,6 +156,14 @@ Plystra may be operated by an individual or a small group, but the brand should 
 ### Decorative seriousness
 
 Do not use dense typography, latin phrases, pseudo-academic language, or excessive darkness to simulate depth.
+
+### Template look
+
+Do not let a surface read as a template with Plystra colors applied: rows of generic icons with boxed name tags, feature-card grids, stock illustration, or a project site cast from the same mould as another Plystra site. Each surface should look made for its own subject.
+
+### Generated decoration
+
+Do not fill space with figures, symbols, or diagrams drawn by an agent or assembled from mechanical geometry. Concept symbols such as keys, arches, dovetails, or nodes read as clip-art. When a surface needs a figure, build it from the system's own visual language, as described in [imagery and figures](04-visual-identity.md#8-imagery-and-figures).
 
 ## 9. Brand test
 

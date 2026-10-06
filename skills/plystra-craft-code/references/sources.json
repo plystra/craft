@@ -2,18 +2,18 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft-code",
-  "craftVersion": "1.0.1",
+  "craftVersion": "2.0.0",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
       "path": "principles/12-code-project-working-standards.md",
-      "sha256": "480373a21172342d5b705112d7f4a3742ad7d25e9f7a0c4ad1dbfb23fc00601b",
+      "sha256": "e476c966c2b682c28d665e24bdaf97fa74932e325f8c7c79b1732998f0eaaafe",
       "selection": null,
       "output": "references/code-working-standards.md"
     },
     {
       "path": "principles/07-engineering-standards.md",
-      "sha256": "96bb9b7e31ee22fc685a07da16c47fc76891de387c9790d91ee522163a130b11",
+      "sha256": "58ae0cbf53bd447db4d39825dc1bb5882cdda37f707309a44d7177afffbaaf5b",
       "selection": null,
       "output": "references/engineering-standards.md"
     },
@@ -43,15 +43,15 @@
   "outputs": [
     {
       "path": "references/code-working-standards.md",
-      "sha256": "f29fde0c174e6e21426d35bd8aacebec847884f557fcad1db321a4dcf3587b12"
+      "sha256": "5b4632d47912ddb670ee15925727273feba4932d4099689dc341ff36e835c28e"
     },
     {
       "path": "references/engineering-standards.md",
-      "sha256": "45ca2ba4e7bcb593c89a9ee8dab44137a38f05c689ad8bab6aa94c60f7af8d04"
+      "sha256": "6eb4aa55211a399c89a511591c0cd4f7bcda9979207796e9e9e59a3952ffcd5b"
     },
     {
       "path": "references/index.md",
-      "sha256": "fe4d92b1b76b1fa67b4164748b2091872d5582ff98107b6d05e1be142c98ee24"
+      "sha256": "03713467542f13f4607e6d5f521d1511056776166f5ff3c679a7401718fd07d7"
     },
     {
       "path": "references/LICENSE",
@@ -59,7 +59,7 @@
     },
     {
       "path": "references/security.md",
-      "sha256": "cb74273962fb2e25ab8c499093c9e5f801cca2b81233daa2fe9dbeb4177f836e"
+      "sha256": "6d21b3321134be70485ac2f258200428b0a6cf79fa92552aaa35304bd996291e"
     }
   ]
 }

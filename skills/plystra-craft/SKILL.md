@@ -1,6 +1,6 @@
 ---
 name: plystra-craft
-description: "Plystra Craft baseline for every Plystra project in any medium. Use for any work in a Plystra-owned or sub-brand project: product behavior, writing and public claims, documentation, releases and maintenance status, user data and privacy notices, licensing and ownership wording, and the PROJECT_PRINCIPLES.md adoption record. Always installed; plystra-craft-code, plystra-craft-design, and plystra-craft-website add rules for those surfaces."
+description: "Plystra Craft baseline for every Plystra project in any medium. Use for any work in a Plystra-owned or sub-brand project: product behavior, writing and public claims, documentation, releases and maintenance status, user data and privacy notices, licensing and ownership wording, and the PROJECT_PRINCIPLES.md working record. Always installed; plystra-craft-code, plystra-craft-design, and plystra-craft-website add rules for those surfaces."
 ---
 
 # Plystra Craft
@@ -21,7 +21,7 @@ If a task touches a surface whose module is missing, such as interface work with
 
 ## Apply the standard
 
-Read [applying Craft](references/applying-craft.md) before relying on any other reference. It defines `must`, `should`, and `may`, which provisions apply to which media and surfaces, and what the project's adoption record contains. Owned projects, sub-brands, and their projects follow every applicable requirement. A sponsored project follows only what it adopted, plus the sponsorship rules.
+Read [applying Craft](references/applying-craft.md) before relying on any other reference. It defines `must`, `should`, and `may`, which provisions apply to which media and surfaces, and what the project principles record contains. Owned projects, sub-brands, and their projects follow every applicable requirement. A sponsored project follows only what it adopted, plus the sponsorship rules.
 
 These standards describe how work should be done. They do not authorize publishing, deploying, contacting people, or changes outside the user's request.
 
@@ -29,8 +29,8 @@ These standards describe how work should be done. They do not authorize publishi
 
 | Task | Read |
 | --- | --- |
-| Product purpose, workflows, automation or AI status, confirmations, maturity labels | [product](references/product.md) |
-| Any user-facing text: descriptions, taglines, public claims, labels, empty states, errors | [writing](references/writing.md) |
+| Product purpose, workflows, scope, deferred design, agent use, automation or AI status, confirmations, maturity labels | [product](references/product.md) |
+| Any text: documents, descriptions, taglines, public claims, labels, empty states, errors | [writing](references/writing.md) |
 | Positioning, voice, the five words, relationship wording such as "A Plystra project" | [brand](references/brand.md), [Plystra scope](references/plystra-scope.md), [charter commitments](references/charter-commitments.md) |
 | Repository files, README, guides, `AGENTS.md`, examples, status labels | [documentation](references/documentation.md), [README template](assets/templates/project-readme.md) |
 | Collecting real user data, telemetry, support data, or sending private content to an AI provider or other processor | [privacy and data](references/privacy-and-data.md), before collection or transfer begins |
@@ -43,6 +43,6 @@ Inspect the project's existing records, README, and `PROJECT_PRINCIPLES.md` befo
 
 ## Report honestly
 
-State what was checked and what remains unverified. Separate current behavior from plans. Completing a task, or keeping an adoption record, does not make a project fully compliant; only the review described in [applying Craft](references/applying-craft.md) establishes status.
+State what was checked and what remains unverified. Separate current behavior from plans. Keep observed facts, inferences, and unknowns apart, and never claim to have read or checked what was not.
 
 The references are generated snapshots of the canonical Craft sources. The [index](references/index.md) lists each one with its source, and the [source ledger](references/sources.json) records the version and hashes. Keep the [license](references/LICENSE) when reusing them.

@@ -10,7 +10,7 @@ This document defines how code in Plystra projects is changed, reviewed, verifie
 
 The [project relationship](../README.md#scope-and-project-relationships) determines the applicable philosophy obligations, which [local instructions cannot weaken](../ADOPTION.md#2-requirement-levels). Contributors must also observe applicable legal and security requirements.
 
-If a task conflicts with an applicable obligation, identify the conflict and resolve the affected scope with the maintainer before proceeding. Unaffected work may continue. Record remaining gaps through the adoption process; a task request or a remediation plan does not establish compliance.
+If a task conflicts with an applicable obligation, identify the conflict and resolve the affected scope with the maintainer before proceeding. Unaffected work may continue.
 
 ### Maintainer authorization and task scope
 
@@ -34,7 +34,9 @@ An accepted implementation task must be carried through the work and verificatio
 
 Keep explanation, planning, and review requests within their stated scope. They do not by themselves authorize implementation.
 
-Resolve routine implementation choices using project guidance and engineering judgment. Clarify missing information when it would materially change architecture, create meaningful risk, or cause significant rework.
+Resolve routine implementation choices using project guidance and engineering judgment, and make the call rather than handing it back as an open question. Clarify missing information when it would materially change architecture, create meaningful risk, or cause significant rework.
+
+Answer the question that was asked. A narrow request gets a narrow result; do not expand it into adjacent redesigns, and mention a larger issue briefly instead of acting on it.
 
 Investigate errors, check assumptions, and try focused corrections before treating ordinary implementation friction as a blocker.
 
@@ -136,6 +138,8 @@ Test through public surfaces:
 - library changes should be tested through public exports.
 
 Report verification honestly. If tests fail, explain what failed. If verification was skipped or impossible, explain why.
+
+Never claim to have read, run, or checked something that was not actually read, run, or checked. Keep observed facts, inferences, and unknowns apart, and say which is which. When information is missing, look it up or ask; do not fill the gap with a plausible inference and present it as fact.
 
 ## 11. Code review
 

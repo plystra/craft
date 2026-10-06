@@ -2,18 +2,18 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft-design",
-  "craftVersion": "1.0.1",
+  "craftVersion": "2.0.0",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
       "path": "principles/04-visual-identity.md",
-      "sha256": "f28940f1816781fabfc2e1e82156ce5d3c3df810e3805553b539f4d0a904e4fa",
+      "sha256": "6c69f796dbe86a28945cc1ce679ef18765026e92f8c5ddb6079760f40264c519",
       "selection": null,
       "output": "references/visual-identity.md"
     },
     {
       "path": "principles/05-frontend-ui-design.md",
-      "sha256": "e9f2b54549bd328af3a9f69c2b6f52cca150e085d6ee7f4def4e19de4360d15e",
+      "sha256": "6f9df3176de2650d583564ef00050179f9258ba436cb63ee33273d92ea94b58b",
       "selection": null,
       "output": "references/interface-design.md"
     },
@@ -25,7 +25,7 @@
     },
     {
       "path": "templates/ui-review-checklist.md",
-      "sha256": "7f065fd95cdfb0a53e5e7a70b5cc0c0f2eeaf141c838ee313da6e1213fa7d90b",
+      "sha256": "93e9f039474e83c1029ab51341ca822b4ff7dc8466a65e0fc244fcfc102aa203",
       "selection": null,
       "output": "assets/templates/ui-review-checklist.md"
     },
@@ -39,19 +39,19 @@
   "outputs": [
     {
       "path": "assets/templates/ui-review-checklist.md",
-      "sha256": "1b153e151730e7f5483c4d04aeb610bcbba99ea792ed72274ef1a432bfc0ab21"
+      "sha256": "bbbaffbd780327bf9b0ee723fea35abbc46486372d72a2136b0407affb62d596"
     },
     {
       "path": "references/accessibility.md",
-      "sha256": "7d283596b904211305941c87f8e543d724574d04572f6efd3304b866aef862f9"
+      "sha256": "44c6fa5bb4c16ccc931e3e8ad3b6a633ba02255bc30ebc2eed047bc286305c1a"
     },
     {
       "path": "references/index.md",
-      "sha256": "435a9cc4930a8d0b5c15e0e71e48f041a43d310aa505aa1cae6f9d275cda228f"
+      "sha256": "2f880eb8e66bf5b2a99212b1326979fb424880a84c436a6a644a21accda30430"
     },
     {
       "path": "references/interface-design.md",
-      "sha256": "76e07bdb0b1e9ee5912cbc93baa3f9a8bbc93afa7700c2b813787804b08fdd81"
+      "sha256": "c77dbda2dabd655d7f01fd55595776071a1a4db934edeaa07c250ff95f53bdbc"
     },
     {
       "path": "references/LICENSE",
@@ -59,7 +59,7 @@
     },
     {
       "path": "references/visual-identity.md",
-      "sha256": "da7db60b01adabe085aeabd802f66482eb6d04d6d646f9f191583ce7d5422dc3"
+      "sha256": "114a84c1f4579fab429354815635c0e7555d8eb2bf8638a39c25ec44e86c28df"
     }
   ]
 }

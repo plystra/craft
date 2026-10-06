@@ -6,7 +6,7 @@ Plystra is an independent practice for thoughtful, durable work, described in th
 
 ## Purpose
 
-The purpose of this repository is to make Plystra's taste explicit.
+The purpose of this repository is to make Plystra's taste explicit, so that contributors and agents can make the same judgments the steward would make without asking.
 
 Every Plystra project may choose its own medium, methods, roadmap, business model, and release pace. These documents should help contributors answer questions such as:
 
@@ -28,7 +28,7 @@ The goal is not to make every project look identical. The goal is to make every 
 
 Throughout this repository, **Plystra projects** means Plystra-owned projects and all projects under Plystra sub-brands. Sponsored projects are named explicitly when a rule applies to them; otherwise a provision does not bind them unless they adopted it. A voluntary adoption claim must identify its actual scope and the revision reviewed.
 
-The full philosophy is this README, the [Charter](CHARTER.md), [Applying and Updating the Philosophy](ADOPTION.md), and every document in `principles/`. It covers new and existing projects. A distinct name, domain, technical stack, business model, or maturity level does not exempt an owned project or a sub-brand project, and a sub-brand cannot exempt the projects under it. [ADOPTION.md](ADOPTION.md) defines requirement levels, which provisions apply to which kinds of work, versions, and review deadlines.
+The full philosophy is this README, the [Charter](CHARTER.md), [Applying and Updating the Philosophy](ADOPTION.md), and every document in `principles/`. It covers new and existing projects. A distinct name, domain, technical stack, business model, or maturity level does not exempt an owned project or a sub-brand project, and a sub-brand cannot exempt the projects under it. [ADOPTION.md](ADOPTION.md) defines requirement levels and which provisions apply to which kinds of work.
 
 Sponsorship, a shared author, or voluntary adoption of the philosophy does not by itself establish ownership, a sub-brand relationship, or permission to use the Plystra brand. Association must be confirmed by Plystra's steward.
 
@@ -76,15 +76,11 @@ plystra/craft
 │   ├── build-skills.ts
 │   ├── build-skills.test.ts
 │   └── skill-packages.test.ts
-└── docs/decisions/
-    ├── 0001-craft-structure.md
-    ├── 0002-task-specific-skills.md
-    └── 0003-surface-based-skills.md
 ```
 
 The root scope, Charter, adoption process, and `principles/` are the authoritative standards. Each rule has one canonical home; other documents link to it rather than restating it. `templates/` contains copyable forms that help projects apply the standards. The 01–13 prefixes retain existing citations and provide a reading order; they do not rank the authority of chapters.
 
-Skills distribute these standards to the projects that follow them. The generator selects canonical sections into flat, purpose-named reference files, and each canonical section is distributed by exactly one skill. Skills do not define additional policy. Repository maintenance notes under `CONTRIBUTING.md`, `tooling/`, and `docs/` describe how Craft itself is maintained and add no obligations to adopting projects. The [structure decision](docs/decisions/0001-craft-structure.md) records why the sources stay together; the [surface-based skills decision](docs/decisions/0003-surface-based-skills.md) defines the skill boundaries.
+Skills distribute these standards to the projects that follow them. The generator selects canonical sections into flat, purpose-named reference files, and each canonical section is distributed by exactly one skill. Skills do not define additional policy. `CONTRIBUTING.md` and `tooling/` describe how Craft itself is maintained and add no obligations to projects. Craft keeps no material that projects cannot use, such as its own decision records.
 
 ## Installing skills
 
@@ -96,7 +92,6 @@ Skills follow [what the project contains](ADOPTION.md#3-applicability-follows-th
 | [`plystra-craft-code`](skills/plystra-craft-code/SKILL.md) | The project contains source code: an app, service, library, CLI, script, or firmware. | Code working standards, engineering, security, and operational readiness. |
 | [`plystra-craft-design`](skills/plystra-craft-design/SKILL.md) | The project has a visual identity or an interface people see or operate: app UI, website, print, or physical design. | Visual identity, interface design, accessibility, and the UI review checklist. |
 | [`plystra-craft-website`](skills/plystra-craft-website/SKILL.md) | The project operates an official website or public web documentation. | Search, sharing, `robots.txt`, `sitemap.xml`, `/llms.txt`, and release verification. |
-| [`plystra-craft-stewardship`](skills/plystra-craft-stewardship/SKILL.md) | Only in the Plystra steward's own workspace, where admission, sponsorship, and sub-brands are decided. | Charter admission conditions, sponsorship, governance maturity, and brand-use permission. |
 
 Common combinations, where `-code` stands for `plystra-craft-code` and so on:
 
@@ -124,7 +119,7 @@ bunx --bun skills add plystra/craft --skill plystra-craft plystra-craft-code
 
 Every module requires `plystra-craft` and does not repeat its content. When a project later gains a surface, such as a first website, add that module. If an agent is asked to work on a surface whose module is missing, `plystra-craft` tells it to name the module instead of guessing.
 
-Each skill is a snapshot of the standards at the version recorded in its `references/sources.json`; it does not update itself. Run `bunx --bun skills update` after a new Craft version, and follow the adoption process for current obligations. Using a skill does not establish full project compliance.
+Each skill is a snapshot of the standards at the version recorded in its `references/sources.json`; it does not update itself. Run `bunx --bun skills update` after a new Craft version.
 
 See [Contributing](CONTRIBUTING.md) to change Craft itself.
 
@@ -134,7 +129,7 @@ Plystra is currently stewarded by [immoses (Moses Qiu)](https://www.immoses.com)
 
 ## Attribution and brand use
 
-The Plystra name, logo, visual identity, and other brand-identifying materials are not a general-purpose public brand asset library. Do not use them in a way that suggests official affiliation, endorsement, ownership, or representation without permission from immoses.
+The Plystra name, wordmark, visual identity, and other brand-identifying materials are not a general-purpose public brand asset library. Do not use them in a way that suggests official affiliation, endorsement, ownership, or representation without permission from immoses.
 
 Plystra is not currently represented here as a registered trademark. This section is a practical brand-use notice, not a claim of trademark registration.
 

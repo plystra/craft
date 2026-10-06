@@ -210,6 +210,10 @@ Avoid motion for:
 - decorative hover effects on every element;
 - hiding slow performance.
 
+Never animate text by distorting it. Scaling, stretching, or skewing letterforms looks broken; draw rules and shapes, and fade or move text without changing its proportions.
+
+On public sites, prefer showing how a system works through short scenes tied to scroll, each carrying a sentence or two, over long passages of explanation. A scene must still make sense at rest, with reduced motion, and in the initial HTML.
+
 Recommended duration:
 
 ```text
@@ -318,7 +322,7 @@ Rules:
 - use stable dimensions for fixed-format controls, boards, counters, tiles, and toolbars;
 - avoid font sizes based only on viewport width; fluid typography may use explicit minimum and maximum sizes with relative text units, and must remain readable under text resizing and browser zoom;
 - adjust letter spacing for the typeface and text role only when legibility is preserved; verify tight tracking with supported scripts and sizes;
-- use existing icon libraries when available, and do not use emoji as interface icons;
+- use icons only as described in [imagery and figures](04-visual-identity.md#8-imagery-and-figures), and do not use emoji as interface icons;
 - keep public design assets used by application code in versioned project assets or an approved asset pipeline, with provenance and licensing recorded; runtime user uploads belong in the project's data storage and must not be committed to source control.
 
 For maps, geographic data, 3D, charts, and other specialized surfaces, use established libraries instead of fragile hand-drawn approximations. Verify that rendered canvases and media are nonblank, framed correctly, and interactive when relevant.

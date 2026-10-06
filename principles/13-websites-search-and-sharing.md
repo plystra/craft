@@ -18,6 +18,8 @@ Public pages must:
 - describe ownership, publishing, and sponsorship relationships with the [relationship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording);
 - keep metadata and machine-readable summaries consistent with visible content.
 
+Public sites carry no roadmap, milestone list, or gate status. One plain line about maturity is enough; plans belong in the project's own documentation, not on its public pages.
+
 Do not use keyword stuffing, misleading previews, invented reviews, or unsupported claims to attract traffic. Search and sharing copy follows the same [writing standards](03-language-and-writing.md) as the product.
 
 ## 3. Readable pages and navigation
