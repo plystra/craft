@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026 immoses (Moses Qiu)
+// Copyright 2026 Plystra LLC
 import assert from 'node:assert/strict';
 import * as fs from 'node:fs/promises';
 import os from 'node:os';

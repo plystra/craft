@@ -125,11 +125,11 @@ See [Contributing](CONTRIBUTING.md) to change Craft itself.
 
 ## Stewardship
 
-Plystra is currently stewarded by [immoses (Moses Qiu)](https://www.immoses.com) ([@immoses648](https://github.com/immoses648)). The steward is responsible for the direction, naming, public standards, and project association of Plystra. This may evolve as described in [governance maturity](principles/11-governance-and-legal.md#6-governance-maturity).
+Plystra is currently stewarded by Plystra LLC. The steward is responsible for the direction, naming, public standards, and project association of Plystra. This may evolve as described in [governance maturity](principles/11-governance-and-legal.md#6-governance-maturity).
 
 ## Attribution and brand use
 
-The Plystra name, wordmark, visual identity, and other brand-identifying materials are not a general-purpose public brand asset library. Do not use them in a way that suggests official affiliation, endorsement, ownership, or representation without permission from immoses.
+The Plystra name, wordmark, visual identity, and other brand-identifying materials are not a general-purpose public brand asset library. Do not use them in a way that suggests official affiliation, endorsement, ownership, or representation without permission from Plystra LLC.
 
 Plystra is not currently represented here as a registered trademark. This section is a practical brand-use notice, not a claim of trademark registration.
 
@@ -139,4 +139,4 @@ Unless otherwise noted, the documentation and non-code content in this repositor
 
 The executable tooling and tests in `tooling/` are licensed under Apache License 2.0; see [LICENSE-CODE](LICENSE-CODE). Neither license grants permission to imply Plystra affiliation or endorsement.
 
-© 2026 immoses (Moses Qiu)
+© 2026 Plystra LLC

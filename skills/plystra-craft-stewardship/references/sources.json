@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft-stewardship",
-  "craftVersion": "2.0.0",
+  "craftVersion": "2.0.1",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
@@ -29,7 +29,7 @@
     },
     {
       "path": "README.md",
-      "sha256": "5d5990b93c308424830884a9a80cec27664c944d017a59774102020f36d0058b",
+      "sha256": "6f46803399be680da2d22dc3ebfa3c00b0b0a0d239b3d8b3c008579a087b0fdc",
       "selection": [
         "Stewardship",
         "Attribution and brand use"
@@ -46,19 +46,19 @@
   "outputs": [
     {
       "path": "references/brand-stewardship.md",
-      "sha256": "3f025930c1c9e81040cd85f2b0b7e1e8ea04e958ef170335ce055f2326d8ad5a"
+      "sha256": "52cc6ea84f73db60ceccbfe4e078748b2c4e5a4e5fdb01948e20d3b2f2a8f1d8"
     },
     {
       "path": "references/charter.md",
-      "sha256": "543cc69b2b4e5da21bb38489ecab206993515e3c01cf3c6cedb737926d523dcc"
+      "sha256": "e64daea00aeba45bd8454916869a9f7a7345eecc6888626f5e00f6db1619dab1"
     },
     {
       "path": "references/governance-and-sponsorship.md",
-      "sha256": "304e928850a29fc2df0dd2d6f946c96a1190be86742e188d81cbbf3523ff7f42"
+      "sha256": "fbb43bd77bc58f1d17ab22912ca0d6439d8569388edaaabe2a207f7cc5c1ef22"
     },
     {
       "path": "references/index.md",
-      "sha256": "d15d1dd751bfa45f4cbbdfab4879070082c0c809cd4055a3727efb50b9757ba1"
+      "sha256": "d95f579c77ede7f0dccd269b7312894e41af9d3e6dea852e90e2cf7790542565"
     },
     {
       "path": "references/LICENSE",

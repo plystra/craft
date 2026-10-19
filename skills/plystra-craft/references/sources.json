@@ -2,18 +2,18 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft",
-  "craftVersion": "2.0.0",
+  "craftVersion": "2.0.1",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
       "path": "ADOPTION.md",
-      "sha256": "57023ba57d22b790f0b1fcb6abf437a39240a505f5559643a0591b585b95e9ac",
+      "sha256": "f228549c73e7fec6130b0b1539b64081a551440798e6176b4c8d6472ea985467",
       "selection": null,
       "output": "references/applying-craft.md"
     },
     {
       "path": "README.md",
-      "sha256": "5d5990b93c308424830884a9a80cec27664c944d017a59774102020f36d0058b",
+      "sha256": "6f46803399be680da2d22dc3ebfa3c00b0b0a0d239b3d8b3c008579a087b0fdc",
       "selection": [
         "Scope and project relationships"
       ],
@@ -117,39 +117,39 @@
   "outputs": [
     {
       "path": "assets/templates/decision-record.md",
-      "sha256": "0db4e1adc18566fb3b19c1b2d8b397a2f1247e44b2d28bff4400018f71f70126"
+      "sha256": "b36a0a223a8bde2fcd79aa556cff17a0c09e0e4735e50826ab2a89807bda8b91"
     },
     {
       "path": "assets/templates/project-principles.md",
-      "sha256": "9df404fa1af959cf522412e7627b2bf71715245a378ff4c555f5e0d0c4766ed6"
+      "sha256": "3a64898178229d4ecd03c50846a7f13d3754d8f703725f664366a9103be0c560"
     },
     {
       "path": "assets/templates/project-readme.md",
-      "sha256": "495936692623b5e3c1de8ae10f158ac69d5e63d9d3c753323b0c2e6865698022"
+      "sha256": "345a37e79f65f9acf5021c57c87cd254e346ec0d9ea31ad8ef6a061600ef5f26"
     },
     {
       "path": "assets/templates/release-notes.md",
-      "sha256": "8fbe5e49523fa61b5a3c497d4b4ad3140836699dd25e5ea4cb523432f301d6ff"
+      "sha256": "416eba52b58ec71c98c23c8758cc0b688c7854b1ecdfd1b6a381946fc62bf73e"
     },
     {
       "path": "references/applying-craft.md",
-      "sha256": "6cae8d4fb272b156b13f0d445a90c52df25e610e4447e4aefcbe7d9c11afa120"
+      "sha256": "0c79fff06a5ddb28639ce6a434c2a4fb3dd193a32d75fba36b9c73f5b9b8fbfd"
     },
     {
       "path": "references/brand.md",
-      "sha256": "ab7aab21fa00880da5ef66e9922e56f06c6edd128839823eca4a6e5e0d6dbcf4"
+      "sha256": "5f6c80825daafcb5914597e70bc96f130723b7ef0d762344e40c6e9beabc39f4"
     },
     {
       "path": "references/charter-commitments.md",
-      "sha256": "04d9c1e1da9ca5a48b1fd6a36547cd88db20a7ef9cf8ca462ffb5abe7ea1a2d0"
+      "sha256": "b40ec7db76566da7753bc366614bb1a92190cc55c59596be28b9d93c166c31af"
     },
     {
       "path": "references/documentation.md",
-      "sha256": "a47bc0c748a251f84ed24b3a0bed643d3911cf3eaac184b8ea218ea9df757904"
+      "sha256": "77fb6fac6945ce99a893672c9d8e2e24b4519c79ae9718cb01554aa533525607"
     },
     {
       "path": "references/index.md",
-      "sha256": "457e51733335de6594a264aec9ace7d4231ef311f3ddd03bfee7e2126db13f5d"
+      "sha256": "6aca43b2197a48fadc4dc294d67da929e9973fdaf6858b968975c87cdf440e39"
     },
     {
       "path": "references/LICENSE",
@@ -157,27 +157,27 @@
     },
     {
       "path": "references/ownership-licensing-claims.md",
-      "sha256": "069d7207f8290193f5cb7eecc9558ca2b48b4489ceade7dbdd7ebfd1b61e20d6"
+      "sha256": "fc80baef3705c0b83a8da495107b3ee1bd23d1996a68e306a3253ffd8a8b7f1e"
     },
     {
       "path": "references/plystra-scope.md",
-      "sha256": "0477f6dd9a8ff2cd00a498522ccad1b0d8a3bfaf0c476e2ce8a0a7104acb0a6a"
+      "sha256": "b73ce42740bf8ac31f565773a875a5051929d4305bb30c3653d45b8d1e072cc3"
     },
     {
       "path": "references/privacy-and-data.md",
-      "sha256": "3c79bf6bf764f716ac29172e78823fe48421b6250b6203d041b76bac6b4d9b3d"
+      "sha256": "f1fe08758a067f8987563049b1d24402e82910be12d028d1dc94fcd428a8bb49"
     },
     {
       "path": "references/product.md",
-      "sha256": "052380e43c4aab72fb46e5fa23cdcc3daeda2223279bbe5bbb70a2fa20c9eda2"
+      "sha256": "c6989822e3f4bd676fda6b40702e1638254a72585ff9dd3d4d42589f8845736d"
     },
     {
       "path": "references/release-and-maintenance.md",
-      "sha256": "ec0680a8f75604db0325dc6711b1288402b36d70174f4a434cf467763bbe6409"
+      "sha256": "b90ac18a675d0b97590a7b5344b4d1b5fb446302c89dfcfc68871fe7a7036868"
     },
     {
       "path": "references/writing.md",
-      "sha256": "674c71247c32ec9cdafbf0ac85dc810a9c24c59829f9dad3e616c7c5127f6959"
+      "sha256": "5718e7e19056229be33e9bb9e52309320548453fc7c2db068364f2140164b7a5"
     }
   ]
 }

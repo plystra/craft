@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft-design",
-  "craftVersion": "2.0.0",
+  "craftVersion": "2.0.1",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
@@ -39,19 +39,19 @@
   "outputs": [
     {
       "path": "assets/templates/ui-review-checklist.md",
-      "sha256": "bbbaffbd780327bf9b0ee723fea35abbc46486372d72a2136b0407affb62d596"
+      "sha256": "24b19a223adffe9a965a06e2a1bd34b5eb934a0489c2bee1609a13f36e4a6116"
     },
     {
       "path": "references/accessibility.md",
-      "sha256": "44c6fa5bb4c16ccc931e3e8ad3b6a633ba02255bc30ebc2eed047bc286305c1a"
+      "sha256": "e0359cea03420659690a7db4d4e6f846ec34cfd9c15bf823100012faff105f14"
     },
     {
       "path": "references/index.md",
-      "sha256": "2f880eb8e66bf5b2a99212b1326979fb424880a84c436a6a644a21accda30430"
+      "sha256": "a19bf433ce4e60a74af4a876eafdc83ae5e4bf76de866b20728520afbd3cc5c5"
     },
     {
       "path": "references/interface-design.md",
-      "sha256": "c77dbda2dabd655d7f01fd55595776071a1a4db934edeaa07c250ff95f53bdbc"
+      "sha256": "e8c94ecdbf26aada3fe441850ec28544d138c2053e797b746833f3c5fb30047b"
     },
     {
       "path": "references/LICENSE",
@@ -59,7 +59,7 @@
     },
     {
       "path": "references/visual-identity.md",
-      "sha256": "114a84c1f4579fab429354815635c0e7555d8eb2bf8638a39c25ec44e86c28df"
+      "sha256": "91a7a715234d8b70be851a72a5611424a277d1bba85fce9a040375d8308b5c9e"
     }
   ]
 }
