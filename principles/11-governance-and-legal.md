@@ -4,7 +4,7 @@
 
 Plystra should grow governance gradually.
 
-Do not imitate the full structure of a foundation before there is a real contributor base, maintenance burden, or legal need. Plystra should be treated as a personal craft umbrella first: careful, independent, and not prematurely institutionalized. But do build habits that make future governance possible, as described in the rest of this chapter.
+Do not imitate the full structure of a foundation before there is a real contributor base, maintenance burden, or legal need. Plystra is a small company, Plystra LLC, and should be treated as a craft umbrella first: careful, independent, and not prematurely institutionalized. But do build habits that make future governance possible, as described in the rest of this chapter.
 
 ## 2. Ownership and attribution
 
@@ -65,9 +65,9 @@ Do not choose names that depend on another company's mark unless the project is 
 
 Plystra governance may evolve through stages:
 
-### Stage 0: Personal stewardship
+### Stage 0: Company stewardship
 
-One maintainer controls direction. Decisions are still documented.
+Plystra LLC controls direction. Decisions are still documented.
 
 ### Stage 1: Maintainer-led projects
 

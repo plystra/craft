@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft-stewardship",
-  "craftVersion": "2.0.1",
+  "craftVersion": "2.0.2",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "path": "principles/11-governance-and-legal.md",
-      "sha256": "f6879b787d19f1c389de9669138f29b692bed2e6caa395971bd4cdbaa71a80e3",
+      "sha256": "99259213196c10f4467454a4c3e5f097608b36ec5d2726119892da3a0ceec226",
       "selection": [
         "1. Governance philosophy",
         "6. Governance maturity",
@@ -46,19 +46,19 @@
   "outputs": [
     {
       "path": "references/brand-stewardship.md",
-      "sha256": "52cc6ea84f73db60ceccbfe4e078748b2c4e5a4e5fdb01948e20d3b2f2a8f1d8"
+      "sha256": "177e3dbc68044bdc3fcb41c28eac82bca11ad939088f00f192e7329a7ddb82f5"
     },
     {
       "path": "references/charter.md",
-      "sha256": "e64daea00aeba45bd8454916869a9f7a7345eecc6888626f5e00f6db1619dab1"
+      "sha256": "0babda2d497aa04503fbec31801970aef62bad856944b2e757f856b4b52dca69"
     },
     {
       "path": "references/governance-and-sponsorship.md",
-      "sha256": "fbb43bd77bc58f1d17ab22912ca0d6439d8569388edaaabe2a207f7cc5c1ef22"
+      "sha256": "bc3ab2768680fddd58a1d324f4edb103429b3c228c55a9f78df8d7ef65e61ba8"
     },
     {
       "path": "references/index.md",
-      "sha256": "d95f579c77ede7f0dccd269b7312894e41af9d3e6dea852e90e2cf7790542565"
+      "sha256": "90e1dd045a83c34988bff9c46834fd2f04c9665b43e94c8cf57bc58f119ca411"
     },
     {
       "path": "references/LICENSE",

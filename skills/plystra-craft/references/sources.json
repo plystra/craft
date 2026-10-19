@@ -2,12 +2,12 @@
   "schemaVersion": 2,
   "generator": "tooling/build-skills.ts",
   "skill": "plystra-craft",
-  "craftVersion": "2.0.1",
+  "craftVersion": "2.0.2",
   "canonicalBaseUrl": "https://github.com/plystra/craft/blob/main/",
   "sources": [
     {
       "path": "ADOPTION.md",
-      "sha256": "f228549c73e7fec6130b0b1539b64081a551440798e6176b4c8d6472ea985467",
+      "sha256": "605feeef34e49b11aefc58dce7a28150dd3c0768492e858ff58b32d571b584f3",
       "selection": null,
       "output": "references/applying-craft.md"
     },
@@ -33,7 +33,7 @@
     },
     {
       "path": "principles/01-brand-philosophy.md",
-      "sha256": "29c7d08a744623fbbf5834774ad188c31f35f56e31bae2c85465af0b34694875",
+      "sha256": "3b9c012603d932ec808254c662522acae719179c73248158c8754aa0eaf0b650",
       "selection": null,
       "output": "references/brand.md"
     },
@@ -73,7 +73,7 @@
     },
     {
       "path": "principles/11-governance-and-legal.md",
-      "sha256": "f6879b787d19f1c389de9669138f29b692bed2e6caa395971bd4cdbaa71a80e3",
+      "sha256": "99259213196c10f4467454a4c3e5f097608b36ec5d2726119892da3a0ceec226",
       "selection": [
         "2. Ownership and attribution",
         "3. Licenses",
@@ -117,39 +117,39 @@
   "outputs": [
     {
       "path": "assets/templates/decision-record.md",
-      "sha256": "b36a0a223a8bde2fcd79aa556cff17a0c09e0e4735e50826ab2a89807bda8b91"
+      "sha256": "8d5447f229261805deeeff15eb44fb16c9d86e3dc0a7d2d8dff1e91a514053fc"
     },
     {
       "path": "assets/templates/project-principles.md",
-      "sha256": "3a64898178229d4ecd03c50846a7f13d3754d8f703725f664366a9103be0c560"
+      "sha256": "22d39e90a1c69c0ea962668c609f99ddbc9dc4d34f719408081dfc9b47690502"
     },
     {
       "path": "assets/templates/project-readme.md",
-      "sha256": "345a37e79f65f9acf5021c57c87cd254e346ec0d9ea31ad8ef6a061600ef5f26"
+      "sha256": "d6dc4babb949cb6ed7de855d532bf0a73419592f99ad5b34e6e35b0fc7be5764"
     },
     {
       "path": "assets/templates/release-notes.md",
-      "sha256": "416eba52b58ec71c98c23c8758cc0b688c7854b1ecdfd1b6a381946fc62bf73e"
+      "sha256": "7761e2b4a3b1ee11ea3404a4f67821a5a9c2a6e1ef4ed6b3f96428a4afef8f6f"
     },
     {
       "path": "references/applying-craft.md",
-      "sha256": "0c79fff06a5ddb28639ce6a434c2a4fb3dd193a32d75fba36b9c73f5b9b8fbfd"
+      "sha256": "e3988607e4befa534e317cb17ce08ff10f5f6a3a972790239529af53417fced1"
     },
     {
       "path": "references/brand.md",
-      "sha256": "5f6c80825daafcb5914597e70bc96f130723b7ef0d762344e40c6e9beabc39f4"
+      "sha256": "22087d0e7e7b1ac247358aebb5d84b8d15a30b7aac6512fb1d5117742c9d765c"
     },
     {
       "path": "references/charter-commitments.md",
-      "sha256": "b40ec7db76566da7753bc366614bb1a92190cc55c59596be28b9d93c166c31af"
+      "sha256": "199fff46d400dba867b110e4143b47b378565864ad174fe78624a24bc8ec1d9a"
     },
     {
       "path": "references/documentation.md",
-      "sha256": "77fb6fac6945ce99a893672c9d8e2e24b4519c79ae9718cb01554aa533525607"
+      "sha256": "308036968e98db418a014ab15355394c0b785d6a690e5a9ca841bd8eb2275a09"
     },
     {
       "path": "references/index.md",
-      "sha256": "6aca43b2197a48fadc4dc294d67da929e9973fdaf6858b968975c87cdf440e39"
+      "sha256": "dbb99b7137842ad8390d9a9278d170488a55c14b77681ecd8f87d1135d4ffd9a"
     },
     {
       "path": "references/LICENSE",
@@ -157,27 +157,27 @@
     },
     {
       "path": "references/ownership-licensing-claims.md",
-      "sha256": "fc80baef3705c0b83a8da495107b3ee1bd23d1996a68e306a3253ffd8a8b7f1e"
+      "sha256": "52a9c4870bff51ef12833b5cd5f0d3e54810f36bfeed15470fe5228ba54ee5b8"
     },
     {
       "path": "references/plystra-scope.md",
-      "sha256": "b73ce42740bf8ac31f565773a875a5051929d4305bb30c3653d45b8d1e072cc3"
+      "sha256": "3395ddc6c35fc8ce2e463c3173f19f69cb63f980e76fbd2fbd164253092c5ea3"
     },
     {
       "path": "references/privacy-and-data.md",
-      "sha256": "f1fe08758a067f8987563049b1d24402e82910be12d028d1dc94fcd428a8bb49"
+      "sha256": "ec45d908c5d5ba793b16ee268c6dbf4bf3a7178ee708c72f629138744ff64abe"
     },
     {
       "path": "references/product.md",
-      "sha256": "c6989822e3f4bd676fda6b40702e1638254a72585ff9dd3d4d42589f8845736d"
+      "sha256": "641f295ad082cea686345416d51ccf2c13d27061d2b3aaf052732fd72b201fbd"
     },
     {
       "path": "references/release-and-maintenance.md",
-      "sha256": "b90ac18a675d0b97590a7b5344b4d1b5fb446302c89dfcfc68871fe7a7036868"
+      "sha256": "6d54845d747a721156a98fc0cc9bd2cace82c9111e770cb368a19350c6beaecc"
     },
     {
       "path": "references/writing.md",
-      "sha256": "5718e7e19056229be33e9bb9e52309320548453fc7c2db068364f2140164b7a5"
+      "sha256": "233d0732a4727775e79c209da8e8abbf97058a2813fffe7ea5af153500cb99f1"
     }
   ]
 }

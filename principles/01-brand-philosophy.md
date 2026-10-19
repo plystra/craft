@@ -151,7 +151,7 @@ Do not add visible features only because competitors have them. Every visible fe
 
 ### Founder diary as brand
 
-Plystra may be operated by an individual or a small group, but the brand should not collapse into a personal diary. Personal authorship is acceptable; personal chaos is not.
+Plystra is operated by Plystra LLC, a small company, but the brand should not collapse into a personal diary. Personal authorship is acceptable; personal chaos is not.
 
 ### Decorative seriousness
 

@@ -51,6 +51,7 @@ The current version of the philosophy is recorded below. Distributed skills reco
 
 | Version | Effective date | Change |
 | --- | --- | --- |
+| 2.0.2 | 2026-10-20 | Governance names Plystra LLC as the company that operates Plystra and holds its direction; the first governance stage is company stewardship. No obligation changes. |
 | 2.0.1 | 2026-10-19 | Plystra LLC is named as steward, copyright holder and the party that permits brand use. No obligation changes. |
 | 2.0.0 | 2026-10-07 | Project principles became a working record for contributors and agents instead of a compliance review with deadlines. Taste rules were added for agent-first work, deferred design, wordmark use, imagery and icons, motion, page grounds, project site identity, and document form. |
 | 1.0.1 | 2026-10-04 | Each provision received one canonical home. No obligation changes. |
