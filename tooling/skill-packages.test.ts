@@ -45,7 +45,7 @@ function localLinks(markdown: string): string[] {
 }
 
 const CORE = 'plystra-craft';
-const MODULES = ['plystra-craft-code', 'plystra-craft-design', 'plystra-craft-website', 'plystra-craft-stewardship'];
+const MODULES = ['plystra-craft-code', 'plystra-craft-design', 'plystra-craft-website'];
 
 test('skills are one required base skill plus surface modules', async () => {
   assert.equal(manifest.schemaVersion, 2);

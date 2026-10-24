@@ -2,7 +2,7 @@
 
 This is the project principles record described in [project principles](../ADOPTION.md#4-project-principles). It is read by the people and agents who work on the project before they start a task. Keep it short and current, adapt the sections to the actual medium, remove these instructions, and replace relative links with canonical Craft URLs.
 
-Relationship: Plystra-owned project / Plystra sub-brand / Project under [Sub-brand], a Plystra sub-brand
+Relationship: Plystra project
 
 Owner and responsible maintainer: ...
 

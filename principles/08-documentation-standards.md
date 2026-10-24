@@ -36,7 +36,7 @@ PROJECT_PRINCIPLES.md
 docs/, when setup or operation is non-trivial
 ```
 
-`LICENSE` is required by [Governance and Legal](11-governance-and-legal.md#3-licenses) and `PROJECT_PRINCIPLES.md` by [project principles](../ADOPTION.md#4-project-principles). Every private repository should still include enough documentation for future maintainers.
+`LICENSE` is required by [Ownership and Legal](11-governance-and-legal.md#2-licenses) and `PROJECT_PRINCIPLES.md` by [project principles](../ADOPTION.md#4-project-principles). Every private repository should still include enough documentation for future maintainers.
 
 ### README
 

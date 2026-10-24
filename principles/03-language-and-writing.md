@@ -25,6 +25,8 @@ Good Plystra writing should:
 
 Plystra should not sound like it is trying to impress everyone. It should sound like it was made carefully for people who care.
 
+Plystra should speak with confidence, not volume. The public voice should be calm, technical when useful, plain when possible, and never desperate for attention. Plystra may be ambitious, but it should not be grandiose. It should let the quality of its work create authority.
+
 ## 2. Default writing style
 
 Use short sentences when explaining actions. Use longer sentences only when the rhythm benefits the idea.
@@ -87,7 +89,7 @@ Legal and public claims must be conservative. Do not use:
 - `compliant` without naming the framework and scope;
 - `enterprise-grade` without evidence;
 - `trusted by` without evidence;
-- `open source` without a [qualifying license](11-governance-and-legal.md#3-licenses);
+- `open source` without a [qualifying license](11-governance-and-legal.md#2-licenses);
 - `official` when the project is not formally endorsed by the external organization concerned.
 
 ## 4. Project descriptions

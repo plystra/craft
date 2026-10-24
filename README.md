@@ -2,7 +2,7 @@
 
 Craft is Plystra's shared philosophy and working standards. This repository was previously named `plystra/philosophy`; the rename preserves its history and existing principle paths.
 
-Plystra is an independent practice for thoughtful, durable work, described in the [Charter](CHARTER.md). Craft defines what its projects share: brand, product, writing, design, engineering, documentation, privacy, release, and stewardship standards, and the separate rules for projects Plystra sponsors.
+Plystra is an independent practice for thoughtful, durable work, described in its [Charter](https://github.com/plystra/handbook/blob/main/charter.md). Craft defines what good Plystra work is: brand, product, writing, design, engineering, documentation, privacy, and release standards. Everything about Plystra as an organization, including its relationships with projects and people, its stewardship, and permission to use its name, is in the [Plystra Handbook](https://github.com/plystra/handbook).
 
 ## Purpose
 
@@ -20,17 +20,17 @@ The goal is not to make every project look identical. The goal is to make every 
 
 ## Scope and project relationships
 
-| Relationship | Meaning | Philosophy obligations |
-| --- | --- | --- |
-| **Plystra-owned project** | A project owned and stewarded directly under Plystra. | Must follow the full philosophy. |
-| **Plystra sub-brand** | A brand within Plystra with its own name and identity. | The sub-brand and every project under it must follow the full philosophy. |
-| **Plystra-sponsored project** | An independently owned and governed project receiving agreed support from Plystra. | May adopt none, part, or all of the philosophy. Must meet the [sponsorship requirements](principles/11-governance-and-legal.md#7-sponsorship-admission-and-continuation). |
+How much of Craft a project must follow depends on its relationship to Plystra. The relationships themselves, their public wording, and how a project enters or leaves one are defined in the [Plystra Handbook](https://github.com/plystra/handbook/blob/main/relationships/README.md).
 
-Throughout this repository, **Plystra projects** means Plystra-owned projects and all projects under Plystra sub-brands. Sponsored projects are named explicitly when a rule applies to them; otherwise a provision does not bind them unless they adopted it. A voluntary adoption claim must identify its actual scope and the revision reviewed.
+| Relationship | Craft obligations |
+| --- | --- |
+| **Plystra project** | Must follow the full philosophy. |
+| **Partner project** | Must meet the Craft provisions named in its partnership agreement, and is reviewed against them before Plystra's participation is stated. |
+| **Sponsored project** | Not bound. It may adopt any part of the philosophy. |
 
-The full philosophy is this README, the [Charter](CHARTER.md), [Applying and Updating the Philosophy](ADOPTION.md), and every document in `principles/`. It covers new and existing projects. A distinct name, domain, technical stack, business model, or maturity level does not exempt an owned project or a sub-brand project, and a sub-brand cannot exempt the projects under it. [ADOPTION.md](ADOPTION.md) defines requirement levels and which provisions apply to which kinds of work.
+Throughout this repository, **Plystra projects** means projects owned by Plystra LLC, whatever their name. Partner and sponsored projects are named explicitly when a rule applies to them; otherwise a provision does not bind them unless they adopted it. A voluntary adoption claim must identify its actual scope and the revision reviewed. Adopting the philosophy does not establish a relationship with Plystra or permission to use the Plystra name.
 
-Sponsorship, a shared author, or voluntary adoption of the philosophy does not by itself establish ownership, a sub-brand relationship, or permission to use the Plystra brand. Association must be confirmed by Plystra's steward.
+The full philosophy is this README, [Applying and Updating the Philosophy](ADOPTION.md), and every document in `principles/`. It covers new and existing projects. A distinct name, domain, technical stack, business model, or maturity level does not exempt a Plystra project. [ADOPTION.md](ADOPTION.md) defines requirement levels and which provisions apply to which kinds of work.
 
 ## Repository structure
 
@@ -39,7 +39,6 @@ plystra/craft
 ├── README.md
 ├── LICENSE
 ├── LICENSE-CODE
-├── CHARTER.md
 ├── ADOPTION.md
 ├── CONTRIBUTING.md
 ├── principles/                     # canonical, maintained by hand
@@ -66,8 +65,7 @@ plystra/craft
 │   ├── plystra-craft/                # every project
 │   ├── plystra-craft-code/           # projects with code
 │   ├── plystra-craft-design/         # projects with a visual identity or interface
-│   ├── plystra-craft-website/        # projects with an official website
-│   └── plystra-craft-stewardship/    # the Plystra steward's workspace only
+│   └── plystra-craft-website/        # projects with an official website
 │       ├── SKILL.md                # maintained entry point
 │       ├── references/             # generated excerpts of the canonical sources
 │       └── assets/templates/       # generated templates, when the skill uses them
@@ -78,7 +76,7 @@ plystra/craft
 │   └── skill-packages.test.ts
 ```
 
-The root scope, Charter, adoption process, and `principles/` are the authoritative standards. Each rule has one canonical home; other documents link to it rather than restating it. `templates/` contains copyable forms that help projects apply the standards. The 01–13 prefixes retain existing citations and provide a reading order; they do not rank the authority of chapters.
+The root scope, adoption process, and `principles/` are the authoritative standards. Each rule has one canonical home; other documents link to it rather than restating it. `templates/` contains copyable forms that help projects apply the standards. The 01–13 prefixes retain existing citations and provide a reading order; they do not rank the authority of chapters.
 
 Skills distribute these standards to the projects that follow them. The generator selects canonical sections into flat, purpose-named reference files, and each canonical section is distributed by exactly one skill. Skills do not define additional policy. `CONTRIBUTING.md` and `tooling/` describe how Craft itself is maintained and add no obligations to projects. Craft keeps no material that projects cannot use, such as its own decision records.
 
@@ -88,7 +86,7 @@ Skills follow [what the project contains](ADOPTION.md#3-applicability-follows-th
 
 | Skill | Install when | Adds |
 | --- | --- | --- |
-| [`plystra-craft`](skills/plystra-craft/SKILL.md) | Always, in every Plystra-owned project, sub-brand, and project under a sub-brand. | Requirement levels and applicability, brand and relationship wording, product, writing, documentation, privacy notices, releases and maintenance, licensing and claims, and the `PROJECT_PRINCIPLES.md` record. |
+| [`plystra-craft`](skills/plystra-craft/SKILL.md) | Always, in every Plystra project. | Requirement levels and applicability, brand and relationship wording, product, writing, documentation, privacy notices, releases and maintenance, licensing and claims, and the `PROJECT_PRINCIPLES.md` record. |
 | [`plystra-craft-code`](skills/plystra-craft-code/SKILL.md) | The project contains source code: an app, service, library, CLI, script, or firmware. | Code working standards, engineering, security, and operational readiness. |
 | [`plystra-craft-design`](skills/plystra-craft-design/SKILL.md) | The project has a visual identity or an interface people see or operate: app UI, website, print, or physical design. | Visual identity, interface design, accessibility, and the UI review checklist. |
 | [`plystra-craft-website`](skills/plystra-craft-website/SKILL.md) | The project operates an official website or public web documentation. | Search, sharing, `robots.txt`, `sitemap.xml`, `/llms.txt`, and release verification. |
@@ -125,13 +123,13 @@ See [Contributing](CONTRIBUTING.md) to change Craft itself.
 
 ## Stewardship
 
-Plystra is currently stewarded by Plystra LLC. The steward is responsible for the direction, naming, public standards, and project association of Plystra. This may evolve as described in [governance maturity](principles/11-governance-and-legal.md#6-governance-maturity).
+Plystra is stewarded by Plystra LLC. The steward confirms changes to Craft, as described in [versions](ADOPTION.md#5-versions). Plystra's stewardship and governance are defined in the handbook's [Stewardship](https://github.com/plystra/handbook/blob/main/stewardship.md).
 
 ## Attribution and brand use
 
 The Plystra name, wordmark, visual identity, and other brand-identifying materials are not a general-purpose public brand asset library. Do not use them in a way that suggests official affiliation, endorsement, ownership, or representation without permission from Plystra LLC.
 
-Plystra is not currently represented here as a registered trademark. This section is a practical brand-use notice, not a claim of trademark registration.
+Plystra is not currently represented here as a registered trademark. This section is a practical brand-use notice, not a claim of trademark registration. Who may use the Plystra name, and on what basis, is defined in the handbook's [Brand Use](https://github.com/plystra/handbook/blob/main/brand-use.md).
 
 ## License
 

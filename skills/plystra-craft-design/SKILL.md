@@ -7,7 +7,7 @@ description: "Plystra Craft rules for visual identity and interfaces. Use when d
 
 Rules for how a Plystra project looks and how people operate it. They add to `plystra-craft`, which carries product behavior, interface copy, and brand relationships. If `plystra-craft` is not installed, tell the user to run `bunx --bun skills add plystra/craft --skill plystra-craft`.
 
-Inspect the accepted identity, existing components and tokens, and supported devices before changing anything. The shipped product and its design system are the source of truth; preserve them unless replacing them is the task. Projects and sub-brands may have their own personality within these standards, and each project site must have its own look.
+Inspect the accepted identity, existing components and tokens, and supported devices before changing anything. The shipped product and its design system are the source of truth; preserve them unless replacing them is the task. Projects may have their own personality within these standards, and each project site must have its own look.
 
 ## Read what the work touches
 

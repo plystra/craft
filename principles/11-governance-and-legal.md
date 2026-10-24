@@ -1,24 +1,16 @@
-# Governance and Legal
+# Ownership and Legal
 
-## 1. Governance philosophy
+## 1. Ownership and attribution
 
-Plystra should grow governance gradually.
+Every Plystra project must clearly record its owner, operator, responsible maintainer, and relationship to Plystra.
 
-Do not imitate the full structure of a foundation before there is a real contributor base, maintenance burden, or legal need. Plystra is a small company, Plystra LLC, and should be treated as a craft umbrella first: careful, independent, and not prematurely institutionalized. But do build habits that make future governance possible, as described in the rest of this chapter.
+Public attribution must match these records and use the [relationship wording](https://github.com/plystra/handbook/blob/main/relationships/README.md#public-wording). State legal entities and trademark status only when verified for that public surface.
 
-## 2. Ownership and attribution
-
-Every Plystra-owned project, sub-brand, and project under a sub-brand must clearly record its owner, operator, responsible maintainer, and relationship to Plystra. For a project under a sub-brand, identify the sub-brand as well.
-
-Sponsored projects must identify their independent owner and maintainers and describe Plystra's agreed support. Sponsorship does not establish Plystra ownership, operation, or responsibility for the whole project.
-
-Public attribution must match these records and use the [relationship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). State legal entities and trademark status only when verified for that public surface.
-
-## 3. Licenses
+## 2. Licenses
 
 Every public repository must have an explicit license.
 
-Open source is not mandatory for Plystra-owned projects, sub-brands or their projects, or sponsored projects. No category requires public source code. License terms and descriptions must accurately reflect what is available and what users may do with it.
+Open source is not mandatory. No project relationship requires public source code. License terms and descriptions must accurately reflect what is available and what users may do with it.
 
 The license should match the project's goals:
 
@@ -29,7 +21,7 @@ The license should match the project's goals:
 
 Do not call a project open source unless its license is an approved open-source license.
 
-## 4. Contributor expectations
+## 3. Contributor expectations
 
 If outside contributions are accepted, the repository should include contribution rules.
 
@@ -45,7 +37,7 @@ Contribution rules should explain:
 
 Keep the tone direct and respectful. Avoid overly corporate language.
 
-## 5. Trademarks and naming
+## 4. Trademarks and naming
 
 Project names should be checked before public release.
 
@@ -61,47 +53,6 @@ A naming review should consider:
 
 Do not choose names that depend on another company's mark unless the project is clearly an integration and the usage is nominative.
 
-## 6. Governance maturity
-
-Plystra governance may evolve through stages:
-
-### Stage 0: Company stewardship
-
-Plystra LLC controls direction. Decisions are still documented.
-
-### Stage 1: Maintainer-led projects
-
-Projects may have contributors. Maintainer roles and review expectations are documented.
-
-### Stage 2: Shared project governance
-
-Multiple maintainers can approve changes. Release and security responsibilities are assigned.
-
-### Stage 3: Foundation-like stewardship
-
-Project admission, retirement, trademark use, and governance are formalized.
-
-Do not skip stages for appearance.
-
-## 7. Sponsorship admission and continuation
-
-Sponsored projects remain independently owned and governed; see [scope and project relationships](../README.md#scope-and-project-relationships). Sponsorship does not require `PROJECT_PRINCIPLES.md`, a particular technical stack, or adoption of the full philosophy.
-
-Admission requires all of the following:
-
-1. **Compatible purpose.** The project's purpose and public conduct are compatible with care for users, honest claims, and responsible maintenance.
-2. **Clear responsibility.** Ownership, operating context, responsible maintainers, and current maintenance status are identifiable. Support expectations reflect the resources available.
-3. **Accurate licensing and claims.** The project has the rights to distribute what it offers, describes its license terms accurately, and makes supportable public claims. Open-source, source-available, and proprietary projects are all eligible.
-4. **Basic security and privacy care.** Practices are proportionate to the project's risks. Secrets are protected, relevant data handling and known limitations are explained, and there is a path for reporting security concerns.
-5. **A feedback path.** Users can report problems or reach a responsible maintainer, with honest expectations about support.
-6. **Confirmed and accurate sponsorship.** Plystra's steward and the project maintainer confirm a written record of the support provided, each party's responsibilities, the term or review trigger, and permitted public wording and brand use. Public descriptions identify the nature and scope of support without implying ownership or guarantees beyond that scope.
-
-Record the project's chosen philosophy adoption scope separately from sponsorship: none, named provisions, or the full philosophy. Any public adoption claim must match actual practice; partial adoption must not be described as full compliance. The admission requirements above apply regardless of that choice.
-
-These requirements continue throughout sponsorship. Review the relationship when its agreed trigger occurs or when ownership, maintenance, support, or material security and privacy circumstances change. If the requirements are no longer met, agree corrective action or suspend or end sponsorship.
-
-When sponsorship changes or ends, update current descriptions and remove or revise current sponsorship marks as appropriate. Accurate historical acknowledgments may remain if they clearly describe the past scope and period of support and follow the agreed brand-use terms.
-
-## 8. Terms of use
+## 5. Terms of use
 
 Provide terms of use or service where needed for the product's service model, commercial arrangements, or applicable law. Applicable terms must be available before the user accepts the relevant service or transaction. The format and content of legal documents must fit the actual product and jurisdiction; one standard document does not cover every case.

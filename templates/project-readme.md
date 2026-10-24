@@ -4,17 +4,15 @@
 
 Adapt this template to the medium. Software may need setup commands and architecture; objects, writing, or research may need use, methods, care, or preservation information. Keep applicable requirements and remove irrelevant examples. Work without a repository may use an equivalent project page or document.
 
-Choose the accurate relationship statement and remove the other options:
+State the project's relationship to Plystra:
 
 - [Project Name] is a Plystra project.
-- [Project Name] is a project by [Sub-brand], a Plystra sub-brand.
-- [Project Name] is independently owned and maintained by [Owner/Maintainer], with [specific support] sponsored by Plystra.
 
 Owner and operator: ...
 
 Responsible maintainer: ...
 
-Follow the [relationship wording](../principles/01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). Owned projects and projects under sub-brands state that the full Plystra philosophy applies and link to their project principles. Sponsored projects state the support scope, current sponsorship status, term or review trigger, and any voluntary adoption.
+Follow the [relationship wording](https://github.com/plystra/handbook/blob/main/relationships/README.md#public-wording). A Plystra project states that the full Plystra philosophy applies and links to its project principles. A partner or sponsored project uses only the wording its written consent permits.
 
 ## Status
 
@@ -129,8 +127,8 @@ These are example links for the target project, not files in Craft. Replace them
 
 [License name]
 
-State the actual license terms and link to them, following [licenses](../principles/11-governance-and-legal.md#3-licenses).
+State the actual license terms and link to them, following [licenses](../principles/11-governance-and-legal.md#2-licenses).
 
 ## About Plystra, if relevant
 
-Describe Plystra with the [Charter identity statement](../CHARTER.md#1-identity), consistent with the relationship stated above.
+Describe Plystra with the [Charter identity statement](https://github.com/plystra/handbook/blob/main/charter.md#1-identity), consistent with the relationship stated above.

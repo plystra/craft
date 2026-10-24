@@ -13,27 +13,15 @@
         {
           "path": "README.md",
           "output": "references/plystra-scope.md",
-          "when": "Who Craft binds: owned projects, sub-brands, and sponsored projects.",
+          "when": "Who Craft binds: Plystra projects, partner projects, and sponsored projects, with a link to the handbook's relationships.",
           "sections": [
             "Scope and project relationships"
           ]
         },
         {
-          "path": "CHARTER.md",
-          "output": "references/charter-commitments.md",
-          "when": "Plystra's identity, what it avoids, the standard of care, public posture, and retirement.",
-          "sections": [
-            "1. Identity",
-            "5. What Plystra avoids",
-            "6. The standard of care",
-            "7. Public posture",
-            "9. Project retirement"
-          ]
-        },
-        {
           "path": "principles/01-brand-philosophy.md",
           "output": "references/brand.md",
-          "when": "Positioning, personality, the five words, relationship wording, anti-patterns such as the template look and generated decoration, and the brand test before publishing."
+          "when": "Positioning, personality, the five words, the standard of care, brand promises, what Plystra avoids and the anti-patterns such as the template look and generated decoration, and the brand test before publishing."
         },
         {
           "path": "principles/02-product-principles.md",
@@ -43,7 +31,7 @@
         {
           "path": "principles/03-language-and-writing.md",
           "output": "references/writing.md",
-          "when": "Any text: voice, document form, outcome-first public copy, claims, descriptions, labels, empty states, and error messages."
+          "when": "Any text: voice and public posture, document form, outcome-first public copy, claims, descriptions, labels, empty states, and error messages."
         },
         {
           "path": "principles/08-documentation-standards.md",
@@ -68,14 +56,7 @@
         {
           "path": "principles/11-governance-and-legal.md",
           "output": "references/ownership-licensing-claims.md",
-          "when": "Ownership records, licenses, contribution rules, naming and trademarks, and terms of use.",
-          "sections": [
-            "2. Ownership and attribution",
-            "3. Licenses",
-            "4. Contributor expectations",
-            "5. Trademarks and naming",
-            "8. Terms of use"
-          ]
+          "when": "Ownership records, licenses, contribution rules, naming and trademarks, and terms of use."
         },
         {
           "path": "templates/project-principles.md",
@@ -177,47 +158,6 @@
           "path": "principles/13-websites-search-and-sharing.md",
           "output": "references/website-standards.md",
           "when": "Official sites and public web docs: content, readable HTML, canonical URLs, robots.txt, sitemap.xml, sharing previews, JSON-LD, the required /llms.txt, and release verification."
-        },
-        {
-          "path": "LICENSE",
-          "output": "references/LICENSE",
-          "when": "Preserve the documentation license when adapting or distributing these resources."
-        }
-      ]
-    },
-    {
-      "name": "plystra-craft-stewardship",
-      "sources": [
-        {
-          "path": "CHARTER.md",
-          "output": "references/charter.md",
-          "when": "Plystra's ambition, scope of work, admission conditions, and promise.",
-          "sections": [
-            "2. Long-term ambition",
-            "3. Core belief",
-            "4. What Plystra builds",
-            "8. Project admission",
-            "10. The Plystra promise"
-          ]
-        },
-        {
-          "path": "principles/11-governance-and-legal.md",
-          "output": "references/governance-and-sponsorship.md",
-          "when": "Governance philosophy and maturity, and sponsorship admission, continuation, and ending.",
-          "sections": [
-            "1. Governance philosophy",
-            "6. Governance maturity",
-            "7. Sponsorship admission and continuation"
-          ]
-        },
-        {
-          "path": "README.md",
-          "output": "references/brand-stewardship.md",
-          "when": "Who stewards Plystra and the limits on using its name and marks.",
-          "sections": [
-            "Stewardship",
-            "Attribution and brand use"
-          ]
         },
         {
           "path": "LICENSE",

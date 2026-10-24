@@ -15,7 +15,7 @@ Public pages must:
 - say what the project does and who it serves;
 - distinguish current capabilities from planned work;
 - state maturity and limitations when needed to understand the offer;
-- describe ownership, publishing, and sponsorship relationships with the [relationship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording);
+- describe ownership, publishing, partnership, and sponsorship relationships with the [relationship wording](https://github.com/plystra/handbook/blob/main/relationships/README.md#public-wording);
 - keep metadata and machine-readable summaries consistent with visible content.
 
 Public sites carry no roadmap, milestone list, or gate status. One plain line about maturity is enough; plans belong in the project's own documentation, not on its public pages.
@@ -89,7 +89,7 @@ Structured data must:
 - describe facts supported by the visible site;
 - use stable identifiers and canonical URLs;
 - identify the real publisher or responsible organization;
-- distinguish ownership from sponsorship;
+- distinguish ownership from partnership and sponsorship;
 - link to source repositories or other resources only when they exist and are public;
 - reflect the actual release or development state.
 

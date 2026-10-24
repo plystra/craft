@@ -6,7 +6,7 @@ Craft keeps its standards and the skills that distribute them in one repository.
 
 | Change | Edit here |
 | --- | --- |
-| Scope or philosophy | `README.md`, `CHARTER.md`, `ADOPTION.md`, or `principles/` |
+| Scope or philosophy | `README.md`, `ADOPTION.md`, or `principles/` |
 | Reusable project document | `templates/` |
 | Task routing and workflow | `skills/<name>/SKILL.md` |
 | Which source sections a skill carries, task-specific filenames, and reading conditions | `tooling/skills-manifest.json` |
@@ -21,6 +21,8 @@ Policy revisions follow [ADOPTION.md](ADOPTION.md#5-versions). Keep its newest v
 Keep the existing numbered principle paths stable when practical. Craft contains only what projects use: the standards, templates, skills, and the tooling that distributes them. Do not add decision records, plans, or notes about Craft itself; explain a structural change in its commit message.
 
 Craft is general. Do not name, describe, or use as an example any specific Plystra project; write rules and examples that any project could apply.
+
+Craft defines what good work is. Plystra's charter, stewardship, relationships, and brand-use permissions belong in [plystra/handbook](https://github.com/plystra/handbook), not here.
 
 ## Build and check
 

@@ -2,7 +2,7 @@
 
 ## 1. Visual direction
 
-Plystra's own visual identity should feel quiet, precise, and lasting. This is the parent brand's direction, not the only acceptable personality for every project or sub-brand. These principles apply to visual work in any medium: digital and physical products, publications, and other work.
+Plystra's own visual identity should feel quiet, precise, and lasting. This is the parent brand's direction, not the only acceptable personality for every project. These principles apply to visual work in any medium: digital and physical products, publications, and other work.
 
 Visual design should support trust, clarity, recognition, and an experience appropriate to the work. Identity, warmth, playfulness, and atmosphere may serve the work alongside structure and information. Typography, spacing, motion, color, and layout should serve those purposes without compromising usability or honest communication.
 
@@ -40,7 +40,7 @@ Default direction for the parent brand and utility interfaces:
 - semantic colors only when they communicate state;
 - avoid arbitrary color cycling.
 
-Projects and sub-brands may use broader or more expressive palettes for a defined identity, audience, or medium. Contrast, semantic consistency, and non-color cues remain required.
+Projects may use broader or more expressive palettes for a defined identity, audience, or medium. Contrast, semantic consistency, and non-color cues remain required.
 
 Use color for:
 
@@ -114,7 +114,7 @@ Use the wordmark:
 - on sharing images and cards;
 - in repository documentation where brand affiliation matters.
 
-A sponsored project may use the wordmark only as authorized for its sponsorship, together with the [sponsorship wording](01-brand-philosophy.md#5-brand-hierarchy-and-relationship-wording). It identifies the agreed support, not ownership or operation.
+A partner or sponsored project may use the wordmark only as its written consent permits, as described in the handbook's [Brand Use](https://github.com/plystra/handbook/blob/main/brand-use.md). There, it identifies participation or support, not ownership or operation.
 
 Avoid:
 
@@ -127,7 +127,7 @@ Avoid:
 
 Affiliation must be accurate, but visual similarity to the parent brand is not required. Shared principles do not require identical colors, typography, density, or emotional tone.
 
-Each project's and sub-brand's site must have its own look. It must not look like the brand site, and it must not be cast from the same mould as another project's site with only the colors changed. Shared foundations such as a rendering setup or a type stack may be reused; the visual language, layout, and figures should come from the project's own subject.
+Each project's site must have its own look. It must not look like the brand site, and it must not be cast from the same mould as another project's site with only the colors changed. Shared foundations such as a rendering setup or a type stack may be reused; the visual language, layout, and figures should come from the project's own subject.
 
 A project may define:
 
